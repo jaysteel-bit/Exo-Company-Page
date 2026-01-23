@@ -1,0 +1,108 @@
+The best strategy to seamlessly redirect customers from your sub-brand domains to dedicated pages on your main website is to implement 301 redirects and ensure your main site is designed for distinct sub-brand experiences. This approach centralizes all web traffic and SEO authority on your parent domain (exoent.co) while maintaining the individual brand identity of exoluxx.com and steelglobal.us. 
+Strategy for seamless domain consolidation
+1. Implement permanent (301) redirects
+A 301 redirect is the most important component of this strategy, as it permanently sends users and search engines from one URL to another. This preserves the SEO value (or "link juice") of the sub-brand domains and passes it to the corresponding pages on the parent domain. 
+From exoluxx.com to exoent.co/luxx: Configure a 301 redirect for the entire exoluxx.com domain. Use a wildcard redirect to forward all pages. For example, if a customer visits exoluxx.com/ground-transport, they will be automatically sent to exoent.co/luxx/ground-transport.
+From steelglobal.us to exoent.co/steel-card: Set up a 301 redirect for the steelglobal.us domain. All traffic will be permanently forwarded to the exoent.co/steel-card page.
+How to implement: You can set up these redirects through your domain registrar's control panel, your website's hosting account (like cPanel), or within your Content Management System (CMS). 
+2. Design dedicated "microsites" on the parent domain
+On your main website (exoent.co), create dedicated sections or "microsites" for each brand that have their own unique look and feel while still remaining under the parent company's navigation.
+Example for ExoLuxx:
+Page structure: Create a page at exoent.co/luxx to serve as the main landing page.
+Dedicated branding: Use a custom design, color scheme, and typography for all pages under the /luxx subdirectory. This will create the feeling of a separate website with a distinct brand culture.
+Consistent navigation: The main navigation at the top of the site should remain consistent with Exo Enterprise's branding, with a clear link to the "Luxx" division.
+Example for The Steel Card:
+Page structure: Develop a specific landing page at exoent.co/steel-card.
+Dedicated branding: Design this page to match the branding of "The Steel Card," possibly with a different layout, font, and imagery.
+Consistent navigation: The parent site's navigation and footer should still be present, demonstrating that it is a product of Exo Enterprise. 
+3. Update all branded assets
+To complete the consolidation, make sure your digital and physical assets point to the new, centralized pages on exoent.co.
+Link updates: Update any internal links on the parent site to point to the correct sub-brand pages. Also, make sure all social media profiles and marketing materials for Luxx and Steel Global link to the consolidated URLs.
+Communication: Consider creating a simple announcement on the old sub-brand sites (before they are fully redirected) to inform returning customers of the consolidation and the new web address. 
+Benefits of this strategy
+Consolidated SEO authority: Instead of SEO value being split across multiple domains, 301 redirects consolidate all link equity to the primary domain (exoent.co). This strengthens the parent site's search engine rankings.
+Seamless user experience: Customers who type in exoluxx.com or steelglobal.us are instantly and permanently taken to the correct product page without interruption, preventing confusion and maintaining a polished customer journey.
+Reduced maintenance: Consolidating to one domain simplifies website management, security updates, and analytics tracking compared to running multiple independent sites.
+Reinforced branding: By housing all sub-brands under the main domain, you communicate a clear vertical integration to customers and strengthen the overarching corporate brand identity of Exo Enterprise.
+
+[How to do this on Framer]
+
+Implementing a domain consolidation strategy with Framer requires a two-part approach: handling domain-level redirects with your domain registrar and setting up page-level redirects within Framer. The Framer platform does not allow for cross-domain redirects from its settings, so you must use your domain provider for the initial redirect. 
+Here is a step-by-step guide for doing this in Framer.
+Part 1: Set up domain-level redirects with your domain registrars
+This is the most critical step and must be completed with the company where you registered exoluxx.com and steelglobal.us (e.g., GoDaddy, Namecheap, Cloudflare). 
+Redirect from exoluxx.com to exoent.co/luxx:
+Log in to the account of the domain registrar for exoluxx.com.
+Locate the DNS management or domain forwarding settings.
+Add a 301 redirect from exoluxx.com to https://exoent.co/luxx. For a full site redirect, you may also need to add a wildcard (e.g., exoluxx.com/* to https://exoent.co/luxx/$1) to ensure any sub-pages on the old domain are forwarded correctly.
+Save the changes. 
+Redirect from steelglobal.us to exoent.co/steel-card:
+Log in to the account of the domain registrar for steelglobal.us.
+Locate the DNS management or domain forwarding settings.
+Add a 301 redirect from steelglobal.us to https://exoent.co/steel-card.
+Save the changes. 
+Part 2: Design dedicated pages within your Framer site (exoent.co)
+This involves creating the microsite experience directly within your main Framer project.
+Step 1: Create new pages for each division
+Open your exoent.co project in Framer.
+Navigate to the Pages panel on the left.
+Click the + icon and select New Page.
+Name the pages logically, such as "Luxx" and "Steel Card," and ensure the URL slugs are set to /luxx and /steel-card respectively. 
+Step 2: Design the pages with distinct branding
+While on the parent domain, you can create the feel of a separate website by using unique designs on each new page.
+Custom components: Create and use distinct component styles for each brand. For example, design different headers, color palettes, and fonts for the Luxx and Steel Card pages.
+Unique layouts: Structure the layouts of the Luxx and Steel Card pages to reflect their specific product offerings and brand culture, giving them a "microsite" feel.
+Branded content: Add all relevant branded content, imagery, and copy for the Luxx and Steel Card products on their respective pages. 
+Step 3: Add internal page redirects (optional)
+If your old domains had specific sub-pages that you want to redirect to new pages within the exoent.co site (and your registrar can't handle complex wildcard redirects), you can use Framer's built-in redirect feature for fine-tuning.
+In your Framer project, go to Site Settings > Redirects.
+Create a new redirect rule.
+For the Old URL, enter the path from the old domain. For example, /old-luxx-page.
+For the New URL, enter the new Framer page path, such as /luxx/old-luxx-page. This only works for paths within the domain hosted on Framer. 
+Step 4: Publish your Framer site
+Once you have created the new pages and set up the branding, publish your site to make the changes live.
+The 301 redirects set up with your domain registrars will now point customers to your newly created, branded pages on exoent.co.
+The traffic and SEO authority from the old domains will be consolidated onto your main site, strengthening your primary brand.
+
+Other Options:
+
+Several excellent web hosting platforms can help you achieve your goal of consolidating multiple startup domains onto a single, main website, allowing for 301 redirects and custom branding. The right choice for you will depend on your budget, your technical comfort level, and the flexibility you need. 
+Here are a few options, categorized by approach, that allow for seamless 301 redirects and HTML import. 
+Option 1: WordPress with a reputable web host
+This is a highly flexible and popular option that gives you complete control over your content and branding. The combination of a web host with a robust control panel (like cPanel) and WordPress makes the process straightforward. 
+Pros:
+Ultimate control: You have full ownership of your site files, databases, and design.
+Extensive functionality: The WordPress ecosystem offers a massive number of themes and plugins to create dedicated "microsite" pages for each brand.
+Simple redirects: Tools like cPanel's built-in redirect manager or free WordPress plugins like "Redirection" allow you to set up and manage 301 redirects easily.
+Easy HTML import: If you have HTML files, you can upload them via FTP or the hosting control panel and integrate them into your WordPress pages.
+Custom branding: You can use page builders (e.g., Elementor or Divi) to create unique, distinct pages for each brand on your main domain. 
+Cons:
+Requires setup: The initial learning curve for setting up WordPress and managing the hosting environment is steeper than with an all-in-one platform.
+Maintenance: You are responsible for software updates, security, and performance optimization. 
+Recommended hosts for startups:
+Hostinger: Offers a cost-effective solution with excellent performance and an easy-to-use control panel (hPanel) that makes setting up redirects simple.
+Bluehost: Known for its user-friendly interface and comprehensive support, it is a great starting point for beginners building their first WordPress site.
+SiteGround: Offers excellent customer support and managed WordPress hosting, taking some maintenance tasks off your hands. 
+Option 2: Webflow
+Webflow is a direct competitor to Framer and is a powerful visual web design platform. It combines a drag-and-drop interface with the ability to export clean HTML and CSS, giving you precise control over your designs. 
+Pros:
+Visual design: You can build and design your unique brand pages visually, without writing code.
+Built-in redirects: Webflow offers a robust, user-friendly interface for managing 301 redirects directly within the Site Settings.
+Integrated hosting: Webflow's hosting is built on Amazon Web Services (AWS), so you don't have to manage a separate server.
+Flexible CMS: The integrated content management system (CMS) allows you to create structured content for your different products or services.
+HTML import: While not a direct import button, you can use the designer interface and custom code embeds to import and format your existing HTML within your Webflow project. 
+Cons:
+Higher cost: For more advanced plans that support multiple domains, Webflow can be more expensive than shared WordPress hosting.
+Learning curve: While visual, the tool is more complex than basic site builders and requires some learning to master. 
+Option 3: Wix
+Wix is a beginner-friendly, all-in-one website builder that manages hosting and security for you. It is well-suited for users who prefer a completely hassle-free solution. 
+Pros:
+Ease of use: The drag-and-drop editor is one of the most intuitive, allowing for fast and easy site creation.
+Managed solution: Wix handles all technical aspects, including security and updates, so you can focus on your business.
+Built-in redirects: You can easily set up and manage your 301 redirects using the URL Redirect Manager in the SEO Dashboard.
+Full ecosystem: Wix offers built-in tools for e-commerce, marketing, and more, all within a single interface.
+Multi-brand support: You can design separate brand pages with distinct branding within your main site. 
+Cons:
+Limited design freedom: While there are many templates, you have less granular control over your site's code and design compared to WordPress or Webflow.
+Less SEO value: Some experts suggest that redirecting many different sites to one main domain can cause a loss of link juice, so care must be taken with the SEO strategy.
+HTML import is not direct: Like with other visual builders, you can't simply upload raw HTML. You'll need to manually re-create the design or paste HTML snippets into "Custom Code" areas on a page.

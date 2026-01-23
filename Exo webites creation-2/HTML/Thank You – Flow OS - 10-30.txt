@@ -1,0 +1,668 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You – Flow OS</title>
+    <script>
+      // Celebration animation on page load
+      window.addEventListener('DOMContentLoaded', function() {
+          // Duration of celebration
+          const duration = 6 * 1000;
+          const animationEnd = Date.now() + duration;
+          const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
+
+          function randomInRange(min, max) {
+              return Math.random() * (max - min) + min;
+          }
+
+          // Continuous fireworks and confetti
+          const interval = setInterval(function() {
+              const timeLeft = animationEnd - Date.now();
+
+              if (timeLeft <= 0) {
+                  return clearInterval(interval);
+              }
+
+              const particleCount = 80 * (timeLeft / duration);
+
+              // Firework bursts from bottom
+              confetti({
+                  ...defaults,
+                  particleCount: particleCount,
+                  origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+                  colors: ['#3b82f6', '#10b981', '#8b5cf6', '#f59e0b', '#ef4444'],
+                  shapes: ['circle', 'square'],
+                  scalar: randomInRange(1.2, 2),
+                  drift: randomInRange(-0.5, 0.5),
+                  gravity: randomInRange(0.4, 0.6),
+                  ticks: 200
+              });
+
+              confetti({
+                  ...defaults,
+                  particleCount: particleCount,
+                  origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+                  colors: ['#3b82f6', '#10b981', '#8b5cf6', '#f59e0b', '#ef4444'],
+                  shapes: ['circle', 'square'],
+                  scalar: randomInRange(1.2, 2),
+                  drift: randomInRange(-0.5, 0.5),
+                  gravity: randomInRange(0.4, 0.6),
+                  ticks: 200
+              });
+          }, 250);
+
+          // Additional cascade effect
+          setTimeout(function() {
+              const cascadeInterval = setInterval(function() {
+                  confetti({
+                      particleCount: 50,
+                      angle: 60,
+                      spread: 55,
+                      origin: { x: 0, y: 0.5 },
+                      colors: ['#3b82f6', '#10b981', '#8b5cf6', '#f59e0b'],
+                      scalar: 1.5,
+                      gravity: 0.8,
+                      ticks: 150
+                  });
+                  confetti({
+                      particleCount: 50,
+                      angle: 120,
+                      spread: 55,
+                      origin: { x: 1, y: 0.5 },
+                      colors: ['#3b82f6', '#10b981', '#8b5cf6', '#f59e0b'],
+                      scalar: 1.5,
+                      gravity: 0.8,
+                      ticks: 150
+                  });
+              }, 400);
+
+              setTimeout(function() {
+                  clearInterval(cascadeInterval);
+              }, 4000);
+          }, 500);
+
+          // Big center explosion at start
+          confetti({
+              particleCount: 200,
+              spread: 120,
+              origin: { y: 0.5 },
+              colors: ['#3b82f6', '#10b981', '#8b5cf6', '#f59e0b', '#ef4444', '#ec4899'],
+              scalar: 2,
+              gravity: 0.5,
+              ticks: 300,
+              startVelocity: 50
+          });
+      });
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+          font-family: 'Geist', 'Inter', sans-serif;
+      }
+
+      .font-playfair {
+          font-family: 'Playfair Display', serif;
+      }
+
+      .gradient-border {
+          position: relative;
+          background: linear-gradient(#0f172a, #0f172a) padding-box,
+                      linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(16, 185, 129, 0.5)) border-box;
+          border: 2px solid transparent;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  <link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">
+.font-geist { font-family: 'Geist', sans-serif !important; }
+</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">
+.font-roboto { font-family: 'Roboto', sans-serif !important; }
+</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">
+.font-montserrat { font-family: 'Montserrat', sans-serif !important; }
+</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">
+.font-poppins { font-family: 'Poppins', sans-serif !important; }
+</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">
+.font-playfair { font-family: 'Playfair Display', serif !important; }
+</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">
+.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }
+</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">
+.font-merriweather { font-family: 'Merriweather', serif !important; }
+</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">
+.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }
+</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">
+.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }
+</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">
+.font-manrope { font-family: 'Manrope', sans-serif !important; }
+</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">
+.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }
+</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">
+.font-work-sans { font-family: 'Work Sans', sans-serif !important; }
+</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">
+.font-pt-serif { font-family: 'PT Serif', serif !important; }
+</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">
+.font-geist-mono { font-family: 'Geist Mono', monospace !important; }
+</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">
+.font-space-mono { font-family: 'Space Mono', monospace !important; }
+</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">
+.font-quicksand { font-family: 'Quicksand', sans-serif !important; }
+</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">
+.font-nunito { font-family: 'Nunito', sans-serif !important; }
+</style></head>
+
+  <body class="antialiased text-slate-100 bg-slate-950 min-h-screen">
+    <!-- Background -->
+    <div class="fixed top-0 w-full h-screen -z-10">
+      <iframe src="https://my.spline.design/orbit-XDLATgFZPQX6SO6dgJGqPwHD/" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+
+    <!-- Header -->
+    <header class="z-10 border-white/5 border-b relative bg-slate-950/80 backdrop-blur-md">
+      <div class="flex md:px-8 max-w-7xl mr-auto ml-auto pt-5 pr-6 pb-5 pl-6 items-center justify-between">
+        <a href="/home" class="inline-flex items-center justify-center text-3xl font-semibold text-white font-playfair bg-transparent ring-1 rounded-full pt-1.5 pr-4 pb-1.5 pl-4" style="position: relative; overflow: hidden; border-radius: 9999px; border: 2px solid transparent; background: linear-gradient(#000000, #000000) padding-box, conic-gradient(from 0deg, transparent 0%, #1d4ed8 5%, #8484ff 15%, #1d4ed8 30%, transparent 40%, transparent 100%) border-box; box-shadow: inset 0 0 0 1px #1a1818; isolation: isolate; outline: none; outline-offset: 4px;">
+          <span aria-hidden="true" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: calc(100% - 6px); height: calc(100% - 6px); background: radial-gradient(circle at 2px 2px, white 0.5px, transparent 0) padding-box; background-size: 4px 4px; background-repeat: space; border-radius: inherit; opacity: 0.35; pointer-events: none; mask-image: conic-gradient(from 45deg, black, transparent 10% 90%, black); -webkit-mask-image: conic-gradient(from 45deg, black, transparent 10% 90%, black); z-index: 0;" class=""></span>
+          <span aria-hidden="true" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 120%; aspect-ratio: 1; background: linear-gradient(-50deg, transparent, #1d4ed8, transparent); mask-image: radial-gradient(circle at bottom, transparent 40%, black); -webkit-mask-image: radial-gradient(circle at bottom, transparent 40%, black); opacity: 0.6; pointer-events: none; z-index: 1;"></span>
+          <span style="position: relative; z-index: 2" class="">Flow OS</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 py-16 md:py-24">
+      <div class="md:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+        <!-- Success Hero Section -->
+        <div class="text-center mb-12 max-w-3xl mx-auto">
+          <!-- Success Icon -->
+          <div class="inline-flex shadow-emerald-500/30 bg-emerald-500/20 w-20 h-20 rounded-full ring-emerald-400/30 ring-1 mb-6 shadow-lg items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400">
+              <polyline points="20 6 9 17 4 12" class=""></polyline>
+            </svg>
+          </div>
+
+          <h1 class="sm:text-5xl md:text-6xl text-4xl font-normal text-white tracking-tighter mb-6" style="">
+            Welcome Aboard!
+            <span class="block bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-blue-400 to-emerald-400" style="">
+              Your Transformation Starts Now
+            </span>
+          </h1>
+
+          <p class="leading-relaxed md:text-xl text-lg text-black">
+            We're excited to help you reclaim 20+ hours per week. Your
+            consultation is confirmed—check your email for details.
+          </p>
+        </div>
+
+        <!-- Three Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 gap-x-8 gap-y-8">
+          <!-- Left Column: Onboarding Instructions -->
+          <div class="lg:col-span-4">
+            <div class="rounded-3xl ring-1 backdrop-blur-md p-8 bg-slate-900/40 ring-white/10 shadow-2xl sticky top-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/20 ring-1 ring-blue-400/30 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-semibold text-white" style="">
+                  Next Steps
+                </h3>
+              </div>
+
+              <div class="space-y-4">
+                <!-- Step 1 -->
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/40 ring-1 ring-white/10">
+                  <div class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 ring-1 ring-emerald-400/30 flex items-center justify-center text-xs font-bold text-emerald-400">
+                    1
+                  </div>
+                  <div class="">
+                    <h4 class="text-sm font-semibold text-white mb-1">
+                      Check Your Email
+                    </h4>
+                    <p class="text-xs text-slate-400">
+                      Calendar invite and prep materials sent
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/40 ring-1 ring-white/10">
+                  <div class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/20 ring-1 ring-blue-400/30 flex items-center justify-center text-xs font-bold text-blue-400">
+                    2
+                  </div>
+                  <div class="">
+                    <h4 class="text-sm font-semibold text-white mb-1">
+                      Complete Pre-Call Survey
+                    </h4>
+                    <p class="text-xs text-slate-400">
+                      Help us understand your biggest challenges (5 min)
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/40 ring-1 ring-white/10">
+                  <div class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500/20 ring-1 ring-purple-400/30 flex items-center justify-center text-xs font-bold text-purple-400">
+                    3
+                  </div>
+                  <div class="">
+                    <h4 class="text-sm font-semibold text-white mb-1">
+                      Join Our Community— Sign up for huge wins
+                    </h4>
+                    <p class="text-xs text-slate-400">
+                      Get early access to resources, exclusives and updates
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex items-start gap-3 p-4 rounded-xl bg-slate-800/40 ring-1 ring-white/10">
+                  <div class="flex-shrink-0 w-6 h-6 rounded-full bg-orange-500/20 ring-1 ring-orange-400/30 flex items-center justify-center text-xs font-bold text-orange-400">
+                    4
+                  </div>
+                  <div class="">
+                    <h4 class="text-sm font-semibold text-white mb-1">
+                      Attend Your Consultation
+                    </h4>
+                    <p class="text-xs text-slate-400">
+                      Get your custom AI roadmap
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Contact Support -->
+              <div class="mt-6 p-4 rounded-xl bg-emerald-950/20 ring-1 ring-emerald-500/20">
+                <p class="text-xs text-emerald-300 mb-2 font-semibold">
+                  Questions Before Your Call?
+                </p>
+                <p class="text-xs text-slate-400 mb-3">
+                  We're here to help. Reach out anytime.
+                </p>
+                <a href="mailto:support@steelglobal.co" class="text-xs text-emerald-400 hover:text-emerald-300 transition underline">
+                  support@steelglobal.co
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center Column: Special Offer / Payment Processor -->
+          <div class="lg:col-span-5">
+            <div class="gradient-border md:p-10 bg-slate-900/40 rounded-3xl pt-8 pr-8 pl-8 shadow-2xl backdrop-blur-md">
+              <!-- Exclusive Offer Badge -->
+              <div class="inline-flex xl:relative text-xs font-medium text-emerald-300 font-geist bg-orange-500/10 rounded-full ring-orange-500/20 ring-1 mb-6 pt-2 pr-4 pb-2 pl-4 gap-x-2 gap-y-2 items-center">Steel Starter Kit—Early Access Offer</div>
+
+              <h2 class="md:text-4xl text-3xl font-semibold text-white tracking-tight text-center mb-4">
+  Start Saving Hours Now
+</h2>
+
+              <p class="leading-relaxed text-base text-slate-200 text-center mb-6">Start Saving Hours
+                <span class="font-semibold text-white">Before Your Call</span>
+                . Get 3 Done-For-You AI templates you can implement before your
+                consultation. See results this week, not next month.</p>
+
+              <!-- Offer Details -->
+              <div class="space-y-4 mb-6">
+                <div class="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5 text-emerald-400">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <p class="text-sm text-slate-100">
+                    3 Plug-and-Play Templates (scheduling AI, email workflows,
+                    lead capture)
+                  </p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5 text-emerald-400">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <p class="text-sm text-slate-100">
+                    Step-by-Step Video Setup Guide ($497 value)
+                  </p>
+                </div>
+                <div class="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5 text-emerald-400">
+                    <polyline points="20 6 9 17 4 12" class=""></polyline>
+                  </svg>
+                  <p class="text-sm text-slate-100">
+                    30-Day Template Library Access (20+ automations)
+                  </p>
+                </div>
+                <div class="flex gap-3 gap-x-3 gap-y-3 items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5 text-emerald-400">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <p class="text-sm text-slate-200">
+                    $197 Credit Toward Steel Starter Kit (use within 30 days)
+                  </p>
+                </div>
+              </div>
+
+              <!-- Pricing -->
+              <div class="bg-slate-800/40 ring-white/10 ring-1 rounded-2xl mb-6 pt-6 pr-6 pb-6 pl-6">
+                <div class="flex mb-2 gap-x-2 gap-y-2 items-baseline">
+                  <span class="text-4xl font-bold text-white" style="">
+                    $197
+                  </span>
+                  <span class="line-through xl:relative xl:bottom-2 text-xl text-slate-400">
+                    $497
+                  </span>
+                  <span class="inline-flex items-center xl:text-emerald-300 text-xs font-medium text-emerald-300 bg-orange-500/20 ring-orange-500/30 ring-1 rounded-full pt-1 pr-3 pb-1 pl-3 relative bottom-3" style="">
+                    60% OFF
+                  </span>
+                </div>
+                <p class="text-xs text-emerald-300 text-center">
+                  Guarantee:
+                  <span class="font-semibold text-white text-center">
+                    Use it for 7 days. If you don't save 3+ hours, email us for
+                    a full refund—no buts, no hassle.
+                  </span>
+                </p>
+                <p class="text-xs text-slate-250 text-center">
+                  One-time payment • Instant access
+                </p>
+              </div>
+
+              <!-- Payment Processor Embed Area -->
+              <div class="xl:pb-6 overflow-x-hidden bg-slate-800/40 w-full ring-white/10 ring-1 rounded-2xl pt-8 pr-8 pb-6 pl-8">
+                <!-- Payment Section -->
+                <div class="text-center max-w-full">
+                  <!-- Checkout Button -->
+                  <a href="https://buy.stripe.com/eVq00j1o14DE1mV9qf9oc00" class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-semibold text-base sm:text-lg py-4 px-8 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 sm:gap-3 mb-6 shadow-lg hover:shadow-xl group relative overflow-hidden">
+  <span class="flex items-center gap-2 sm:gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden sm:inline-block w-4 h-4 sm:w-5 sm:h-5">
+      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+    </svg>
+    <span>Get Instant Access</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1">
+      <path d="M5 12h14"></path>
+      <path d="m12 5 7 7-7 7"></path>
+    </svg>
+  </span>
+</a>
+
+                  <!-- Trust Badges -->
+                  <div class="flex flex-wrap gap-3 sm:gap-6 text-[11px] sm:text-xs text-slate-400 pr-2 pl-2 gap-x-3 gap-y-3 items-center justify-center">
+                    <div class="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400 w-[14px] h-[14px] sm:w-4 sm:h-4">
+                        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                        <path d="m9 12 2 2 4-4"></path>
+                      </svg>
+                      <span class="">SSL Secured</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400 w-[14px] h-[14px] sm:w-4 sm:h-4">
+                        <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                        <line x1="2" x2="22" y1="10" y2="10"></line>
+                      </svg>
+                      <span class="">PCI Compliant</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" class="lucide lucide-shield-check text-emerald-400 w-[14px] h-[14px] sm:w-4 sm:h-4" data-icon-replaced="true" style="color: rgb(52, 211, 153);"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                      <span class="">256-bit Encrypted</span>
+                    </div>
+                  </div>
+
+                  <!-- Powered by Stripe -->
+                  <div class="mt-4 text-xs text-slate-500 flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap px-2">
+                    <span class="">Powered by</span>
+                    <svg class="h-4" viewBox="0 0 60 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z" fill="#6772E5"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <script>
+                  // Checkout button functionality
+                      (function() {
+                        const checkoutButton = document.getElementById('checkout-button');
+
+                        if (checkoutButton) {
+                          checkoutButton.addEventListener('click', function() {
+                            // Show loading state
+                            const buttonText = this.querySelector('.checkout-text');
+                            const buttonIcon = this.querySelector('.checkout-icon');
+                            const buttonArrow = this.querySelector('.checkout-arrow');
+                            const spinner = this.querySelector('.checkout-spinner');
+
+                            buttonText.style.opacity = '0';
+                            if (buttonIcon) buttonIcon.style.opacity = '0';
+                            buttonArrow.style.opacity = '0';
+                            spinner.style.opacity = '1';
+                            spinner.style.pointerEvents = 'auto';
+
+                            this.disabled = true;
+                            this.style.cursor = 'wait';
+
+                            // Simulate redirect to Stripe Checkout
+                            // Replace this URL with your actual Stripe Checkout session URL
+                            setTimeout(function() {
+                              window.location.href = 'https://buy.stripe.com/eVq00j1o14DE1mV9qf9oc00';
+                              // In production, you would:
+                              // 1. Make API call to your backend to create Stripe session
+                              // 2. Redirect to the session URL returned
+                            }, 800);
+                          });
+                        }
+                      })();
+                </script>
+              </div>
+
+              <!-- Trust Badges -->
+              <div class="flex xl:py-2 text-xs text-slate-500 py-2 gap-x-6 gap-y-6 items-center justify-center">
+                <div class="flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="shield-check" class="lucide lucide-shield-check text-emerald-400 w-[14px] h-[14px]" data-icon-replaced="true" style="color: rgb(52, 211, 153); width: 14px; height: 14px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                  <span class="">Secure checkout</span>
+                </div>
+                <div class="flex gap-x-1 gap-y-1 items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400">
+                    <polyline points="20 6 9 17 4 12" class=""></polyline>
+                  </svg>
+                  <span class="">30-day guarantee</span>
+                </div>
+              </div>
+              <div class="flex gap-6 text-xs text-slate-500 text-center gap-x-6 gap-y-6 items-center justify-center">
+                <div class="flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="star" class="lucide lucide-star lucide-shield-check text-yellow-200 w-[14px] h-[14px]" data-icon-replaced="true" style="width: 14px; height: 14px;"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                  <span class="">For Forward Thinkers</span>
+                </div>
+                <div class="flex items-center gap-1"></div>
+              </div>
+
+              <!-- Countdown Timer (Optional - Add JS for functionality) -->
+              <div class="bg-orange-950/30 rounded-xl ring-orange-500/20 ring-1 mt-6 pt-4 pr-6 pb-4 pl-6">
+                <p class="text-xs text-orange-300 text-center mb-2">
+                  After booking | This offer expires in:
+                </p>
+                <div class="flex text-center gap-x-4 gap-y-4 items-center justify-center">
+                  <div class="">
+                    <div class="text-2xl font-bold text-white" id="hours" style="">23</div>
+                    <div class="text-xs text-slate-400">Hours</div>
+                  </div>
+                  <div class="text-2xl text-slate-600" style="">:</div>
+                  <div class="">
+                    <div class="text-2xl font-bold text-white" id="minutes" style="">59</div>
+                    <div class="text-xs text-slate-400">Minutes</div>
+                  </div>
+                  <div class="text-2xl text-slate-600" style="">:</div>
+                  <div class="">
+                    <div class="text-2xl font-bold text-white" id="seconds" style="">39</div>
+                    <div class="text-xs text-slate-400">Seconds</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-6 text-xs text-slate-500 pt-2 pb-2 gap-x-6 gap-y-6 items-center justify-center">
+                <div class="flex items-center gap-1">
+                  <span class="">Timer Tracked By Team</span>
+                </div>
+                <div class="flex items-center gap-1"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Additional Offers / Resources -->
+          <div class="lg:col-span-3 space-y-6 lg:sticky lg:top-8 lg:max-h-screen lg:overflow-y-auto">
+            <!-- What Happens Next -->
+            <div class="rounded-2xl p-6 bg-slate-900/40 backdrop-blur-md ring-1 ring-white/10 shadow-xl">
+              <h3 class="text-xl font-semibold text-white mb-4">
+                Your Timeline
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-500/20 ring-1 ring-blue-400/30 flex items-center justify-center text-xs font-bold text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div class="">
+                    <p class="text-sm font-medium text-white">Today</p>
+                    <p class="text-xs text-slate-400">
+                      Confirmation &amp; prep materials
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-emerald-500/20 ring-1 ring-emerald-400/30 flex items-center justify-center text-xs font-bold text-emerald-400">
+                    2
+                  </div>
+                  <div class="">
+                    <p class="text-sm font-medium text-white">Your Call</p>
+                    <p class="text-xs text-slate-400">
+                      Free audit &amp; custom roadmap
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-purple-500/20 ring-1 ring-purple-400/30 flex items-center justify-center text-xs font-bold text-purple-400">
+                    14
+                  </div>
+                  <div class="">
+                    <p class="text-sm font-medium text-white">Day 14 +</p>
+                    <p class="text-xs text-slate-400">
+                      Systems live &amp; operational
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Continuity Offer -->
+            <div class="rounded-2xl p-6 bg-gradient-to-br from-purple-950/40 to-blue-950/40 ring-1 ring-purple-500/20 shadow-xl">
+              <div class="flex items-center gap-2 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400">
+                  <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+                  <circle cx="12" cy="8" r="6" class=""></circle>
+                </svg>
+                <h3 class="text-lg font-semibold text-white">
+                  Exo Advantage Waitlist
+                </h3>
+              </div>
+              <p class="text-sm text-slate-100 text-center mb-4">
+                Get unlimited AI optimization + priority support after launch.
+                Join the waitlist for early access— Priority access when you
+                upgrade from Steel Starter Kit
+              </p>
+              <div class="w-full">
+                <form class="flex flex-col gap-2">
+                  <div class="relative">
+                    <input type="email" placeholder="Enter your email address" required="" class="w-full px-4 py-3 text-sm text-white placeholder-slate-400 bg-slate-900/40 backdrop-blur-md border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition">
+                  </div>
+                  <button type="submit" class="w-full px-4 py-3 text-sm font-semibold text-white bg-purple-600 hover:bg-purple-500 rounded-xl transition inline-flex items-center justify-center gap-2">
+                    Join Waitlist
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="rounded-2xl p-6 bg-slate-900/40 backdrop-blur-md ring-1 ring-white/10 shadow-xl">
+              <p class="text-sm font-semibold text-white text-center mb-2">
+                Join the next 8 clients launching with Steel Global this month
+              </p>
+              <p class="text-xs italic text-slate-400">
+                "Sarah M., Law Firm Rep. — Automated 12 hours/week of scheduling
+                in 48 hours with Steel templates only week one."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Initialize Lucide icons
+      if (window.lucide) {
+          lucide.createIcons();
+      }
+
+      // Simple countdown timer (24 hours from page load)
+      function startCountdown() {
+          const endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+
+          const timer = setInterval(function() {
+              const now = new Date().getTime();
+              const distance = endTime - now;
+
+              const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+              document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+              document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+              document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+              if (distance < 0) {
+                  clearInterval(timer);
+                  document.getElementById('hours').textContent = "00";
+                  document.getElementById('minutes').textContent = "00";
+                  document.getElementById('seconds').textContent = "00";
+              }
+          }, 1000);
+      }
+
+      startCountdown();
+    </script>
+
+    <canvas style="position: fixed; top: 0px; left: 0px; pointer-events: none; z-index: 100;" width="368" height="579"></canvas>
+  
+</body></html>

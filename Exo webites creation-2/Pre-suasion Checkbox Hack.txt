@@ -1,0 +1,47 @@
+Mozi Minute: Pre-suasion Checkbox Hack
+
+Most opt-in pages try to sell people on signing up. Wrong approach.
+
+You should sell them on what comes after signing up.
+
+We just tested this with a simple checkbox addition and got a 16% revenue per visitor boost during our launch.
+
+Here's what we did:
+
+Added a checkbox above the opt-in that said "I want a VIP ticket."
+
+That’s it.
+
+80% of people checked the box. And here’s the best part - the checkbox did absolutely nothing functional - it was pure psychology.
+
+But it worked.
+
+Why this crushed the control:
+
+People who checked the box had already mentally committed to wanting the upsell before they even became leads.
+
+When they saw the actual upsell (upgrading their order to VIP), they were more likely to take it.
+
+The psychology:
+
+Robert Cialdini calls this "pre-suasion" - the moment before persuasion when you prime someone's mental state.
+
+We weren't asking them to buy.
+
+We were asking them to admit they wanted to see what we'd show them.
+
+Implementation is dead simple:
+
+Add a checkbox above your opt-in form
+
+Make it about wanting to see the upsell on the next page (whatever that next step is)
+
+Don't gate anything behind it
+
+Track the difference in conversion rates
+
+Pure words. Zero tech changes. 16% more revenue from the same traffic.
+
+Considering we did $7M in presales…that’s roughly ~$1M in extra earnings from this one test.
+
+As promised, value in under a minute.
