@@ -7,6 +7,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <style>
     /* CUSTOM CURSOR OPTIMIZATIONS */
     /* Removed custom cursor CSS */
@@ -29,6 +31,18 @@
 </head>
 
 <body class="bg-neutral-950 text-neutral-200 antialiased overflow-x-hidden" style="font-family:'Urbanist',sans-serif;">
+  <!-- Announcement Bar -->
+  <div
+    class="sticky top-0 z-[60] w-full bg-emerald-950/90 backdrop-blur-md border-b border-emerald-500/20 flex items-center justify-center px-4 py-2.5 transition-all">
+    <a href="#contact"
+      class="flex items-center gap-2 text-sm font-medium text-emerald-100 hover:text-white transition-colors group">
+      <span class="font-['Urbanist'] tracking-wide">While Space is Limited: <strong>Transform Your Business
+          Today</strong></span>
+      <iconify-icon icon="solar:arrow-right-linear" width="16"
+        class="text-emerald-400 group-hover:translate-x-0.5 transition-transform"></iconify-icon>
+    </a>
+  </div>
+
   <!-- CUSTOM CURSOR SYSTEM -->
   <!-- Removed custom cursor div -->
 
@@ -38,308 +52,40 @@
   </div>
 
   <!-- Navigation -->
-  <nav class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-xl border-b border-neutral-800/50"
-    style="opacity: 1; animation: 0.8s ease-out 0.2s 1 normal forwards running fadeSlideDown; transition: opacity 0.8s ease-out, transform 0.8s ease-out; transform: translateY(0px);"
-    role="navigation" aria-label="Primary Navigation">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between" style="transition: outline 0.1s ease-in-out;">
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
-
-          @property --gradient-angle {
-            syntax: "<angle>";
-            initial-value: 0deg;
-            inherits: false;
-          }
-
-          @property --gradient-angle-offset {
-            syntax: "<angle>";
-            initial-value: 0deg;
-            inherits: false;
-          }
-
-          @property --gradient-percent {
-            syntax: "<percentage>";
-            initial-value: 20%;
-            inherits: false;
-          }
-
-          @property --gradient-shine {
-            syntax: "<color>";
-            initial-value: #8484ff;
-            inherits: false;
-          }
-
-          .shiny-cta {
-            --gradient-angle: 0deg;
-            --gradient-angle-offset: 0deg;
-            --gradient-percent: 20%;
-            --gradient-shine: #8484ff;
-            --shadow-size: 2px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 9999px;
-            padding: 1.25rem 2.5rem;
-            font-size: 1.125rem;
-            line-height: 1.2;
-            font-weight: 500;
-            color: #ffffff;
-            background: linear-gradient(#000000, #000000) padding-box, conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)), transparent 0%, #1d4ed8 5%, var(--gradient-shine) 15%, #1d4ed8 30%, transparent 40%, transparent 100%) border-box;
-            border: 2px solid transparent;
-            box-shadow: inset 0 0 0 1px #1a1818;
-            outline: none;
-            transition: --gradient-angle-offset 800ms cubic-bezier(0.25, 1, 0.5, 1), --gradient-percent 800ms cubic-bezier(0.25, 1, 0.5, 1), --gradient-shine 800ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s;
-            cursor: pointer;
-            isolation: isolate;
-            outline-offset: 4px;
-            font-family: 'Inter', 'Helvetica Neue', sans-serif;
-            z-index: 0;
-            animation: border-spin 2.5s linear infinite;
-            display: inline-block;
-            vertical-align: middle;
-          }
-
-          @keyframes border-spin {
-            to {
-              --gradient-angle: 360deg;
-            }
-          }
-
-          .shiny-cta:active {
-            transform: translateY(1px);
-          }
-
-          .shiny-cta::before {
-            content: '';
-            pointer-events: none;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            --size: calc(100% - 6px);
-            --position: 2px;
-            --space: 4px;
-            width: var(--size);
-            height: var(--size);
-            background: radial-gradient(circle at var(--position) var(--position), white 0.5px, transparent 0) padding-box;
-            background-size: var(--space) var(--space);
-            background-repeat: space;
-            mask-image: conic-gradient(from calc(var(--gradient-angle) + 45deg), black, transparent 10% 90%, black);
-            border-radius: inherit;
-            opacity: 0.4;
-            pointer-events: none;
-          }
-
-          .shiny-cta::after {
-            content: '';
-            pointer-events: none;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(-50deg, transparent, #1d4ed8, transparent);
-            mask-image: radial-gradient(circle at bottom, transparent 40%, black);
-            opacity: 0.6;
-            animation: shimmer 4s linear infinite;
-            animation-play-state: running;
-          }
-
-          .shiny-cta>span {
-            position: relative;
-            z-index: 2;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.375rem;
-          }
-
-          .shiny-cta>span::before {
-            content: '';
-            pointer-events: none;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-            --size: calc(100% + 1rem);
-            width: var(--size);
-            height: var(--size);
-            box-shadow: inset 0 -1ex 2rem 4px #1d4ed8;
-            opacity: 0;
-            border-radius: inherit;
-            transition: opacity 800ms cubic-bezier(0.25, 1, 0.5, 1);
-            animation: breathe 4.5s linear infinite;
-          }
-
-          @keyframes shimmer {
-            to {
-              transform: translate(-50%, -50%) rotate(360deg);
-            }
-          }
-
-          @keyframes breathe {
-
-            0%,
-            100% {
-              transform: translate(-50%, -50%) scale(1);
-            }
-
-            50% {
-              transform: translate(-50%, -50%) scale(1.20);
-            }
-          }
-        </style>
-        <div class="flex items-center gap-2">
-          <!-- Logo -->
-          <div
-            class="flex text-[10px] bg-white/5 w-10 h-10 border-white/10 border rounded-lg backdrop-blur-lg items-center justify-center"
-            style="transition: outline 0.1s ease-in-out;">
-            <img
-              src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/9248059c-858b-4c26-a774-05e35999e611_3840w.png"
-              alt="Container background" class="w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0"
-              data-container-bg="true">
-          </div>
-          <span class="xl:font-semibold text-xl font-normal tracking-tight font-playfair"
-            style="transition: outline 0.1s ease-in-out;">
-            <span class="shiny-cta focus:outline-none" style="padding: 0.4rem 0.7rem; font-size: 1.125rem">
-              <span style="font-family: 'Playfair Display', serif;" class="">
-                Exo Ent
-              </span>
-            </span>
-          </span>
+  <nav class="relative w-full z-50 border-b border-white/5 bg-neutral-950/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 group">
+        <div
+          class="w-8 h-8 rounded border border-white/20 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors overflow-hidden">
+          <img src="logos/Exo MasterLogo/LOGO MARK.png" alt="Exo Logo" class="w-full h-full object-contain">
         </div>
-        <div class="hidden md:flex gap-8 gap-x-8 gap-y-8 items-center">
-          <div class="relative group">
-            <a href="#placeholder"
-              class="hover:text-neutral-200 transition-colors text-sm font-normal text-neutral-400 font-playfair cursor-hover-target shiny-cta focus:outline-none inline-block"
-              style="padding: 0.35rem 0.6rem; font-size: 0.875rem;">
-              <span style="font-family: 'Playfair Display', serif;" class="">
-                Products
+        <span class="text-md font-medium tracking-tight text-white/90">Exo Enterprise</span>
+      </a>
 
-              </span>
-            </a>
-            <div
-              class="absolute left-0 top-full mt-2 w-56 transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:visible transform -translate-y-1 group-hover:translate-y-0 z-[60]">
-              <div
-                class="ring-1 ring-white/10 bg-neutral-900/60 border-white/10 border rounded-xl pt-2 pr-2 pb-2 pl-2 shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_10px_30px_-10px_rgba(0,0,0,0.5)] backdrop-blur-xl"
-                style="backdrop-filter: blur(8px);">
-                <a href="/exo-ai"
-                  class="block hover:text-white hover:bg-white/5 transition-colors xl:font-semibold cursor-hover-target text-sm font-normal text-neutral-300 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">
-                  Exo AI
-                </a>
-                <a href="/flow.html"
-                  class="block hover:text-white hover:bg-white/5 transition-colors xl:font-semibold cursor-hover-target text-sm font-normal text-neutral-300 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">Flow
-                  OS</a>
-                <a href="/steelglobal.us/waitlist"
-                  class="block hover:text-white hover:bg-white/5 transition-colors xl:font-semibold cursor-hover-target text-sm font-normal text-neutral-300 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">
-                  The Steel Card
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="relative group">
-            <a href="#placeholder"
-              class="hover:text-neutral-200 transition-colors text-sm font-normal text-neutral-400 font-playfair cursor-hover-target shiny-cta focus:outline-none inline-block"
-              style="padding: 0.35rem 0.6rem; font-size: 0.875rem;">
-              <span style="font-family: 'Playfair Display', serif;" class="">
-                Solutions
-
-              </span>
-            </a>
-            <div
-              class="absolute left-0 top-full mt-2 w-56 transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:visible transform -translate-y-1 group-hover:translate-y-0 z-[60]">
-              <div
-                class="p-2 rounded-xl border border-white/10 ring-1 ring-white/10 bg-neutral-900/60 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_10px_30px_-10px_rgba(0,0,0,0.5)]"
-                style="backdrop-filter: blur(8px);">
-                <a href="#placeholder"
-                  class="block hover:text-white hover:bg-white/5 transition-colors xl:font-semibold text-sm font-normal text-neutral-300 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3 cursor-hover-target">
-                  Tier 1
-                </a>
-                <a href="#placeholder"
-                  class="block hover:text-white hover:bg-white/5 transition-colors text-sm font-normal text-neutral-300 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3 xl:font-semibold cursor-hover-target">
-                  Tier 2
-                </a>
-                <a href="#placeholder"
-                  class="block hover:text-white hover:bg-white/5 transition-colors xl:font-semibold text-sm font-normal text-neutral-300 font-geist rounded-lg px-3 py-2 cursor-hover-target">
-                  Tier 3
-                </a>
-                <a href="#placeholder"
-                  class="block hover:text-white hover:bg-white/5 transition-colors xl:font-semibold text-sm font-normal text-neutral-300 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3 cursor-hover-target">
-                  Custom
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="group relative">
-            <a href="/enterprise"
-              class="hover:text-neutral-200 transition-colors cursor-hover-target shiny-cta focus:outline-none inline-block text-sm font-normal text-neutral-400 font-playfair"
-              style="padding: 0.35rem 0.6rem; font-size: 0.875rem;">
-              <span style="font-family: 'Playfair Display', serif;" class="">
-                Enterprise
-                <span
-                  class="ml-1 inline-flex items-center rounded-full border border-white/10 ring-1 ring-white/10 bg-white/5 hover:bg-white/10 transition-colors px-1.5 py-0.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    data-lucide="arrow-right" class="lucide lucide-arrow-right w-[14px] h-[14px] text-neutral-300">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </span>
-              </span>
-            </a>
-            <div
-              class="transition-all duration-300 group-hover:opacity-100 group-hover:visible transform -translate-y-1 group-hover:translate-y-0 z-[] opacity-0 w-56 mt-2 absolute top-full left-0">
-              <div
-                class="p-2 rounded-xl border border-white/10 ring-1 ring-white/10 bg-neutral-900/60 backdrop-blur-xl shadow-[0_1px_0_rgba(255,255,255,0.06)_inset,0_10px_30px_-10px_rgba(0,0,0,0.5)]"
-                style="backdrop-filter: blur(8px);">
-                <a href="#placeholder"
-                  class="block hover:text-white hover:bg-white/5 transition-colors xl:font-semibold text-sm font-normal text-neutral-300 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3 cursor-hover-target">
-                  Quarterly Engagements
-                </a>
-                <a href="#placeholder"
-                  class="block hover:text-white hover:bg-white/5 transition-colors xl:font-semibold cursor-hover-target text-sm font-normal text-neutral-300 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">Contact
-                  Advisory Team</a>
-                <a href="#placeholder"
-                  class="block hover:text-white hover:bg-white/5 transition-colors xl:font-semibold text-sm font-normal text-neutral-300 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3 cursor-hover-target">
-                  Account Management Existing Partners
-                </a>
-              </div>
-            </div>
-          </div>
-          <a href="#placeholder"
-            class="hover:text-neutral-200 transition-colors text-sm font-normal text-neutral-400 font-playfair cursor-hover-target shiny-cta focus:outline-none inline-block"
-            style="padding: 0.35rem 0.6rem; font-size: 0.875rem;">
-            <span style="font-family: 'Playfair Display', serif;" class="">
-              Careers
-              <span
-                class="ml-1 inline-flex items-center rounded-full border border-white/10 ring-1 ring-white/10 bg-white/5 hover:bg-white/10 transition-colors px-1.5 py-0.5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  data-lucide="arrow-right" class="lucide lucide-arrow-right w-[14px] h-[14px] text-neutral-300">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </span>
-            </span>
-          </a>
-        </div>
-        <button class="md:hidden cursor-hover-target" id="mobile-menu-toggle" aria-controls="mobile-drawer"
-          aria-expanded="false" aria-label="Open menu" type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu"
-            class="lucide lucide-menu w-[20px] h-[20px]" data-icon-replaced="true"
-            style="color: rgb(229, 229, 229); width: 20px; height: 20px;">
-            <path d="M4 5h16"></path>
-            <path d="M4 12h16"></path>
-            <path d="M4 19h16"></path>
-          </svg>
-        </button>
+      <!-- Desktop Links -->
+      <div class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide uppercase text-neutral-400">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <a href="/flow.html" class="hover:text-white transition-colors">Flow OS</a>
+        <a href="#departments" class="hover:text-white transition-colors">Departments</a>
+        <a href="/firm.html" class="hover:text-white transition-colors">About</a>
+        <a href="#careers" class="hover:text-white transition-colors">Careers</a>
       </div>
+
+      <!-- CTA -->
+      <a href="#contact"
+        class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-xs font-medium text-white">
+        <span>8 Spots Open This Month</span>
+        <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+      </a>
+
+      <!-- Mobile Menu Icon -->
+      <button class="md:hidden text-white">
+        <iconify-icon icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
+      </button>
     </div>
   </nav>
+
   <div id="mobile-drawer" class="fixed inset-0 z-[70] md:hidden transition-transform duration-300 -translate-x-full">
     <div id="mobile-drawer-overlay" class="absolute inset-0 bg-neutral-900/70 backdrop-blur-xl"
       style="backdrop-filter: blur(8px);"></div>
@@ -627,7 +373,7 @@
               </h2>
               <p class="leading-relaxed font-normal text-neutral-400 font-geist"
                 style="text-shadow: 0 1px 1px rgba(0,0,0,0.65), 0 0 6px rgba(0,0,0,0.35);">
-                The Exo AI™ Engine features a proprietary AI architecture
+                The Exo AI Engine features a proprietary AI architecture
                 specifically engineered for service excellence. Every neural
                 layer is meticulously optimized for precision, speed, and
                 reliability—enabling our AI agents to resolve customer
@@ -1135,32 +881,32 @@
           </h4>
           <ul class="space-y-3" style="text-shadow: 0 1px 1px rgba(0,0,0,0.6), 0 0 2px rgba(0,0,0,0.35);">
             <li class="">
-              <a href="#"
+              <a href="/"
+                class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal cursor-hover-target">
+                Home
+              </a>
+            </li>
+            <li class="">
+              <a href="#steel"
                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal cursor-hover-target">
                 Steel Global
               </a>
             </li>
             <li class="">
-              <a href="#"
-                class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal cursor-hover-target">
-                Change Log
-              </a>
-            </li>
-            <li class="">
-              <a href="#"
+              <a href="#careers"
                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal cursor-hover-target">
                 Careers
               </a>
             </li>
             <li class="">
-              <a href="#"
+              <a href="#contact"
                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal cursor-hover-target">
                 Contact
               </a>
             </li>
 
             <li class="">
-              <a href="#"
+              <a href="/firm.html"
                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal cursor-hover-target">
                 About
               </a>
@@ -1176,33 +922,34 @@
           </h4>
           <ul class="space-y-3">
             <li class="">
-              <a href="#"
+              <a href="/firm.html"
                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal cursor-hover-target">
-                Exo AI
+                Exo AI Engine
               </a>
             </li>
             <li class="">
-              <a href="/exoluxx.com"
+              <a href="/flow.html"
                 class="hover:text-white transition-colors cursor-hover-target text-sm font-normal text-neutral-300 font-geist">
-                Exo Luxx
+                Flow OS
               </a>
             </li>
             <li class="">
-              <a href="/exoflowos.com"
-                class="hover:text-white transition-colors cursor-hover-target text-sm font-normal text-neutral-300 font-geist">Exo
-                Flow OS</a>
+              <a href="#departments"
+                class="hover:text-white transition-colors cursor-hover-target text-sm font-normal text-neutral-300 font-geist">
+                Departments
+              </a>
             </li>
             <li class="">
-              <a href="/steelglobal.us/waitlist"
+              <a href="#steel"
                 class="hover:text-white transition-colors cursor-hover-target text-sm font-normal text-neutral-300 font-geist">
                 The Steel Card
               </a>
             </li>
-            <li class="cursor-pointer" onclick="window.location.href='/enterprise';window.location.href='/enterprise'"
-              role="button">
-              <a href="/enterprise"
-                class="hover:text-white transition-colors cursor-hover-target text-sm font-normal text-neutral-300 font-geist">Exo
-                for Enterprise</a>
+            <li class="">
+              <a href="#contact"
+                class="hover:text-white transition-colors cursor-hover-target text-sm font-normal text-neutral-300 font-geist">
+                Enterprise Solutions
+              </a>
             </li>
           </ul>
         </div>

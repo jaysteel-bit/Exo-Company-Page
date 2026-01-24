@@ -12,6 +12,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   <meta name="disabled-font-classes"
     content="font-instrument-serif,font-bricolage,font-jakarta,font-manrope,font-space-grotesk,font-work-sans,font-pt-serif,font-space-mono,font-quicksand,font-nunito">
   <style id="aura-editor-visibility-style">
@@ -212,6 +214,19 @@ Sequence animation intro. Usage:
 
 <body class="antialiased text-slate-100 bg-slate-950 h-full"
   style="font-family: 'Urbanist', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial">
+
+  <!-- Announcement Bar -->
+  <div
+    class="sticky top-0 z-[60] w-full bg-emerald-950/90 backdrop-blur-md border-b border-emerald-500/20 flex items-center justify-center px-4 py-2.5 transition-all">
+    <a href="#contact"
+      class="flex items-center gap-2 text-sm font-medium text-emerald-100 hover:text-white transition-colors group">
+      <span class="font-['Urbanist'] tracking-wide">While Space is Limited: <strong>Transform Your Business
+          Today</strong></span>
+      <iconify-icon icon="solar:arrow-right-linear" width="16"
+        class="text-emerald-400 group-hover:translate-x-0.5 transition-transform"></iconify-icon>
+    </a>
+  </div>
+
   <!-- Spline moved to hero section only for performance -->
 
   <div class="aura-background-component z-10 mix-blend-screen w-full h-screen absolute top-0">
@@ -435,7 +450,7 @@ Sequence animation intro. Usage:
         <!-- Left: brand + primary nav -->
         <div
           class="flex md:gap-6 gap-x-4 gap-y-4 items-center [animation:fadeSlideIn_1s_ease-out_0.1s_both] ring-white/5 ring-1 rounded-full pt-1 pr-1 pb-1 pl-1">
-          <a href="#placeholder"
+          <a href="/"
             class="inline-flex items-center justify-center xl:text-3xl xl:text-slate-100 text-lg font-semibold text-white font-playfair bg-transparent rounded-full px-4 py-1.5"
             style="--gradient-angle: 0deg; --gradient-angle-offset: 0deg; --gradient-percent: 20%; --gradient-shine: #8484ff; position: relative; overflow: hidden; border-radius: 9999px; background: linear-gradient(#000000, #000000) padding-box, conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)), transparent 0%, #1d4ed8 5%, var(--gradient-shine) 15%, #1d4ed8 30%, transparent 40%, transparent 100%) border-box; border: 2px solid transparent; box-shadow: rgb(26, 24, 24) 0px 0px 0px 1px inset; animation: 2.5s linear 0s infinite normal none running border-spin; z-index: 0;">
             <style>
@@ -496,6 +511,12 @@ Sequence animation intro. Usage:
           <nav class="hidden md:flex gap-2 gap-x-2 gap-y-2 items-center" role="navigation"
             aria-label="Primary Navigation">
             <div class="relative group">
+              <a href="/"
+                class="inline-flex items-center gap-2 transition hover:bg-white/10 hover:ring-white/20 xl:text-sky-600/90 text-sm font-medium text-white/90 font-geist bg-white/5 rounded-full ring-white/10 ring-1 pt-2 pr-3.5 pb-2 pl-3.5 backdrop-blur-sm">
+                Home
+              </a>
+            </div>
+            <div class="relative group">
               <a href="#services"
                 class="inline-flex items-center gap-2 transition hover:bg-white/10 hover:ring-white/20 xl:text-sky-600/90 text-sm font-medium text-white/90 font-geist bg-white/5 rounded-full ring-white/10 ring-1 pt-2 pr-3.5 pb-2 pl-3.5 backdrop-blur-sm">
                 Services
@@ -505,16 +526,15 @@ Sequence animation intro. Usage:
                   class="min-w-[220px] bg-slate-900/70 ring-white/10 ring-1 rounded-xl pt-2 pr-2 pb-2 pl-2 shadow-2xl backdrop-blur-md"
                   style="backdrop-filter: blur(8px)">
                   <a href="/consultation"
-                    class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">Tier
-                    1 —
-                    Flow Starter Kit</a>
+                    class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">Rebuild
+                    — Team Augmentation</a>
                   <a href="/consultation"
                     class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">
-                    Tier 2 — Freedom System
+                    Recruit — AI Native Talent
                   </a>
                   <a href="/consultation"
                     class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">
-                    Tier 3 — Exo Advantage
+                    Manage — Scale Your Operations
                   </a><a href="/consultation"
                     class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">Exo
                     AI — Custom Solutions</a>
@@ -531,6 +551,12 @@ Sequence animation intro. Usage:
               <a href="/consultation"
                 class="inline-flex items-center gap-2 transition ring-1 hover:bg-white/10 hover:ring-white/20 ring-white/10 xl:text-sky-600/90 text-sm font-medium text-white/90 font-geist bg-white/5 rounded-full pt-2 pr-3.5 pb-2 pl-3.5 backdrop-blur-sm">
                 Pricing
+              </a>
+            </div>
+            <div class="relative group">
+              <a href="/firm.html"
+                class="inline-flex items-center gap-2 transition ring-1 hover:bg-white/10 hover:ring-white/20 ring-white/10 xl:text-sky-600/90 text-sm font-medium text-white/90 font-geist bg-white/5 rounded-full pt-2 pr-3.5 pb-2 pl-3.5 backdrop-blur-sm">
+                About
               </a>
             </div>
           </nav>
@@ -690,16 +716,16 @@ Sequence animation intro. Usage:
           <div class="mobile-submenu hidden mt-3 pl-2 space-y-2">
             <a href="#placeholder"
               class="block text-base text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
-              style="backdrop-filter: blur(8px);">Tier 1 — Steel Starter Kit</a>
+              style="backdrop-filter: blur(8px);">Rebuild — Team Augmentation</a>
             <a href="#placeholder"
               class="block text-base text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
-              style="backdrop-filter: blur(8px);">Tier 2 — Freedom System</a>
+              style="backdrop-filter: blur(8px);">Recruit — AI Native Talent</a>
             <a href="#placeholder"
               class="block text-base text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
-              style="backdrop-filter: blur(8px);">Tier 3 — Exo Advantage</a>
+              style="backdrop-filter: blur(8px);">Manage — Scale Your Operations</a>
             <a href="/consultation"
               class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">Exo
-              AI — Custom Solutions</a>
+              Custom Solutions</a>
           </div>
         </div>
         <div class="border-b border-white/10 py-4">
@@ -907,7 +933,7 @@ Sequence animation intro. Usage:
               </a>
               <a href="/waitlist"
                 class="inline-flex items-center justify-center gap-2 transition [animation:fadeSlideIn_1s_ease-out_0.5s_both] hover:bg-white/15 hover:ring-white/25 ring-white/15 ring-1 text-sm font-medium text-white/90 font-geist text-center bg-white/10 w-full rounded-full pt-2.5 pr-4 pb-2.5 pl-4 backdrop-blur-sm">
-                Join the Waitlist
+                Scale Your Business
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                   class="w-4 h-4">
@@ -1176,9 +1202,9 @@ Sequence animation intro. Usage:
       <div
         class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.1s_both] animate">
         <h2 class="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tighter font-geist text-white mb-4">
-          From Overwhelmed to Automated:
+          From Overwhelmed to Extraordinary
           <span class="block bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/70">
-            The Steel Way
+
           </span>
         </h2>
         <p class="text-lg md:text-xl leading-relaxed font-geist text-slate-400 mt-6">
@@ -2793,8 +2819,8 @@ Sequence animation intro. Usage:
                 Most partners see measurable time savings within the first 7
                 days of systems going live. Full transformation—20+ hours per
                 week reclaimed—typically happens within 30 days. We guarantee
-                you'll hit your promised outcomes within 90 days, or we work
-                free until you do. No games, no fine print.
+                you'll hit your promised outcomes within 90 days, or the software
+                is free until you do. No games, no fine print.
               </p>
             </div>
           </div>
@@ -3012,7 +3038,7 @@ Sequence animation intro. Usage:
             </button>
             <div class="faq-answer hidden px-6 pb-6">
               <p class="text-base font-geist text-slate-400 leading-relaxed">
-                We're the only AI consulting firm that guarantees 15+ hours
+                We're the only AI consulting firm that guarantees 20+ hours
                 saved in 60 days or we keep working free. Most consultants
                 overpromise and disappear—we stay until you win. Plus, you get
                 a done-for-you system in 14 days, not 6 months of "strategy
@@ -3064,10 +3090,10 @@ Sequence animation intro. Usage:
             </button>
             <div class="faq-answer hidden px-6 pb-6">
               <p class="text-base font-geist text-slate-400 leading-relaxed">
-                You can start with a single automation (Tier 1: $2,999) to
-                test us out. Most clients upgrade to full transformations
-                within 30 days because they see results fast. No long-term
-                contracts—just results you can measure.
+                You can start with a single department to test us out. Most
+                clients upgrade to full transformations within 30 days because
+                they see results fast. No long-term contracts—just results you
+                can measure.
               </p>
             </div>
           </div>
@@ -3325,7 +3351,7 @@ Sequence animation intro. Usage:
                         David Lombardi
                       </div>
                       <div class="text-xs text-neutral-500">
-                        VP of Operations, Precision Components LLC
+                        VP of Operations, Precision Components Trust Co.
                       </div>
                     </div>
                   </div>
@@ -3361,7 +3387,7 @@ Sequence animation intro. Usage:
       <!-- PART 2: Detailed Case Studies -->
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.3s_both]">
-          <h3 class="md:text-4xl text-3xl font-semibold text-white tracking-tight font-geist mb-4">Flow OS
+          <h3 class="md:text-4xl text-3xl font-semibold text-white tracking-tight font-geist mb-4">Flow
             Transformations</h3>
           <p class="text-base md:text-lg font-geist text-slate-400">
             Deep-dive into how we deliver measurable results.
@@ -3815,7 +3841,7 @@ Sequence animation intro. Usage:
             <div class="flex items-center gap-2 opacity-30">
               <div class="w-3 h-3 rounded-full bg-slate-600"></div>
               <span class="text-sm font-medium font-geist text-slate-500">
-                Not Accepting
+                Not Accepting At This Time
               </span>
             </div>
           </div>
@@ -3826,7 +3852,7 @@ Sequence animation intro. Usage:
             Ready to Eliminate
             <span
               class="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-emerald-400 to-blue-400">
-              15+ Hours of Weekly Busywork?
+              20+ Hours of Weekly Busywork?
             </span>
           </h2>
 
@@ -3837,7 +3863,7 @@ Sequence animation intro. Usage:
             show you the exact automations that eliminate them, and give you a
             custom 14-day roadmap.
             <span class="font-semibold text-white">
-              If we can't find 15+ hours to save you, the audit's on us—100%
+              If we can't find 20+ hours to save you, the audit's on us—100%
               free
             </span>
           </p>
@@ -3957,11 +3983,11 @@ Sequence animation intro. Usage:
                 </svg>
                 <p class="text-sm md:text-base font-geist text-slate-300">
                   <span class="text-white font-semibold">
-                    We guarantee you'll save 15+ hours per week within 60
+                    We guarantee you'll save 20+ hours per week within 60
                     days.
                   </span>
-                  If not, we'll keep implementing solutions at no additional
-                  cost until you do. No refund needed—we just keep working.
+                  If not, we'll stay at your side until you do! This is our
+                  commitment to your success!
                 </p>
               </div>
 
@@ -3973,7 +3999,7 @@ Sequence animation intro. Usage:
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
                 <p class="text-sm md:text-base font-geist text-slate-300">
-                  Walk away with a roadmap you can use
+                  Walk away with a roadmap and insights you can use
                   <span class="text-white font-semibold">
                     whether you hire us or not
                   </span>
@@ -3994,14 +4020,10 @@ Sequence animation intro. Usage:
                 </p>
               </div>
 
-              <!-- Conditional Guarantee Fine Print -->
+              <!-- Conditional Guarantee Fine Print for Activation Steps-->
               <div class="pt-4 border-t border-white/5">
-                <p class="leading-relaxed text-xs text-slate-500 font-geist text-center">*Guarantee applies when you
-                  attend semi-weekly check-ins,
-                  implement solutions within 7 days, and use systems for 30
-                  days. If you don't save 15+ hours/week after meeting these
-                  conditions, we continue working at no additional cost until
-                  you achieve guaranteed results.</p>
+                <p class="leading-relaxed text-xs text-slate-500 font-geist text-center">*This needs to be updated -
+                  So that it is engineered to walk clients toward activation steps.</p>
               </div>
             </div>
           </div>
@@ -4025,7 +4047,7 @@ Sequence animation intro. Usage:
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 lg:gap-12 gap-x-8 gap-y-8">
           <!-- Brand -->
           <div class="col-span-2">
-            <a href="#"
+            <a href="/"
               class="inline-flex items-center justify-center bg-center w-[120px] h-[36px] bg-[url(https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/550b8845-8d82-4f3c-9042-7cb29b15f8ae_320w.png)] bg-cover rounded-full pt-10 pb-10"
               style=""></a>
             <p class="leading-relaxed text-sm text-slate-400 font-geist max-w-xs mt-4">
@@ -4100,19 +4122,19 @@ Sequence animation intro. Usage:
               </h3>
               <ul class="mt-4 space-y-3">
                 <li>
-                  <a href="https://exoent.co" class="transition hover:text-white text-sm text-slate-400 font-geist">
+                  <a href="/firm.html" class="transition hover:text-white text-sm text-slate-400 font-geist">
                     About
                   </a>
                 </li>
 
                 <li>
-                  <a href="/consultation" class="transition hover:text-white text-sm text-slate-400 font-geist">
+                  <a href="#contact" class="transition hover:text-white text-sm text-slate-400 font-geist">
                     Contact
                   </a>
                 </li>
 
                 <li>
-                  <a href="/consultation" class="transition hover:text-white text-sm text-slate-400 font-geist">
+                  <a href="#contact" class="transition hover:text-white text-sm text-slate-400 font-geist">
                     Consultation
                   </a>
                 </li>
