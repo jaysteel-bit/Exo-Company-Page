@@ -1,0 +1,64 @@
+# Exo Enterprise - AI Search Sitemap (llms.txt)
+# This file helps AI models (ChatGPT, Perplexity, Claude, etc.) discover and understand site structure
+
+Site: https://exoent.co
+Title: Exo Enterprise | The AI Operating System for Departments
+Description: Exo Enterprise is an AI-native firm building autonomous departments via Flow OS. We clone your best processes, run departments, and transfer ownership—delivering lasting operational transformation.
+
+# Core Pages
+
+Page: https://exoent.co/
+Title: Exo Enterprise - Home
+Description: Exo Enterprise homepage. Learn about Flow OS, the AI operating system for autonomous departments, and how we deliver operational transformation through Build → Operate → Manage/Transfer (BOM-T).
+Topics: Flow OS, AI departments, autonomous operations, Exo Enterprise
+
+Page: https://exoent.co/flow-os
+Title: Flow OS - The AI Operating System for Departments
+Description: Flow OS is Exo Enterprise's flagship product—an operating system that automates entire departments by cloning your best processes. Uses reflex agents and regret graphs for autonomous decision-making. Delivered via BOM-T service model.
+Topics: Flow OS, reflex agents, regret graph, autonomous departments, AI operating system
+
+Page: https://exoent.co/firm
+Title: Exo AI Engine - Advanced Customer Intelligence
+Description: Exo's AI engine delivers customer intelligence and firm operations. Part of the broader Exo ecosystem supporting autonomous department operations.
+Topics: AI engine, customer intelligence, firm operations
+
+# Future Pages (Planned)
+
+Page: https://exoent.co/departments
+Title: Namespaces & Departments
+Description: Modular departments within Flow OS ecosystem: Deal OS, Exo Launch, Exo Academy, AURA (HR), and more. Customize your autonomous department configuration.
+Topics: Deal OS, Launch, Academy, AURA, namespaces
+
+Page: https://exoent.co/services
+Title: BOM-T Services
+Description: Build → Operate → Manage/Transfer (BOM-T) service delivery model. We build your AI department (30 days), operate it (90 days), then transfer it to you—fully trained and autonomous.
+Topics: BOM-T, Build, Operate, Transfer, services
+
+Page: https://exoent.co/steel
+Title: Steel - Consumer Membership Ecosystem
+Description: Steel is Exo Enterprise's B2C membership spin-out, powered by the same Flow OS technology. Coming soon.
+Topics: Steel, membership, B2C, consumer
+
+# Key Concepts
+
+Concept: Flow OS
+Definition: An AI operating system that automates entire departments by replicating your best processes. Uses reflex agents (autonomous decision-making) and regret graphs (error recovery).
+
+Concept: BOM-T
+Definition: Build → Operate → Manage/Transfer. Exo's service delivery model: we build your autonomous department (30 days), operate it (90 days), then transfer full ownership to you.
+
+Concept: Reflex Agents
+Definition: Autonomous AI agents that make decisions without explicit intervention, using learned processes and decision rules.
+
+Concept: Regret Graph
+Definition: A learning mechanism that allows AI agents to recover from errors and optimize future decisions based on past mistakes.
+
+Concept: Exo Enterprise
+Definition: An AI-native firm that builds and runs autonomous departments. Parent brand and holding company for Flow OS, Deal OS, Launch, Academy, and other products.
+
+# Contact & Info
+
+Organization: Exo Enterprise
+Website: https://exoent.co
+Email: Contact via website
+Social: Links available on site pages

@@ -1976,3 +1976,35 @@ Adopt your plan with light gating: Build core skeleton first (Weeks 1-3: Schema 
 Confidence 0.92 >0.8—no retry. Minor weakness: Composio maturity (marketing-heavy results)—mitigate by prototyping one integration first.
 
 This positions Flow OS as cutting-edge 2026 agentic.
+---
+
+Summary of your 2026 Stack [ Exo Flow OS Software + Exo Websites ]
+
+    •    Main B2B App: Supabase (SQL, Stability, Relational Data).
+
+    •    Sub-Brands/Landing Pages: Convex (Speed, No-Ops, Free Tier).
+
+    •    Steel Mobile/Web App: Convex (Rapid iteration, Real-time UX).
+
+    •    Marketing Tracking: Post-hog ID — or shared Google Analytics (across all sites) to track all users. 
+
+    •    Abstract Auth: Clerk (moving to Supabase later is much easier).
+
+    •    Next.js + Supabase: Flow OS SaaS build 
+
+    • Don't Over-Nest Data: In Convex, it’s tempting to save deeply nested JSON objects. If you plan to move to SQL later, try to keep your data structures flat (like tables). It will make the 2026 migration much simpler.
+
+The Strategy Breakdown
+
+
+1. Why Convex over Supabase for Marketing & Speed-to-Market?
+
+    •    Zero Configuration: For marketing sites (lead captures, waitlists, interactive calculators), you don’t want to spend time on SQL migrations. In Convex, you just save an object and the database adapts.
+
+    •    The "Hype" Factor: If your new web/mobile app needs social features (real-time chat, live feeds, presence indicators like "Who's online"), Convex will let you build those in hours, whereas Supabase would take days of configuring listeners.
+
+    •    Free Tier Efficiency: Since you can have up to 20 projects on Convex's free tier, you can host all your sub-brand landing pages for $0 without hitting the "2-project limit" that Supabase enforces.
+
+2. Why Keep the B2B Software on Supabase?
+
+    •    Relational Integrity: B2B software usually involves complex relationships (Companies > Teams > Users > Permissions > Invoices). PostgreSQL (Supabase) is the undisputed king for this. You want the strictness of SQL to ensure a billing error never happens.
