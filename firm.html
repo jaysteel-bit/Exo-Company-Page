@@ -11,11 +11,11 @@
     /* CUSTOM CURSOR OPTIMIZATIONS */
     /* Removed custom cursor CSS */
   </style>
-  <link id="all-fonts-link-font-geist" rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
+  <link id="all-fonts-link-font-urbanist" rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&amp;display=swap">
   <style id="all-fonts-style-font-geist">
     .font-geist {
-      font-family: 'Geist', sans-serif !important;
+      font-family: 'Urbanist', sans-serif !important;
     }
   </style>
   <link id="all-fonts-link-font-playfair" rel="stylesheet"
@@ -28,7 +28,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-neutral-950 text-neutral-200 antialiased overflow-x-hidden" style="font-family:'Inter',sans-serif;">
+<body class="bg-neutral-950 text-neutral-200 antialiased overflow-x-hidden" style="font-family:'Urbanist',sans-serif;">
   <!-- CUSTOM CURSOR SYSTEM -->
   <!-- Removed custom cursor div -->
 
@@ -1298,15 +1298,6 @@
   </footer>
 
   <style>
-    /* CUSTOM CURSOR STYLES - HIDE DEFAULT CURSOR ON DESKTOP */
-    @media (min-width: 768px) {
-
-      body,
-      * {
-        cursor: none !important;
-      }
-    }
-
     /* CUSTOMIZATION COMMENT: Animation keyframes */
     @keyframes fadeSlideUp {
       from {
@@ -1404,117 +1395,6 @@
   </script>
   <script>
     (function () { const toggleBtn = document.getElementById('mobile-menu-toggle'); const drawer = document.getElementById('mobile-drawer'); const overlay = document.getElementById('mobile-drawer-overlay'); const closeBtn = document.getElementById('mobile-drawer-close'); if (toggleBtn && drawer) { const setExpanded = (val) => toggleBtn.setAttribute('aria-expanded', String(val)); const open = () => { drawer.classList.add('open'); setExpanded(true); }; const close = () => { drawer.classList.remove('open'); setExpanded(false); }; toggleBtn.addEventListener('click', () => { if (drawer.classList.contains('open')) { close(); } else { open(); } }); if (overlay) { overlay.addEventListener('click', close); } if (closeBtn) { closeBtn.addEventListener('click', close); } document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); }); } document.querySelectorAll('[data-mobile-accordion]').forEach((btn) => { btn.addEventListener('click', () => { const id = btn.getAttribute('aria-controls'); const panel = id ? document.getElementById(id) : null; if (!panel) return; const expanded = btn.getAttribute('aria-expanded') === 'true'; btn.setAttribute('aria-expanded', String(!expanded)); panel.classList.toggle('hidden', expanded); const plus = btn.querySelector('svg[data-icon="plus"]'); const minus = btn.querySelector('svg[data-icon="minus"]'); if (plus && minus) { plus.classList.toggle('hidden', !expanded); minus.classList.toggle('hidden', expanded); } }); }); })();
-  </script>
-
-  <!-- CUSTOM CURSOR SYSTEM SCRIPT -->
-  <script>
-    (function () {
-      // Enable cursor on devices that have any fine pointer (e.g., mouse/trackpad)
-      const hasFinePointer = window.matchMedia && window.matchMedia('(any-pointer: fine)').matches;
-      if (!hasFinePointer) return; // Exit on purely coarse-pointer devices
-
-      const cursor = document.getElementById('custom-cursor');
-      if (!cursor) return;
-
-      // Ensure cursor is above all content
-      cursor.style.zIndex = '99999';
-      cursor.style.transformOrigin = 'center center';
-
-      // Cursor size vars
-      const NORMAL_SIZE = 32; // w-8 h-8 = 32px
-      const HOVER_SIZE = 48;  // w-12 h-12 = 48px
-      const DEBOUNCE_DELAY = 100; // 100ms debounce
-
-      let mouseX = 0;
-      let mouseY = 0;
-      let cursorX = 0;
-      let cursorY = 0;
-      let isHovering = false;
-      let debounceTimer = null;
-      let lastMoveTime = 0;
-      const THROTTLE_INTERVAL = 16; // ~60fps
-
-      // Throttled mouse move handler
-      document.addEventListener('mousemove', (e) => {
-        const now = Date.now();
-        if (now - lastMoveTime < THROTTLE_INTERVAL) return;
-        lastMoveTime = now;
-
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      }, { passive: true });
-
-      // Smooth trailing animation using requestAnimationFrame
-      function animate() {
-        const easing = 0.15;
-        cursorX += (mouseX - cursorX) * easing;
-        cursorY += (mouseY - cursorY) * easing;
-        // Use translate3d for smoother GPU-accelerated movement
-        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
-        requestAnimationFrame(animate);
-      }
-      animate();
-
-      // Debounced hover state manager
-      function setHoverState(hovering) {
-        if (debounceTimer) {
-          clearTimeout(debounceTimer);
-        }
-
-        debounceTimer = setTimeout(() => {
-          if (hovering === isHovering) return;
-          isHovering = hovering;
-
-          const targetSize = hovering ? HOVER_SIZE : NORMAL_SIZE;
-
-          if (window.gsap) {
-            gsap.to(cursor, {
-              width: targetSize,
-              height: targetSize,
-              duration: 0.3,
-              ease: 'power2.out',
-              force3D: true,
-              overwrite: 'auto'
-            });
-          } else {
-            cursor.style.width = targetSize + 'px';
-            cursor.style.height = targetSize + 'px';
-          }
-        }, DEBOUNCE_DELAY);
-      }
-
-      // Track current hovered element
-      let currentHoveredElement = null;
-
-      // Event delegation with debounce on document body
-      document.body.addEventListener('mouseover', (e) => {
-        const target = e.target.closest('a, button, .cursor-hover-target, [role="button"]');
-
-        if (target && target !== currentHoveredElement) {
-          currentHoveredElement = target;
-          setHoverState(true);
-        } else if (!target && currentHoveredElement) {
-          currentHoveredElement = null;
-          setHoverState(false);
-        }
-      }, true);
-
-      // Hide cursor when leaving viewport
-      document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
-        currentHoveredElement = null;
-        setHoverState(false);
-      });
-
-      document.addEventListener('mouseenter', () => {
-        cursor.style.opacity = '1';
-      });
-
-      // Initial fade in
-      setTimeout(() => {
-        cursor.style.opacity = '1';
-      }, 100);
-    })();
   </script>
 
 </body>
