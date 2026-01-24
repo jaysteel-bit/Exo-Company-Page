@@ -29,10 +29,26 @@ https://www.aura.build/share/ai-business
 -
 (Exo Landing Page)
 ------------------------------------------------------------------
+https://www.aura.build/templates/9YWVM7G [mobile on boarding component]
+------------------------------------------------------------------
+SOFTWARE:
+https://www.aura.build/templates/DS6QIFD [PROJECT MANAGER UI]
 
+https://futuristic-agency.aura.build/ [DEAL OS WEBISTE UI]
+-------------
+https://www.aura.build/templates/JVIPA21 [sign-up page - turn it into a booking component]
 
+TESTIMONAL VIDEO - [FLOW OS] - https://www.aura.build/component/8F75AAE
+TESTIMONAL CARDS- [FLOW OS] - https://www.aura.build/component/8232E7
+TESTIMONAL UNIT BLOCK - [FLOW OS] - https://www.aura.build/component/C8F898C
+TESTIMONAL SLIDER BLOCK- [FLOW OS] - https://www.aura.build/component/BF276A
 
---------
+SOCAIL PROOF -
+GOOGLE LOGO - https://www.aura.build/component/C2D19F7
+WEBFLOW - https://www.aura.build/component/3B57DA
+AIRBNB LOGO - https://www.aura.build/component/2783BF6
+SQAURE LOGO - https://www.aura.build/component/95A16
+-------------
 -ASSETS-
 NEW:
 -Twisting Red Glass Ribbons on Black Background (Exo Launch)
@@ -55,7 +71,7 @@ NEW:
 -Monochrome studio portrait of four adults (TEAM)
 
 Dynamic Backlit Tennis Serve (JAYSTEEL.CO)
------
+--------
 https://www.aura.build/assets/7B127
 Blue Accretion Disk Around Black Hole Illustration
 https://www.aura.build/assets/3FCA4
@@ -75,7 +91,7 @@ https://www.aura.build/assets/532CC
 (Macro Close-up of BTC) --- >https://www.aura.build/assets/977AAF8
 https://www.aura.build/assets/1D30006
 (Holographic 3D AI Text)
-
+----------
 ((FIRST BLURED GIRL))
 https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/92a4234b-15fa-4d5f-8821-48d3f9f7e2f1_3840w.jpg
 ((FIRST BLURED GIRL))
