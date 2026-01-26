@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo Enterprise | Department Transformation</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&amp;family=Geist:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Base Styles */
+        :root {
+            --font-sans: 'Urbanist', 'Geist', 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #050505;
+            color: #e5e5e5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography Utilities */
+        .font-serif {
+            font-family: var(--font-serif);
+        }
+
+        .tracking-tighter-custom {
+            letter-spacing: -0.04em;
+        }
+
+        /* Glass Cards */
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Animation */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        /* Form Inputs */
+        input[type="text"],
+        input[type="email"],
+        select {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #10b981;
+            /* Emerald-500 */
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Accordion */
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-950 text-neutral-200 antialiased selection:bg-emerald-500/30 selection:text-white">
+
+    <!-- SPLINE BACKGROUND -->
+    <div class="fixed top-0 left-0 w-full h-full -z-10 opacity-60 pointer-events-none">
+        <div class="absolute inset-0 bg-neutral-950/40 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-neutral-850/20 via-transparent to-neutral-850 z-10"></div>
+        <iframe src="https://my.spline.design/animatedshapeblend-1gCFHvLukjcmK6imbIAFLY2d/" frameborder="0" width="100%"
+            height="100%"></iframe>
+    </div>
+
+    <!-- NAVIGATION -->
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="fixed top-0 left-0 w-full z-50 bg-black flex items-center justify-center py-3 border-b border-white/5">
+        <div class="bg-white px-4 py-1.5 rounded-full flex items-center gap-3 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+            <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+            </span>
+            <span class="text-black text-xs font-bold tracking-wide">8 Acceptances Per Month | Apply Now</span>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="min-h-screen flex flex-col pt-32 pb-20 relative items-center justify-center">
+        <div class="max-w-5xl mx-auto text-center z-20 space-y-10 px-6 animate-fade-up">
+
+            <!-- Context Tag -->
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mx-auto">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span class="text-[11px] uppercase font-bold text-white/90 tracking-widest">Service-Software Hybrid |
+                    90-Day Transformation</span>
+            </div>
+
+            <!-- Headline -->
+            <h1
+                class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tighter-custom text-white leading-[1.05]">
+                ARE YOU THE BIGGEST RISK <br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 to-emerald-600 font-serif italic">TO
+                    YOUR OWN BUSINESS?</span>
+            </h1>
+
+            <!-- Sub-headline -->
+            <p
+                class="text-lg md:text-xl text-slate-300 font-['Urbanist'] font-normal max-w-3xl mx-auto leading-relaxed">
+                Join our <span class="text-white font-medium">Department Transformation Program</span>. We install a
+                self-running AI department in your company, removing you as the single point of failure.<br>
+                <span class="text-white font-bold">Letting You Work
+                </span><span class="text-emerald-400 font-bold">ON</span>
+                <span class="text-white font-bold">
+                    The Business, Not Kept
+                </span>
+                <span class="text-red-600 font-bold">
+                    STUCK IN
+                </span>
+                <span class="text-white font-bold">
+                    It</span>
+            </p>
+
+            <!-- Video Placeholder -->
+            <div
+                class="w-full max-w-4xl mx-auto aspect-video glass-panel rounded-xl overflow-hidden relative group cursor-pointer shadow-2xl shadow-emerald-900/10 border border-white/10 mt-8">
+                <div
+                    class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-all">
+                    <div
+                        class="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:scale-110 transition-transform duration-300">
+                        <iconify-icon icon="solar:play-bold" class="text-white text-3xl ml-1"></iconify-icon>
+                    </div>
+                </div>
+                <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none">
+                    <span class="text-xs font-mono text-white/80 bg-black/50 px-2 py-1 rounded">EXO CORE // SIZZLE
+                        REEL</span>
+                    <span class="text-xs font-mono text-white/80">02:34</span>
+                </div>
+                <!-- Image Placeholder for Video Thumb -->
+                <div class="absolute inset-0 -z-10 bg-neutral-900 flex items-center justify-center text-neutral-700">
+                    [VIDEO PLACEHOLDER]
+                </div>
+            </div>
+
+            <!-- Primary CTA -->
+            <div class="pt-8">
+                <a href="#book"
+                    class="inline-flex items-center gap-3 px-10 py-5 bg-white text-black rounded-lg text-sm font-bold tracking-wide hover:bg-neutral-200 transition-all shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.5)] transform hover:-translate-y-1">
+                    START TRANSFORMATION
+                    <iconify-icon icon="solar:round-alt-arrow-right-bold" width="20"></iconify-icon>
+                </a>
+                <p class="text-xs text-neutral-500 mt-4 uppercase tracking-widest text-center">Limited Availability - 8
+                    Partners/Month</p>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- SOCIAL PROOF -->
+    <section class="py-20 border-t border-white/5 bg-neutral-900/30">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-10 font-['Urbanist'] font-medium">
+                Trusted by founders building the future</p>
+
+            <!-- Logos Grid (Reusing SVG Paths from index.html for visual consistency) -->
+            <div class="flex flex-wrap gap-12 md:gap-24 justify-center items-center opacity-60">
+                <!-- Google -->
+                <svg width="100" height="34" viewBox="0 0 130 44" fill="none"
+                    class="h-6 w-auto grayscale hover:grayscale-0 transition-all duration-500">
+                    <g>
+                        <path
+                            d="M58.0779 22.3848C58.0779 26.5489 54.8203 29.6174 50.8225 29.6174C46.8247 29.6174 43.567 26.5489 43.567 22.3848C43.567 18.1913 46.8247 15.1522 50.8225 15.1522C54.8203 15.1522 58.0779 18.1913 58.0779 22.3848ZM54.9018 22.3848C54.9018 19.7826 53.0138 18.0022 50.8225 18.0022C48.6312 18.0022 46.7431 19.7826 46.7431 22.3848C46.7431 24.9609 48.6312 26.7674 50.8225 26.7674C53.0138 26.7674 54.9018 24.9576 54.9018 22.3848Z"
+                            fill="white" />
+                        <path
+                            d="M73.7301 22.3848C73.7301 26.5489 70.4725 29.6174 66.4747 29.6174C62.4768 29.6174 59.2192 26.5489 59.2192 22.3848C59.2192 18.1946 62.4768 15.1522 66.4747 15.1522C70.4725 15.1522 73.7301 18.1913 73.7301 22.3848ZM70.554 22.3848C70.554 19.7826 68.666 18.0022 66.4747 18.0022C64.2834 18.0022 62.3953 19.7826 62.3953 22.3848C62.3953 24.9609 64.2834 26.7674 66.4747 26.7674C68.666 26.7674 70.554 24.9576 70.554 22.3848Z"
+                            fill="white" />
+                        <path
+                            d="M88.7301 15.5891V28.5739C88.7301 33.9152 85.5801 36.0967 81.8562 36.0967C78.3507 36.0967 76.241 33.7522 75.4453 31.8348L78.2105 30.6837C78.7029 31.8609 79.9094 33.25 81.8529 33.25C84.2366 33.25 85.7138 31.7793 85.7138 29.0109V27.9706H85.6029C84.892 28.8478 83.5225 29.6141 81.7942 29.6141C78.1779 29.6141 74.8649 26.4641 74.8649 22.4109C74.8649 18.3282 78.1779 15.1522 81.7942 15.1522C83.5192 15.1522 84.8888 15.9185 85.6029 16.7696H85.7138V15.5924H88.7301V15.5891ZM85.9388 22.4109C85.9388 19.8641 84.2399 18.0022 82.0779 18.0022C79.8866 18.0022 78.0507 19.8641 78.0507 22.4109C78.0507 24.9315 79.8866 26.7674 82.0779 26.7674C84.2399 26.7674 85.9388 24.9315 85.9388 22.4109Z"
+                            fill="white" />
+                        <path d="M93.7029 7.97824V29.1739H90.6051V7.97824H93.7029Z" fill="white" />
+                        <path
+                            d="M105.775 24.7652L108.24 26.4087C107.444 27.5859 105.527 29.6141 102.214 29.6141C98.1051 29.6141 95.0366 26.438 95.0366 22.3815C95.0366 18.0804 98.1312 15.1489 101.858 15.1489C105.612 15.1489 107.447 18.1359 108.047 19.75L108.377 20.5717L98.7084 24.5761C99.4486 26.0272 100.6 26.7674 102.214 26.7674C103.831 26.7674 104.953 25.9717 105.775 24.7652ZM98.1866 22.163L104.65 19.4793C104.294 18.5761 103.225 17.9467 101.966 17.9467C100.352 17.9467 98.1051 19.3717 98.1866 22.163Z"
+                            fill="white" />
+                        <path
+                            d="M31.841 20.5033V17.4348H42.1812C42.2823 17.9696 42.3344 18.6022 42.3344 19.287C42.3344 21.5891 41.7051 24.4359 39.6768 26.4641C37.704 28.5185 35.1834 29.6141 31.8442 29.6141C25.6551 29.6141 20.4507 24.5728 20.4507 18.3837C20.4507 12.1946 25.6551 7.15326 31.8442 7.15326C35.2681 7.15326 37.7073 8.49674 39.5399 10.2478L37.3747 12.413C36.0605 11.1804 34.2801 10.2217 31.841 10.2217C27.3214 10.2217 23.7866 13.8641 23.7866 18.3837C23.7866 22.9033 27.3214 26.5457 31.841 26.5457C34.7725 26.5457 36.4421 25.3685 37.5116 24.2989C38.379 23.4315 38.9497 22.1924 39.1747 20.5L31.841 20.5033Z"
+                            fill="white" />
+                    </g>
+                </svg>
+                <!-- Airbnb -->
+                <svg width="90" height="34" viewBox="0 0 120 44" fill="none"
+                    class="h-6 w-auto grayscale hover:grayscale-0 transition-all duration-500">
+                    <path
+                        d="M22.584 8C20.8 10.5 19.5 12.8 19.2 14.5C19.1 15.1 19.1 15.6 19.2 16.1C19.3 16.5 19.5 16.9 19.7 17.2C20.3 18 21.3 18.5 22.6 18.5C23.8 18.5 24.9 18 25.5 17.2C25.7 16.9 25.9 16.5 26 16.1C26.1 15.6 26.1 15.1 25.9 14.5C25.5 12.8 24.3 10.5 22.584 8ZM32.7 31.3C34.3 30.7 35.5 29.3 35.7 27.6C35.8 26.8 35.7 26 35.5 25.2C35.4 24.9 35.3 24.7 35.2 24.4C35.1 24.3 35.1 24.2 35 24.1C34.9 23.8 34.8 23.6 34.7 23.3C34.6 23.1 34.5 22.8 34.3 22.5V22.5C32.1 17.7 29.6 12.8 27.1 8L27 7.8C26.9 7.6 26.8 7.4 26.6 7.1C26.5 6.9 26.4 6.6 26.2 6.4C26 5.9 25.7 5.4 25.3 5C24.6 4.3 23.7 3.9 22.6 3.9C21.6 3.9 20.7 4.3 20 5C19.6 5.4 19.4 5.9 19.1 6.4C19 6.6 18.9 6.9 18.7 7.1C18.6 7.4 18.5 7.6 18.3 7.8L18.2 8C15.7 12.8 13.3 17.7 11 22.5L11 22.5C10.7 23.1 10.4 23.6 10.2 24.1C10.2 24.2 10.1 24.3 10.1 24.4C10 24.7 9.9 24.9 9.8 25.2C9.5 26 9.4 26.8 9.5 27.6C9.7 29.3 10.9 30.7 12.5 31.3C13.2 31.6 14.1 31.7 15 31.6C15.8 31.5 16.6 31.3 17.5 30.9C18.7 30.2 19.9 29.2 21.2 27.7C19.1 25.1 17.7 23 17.3 21.1C17 20.2 17 19.3 17.1 18.5C17.2 17.7 17.5 17 18 16.4C19 15 20.7 14.1 22.6 14.1C24.5 14.1 26.2 15 27.3 16.4C27.7 17 28 17.7 28.1 18.5C28.2 19.3 28.2 20.2 28 21.1C27.5 23 26.2 25.1 24 27.7C25.4 29.2 26.6 30.2 27.7 30.9C28.6 31.3 29.4 31.5 30.2 31.6C31.1 31.7 32 31.6 32.7 31.3Z"
+                        stroke="white" stroke-width="1.8" fill="none" /><text x="42" y="26" font-family="sans-serif"
+                        font-size="16" font-weight="500" fill="white" letter-spacing="-0.02em">airbnb</text>
+                </svg>
+                <!-- Other logos would go here -->
+            </div>
+
+            <!-- Testimonial Reel Placeholder -->
+            <div class="mt-20">
+                <div class="glass-panel p-8 rounded-2xl max-w-4xl mx-auto border border-white/10">
+                    <h3 class="text-lg font-medium text-white mb-6 flex items-center justify-center gap-2">
+                        <iconify-icon icon="solar:chat-round-like-linear" class="text-emerald-400"></iconify-icon>
+                        What Partners Are Saying
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Testimonial 1 -->
+                        <div class="bg-white/5 p-6 rounded-xl text-left">
+                            <div class="flex text-emerald-400 mb-3 text-xs">★★★★★</div>
+                            <p class="text-sm text-neutral-300 mb-4">"The 90-day handoff is real. We scaled our ops
+                                without hiring a single new manager."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-white/20"></div>
+                                <div>
+                                    <div class="text-xs font-bold text-white">Sarah Jenkins</div>
+                                    <div class="text-[10px] text-neutral-500">CEO, TechFlow</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div
+                            class="bg-white/5 p-6 rounded-xl text-left border border-white/10 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-emerald-500/5 z-0"></div>
+                            <div class="flex text-emerald-400 mb-3 text-xs z-10 relative">★★★★★</div>
+                            <p class="text-sm text-neutral-300 mb-4 z-10 relative">"Exo installed Deal OS and our close
+                                rates went from 15% to 40% in 5 weeks."</p>
+                            <div class="flex items-center gap-3 z-10 relative">
+                                <div class="w-8 h-8 rounded-full bg-white/20"></div>
+                                <div>
+                                    <div class="text-xs font-bold text-white">Mark D.</div>
+                                    <div class="text-[10px] text-neutral-500">Founder, ScaleUp</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="bg-white/5 p-6 rounded-xl text-left">
+                            <div class="flex text-emerald-400 mb-3 text-xs">★★★★★</div>
+                            <p class="text-sm text-neutral-300 mb-4">"Stopped firefighting. Started strategizing. Best
+                                investment we made last year."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-white/20"></div>
+                                <div>
+                                    <div class="text-xs font-bold text-white">Elena R.</div>
+                                    <div class="text-[10px] text-neutral-500">COO, CreativeX</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUE STACK (3 PILLARS) -->
+    <section id="outcomes" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-emerald-500 text-xs font-mono tracking-widest uppercase block mb-4">The Exo
+                    Promise</span>
+                <h2 class="text-3xl md:text-5xl font-light text-white">What You Get in <span
+                        class="font-serif italic text-emerald-400">90 Days</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div
+                    class="group p-8 rounded-2xl glass-panel border border-white/10 hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="text-5xl font-serif text-white/5 font-bold absolute top-6 right-8">01</div>
+                    <div
+                        class="w-12 h-12 rounded-lg bg-indigo-500/10 flex items-center justify-center mb-6 text-indigo-400">
+                        <iconify-icon icon="solar:users-group-two-rounded-bold" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Exo Architects</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+                        Access to high-caliber operators who build your AI implementation. We don't just advise; we
+                        engineer the system for you.
+                    </p>
+                    <ul class="text-sm text-neutral-300 space-y-3">
+                        <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                class="text-indigo-400"></iconify-icon> Dedicated Implementation Team</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                class="text-indigo-400"></iconify-icon> Custom Workflow Mapping</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div
+                    class="group p-8 rounded-2xl glass-panel border border-white/10 hover:border-emerald-500/50 transition-all duration-300 bg-emerald-500/5">
+                    <div class="text-5xl font-serif text-white/5 font-bold absolute top-6 right-8">02</div>
+                    <div
+                        class="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-6 text-emerald-400">
+                        <iconify-icon icon="solar:widget-linear" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Flow OS Installation</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+                        We install our proprietary operating system. Centralize your data, automate diffs, and deploy
+                        reflex agents.
+                    </p>
+                    <ul class="text-sm text-neutral-300 space-y-3">
+                        <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                class="text-emerald-400"></iconify-icon> Full Software Deployment</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                class="text-emerald-400"></iconify-icon> Agentic Automation Setup</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div
+                    class="group p-8 rounded-2xl glass-panel border border-white/10 hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="text-5xl font-serif text-white/5 font-bold absolute top-6 right-8">03</div>
+                    <div class="w-12 h-12 rounded-lg bg-sky-500/10 flex items-center justify-center mb-6 text-sky-400">
+                        <iconify-icon icon="solar:crown-linear" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Complete Sovereignty</h3>
+                    <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+                        The "Transfer" in BOM-T. You walk away with a fully documented, self-running department that you
+                        own forever.
+                    </p>
+                    <ul class="text-sm text-neutral-300 space-y-3">
+                        <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                class="text-sky-400"></iconify-icon> Zero Vendor Lock-In</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                class="text-sky-400"></iconify-icon> Training & Handover Packet</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#book"
+                    class="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-sm font-medium text-white hover:text-white">
+                    <span class="">See If You Are A Fit</span>
+                    <iconify-icon icon="solar:arrow-down-linear" width="16"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section id="book" class="py-24 relative overflow-hidden">
+        <!-- Background Glow -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-600/10 blur-[120px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="glass-panel rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
+                <div class="grid md:grid-cols-5">
+                    <!-- Sidebar info -->
+                    <div
+                        class="md:col-span-2 bg-neutral-900/80 p-8 border-r border-white/5 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-serif italic text-white mb-2">Book Your Audit</h3>
+                            <p class="text-sm text-neutral-400 mb-8">
+                                Speak with our admission team to see if your company qualifies for the transformation
+                                program.
+                            </p>
+
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <iconify-icon icon="solar:shield-check-linear"
+                                        class="text-emerald-400 text-xl mt-1"></iconify-icon>
+                                    <div>
+                                        <div class="text-white text-sm font-medium">Selective Process</div>
+                                        <div class="text-neutral-500 text-xs">We accept < 10% of applicants</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <iconify-icon icon="solar:clock-circle-linear"
+                                            class="text-sky-400 text-xl mt-1"></iconify-icon>
+                                        <div>
+                                            <div class="text-white text-sm font-medium">15-Mins Discovery</div>
+                                            <div class="text-neutral-500 text-xs">Zero pressure, consultation only</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-12">
+                                <img src="./logos/LOGO%20MARK.png" alt="Exo" class="w-8 opacity-50 mb-4">
+                                <div class="text-xs text-neutral-600">Powered by Steel Protocol</div>
+                            </div>
+                        </div>
+
+                        <!-- Form -->
+                        <div class="md:col-span-3 p-8 bg-black/20">
+                            <form class="space-y-4">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="space-y-1">
+                                        <label
+                                            class="text-xs uppercase tracking-wider text-neutral-500 font-medium">First
+                                            Name *</label>
+                                        <input type="text" class="w-full px-4 py-3 rounded-lg text-sm"
+                                            placeholder="John">
+                                    </div>
+                                    <div class="space-y-1">
+                                        <label
+                                            class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Last
+                                            Name *</label>
+                                        <input type="text" class="w-full px-4 py-3 rounded-lg text-sm"
+                                            placeholder="Doe">
+                                    </div>
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Work
+                                        Email *</label>
+                                    <input type="email" class="w-full px-4 py-3 rounded-lg text-sm"
+                                        placeholder="john@company.com">
+                                </div>
+
+                                <div class="space-y-1">
+                                    <label class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Phone
+                                        Number *</label>
+                                    <div class="flex gap-2">
+                                        <select
+                                            class="w-20 px-2 py-3 rounded-lg text-sm bg-neutral-800 text-neutral-400 border border-white/10">
+                                            <option value="+1">🇺🇸 +1</option>
+                                            <option value="+44">🇬🇧 +44</option>
+                                            <option value="+61">🇦🇺 +61</option>
+                                        </select>
+                                        <input type="text" class="flex-1 px-4 py-3 rounded-lg text-sm"
+                                            placeholder="(555) 123-4567">
+                                    </div>
+                                </div>
+
+                                <div class="pt-4">
+                                    <label class="flex items-start gap-3 cursor-pointer group">
+                                        <input type="checkbox"
+                                            class="mt-1 w-4 h-4 rounded border-white/20 bg-white/5 checked:bg-emerald-500 text-emerald-500 focus:ring-emerald-500/30">
+                                        <span
+                                            class="text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors">
+                                            I agree to the <a href="#"
+                                                class="underline decoration-neutral-600 hover:text-white">Terms</a> & <a
+                                                href="#"
+                                                class="underline decoration-neutral-600 hover:text-white">Privacy
+                                                Policy</a>. I understand this is an application for a B2B service.
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <button type="button"
+                                    class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-bold tracking-wide rounded-lg mt-2 transition-all shadow-[0_0_20px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)]">
+                                    CONTINUE TO CALENDAR
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 bg-neutral-900/30 border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-light text-white text-center mb-16">Objection Handling</h2>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <details
+                    class="group glass-panel rounded-xl overflow-hidden border border-white/5 open:border-emerald-500/30 transition-colors">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer bg-white/0 hover:bg-white/5 transition-colors">
+                        <h3 class="text-lg font-medium text-white pr-8">Is this a consultancy or a software product?
+                        </h3>
+                        <span class="text-2xl text-emerald-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-neutral-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2"><strong class="text-white">It is both.</strong> High-end consulting leaves you
+                            with a strategy but no execution. Software leaves you with a tool but no process.</p>
+                        <p>We are a <strong>Hybrid Firm</strong>. We consult to design the strategy, then we install our
+                            software (Flow OS) to execute it. Most importantly, we transfer the entire capability to you
+                            within 90 days.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details
+                    class="group glass-panel rounded-xl overflow-hidden border border-white/5 open:border-emerald-500/30 transition-colors">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer bg-white/0 hover:bg-white/5 transition-colors">
+                        <h3 class="text-lg font-medium text-white pr-8">What exactly do I walk away with?</h3>
+                        <span class="text-2xl text-emerald-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-neutral-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2">You walk away with a <strong class="text-white">fully operational internal
+                                department</strong>.</p>
+                        <p>Specifically: 1) A configured instance of Flow OS running your ops, 2) A trained team (yours
+                            or new hires) certified in the system, and 3) A "Sovereignty Packet" containing all SOPs,
+                            IP, and data. You own 100% of the output.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details
+                    class="group glass-panel rounded-xl overflow-hidden border border-white/5 open:border-emerald-500/30 transition-colors">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer bg-white/0 hover:bg-white/5 transition-colors">
+                        <h3 class="text-lg font-medium text-white pr-8">Is this right for my business size?</h3>
+                        <span class="text-2xl text-emerald-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-neutral-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2">Our ideal partners are generating between <strong class="text-white">$2M and
+                                $50M in annual revenue</strong>.</p>
+                        <p>If you are smaller, you likely need a lead generation or PMF solution, not an operations
+                            scale-up. If you are larger ($100M+), we have a dedicated Enterprise division. This program
+                            is optimized for the "Empty Middle" where growth breaks processes.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details
+                    class="group glass-panel rounded-xl overflow-hidden border border-white/5 open:border-emerald-500/30 transition-colors">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer bg-white/0 hover:bg-white/5 transition-colors">
+                        <h3 class="text-lg font-medium text-white pr-8">How much does the transformation cost?</h3>
+                        <span class="text-2xl text-emerald-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-neutral-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2">We don't publish a price list because we build custom departments.</p>
+                        <p>However, partners typically invest between <strong class="text-white">$15k and $60k</strong>
+                            for a complete transformation. If you haven't wasted at least that much on bad hires or
+                            broken tools in the last year, you probably don't need us yet.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-24 bg-neutral-950 text-center">
+        <div class="max-w-2xl mx-auto px-6">
+            <img src="./logos/LOGO%20MARK.png" alt="Exo" class="w-12 h-12 mx-auto mb-8 opacity-80">
+            <h2 class="text-4xl font-light text-white mb-8">Ready to remove yourself as the bottleneck?</h2>
+
+            <a href="#book"
+                class="inline-flex items-center gap-3 px-10 py-5 bg-white text-black rounded-lg text-sm font-bold tracking-wide hover:bg-neutral-200 transition-all shadow-xl">
+                START APPLICATION
+                <iconify-icon icon="solar:round-alt-arrow-right-bold" width="20"></iconify-icon>
+            </a>
+
+            <div class="mt-12 flex flex-wrap justify-center gap-6 text-xs text-neutral-600 uppercase tracking-widest">
+                <a href="#" class="hover:text-neutral-400">Terms of Service</a>
+                <a href="#" class="hover:text-neutral-400">Privacy Policy</a>
+                <a href="#" class="hover:text-neutral-400">DMCA</a>
+            </div>
+            <p class="mt-8 text-xs text-neutral-700 max-w-lg mx-auto leading-relaxed">
+                Disclaimer: Exo Enterprise does not guarantee revenue results. All business entails risk. We provide
+                systems, training, and software. Your results rely on your execution.
+            </p>
+            <p class="mt-4 text-xs text-neutral-800">© 2026 Exo Enterprise LLC.</p>
+        </div>
+    </section>
+
+</body>
+
+</html>

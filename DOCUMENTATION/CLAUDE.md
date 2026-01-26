@@ -293,3 +293,6 @@ Per SEO.md, prioritize AI visibility (Google AI Overviews, ChatGPT, Perplexity):
 **Test frequently** in Rich Results Tool as you update schema.
 
 *User's note: Copywriting is key. Also, Ensure not to simply say BOM/T is a thing we use to get the job done. Yet, instead we can make sure to highlight the BOM/T aspect as a key differentiator. While focusing on what the client will get as a result of going through the process rather than the jargon of BOM/T. The customer wants to feel the value of the process. Not the jargon. For example, we give the the vaction not the plane flight process and the checked bags and the security checkpoint at the airport. But we give them the beach/rome experience type of copy.*
+
+**copy-and-paste.md:** This is the users copy and paste for Claude to read and understand. The user is asking Claude to read this when it makes sense to do so - this will aviod the bug from pasting long text into Claude code terminal and having it not work.
+**paste-from-claud.md:** This is the users paste from Claude. The user is asking Claude to paste into this file when it makes sense to do so but not always - do not paste if it does not make sense to do so, inline terminal response is fine and preferred if it makes sense to do so. 
