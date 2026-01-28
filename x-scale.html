@@ -429,14 +429,14 @@
                                         <label
                                             class="text-xs uppercase tracking-wider text-neutral-500 font-medium">First
                                             Name *</label>
-                                        <input type="text" class="w-full px-4 py-3 rounded-lg text-sm"
+                                        <input type="text" id="first-name-x" class="w-full px-4 py-3 rounded-lg text-sm"
                                             placeholder="John">
                                     </div>
                                     <div class="space-y-1">
                                         <label
                                             class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Last
                                             Name *</label>
-                                        <input type="text" class="w-full px-4 py-3 rounded-lg text-sm"
+                                        <input type="text" id="last-name-x" class="w-full px-4 py-3 rounded-lg text-sm"
                                             placeholder="Doe">
                                     </div>
                                 </div>
@@ -444,7 +444,7 @@
                                 <div class="space-y-1">
                                     <label class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Work
                                         Email *</label>
-                                    <input type="email" class="w-full px-4 py-3 rounded-lg text-sm"
+                                    <input type="email" id="email-x" class="w-full px-4 py-3 rounded-lg text-sm"
                                         placeholder="john@company.com">
                                 </div>
 
@@ -591,6 +591,24 @@
         </div>
     </section>
 
+    <script>
+        // Auto-populate form if lead data exists in session
+        document.addEventListener('DOMContentLoaded', () => {
+            const rawData = sessionStorage.getItem('exo_lead_data');
+            if (rawData) {
+                try {
+                    const data = JSON.parse(rawData);
+                    if (data.firstName) document.getElementById('first-name-x').value = data.firstName;
+                    if (data.lastName) document.getElementById('last-name-x').value = data.lastName;
+                    if (data.email) document.getElementById('email-x').value = data.email;
+
+                    console.log("Lead data restored for auto-population:", data);
+                } catch (e) {
+                    console.error("Failed to parse lead data:", e);
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

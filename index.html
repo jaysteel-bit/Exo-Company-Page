@@ -948,19 +948,19 @@
                 Submit a systems audit. We'll show you exactly how Exo can replace your busywork with intelligence.
             </p>
 
-            <form class="max-w-md mr-auto ml-auto space-y-4">
+            <form id="lead-form" class="max-w-md mr-auto ml-auto space-y-4">
                 <div class="grid grid-cols-2 gap-4">
-                    <input type="text" placeholder="First Name"
+                    <input type="text" id="first-name" placeholder="First Name" required
                         class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-sm">
-                    <input type="text" placeholder="Last Name"
+                    <input type="text" id="last-name" placeholder="Last Name" required
                         class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-sm">
                 </div>
-                <input type="email" placeholder="Work Email"
+                <input type="email" id="work-email" placeholder="Work Email" required
                     class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-sm">
 
-                <button type="button"
+                <button type="submit" id="lead-submit-btn"
                     class="hover:bg-neutral-200 transition-colors flex gap-2 font-semibold text-black bg-white w-full rounded-lg pt-4 pr-4 pb-4 pl-4 gap-x-2 gap-y-2 items-center justify-center">
-                    Book Risk Free Audit
+                    <span id="btn-text">Book Risk Free Audit</span>
                     <iconify-icon icon="solar:arrow-right-linear" class=""></iconify-icon>
                 </button>
                 <p class="text-xs text-neutral-500 mt-4 mb-0">No commitment required. 100% Confidential.</p>
@@ -1065,6 +1065,53 @@
                 2026 Exo Enterprise. All rights reserved.</div>
         </div>
     </footer>
+    <script type="module">
+        import { client } from "./js/convex-client.js";
+
+        const leadForm = document.getElementById('lead-form');
+        const submitBtn = document.getElementById('lead-submit-btn');
+        const btnText = document.getElementById('btn-text');
+
+        if (leadForm) {
+            leadForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const firstName = document.getElementById('first-name').value;
+                const lastName = document.getElementById('last-name').value;
+                const email = document.getElementById('work-email').value;
+
+                // UI Loading State
+                submitBtn.disabled = true;
+                btnText.innerText = "Securing Audit...";
+                submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+
+                try {
+                    // 1. Submit to Convex
+                    await client.mutation("leads:submitLead", {
+                        firstName,
+                        lastName,
+                        email
+                    });
+
+                    // 2. Save to Session for the next page
+                    const leadData = { firstName, lastName, email };
+                    sessionStorage.setItem('exo_lead_data', JSON.stringify(leadData));
+
+                    // 3. Redirect to X-Scale page
+                    window.location.href = "/x-scale.html";
+
+                } catch (error) {
+                    console.error("Submission failed:", error);
+                    alert("Submission failed. Please check your connection and try again.");
+
+                    // Reset UI
+                    submitBtn.disabled = false;
+                    btnText.innerText = "Book Risk Free Audit";
+                    submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
