@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <title>Exo AI Engine - Advanced Customer Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- PostHog Analytics -->
+  <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_N1Clw6iwKeyIqhNrxd1cejjCuvKXPtW17bn9h6ZUw9b', {
+          api_host: 'https://us.i.posthog.com',
+          defaults: '2025-11-30'
+      })
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -34,7 +44,7 @@
   <!-- Announcement Bar -->
   <div
     class="sticky top-0 z-[60] w-full bg-emerald-950/90 backdrop-blur-md border-b border-emerald-500/20 flex items-center justify-center px-4 py-2.5 transition-all">
-    <a href="/x-scale.html"
+    <a href="x-scale.html"
       class="flex items-center gap-2 text-sm font-medium text-emerald-100 hover:text-white transition-colors group">
       <span class="font-['Urbanist'] tracking-wide">While Space is Limited: <strong>Transform Your Business
           Today</strong></span>
@@ -55,7 +65,7 @@
   <nav class="relative w-full z-50 border-b border-white/5 bg-neutral-950/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group">
+      <a href="index.html" class="flex items-center gap-2 group">
         <div
           class="w-8 h-8 rounded border border-white/20 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors overflow-hidden">
           <img src="./logos/LOGO%20MARK.png" alt="Exo Logo" class="w-full h-full object-contain">
@@ -65,15 +75,15 @@
 
       <!-- Desktop Links -->
       <div class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide uppercase text-neutral-400">
-        <a href="/" class="hover:text-white transition-colors">Home</a>
-        <a href="/flow.html" class="hover:text-white transition-colors">Flow OS</a>
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="flow.html" class="hover:text-white transition-colors">Flow OS</a>
         <a href="#departments" class="hover:text-white transition-colors">Departments</a>
-        <a href="/firm.html" class="hover:text-white transition-colors">About The Firm</a>
+        <a href="firm.html" class="hover:text-white transition-colors">About The Firm</a>
         <a href="#careers" class="hover:text-white transition-colors">Careers</a>
       </div>
 
       <!-- CTA -->
-      <a href="/x-scale.html"
+      <a href="x-scale.html"
         class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-xs font-medium text-white">
         <span>8 Spots Open This Month</span>
         <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
@@ -127,15 +137,15 @@
           </span>
         </button>
         <div id="mobile-products-sub" class="hidden px-4 pb-3 space-y-2">
-          <a href="/x-scale.html"
+          <a href="x-scale.html"
             class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
             Exo AI
           </a>
-          <a href="/x-scale.html"
+          <a href="x-scale.html"
             class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
             Steel Global
           </a>
-          <a href="/x-scale.html"
+          <a href="x-scale.html"
             class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
             The Steel Card
           </a>
@@ -163,19 +173,19 @@
           </span>
         </button>
         <div id="mobile-solutions-sub" class="hidden px-4 pb-3 space-y-2">
-          <a href="/x-scale.html"
+          <a href="x-scale.html"
             class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
             Rebuild — upskill your current team on Flow OS
           </a>
-          <a href="/x-scale.html"
+          <a href="x-scale.html"
             class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
             Recruit — hire and train a new AI-native team for you
           </a>
-          <a href="/x-scale.html"
+          <a href="x-scale.html"
             class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
             Managed Services — We run your system as a service
           </a>
-          <a href="/x-scale.html"
+          <a href="x-scale.html"
             class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
             Custom
           </a>
@@ -203,17 +213,17 @@
           </span>
         </button>
         <div id="mobile-enterprise-sub" class="hidden px-4 pb-3 space-y-2">
-          <a href="/x-scale.html"
+          <a href="x-scale.html"
             class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
             Quarterly Engagements
           </a>
-          <a href="/x-scale.html"
+          <a href="x-scale.html"
             class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
             Contact Enterprise Team
           </a>
         </div>
       </div>
-      <a href="/x-scale.html"
+      <a href="x-scale.html"
         class="mt-2 block w-full text-center text-neutral-200 shiny-cta focus:outline-none font-playfair cursor-hover-target"
         style="display:block; width:100%; padding: 0.35rem 0.6rem; font-size: 0.875rem;">
         <span style="font-family: 'Playfair Display', serif;">Careers</span>
@@ -1010,7 +1020,7 @@
     style="opacity: 1; animation: 0.8s ease-out 0.4s 1 normal forwards running fadeSlideUp; transition: opacity 0.8s ease-out, transform 0.8s ease-out; transform: translateY(0px);">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16">
-        <h3 class="uppercase xl:text-emerald-300 text-sm font-normal text-neutral-400 tracking-widest font-geist mb-2"
+        <h3 class="uppercase xl:text-emerald-800 text-sm font-normal text-neutral-400 tracking-widest font-geist mb-2"
           style="transition: outline 0.1s ease-in-out;">
           Enterprise Security &amp; Compliance
         </h3>

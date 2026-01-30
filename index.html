@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exo Enterprise | The AI Operating System for Departments</title>
 
+    <!-- PostHog Analytics -->
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_N1Clw6iwKeyIqhNrxd1cejjCuvKXPtW17bn9h6ZUw9b', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2025-11-30'
+        })
+    </script>
+
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -250,7 +259,7 @@
     <!-- Announcement Bar -->
     <div
         class="sticky top-0 z-[60] w-full bg-emerald-950/90 backdrop-blur-md border-b border-emerald-500/20 flex items-center justify-center px-4 py-2.5 transition-all">
-        <a href="/x-scale.html"
+        <a href="x-scale.html"
             class="flex items-center gap-2 text-sm font-medium text-emerald-100 hover:text-white transition-colors group">
             <span class="font-['Urbanist'] tracking-wide">While Space is Limited: <strong>Transform Your Business
                     Today</strong></span>
@@ -263,7 +272,7 @@
     <nav class="relative w-full z-50 border-b border-white/5 bg-neutral-950/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <!-- Logo -->
-            <a href="/" class="flex items-center gap-2 group">
+            <a href="index.html" class="flex items-center gap-2 group">
                 <div
                     class="w-8 h-8 rounded border border-white/20 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors overflow-hidden">
                     <img src="./logos/LOGO%20MARK.png" alt="Exo Logo" class="w-full h-full object-contain">
@@ -274,15 +283,15 @@
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide uppercase text-neutral-400">
                 <a href="#problem" class="hover:text-white transition-colors">The Dilemma</a>
-                <a href="/flow.html" class="hover:text-white transition-colors">Flow OS</a>
+                <a href="flow.html" class="hover:text-white transition-colors">Flow OS</a>
                 <a href="#how-it-works" class="hover:text-white transition-colors">Process</a>
                 <a href="#departments" class="hover:text-white transition-colors">Departments</a>
-                <a href="/firm.html" class="hover:text-white transition-colors">About the Firm</a>
+                <a href="firm.html" class="hover:text-white transition-colors">About the Firm</a>
                 <a href="#careers" class="hover:text-white transition-colors">Careers</a>
             </div>
 
             <!-- CTA -->
-            <a href="/x-scale.html"
+            <a href="x-scale.html"
                 class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-xs font-medium text-white">
                 <span class="">8 Spots Open This Month</span>
                 <iconify-icon icon="solar:arrow-right-linear" width="16" class=""></iconify-icon>
@@ -336,7 +345,7 @@
 
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full max-w-md mx-auto">
-                <a href="/x-scale.html"
+                <a href="x-scale.html" id="hero-cta-btn"
                     class="w-full px-8 py-4 bg-white text-black rounded-lg text-sm font-semibold tracking-tight hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_-5px_rgba(255,255,255,0.5)] duration-300">
                     SCALE YOUR BUSINESS
                     <iconify-icon icon="solar:calendar-linear" width="18" class=""></iconify-icon>
@@ -608,20 +617,20 @@
                     Path</h3>
                 <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                     <!-- Path 1 -->
-                    <a href="#"
-                        class="group block p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all text-center">
+                    <a href="#contact" class=" group block p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05]
+                        transition-all text-center">
                         <h4 class="group-hover:text-sky-300 transition-colors font-medium text-white mb-2">Rebuild</h4>
                         <p class="text-xs text-neutral-500">We upskill your current team on Flow OS.</p>
                     </a>
                     <!-- Path 2 -->
-                    <a href="#"
-                        class="group block p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all text-center">
+                    <a href="#contact" class=" group block p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05]
+                        transition-all text-center">
                         <h4 class="text-white font-medium mb-2 group-hover:text-teal-400 transition-colors">Recruit</h4>
                         <p class="text-xs text-neutral-500">We hire and train a new AI-native team for you.</p>
                     </a>
                     <!-- Path 3 -->
-                    <a href="#"
-                        class="group block p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all text-center">
+                    <a href="#contact" class=" group block p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05]
+                        transition-all text-center">
                         <h4 class="text-white font-medium mb-2 group-hover:text-white transition-colors">Managed</h4>
                         <p class="text-xs text-neutral-500">We keep running the system as a service.</p>
                     </a>
@@ -960,7 +969,7 @@
 
                 <button type="submit" id="lead-submit-btn"
                     class="hover:bg-neutral-200 transition-colors flex gap-2 font-semibold text-black bg-white w-full rounded-lg pt-4 pr-4 pb-4 pl-4 gap-x-2 gap-y-2 items-center justify-center">
-                    <span id="btn-text">Book Risk Free Audit</span>
+                    <span id="btn-text">Book Risk Free</span>
                     <iconify-icon icon="solar:arrow-right-linear" class=""></iconify-icon>
                 </button>
                 <p class="text-xs text-neutral-500 mt-4 mb-0">No commitment required. 100% Confidential.</p>
@@ -1043,13 +1052,13 @@
                         <li>
                             <a href="#departments"
                                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
-                                Exa
+                                EXA
                             </a>
                         </li>
                         <li>
                             <a href="#departments"
                                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
-                                Aura
+                                AURA
                             </a>
                         </li>
                         <li>
@@ -1098,7 +1107,7 @@
                     sessionStorage.setItem('exo_lead_data', JSON.stringify(leadData));
 
                     // 3. Redirect to X-Scale page
-                    window.location.href = "/x-scale.html";
+                    window.location.href = "x-scale.html";
 
                 } catch (error) {
                     console.error("Submission failed:", error);
@@ -1106,9 +1115,24 @@
 
                     // Reset UI
                     submitBtn.disabled = false;
-                    btnText.innerText = "Book Risk Free Audit";
+                    btnText.innerText = "Book Risk Free";
                     submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
                 }
+            });
+        }
+    </script>
+
+    <!-- PostHog Event Tracking -->
+    <script>
+        // Track hero CTA click
+        const heroCTABtn = document.getElementById('hero-cta-btn');
+        if (heroCTABtn) {
+            heroCTABtn.addEventListener('click', () => {
+                posthog.capture('cta_clicked', {
+                    page: 'home',
+                    placement: 'hero',
+                    cta_text: 'SCALE YOUR BUSINESS'
+                });
             });
         }
     </script>
