@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exo Enterprise | The AI Operating System for Departments</title>
 
+    <!-- Spline Preconnect for faster loading -->
+    <link rel="preconnect" href="https://my.spline.design">
+    <link rel="dns-prefetch" href="https://my.spline.design">
+
     <!-- PostHog Analytics -->
     <script>
         !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
@@ -95,6 +99,16 @@
 
         .animate-fade-up {
             animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        /* Spline Loader Animations */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
         }
     </style>
     <link id="all-fonts-link-font-roboto" rel="stylesheet"
@@ -248,11 +262,20 @@
 
 <body class="bg-neutral-950 text-neutral-200 antialiased selection:bg-indigo-500/30 selection:text-white">
 
+    <!-- SPLINE LOADING PLACEHOLDER -->
+    <div id="spline-loader" class="fixed inset-0 -z-10 bg-neutral-950 flex items-center justify-center transition-opacity duration-1000" style="z-index: -9;">
+        <div class="text-center relative z-10">
+            <img src="./logos/LOGO%20MARK.png" alt="Loading..." class="w-16 h-16 mx-auto mb-4 opacity-60" style="animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;">
+            <div class="w-8 h-8 border-2 border-white/20 border-t-emerald-500 rounded-full mx-auto" style="animation: spin 1s linear infinite;"></div>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-neutral-900/40 via-transparent to-neutral-950 pointer-events-none"></div>
+    </div>
+
     <!-- SPLINE BACKGROUND (Brand Core) -->
     <div class="spline-bg">
         <div class="absolute inset-0 bg-neutral-950/40 z-10"></div> <!-- Overlay for contrast -->
         <div class="absolute inset-0 bg-gradient-to-b from-neutral-850/20 via-transparent to-neutral-850 z-10"></div>
-        <iframe src="https://my.spline.design/animatedshapeblend-1gCFHvLukjcmK6imbIAFLY2d/" frameborder="0" width="100%"
+        <iframe id="spline-iframe" src="https://my.spline.design/animatedshapeblend-1gCFHvLukjcmK6imbIAFLY2d/" frameborder="0" width="100%"
             height="100%"></iframe>
     </div>
 
@@ -1135,6 +1158,31 @@
                 });
             });
         }
+    </script>
+
+    <!-- Spline Loader Fade-Out -->
+    <script>
+        (function() {
+            const splineIframe = document.getElementById('spline-iframe');
+            const loader = document.getElementById('spline-loader');
+
+            if (splineIframe && loader) {
+                splineIframe.addEventListener('load', function() {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 1000);
+                });
+
+                // Fallback: Hide loader after 8 seconds regardless
+                setTimeout(() => {
+                    if (loader.style.display !== 'none') {
+                        loader.style.opacity = '0';
+                        setTimeout(() => loader.style.display = 'none', 1000);
+                    }
+                }, 8000);
+            }
+        })();
     </script>
 </body>
 

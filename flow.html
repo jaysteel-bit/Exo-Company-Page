@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FLOW OS Systems — Hero</title>
 
+  <!-- Spline Preconnect for faster loading (PRIORITY) -->
+  <link rel="preconnect" href="https://my.spline.design">
+  <link rel="dns-prefetch" href="https://my.spline.design">
+
   <!-- PostHog Analytics -->
   <script>
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
@@ -95,6 +99,16 @@ Sequence animation intro. Usage:
         transform: translateY(0);
         filter: blur(0px);
       }
+    }
+
+    /* Spline Loader Animations */
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
     }
   </style>
   <script>
@@ -409,18 +423,43 @@ Sequence animation intro. Usage:
     </div>
   </div>
   <!-- HERO SECTION - Exo Flow OS -->
-  <!-- Spline 3D Background - Hero Only -->
-  <div class="absolute top-0 left-0 w-full h-full -z-10" id="spline-container" style="display: block;">
-    <iframe src="https://my.spline.design/orbit-XDLATgFZPQX6SO6dgJGqPwHD/" frameborder="0" width="100%" height="100%"
-      loading="lazy"></iframe>
+  <!-- Spline Loading Placeholder - Priority Hero -->
+  <div id="flow-spline-loader" class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-950/30 via-neutral-950 to-neutral-950 flex items-center justify-center transition-opacity duration-700">
+    <div class="text-center">
+      <img src="./logos/LOGO%20MARK.png" alt="Loading..." class="w-20 h-20 mx-auto mb-6 opacity-80" style="animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;">
+      <div class="w-10 h-10 border-2 border-white/30 border-t-blue-500 rounded-full mx-auto" style="animation: spin 1s linear infinite;"></div>
+      <p class="text-white/40 text-xs mt-4 tracking-wider uppercase">Loading Experience</p>
+    </div>
   </div>
+
+  <!-- Spline 3D Background - Hero Only (Priority Loading) -->
+  <div class="absolute top-0 left-0 w-full h-full -z-10" id="spline-container">
+    <iframe id="flow-spline-iframe" src="https://my.spline.design/orbit-XDLATgFZPQX6SO6dgJGqPwHD/" frameborder="0" width="100%" height="100%"></iframe>
+  </div>
+
+  <!-- Spline Loader Fade-Out -->
   <script>
-          // Lazy load Spline after hero content renders
-          window.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function () {
-              document.getElementById('spline-container').style.display = 'block';
-            }, 800); // Load after 800ms
+    (function() {
+      const splineIframe = document.getElementById('flow-spline-iframe');
+      const loader = document.getElementById('flow-spline-loader');
+
+      if (splineIframe && loader) {
+        splineIframe.addEventListener('load', function() {
+          loader.style.opacity = '0';
+          setTimeout(() => {
+            loader.style.display = 'none';
+          }, 700);
         });
+
+        // Fallback: Hide loader after 6 seconds (shorter for hero priority)
+        setTimeout(() => {
+          if (loader.style.display !== 'none') {
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 700);
+          }
+        }, 6000);
+      }
+    })();
   </script>
 
   <div class="relative h-screen overflow-hidden">
