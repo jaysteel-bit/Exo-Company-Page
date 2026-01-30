@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo Enterprise | Scale Your Business</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Urbanist:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- PostHog Analytics -->
+    <script>
+        !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+        posthog.init('phc_N1Clw6iwKeyIqhNrxd1cejjCuvKXPtW17bn9h6ZUw9b', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2025-11-30'
+        })
+    </script>
+
+    <!-- Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Urbanist', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .text-emerald-ex {
+            color: #10b981;
+        }
+
+        .bg-emerald-ex {
+            background-color: #10b981;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-neutral-900 min-h-screen flex flex-col">
+
+    <!-- Hero Section -->
+    <main class="flex-grow flex flex-col items-center pt-20 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+
+        <!-- Success Icon -->
+        <div class="mb-8 relative">
+            <div class="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center relative z-10">
+                <i data-lucide="arrow-down" class="w-10 h-10 text-emerald-600 stroke-[1.5]"></i>
+            </div>
+            <!-- Pulse Glow -->
+            <div class="absolute inset-0 bg-emerald-100/50 rounded-full animate-ping opacity-75"></div>
+        </div>
+
+        <!-- Headquarters Message -->
+        <h1 class="text-4xl sm:text-5xl font-bold text-center mb-6 tracking-tight text-neutral-900 serif">
+            Application Received.<br>The Change Begins.
+        </h1>
+
+        <p class="text-lg sm:text-xl text-neutral-600 text-center max-w-2xl leading-relaxed mb-4">
+            You've taken the first step toward operational sovereignty. We review every application carefully.
+        </p>
+
+        <div
+            class="bg-neutral-50 px-4 py-2 rounded-full border border-neutral-200 inline-flex items-center gap-2 mb-16">
+            <i data-lucide="lock" class="w-4 h-4 text-emerald-600"></i>
+            <span class="text-sm font-medium text-neutral-600 tracking-wide uppercase">Exclusivity: We accept 10% of
+                partners</span>
+        </div>
+
+        <!-- Process Timeline -->
+        <div class="w-full max-w-5xl mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
+                <!-- Connector Line (Desktop) -->
+                <div class="hidden md:block absolute top-6 left-0 w-full h-0.5 bg-neutral-100 -z-10"></div>
+
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4 shadow-lg shadow-emerald-200">
+                        1</div>
+                    <h3 class="font-bold text-lg mb-2">Book Discovery</h3>
+                    <p class="text-sm text-neutral-500 leading-snug">Claim your 15-min slot below to secure your
+                        priority review. <strong class="text-black">Click AI Assessment to book your slot.</strong></p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-12 h-12 bg-white border-2 border-neutral-200 text-neutral-400 rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                        2</div>
+                    <h3 class="font-semibold text-lg mb-2 text-neutral-700">Prep Email</h3>
+                    <p class="text-sm text-neutral-500 leading-snug">Receive a brief intake form to profile your
+                        operations. <strong class="text-black">This helps us understand your current state and identify
+                            areas for
+                            improvement.</strong></p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-12 h-12 bg-white border-2 border-neutral-200 text-neutral-400 rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                        3</div>
+                    <h3 class="font-semibold text-lg mb-2 text-neutral-700">Discovery Session</h3>
+                    <p class="text-sm text-neutral-500 leading-snug">Our Architects assess if you're ready for
+                        transformation. <strong class="text-black">We'll provide a clear path forward and the free tools
+                            you need to
+                            succeed.</strong></p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-12 h-12 bg-white border-2 border-neutral-200 text-neutral-400 rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                        4</div>
+                    <h3 class="font-semibold text-lg mb-2 text-neutral-700">Decision</h3>
+                    <p class="text-sm text-neutral-500 leading-snug"><strong class="text-black">Access granted or denied
+                            within 1 hour. No
+                            more
+                            waiting to succeed.</strong></p>
+                </div>
+
+                <!-- Step 5 (Dream Outcome)-->
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="w-12 h-12 bg-emerald-50 border-2 border-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold text-lg mb-4">
+                        <i data-lucide="star" class="w-5 h-5 fill-emerald-600/20"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-emerald-800">Transformation</h3>
+                    <p class="text-sm text-neutral-500 leading-snug"><strong class="text-black">Operational sovereignty
+                            with minimal effort
+                            or
+                            sacrifice.</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- What To Expect Box -->
+        <div
+            class="bg-neutral-50 border border-neutral-200 rounded-2xl p-8 max-w-3xl w-full mb-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
+            <div class="flex-1">
+                <h4 class="serif text-2xl font-semibold mb-2">The Discovery Call</h4>
+                <p class="text-neutral-600">You'll speak directly with an Exo Systems Architect. No fluff—just a raw
+                    assessment of your operational bottlenecks and our capacity to solve them.</p>
+            </div>
+            <div class="flex gap-4 text-left">
+                <div class="bg-white p-4 rounded-xl border border-neutral-100 shadow-sm min-w-[140px]">
+                    <span class="block text-xs uppercase tracking-wider text-neutral-400 mb-1">Time</span>
+                    <span class="font-bold text-neutral-900">15 Minutes</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-neutral-100 shadow-sm min-w-[140px]">
+                    <span class="block text-xs uppercase tracking-wider text-neutral-400 mb-1">Format</span>
+                    <span class="font-bold text-neutral-900">Call Audit</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendly Section -->
+        <div
+            class="w-full max-w-6xl mx-auto bg-white rounded-xl shadow-2xl shadow-neutral-200/50 overflow-hidden border border-neutral-100">
+            <!-- Calendly inline widget with prefill -->
+            <div id="calendly-embed" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-100 bg-white py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+
+            <!-- Logo area -->
+            <div class="flex items-center gap-3">
+                <img src="./logos/LOGO MARK.png" alt="Exo" class="w-8 h-8 opacity-80 grayscale">
+                <span class="font-bold text-neutral-900 tracking-tight">Exo Enterprise</span>
+            </div>
+
+            <!-- Security Badge -->
+            <div class="flex items-center gap-2 px-4 py-1.5 bg-neutral-50 rounded-full border border-neutral-200">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="text-xs font-semibold text-neutral-600 uppercase tracking-wider">Steel Protocol Security
+                    Active</span>
+            </div>
+
+            <!-- Support -->
+            <div class="text-sm text-neutral-500">
+                Have a question before your call? <a href="mailto:support@exo.enterprise"
+                    class="text-emerald-600 font-semibold hover:underline">Contact Support</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Init Scripts -->
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Celebration Confetti
+        window.addEventListener('load', () => {
+            // Initial burst
+            const duration = 6000;
+            const end = Date.now() + duration;
+
+            (function frame() {
+                // launch a few confetti from the left edge
+                confetti({
+                    particleCount: 2,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#10b981', '#3b82f6', '#8b5cf6', '#fbbf24']
+                });
+                // and launch a few from the right edge
+                confetti({
+                    particleCount: 2,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#10b981', '#3b82f6', '#8b5cf6', '#fbbf24']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        });
+
+        // Calendly Prefill Integration
+        function initCalendlyWithPrefill() {
+            // Ensure Calendly script has loaded
+            if (typeof Calendly === "undefined") {
+                setTimeout(initCalendlyWithPrefill, 100);
+                return;
+            }
+
+            // Restore lead data from sessionStorage
+            let lead = null;
+            try {
+                const raw = sessionStorage.getItem("exo_lead_data");
+                if (raw) {
+                    lead = JSON.parse(raw);
+                    console.log("Lead data restored for Calendly prefill:", lead);
+                }
+            } catch (e) {
+                console.error("Failed to parse lead data", e);
+            }
+
+            const firstName = lead?.firstName || "";
+            const lastName = lead?.lastName || "";
+            const email = lead?.email || "";
+
+            const fullName = [firstName, lastName].filter(Boolean).join(" ");
+
+            // Initialize Calendly with prefill
+            Calendly.initInlineWidget({
+                url: "https://calendly.com/exo-flowos?hide_landing_page_details=1&hide_gdpr_banner=1",
+                parentElement: document.getElementById("calendly-embed"),
+                prefill: {
+                    name: fullName,
+                    email: email
+                }
+            });
+
+            console.log("Calendly initialized with prefill:", { name: fullName, email: email });
+        }
+
+        // Kick off Calendly initialization after page load
+        window.addEventListener("load", initCalendlyWithPrefill);
+    </script>
+
+</body>
+
+</html>
