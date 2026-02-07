@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steel by Exo | Access Redefined</title>
-    <meta name="description" content="Steel by Exo. The definitive identity ecosystem for the exceptional. Seamless access, curated connections, and absolute control. Invitation-only.">
+    <meta name="description"
+        content="Steel by Exo. The definitive identity ecosystem for the exceptional. Seamless access, curated connections, and absolute control. Invitation-only.">
     <meta property="og:title" content="Steel by Exo | Access Redefined">
     <meta property="og:description" content="The definitive identity ecosystem for the exceptional. Invitation-only.">
     <meta property="og:type" content="website">
@@ -167,6 +168,10 @@
         <section class="w-full max-w-sm mx-auto pt-8">
             <form id="waitlist-form" class="space-y-4">
                 <div class="relative group">
+                    <input type="text" id="firstName" required placeholder="First name"
+                        class="w-full px-4 py-3.5 glass-input rounded-lg text-white placeholder-neutral-500 focus:ring-1 focus:ring-white/20 text-sm transition-all">
+                </div>
+                <div class="relative group">
                     <input type="email" id="email" required placeholder="Enter your email"
                         class="w-full px-4 py-3.5 glass-input rounded-lg text-white placeholder-neutral-500 focus:ring-1 focus:ring-white/20 text-sm transition-all">
                 </div>
@@ -246,12 +251,17 @@
                 e.preventDefault();
 
                 const email = document.getElementById('email').value.trim();
+                const firstName = document.getElementById('firstName').value.trim();
                 const btn = form.querySelector('button');
                 const originalHTML = btn.innerHTML;
 
                 // Basic validation
                 if (!email || !email.includes('@')) {
                     alert('Please enter a valid email address.');
+                    return;
+                }
+                if (!firstName) {
+                    alert('Please enter your first name.');
                     return;
                 }
 
@@ -262,7 +272,7 @@
                 try {
                     // 1. Save lead to Convex database
                     await client.mutation("leads:submitLead", {
-                        firstName: "Steel",
+                        firstName: firstName,
                         lastName: "Waitlist",
                         email: email
                     });
@@ -271,6 +281,7 @@
                     // Fire-and-forget: don't block UX on Mailchimp
                     client.action("mailchimp:addSubscriber", {
                         email: email,
+                        firstName: firstName,
                         brandType: "steel_b2c"
                     }).catch(err => console.error("Mailchimp sync error:", err));
 
