@@ -41,8 +41,8 @@ function getBrandConfig(brandType: "exo_b2b" | "steel_b2c") {
 export const addSubscriber = action({
     args: {
         email: v.string(),
-        firstName: v.string(),
-        lastName: v.string(),
+        firstName: v.optional(v.string()),
+        lastName: v.optional(v.string()),
         brandType: v.union(v.literal("exo_b2b"), v.literal("steel_b2c")),
         // B2B-specific optional fields
         company: v.optional(v.string()),
@@ -67,10 +67,9 @@ export const addSubscriber = action({
             });
 
             // Build merge fields based on brand type
-            const mergeFields: Record<string, string> = {
-                FNAME: args.firstName,
-                LNAME: args.lastName,
-            };
+            const mergeFields: Record<string, string> = {};
+            if (args.firstName) mergeFields.FNAME = args.firstName;
+            if (args.lastName) mergeFields.LNAME = args.lastName;
 
             if (args.phone) mergeFields.PHONE = args.phone;
 

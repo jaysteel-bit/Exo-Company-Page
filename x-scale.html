@@ -4,7 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exo Enterprise | Department Transformation</title>
+    <title>Exo Enterprise | Department Transformation Program</title>
+    <meta name="description" content="Join our Department Transformation Program. We install a self-running AI department in your company in 90 days. Limited to 8 partners per month.">
+    <meta property="og:title" content="Exo Enterprise | Department Transformation Program">
+    <meta property="og:description" content="We install a self-running AI department in your company in 90 days.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/logos/LOGO%20MARK.png">
+    <link rel="icon" type="image/png" href="/logos/LOGO%20MARK.png">
 
     <!-- Spline Preconnect for faster loading -->
     <link rel="preconnect" href="https://my.spline.design">
@@ -902,6 +908,15 @@
                         investmentCapability: invest,
                         priceQualifier: price
                     });
+
+                    // Sync to Mailchimp (B2B audience)
+                    client.action("mailchimp:addSubscriber", {
+                        email,
+                        firstName,
+                        lastName,
+                        brandType: "exo_b2b",
+                        phone
+                    }).catch(err => console.error("Mailchimp sync error:", err));
 
                     // Success - Redirect to thank you page
                     submitBtn.innerText = "REDIRECTING...";

@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exo Enterprise | Home</title>
+    <title>Exo Enterprise | Building Self-Running Enterprises</title>
+    <meta name="description" content="We install complete AI-powered departments, run them until they're flawless, then transfer ownership to you. 90-day operational sovereignty.">
+    <meta property="og:title" content="Exo Enterprise | Building Self-Running Enterprises">
+    <meta property="og:description" content="We install complete AI-powered departments, run them until they're flawless, then transfer ownership to you.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/logos/LOGO%20MARK.png">
+    <link rel="icon" type="image/png" href="/logos/LOGO%20MARK.png">
 
     <!-- Spline Preconnect for faster loading -->
     <link rel="preconnect" href="https://my.spline.design">
@@ -325,7 +331,7 @@
                 <a href="#how-it-works" class="hover:text-white transition-colors">Process</a>
                 <a href="#departments" class="hover:text-white transition-colors">Departments</a>
                 <a href="firm.html" class="hover:text-white transition-colors">About the Firm</a>
-                <a href="#careers" class="hover:text-white transition-colors">Careers</a>
+                <a href="/careers.html" class="hover:text-white transition-colors">Careers</a>
             </div>
 
             <!-- CTA -->
@@ -1146,11 +1152,19 @@
                         email
                     });
 
-                    // 2. Save to Session for the next page
+                    // 2. Sync to Mailchimp (B2B audience)
+                    client.action("mailchimp:addSubscriber", {
+                        email,
+                        firstName,
+                        lastName,
+                        brandType: "exo_b2b"
+                    }).catch(err => console.error("Mailchimp sync error:", err));
+
+                    // 3. Save to Session for the next page
                     const leadData = { firstName, lastName, email };
                     sessionStorage.setItem('exo_lead_data', JSON.stringify(leadData));
 
-                    // 3. Redirect to X-Scale page
+                    // 4. Redirect to X-Scale page
                     window.location.href = "x-scale.html";
 
                 } catch (error) {
