@@ -9,6 +9,7 @@
  */
 
 import type * as leads from "../leads.js";
+import type * as mailchimp from "../mailchimp.js";
 import type * as test from "../test.js";
 
 import type {
@@ -19,6 +20,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   leads: typeof leads;
+  mailchimp: typeof mailchimp;
   test: typeof test;
 }>;
 
