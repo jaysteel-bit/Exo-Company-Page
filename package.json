@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "browser-sync start --server --port 3000 --files \"*.html, js/*.js\""
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,11 @@
   },
   "homepage": "https://github.com/jaysteel-bit/Exo-Company-Page#readme",
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "@remotion/player": "^4.0.419",
     "convex": "^1.31.6"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
   }
 }

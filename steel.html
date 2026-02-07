@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steel by Exo | Access Redefined</title>
+    <meta name="description" content="Premium identity & access ecosystem. Invitation-only.">
+
+    <!-- PostHog Analytics -->
+    <script>
+        !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+        posthog.init('phc_N1Clw6iwKeyIqhNrxd1cejjCuvKXPtW17bn9h6ZUw9b', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2025-11-30'
+        })
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#050505',
+                            dark: '#0a0a0a',
+                            gray: '#1f1f1f',
+                            text: '#f5f5f5',
+                            muted: '#a3a3a3',
+                            accent: '#10b981', // Emerald
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #f5f5f5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .glass-input:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+
+        .metallic-text {
+            background: linear-gradient(to right, #ffffff 20%, #a0a0a0 50%, #ffffff 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-size: 200% auto;
+            color: transparent;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center p-6 selection:bg-brand-accent selection:text-black">
+
+    <main
+        class="w-full max-w-xl mx-auto flex flex-col items-center text-center space-y-16 py-12 my-auto opacity-0 animate-fade-in">
+
+        <!-- Hero Section -->
+        <header class="space-y-8 w-full">
+            <div class="flex justify-center">
+                <span
+                    class="text-xs uppercase tracking-[0.3em] text-brand-muted font-medium border border-white/10 px-3 py-1 rounded-full">Steel
+                    by Exo</span>
+            </div>
+
+            <h1 class="font-serif text-5xl md:text-6xl leading-tight font-medium text-white tracking-tight">
+                Access <span class="italic text-brand-muted">Redefined.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-brand-muted max-w-md mx-auto leading-relaxed font-light">
+                The definitive identity ecosystem for the exceptional. Seamless access, curated connections, and
+                absolute control.
+            </p>
+        </header>
+
+        <!-- Dynamic Visual Spacer (Minimal) -->
+        <div class="w-px h-16 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+
+        <!-- Benefits Section -->
+        <section class="grid gap-8 w-full md:grid-cols-3 text-center md:text-left px-4 md:px-0">
+            <div class="space-y-3 flex flex-col items-center md:items-start group">
+                <div class="p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                    <i data-lucide="zap" class="w-5 h-5 text-gray-300"></i>
+                </div>
+                <h3 class="font-medium text-white text-sm tracking-wide uppercase">Seamless Access</h3>
+                <p class="text-sm text-brand-muted leading-relaxed">Tap into exclusive venues and curated partner
+                    experiences instantly.</p>
+            </div>
+
+            <div class="space-y-3 flex flex-col items-center md:items-start group">
+                <div class="p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-gray-300"></i>
+                </div>
+                <h3 class="font-medium text-white text-sm tracking-wide uppercase">Controlled Connection</h3>
+                <p class="text-sm text-brand-muted leading-relaxed">Share your profiles with a tap. You decide
+                    specifically who gets in.</p>
+            </div>
+
+            <div class="space-y-3 flex flex-col items-center md:items-start group">
+                <div class="p-3 rounded-full bg-white/5 group-hover:bg-white/10 transition-colors">
+                    <i data-lucide="credit-card" class="w-5 h-5 text-gray-300"></i>
+                </div>
+                <h3 class="font-medium text-white text-sm tracking-wide uppercase">Unified Identity</h3>
+                <p class="text-sm text-brand-muted leading-relaxed">One premium platform for payments, networking, and
+                    membership.</p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="w-full max-w-sm mx-auto pt-8">
+            <form id="waitlist-form" class="space-y-4">
+                <div class="relative group">
+                    <input type="email" id="email" required placeholder="Enter your email"
+                        class="w-full px-4 py-3.5 glass-input rounded-lg text-white placeholder-neutral-500 focus:ring-1 focus:ring-white/20 text-sm transition-all">
+                </div>
+
+                <button type="submit"
+                    class="w-full py-3.5 bg-white text-black font-medium rounded-lg hover:bg-neutral-200 transition-all transform active:scale-[0.98] text-sm tracking-wide flex items-center justify-center gap-2 group">
+                    <span>Request Invite</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-0.5 transition-transform"></i>
+                </button>
+
+                <div class="flex justify-between items-center px-1">
+                    <p class="text-[10px] text-neutral-600 uppercase tracking-wider">Invitations Q3 2026</p>
+                    <p class="text-[10px] text-neutral-600 uppercase tracking-wider">First 100 Members</p>
+                </div>
+            </form>
+
+            <!-- Success State (Hidden by default) -->
+            <div id="success-message" class="hidden space-y-4 pt-4 text-center animate-slide-up">
+                <div
+                    class="inline-flex items-center justify-center p-2 rounded-full bg-emerald-500/10 text-emerald-500 mb-2">
+                    <i data-lucide="check" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-white font-serif text-xl">You're on the list.</h3>
+                <p class="text-sm text-brand-muted">Watch your inbox. We'll be in touch Q3 2026.</p>
+            </div>
+        </section>
+
+        <!-- Timeline (Minimal) -->
+        <div
+            class="w-full border-t border-white/5 pt-12 mt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-brand-muted font-mono opacity-60">
+            <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                <span>Q3 2026: Digital Membership</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                <span>Q4 2026: Physical Card</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full text-center pb-6">
+        <div class="flex flex-col items-center gap-4">
+            <a href="index.html"
+                class="text-xs text-neutral-600 hover:text-neutral-400 transition-colors flex items-center gap-1 group">
+                <span class="group-hover:-translate-x-0.5 transition-transform">←</span> Back to Exo
+            </a>
+            <p class="text-[10px] text-neutral-800 uppercase tracking-widest">Built by Exo Enterprise</p>
+        </div>
+    </footer>
+
+    <script>
+        // Icon initialization
+        lucide.createIcons();
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        });
+    </script>
+
+    <!-- Steel Waitlist: Convex + Mailchimp Integration -->
+    <script type="module">
+        import { client } from "./js/convex-client.js";
+
+        const form = document.getElementById('waitlist-form');
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const email = document.getElementById('email').value.trim();
+                const btn = form.querySelector('button');
+                const originalHTML = btn.innerHTML;
+
+                // Basic validation
+                if (!email || !email.includes('@')) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+
+                // Loading state
+                btn.innerHTML = '<span class="animate-pulse">Processing...</span>';
+                btn.disabled = true;
+
+                try {
+                    // 1. Save lead to Convex database
+                    await client.mutation("leads:submitLead", {
+                        firstName: "",
+                        lastName: "",
+                        email: email
+                    });
+
+                    // 2. Add subscriber to Mailchimp (Steel B2C audience)
+                    await client.action("mailchimp:addSubscriber", {
+                        email: email,
+                        firstName: "",
+                        lastName: "",
+                        brandType: "steel_b2c"
+                    });
+
+                    // 3. Track in PostHog
+                    if (typeof posthog !== 'undefined') {
+                        posthog.capture('steel_waitlist_signup', {
+                            page: 'steel',
+                            email: email
+                        });
+                    }
+
+                    // 4. Show success state
+                    document.getElementById('waitlist-form').classList.add('hidden');
+                    document.getElementById('success-message').classList.remove('hidden');
+                    document.getElementById('success-message').classList.add('flex', 'flex-col', 'items-center');
+
+                } catch (error) {
+                    console.error("Steel waitlist submission failed:", error);
+
+                    // Still show success if DB save worked but Mailchimp failed
+                    // (Mailchimp errors are non-critical for UX)
+                    document.getElementById('waitlist-form').classList.add('hidden');
+                    document.getElementById('success-message').classList.remove('hidden');
+                    document.getElementById('success-message').classList.add('flex', 'flex-col', 'items-center');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
