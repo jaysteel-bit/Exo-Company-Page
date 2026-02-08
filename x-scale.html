@@ -918,6 +918,10 @@
                         phone
                     }).catch(err => console.error("Mailchimp sync error:", err));
 
+                    // Save to sessionStorage for Calendly pre-fill on thank-you page
+                    const leadData = { firstName, lastName, email };
+                    sessionStorage.setItem('exo_lead_data', JSON.stringify(leadData));
+
                     // Success - Redirect to thank you page
                     submitBtn.innerText = "REDIRECTING...";
                     submitBtn.classList.replace('bg-emerald-500', 'bg-emerald-600');
