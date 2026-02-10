@@ -179,7 +179,7 @@
 
                 <!-- Verification State -->
                 <div id="verification"
-                    class="absolute inset-0 flex flex-col items-center justify-center space-y-12 opacity-0">
+                    class="absolute inset-0 flex flex-col items-center justify-center space-y-12 opacity-0 pointer-events-none">
                     <div id="orb-active" class="w-64 h-64 rounded-full relative">
                         <div class="scan-line" id="scan-line"></div>
                     </div>
@@ -194,7 +194,7 @@
 
                 <!-- Profile Unlocked State -->
                 <div id="profile"
-                    class="absolute inset-0 flex flex-col items-center justify-center space-y-8 opacity-0 px-8">
+                    class="absolute inset-0 flex flex-col items-center justify-center space-y-8 opacity-0 px-8 pointer-events-none">
                     <div class="glass rounded-2xl p-8 w-full text-center space-y-6">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Rivera"
                             class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-brand-accent/50 shadow-2xl">
@@ -323,14 +323,14 @@
         // Unlock Sequence
         const tl = gsap.timeline({ paused: true });
         tl.to('#locked', { opacity: 0, duration: 0.6 })
-            .to('#verification', { opacity: 1, duration: 0.8 }, '-=0.3')
+            .to('#verification', { opacity: 1, duration: 0.8, pointerEvents: 'auto' }, '-=0.3')
             .to('.pin-field', {
                 backgroundColor: '#10b981', borderColor: '#10b981', stagger: 0.4, duration: 0.4
             }, '-=0.5')
             .to('#scan-line', { opacity: 1, top: '0%', duration: 1.2 }, '-=0.8')
-            .to('#verification', { opacity: 0, duration: 0.8 })
+            .to('#verification', { opacity: 0, pointerEvents: 'none', duration: 0.8 })
             .to('#profile', {
-                opacity: 1, duration: 1.2, onComplete: () => {
+                opacity: 1, pointerEvents: 'auto', duration: 1.2, onComplete: () => {
                     gsap.from('#profile > .glass > *', { y: 20, opacity: 0, stagger: 0.1, duration: 0.8 });
                 }
             }, '-=0.5');
