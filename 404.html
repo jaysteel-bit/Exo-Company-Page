@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Exo Enterprise</title>
+
+    <!-- Fonts: Urbanist (Exo) & Playfair Display (Steel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Urbanist', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            900: '#064e3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #f5f5f5;
+            overflow: hidden;
+            /* Prevent scrollbars from canvas */
+        }
+    </style>
+</head>
+
+<body class="w-full h-screen relative flex justify-center items-center">
+
+    <!-- 1. Background Animation (Canvas) -->
+    <canvas id="circle-animation" class="absolute inset-0 w-full h-full z-0"></canvas>
+
+    <!-- 2. Message Display -->
+    <div id="message-container"
+        class="absolute flex flex-col justify-center items-center w-[90%] h-[90%] z-10 transition-opacity duration-1000 opacity-0">
+        <div class="flex flex-col items-center text-center">
+
+            <!-- Branding Tag -->
+            <div class="mb-6 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-lg">
+                <span class="text-[10px] uppercase font-medium text-emerald-500 tracking-[0.2em]"
+                    style="text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 1px 1px rgba(0,0,0,0.75);">Exo Enterprise</span>
+            </div>
+
+            <div class="text-4xl md:text-[50px] font-semibold text-white/90 mb-2 tracking-tight"
+                style="text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 1px 1px rgba(0,0,0,0.75);">
+                Page Not Found
+            </div>
+
+            <div class="text-[100px] md:text-[150px] font-serif font-bold text-white/30 leading-none select-none"
+                style="text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 1px 1px rgba(0,0,0,0.75);">
+                404
+            </div>
+
+            <div class="text-base md:text-lg text-neutral-900 max-w-md mx-auto mt-6 font-light leading-relaxed">
+                You didn’t break the internet, but we couldn’t find what you are looking for. Let’s get you back
+                on track to Becoming Extraordinary.
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 mt-10">
+                <button onclick="history.back()"
+                    class="group px-8 py-3 bg-transparent border border-emerald-500/30 text-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 rounded-lg flex items-center justify-center gap-2 hover:scale-105">
+                    <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+                    <span>Go Back</span>
+                </button>
+
+                <button onclick="window.location.href='index.html'"
+                    class="group px-8 py-3 bg-emerald-500 text-black font-medium hover:bg-emerald-400 transition-all duration-300 rounded-lg flex items-center justify-center gap-2 hover:scale-105 shadow-[0_0_20px_-5px_rgba(16,185,129,0.3)]">
+                    <i data-lucide="home" class="w-4 h-4"></i>
+                    <span>Go Home</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // ---------------------------------------------------------
+        // logic 1: Message Display Fade In
+        // ---------------------------------------------------------
+        document.addEventListener('DOMContentLoaded', () => {
+            const messageContainer = document.getElementById('message-container');
+            setTimeout(() => {
+                messageContainer.classList.remove('opacity-0');
+                messageContainer.classList.add('opacity-100');
+            }, 500); // Slightly faster than 1200ms for better UX
+        });
+
+        // ---------------------------------------------------------
+        // logic 2: Circle Animation (Ported from React)
+        // ---------------------------------------------------------
+        const canvas = document.getElementById('circle-animation');
+        const context = canvas.getContext('2d');
+
+        let animationFrameId;
+        let timer = 0;
+        let circles = [];
+
+        function initCircles() {
+            circles = [];
+            // Create 300 circles
+            for (let index = 0; index < 300; index++) {
+                // Random position logic from original code
+                // x: random between (width * 1.2) and (width * 3) -> starts off-screen right
+                const randomX = Math.floor(
+                    Math.random() * ((canvas.width * 3) - (canvas.width * 1.2) + 1)
+                ) + (canvas.width * 1.2);
+
+                // y: random between (height * -0.2) and (height)
+                const randomY = Math.floor(
+                    Math.random() * ((canvas.height) - (canvas.height * (-0.2) + 1))
+                ) + (canvas.height * (-0.2));
+
+                const size = canvas.width / 1000; // Base size relative to width
+
+                circles.push({ x: randomX, y: randomY, size });
+            }
+        }
+
+        function draw() {
+            timer++;
+            context.setTransform(1, 0, 0, 1, 0, 0);
+
+            // Branding adjustment: Use a very subtle opacity for the circles so they don't distract
+            // or use specific brand colors if desired. The original used 'white'.
+            // Let's use a subtle emerald hint or just white with low opacity.
+            context.fillStyle = 'rgba(255, 255, 255, 0.5)';
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            const distanceX = canvas.width / 80; // Speed moving left
+            const growthRate = canvas.width / 1000;
+
+            circles.forEach((circle) => {
+                context.beginPath();
+
+                // Phase 1: Fast movement and growth
+                if (timer < 65) {
+                    circle.x = circle.x - distanceX;
+                    circle.size = circle.size + growthRate;
+                }
+
+                // Phase 2: Slow down
+                if (timer > 65 && timer < 500) {
+                    circle.x = circle.x - (distanceX * 0.02);
+                    circle.size = circle.size + (growthRate * 0.2);
+                }
+
+                context.arc(circle.x, circle.y, circle.size, 0, 360);
+                context.fill();
+            });
+
+            // Stop after 500 frames (approx 8 seconds at 60fps)
+            if (timer > 500) {
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                }
+                return;
+            }
+
+            animationFrameId = requestAnimationFrame(draw);
+        }
+
+        function handleResize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // Reset animation on resize
+            timer = 0;
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            // context.reset() is not supported in all browsers, use clearRect and manual reset if needed.
+            // But since we redraw every frame and setTransform in draw(), clearRect is enough.
+            context.clearRect(0, 0, canvas.width, canvas.height);
+
+            initCircles();
+            draw();
+        }
+
+        // Initialize
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initCircles();
+        draw();
+
+        // Event Listeners
+        window.addEventListener('resize', handleResize);
+
+    </script>
+</body>
+
+</html>
