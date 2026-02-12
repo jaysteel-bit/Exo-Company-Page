@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exo Resources | Access The Value Ladder</title>
+    <title>Exo | Free Resources</title>
     <meta name="description"
-        content="Access exclusive resources, frameworks, and insights from Exo Enterprise. Unlock the value ladder to scale your operations.">
-    <meta property="og:title" content="Exo Resources | Access The Value Ladder">
-    <meta property="og:description" content="Access exclusive resources and frameworks to scale your operations.">
+        content="Access exclusive resources, frameworks, and insights from Exo Enterprise. Unlock the value ladder to scale your business.">
+    <meta property="og:title" content="Exo | Free Resources">
+    <meta property="og:description" content="Access exclusive resources and frameworks to scale your business.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="/logos/LOGO%20MARK.png">
     <link rel="icon" type="image/png" href="/logos/LOGO%20MARK.png">
@@ -194,16 +194,17 @@
                 <div>
                     <span
                         class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium uppercase tracking-widest border border-emerald-500/20 mb-6">
-                        Exo Value Ladder
+                        Exo's Free Gifts
                     </span>
                     <h1
                         class="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight mb-6">
                         Unlock High-Leverage <br>
                         <span class="font-serif italic text-emerald-400">Operational Assets.</span>
                     </h1>
-                    <p class="text-lg text-neutral-400 leading-relaxed max-w-md">
-                        Stop guessing. Get the frameworks, SOP templates, and architectural blueprints we use to build
-                        self-running enterprises.
+                    <p class="text-lg text-white leading-relaxed max-w-md">
+                        Stop guessing. Get the frameworks, SOP templates, and advanced blueprints regularly released
+                        that we use to build
+                        self-running enterprises. <span class="text-emerald-300 font-bold">On Us.</span>
                     </p>
                 </div>
 
@@ -214,8 +215,8 @@
                             <iconify-icon icon="solar:document-add-linear" class="text-xl"></iconify-icon>
                         </div>
                         <div>
-                            <h3 class="text-white font-medium text-sm">Process Maps</h3>
-                            <p class="text-neutral-500 text-xs">Visual workflows for every department.</p>
+                            <h3 class="text-white font-medium font-bold text-sm">Process Maps</h3>
+                            <p class="text-white text-xs">Visual workflows for every department.</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-3">
@@ -224,8 +225,8 @@
                             <iconify-icon icon="solar:users-group-rounded-linear" class="text-xl"></iconify-icon>
                         </div>
                         <div>
-                            <h3 class="text-white font-medium text-sm">Hiring Archetypes</h3>
-                            <p class="text-neutral-500 text-xs">Job descriptions for the AI era.</p>
+                            <h3 class="text-white font-medium font-bold text-sm">Hiring Archetypes</h3>
+                            <p class="text-white text-xs">Job descriptions for the AI era.</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-3">
@@ -234,8 +235,20 @@
                             <iconify-icon icon="solar:graph-new-linear" class="text-xl"></iconify-icon>
                         </div>
                         <div>
-                            <h3 class="text-white font-medium text-sm">Audit Frameworks</h3>
-                            <p class="text-neutral-500 text-xs">Self-assess your operational bottlenecks.</p>
+                            <h3 class="text-white font-medium font-bold text-sm">Audit Frameworks</h3>
+                            <p class="text-white text-xs">Self-assess your operational bottlenecks.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 text-emerald-400">
+                            <iconify-icon icon="solar:arrow-right-up-linear" class="text-xl"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-medium font-bold text-sm"><span
+                                    class="text-emerald-300 font-bold">And Much More</span></h3>
+                            <p class="text-white text-xs">Videos, eBooks, Guides, Templates,<br>
+                                Downloads & more to help you succeed.</p>
                         </div>
                     </div>
                 </div>
@@ -245,7 +258,9 @@
             <div class="glass-panel p-8 md:p-10 rounded-3xl animate-slide-up" style="animation-delay: 0.2s;">
                 <div class="mb-8">
                     <h2 class="text-xl text-white font-serif italic mb-2">Get Instant Access</h2>
-                    <p class="text-sm text-neutral-400">Complete the profile below to unlock the library.</p>
+                    <p class="text-sm text-neutral-400">Complete the profile below to <span
+                            class="text-emerald-300 font-bold">unlock
+                            the library.</span></p>
                 </div>
 
                 <form id="lead-magnet-form" class="space-y-5">
@@ -353,7 +368,7 @@
                             <span
                                 class="text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors leading-snug">
                                 Send me free value updates on AI + Scaling. <br>
-                                <span class="text-[10px] text-neutral-500">(Low frequency, high value.
+                                <span class="text-[10px] text-neutral-500">(Low frequency, HIGH value.
                                     Unsubscribe
                                     anytime).</span>
                             </span>
@@ -441,7 +456,14 @@
         document.getElementById('lead-magnet-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // 1. Gather Data (including newsletter opt-in)
+            // 1. Validate Newsletter Opt-in
+            const newsletterOptIn = document.getElementById('newsletter');
+            if (!newsletterOptIn.checked) {
+                alert("Please confirm you'd like to receive the free resources.");
+                return;
+            }
+
+            // 2. Gather Data
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,

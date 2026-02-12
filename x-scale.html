@@ -160,8 +160,8 @@
         class="fixed top-0 left-0 w-full z-[9999] bg-emerald-950/95 backdrop-blur-md border-b border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.2)] transform -translate-y-full transition-transform duration-500 ease-out">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-center gap-3">
             <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-            <p class="text-sm font-medium text-emerald-100 tracking-wide text-center">
-                Access granted. Check your email for the gift in a moment.
+            <p class="text-sm font-medium text-emerald-100 tracking-wide text-center uppercase">
+                ACCESS GRANTED. CHECK YOUR EMAIL FOR THE GIFT IN A MOMENT.
             </p>
             <button onclick="document.getElementById('value-notification-banner').classList.add('-translate-y-full')"
                 class="ml-4 text-emerald-400 hover:text-emerald-200 transition-colors">
@@ -820,7 +820,7 @@
                 // Auto-hide
                 setTimeout(() => {
                     banner.classList.add('-translate-y-full');
-                }, 4000); // 4 seconds visibility
+                }, 5000); // 5 seconds visibility
             }
         }
         const rawData = sessionStorage.getItem('exo_lead_data');
