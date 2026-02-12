@@ -40,6 +40,10 @@
         href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&amp;family=Geist:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
         rel="stylesheet">
 
+    <!-- GSAP for Scroll Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <style>
         /* Base Styles */
         :root {
@@ -128,6 +132,97 @@
                 opacity: 1;
             }
         }
+
+        /* Spotlight Card */
+        .card-spotlight {
+            position: relative;
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            /* Matches glass-panel border */
+            background-color: #111;
+            /* User requested color */
+            overflow: hidden;
+            --mouse-x: 50%;
+            --mouse-y: 50%;
+            --spotlight-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .card-spotlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 80%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .card-spotlight:hover::before,
+        .card-spotlight:focus-within::before {
+            opacity: 0.6;
+        }
+
+        /* Stacked Cards Styles */
+        .stacked-cards-container {
+            position: relative;
+            background: #050505;
+            /* Match body bg */
+        }
+
+        .sticky-card-wrapper {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-content {
+            position: absolute;
+            width: 90%;
+            /* Default mobile width */
+            max-width: 400px;
+            /* Max width from example */
+            height: 500px;
+            border-radius: 45px;
+            transform-origin: center top;
+            will-change: transform;
+        }
+
+        /* Custom Card Gradient Styles from Example 1 */
+        .exo-card-bg {
+            background-image: linear-gradient(to bottom right, #080509, #1a171c, #080509);
+            background-clip: padding-box;
+            border: 2px solid transparent;
+            border-radius: 45px;
+            padding: 2.5rem;
+            /* p-10 */
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exo-card-border-gradient {
+            position: absolute;
+            inset: -2px;
+            /* absolute -inset-px */
+            border-radius: 45px;
+            z-index: -10;
+            background: linear-gradient(71deg, #110e0e, var(--card-color, #afa220), #110e0e);
+        }
+
+        @media (min-width: 768px) {
+            .card-content {
+                width: 400px;
+            }
+        }
     </style>
 </head>
 
@@ -163,8 +258,7 @@
             class="flex items-center gap-2 text-sm font-medium text-emerald-100 hover:text-white transition-colors group">
             <span class="font-['Urbanist'] tracking-wide"><span
                     class="inline-flex items-center justify-center bg-white text-emerald-950 text-[10px] font-bold px-2 py-0.5 rounded-full mr-2 leading-none">NEW</span>Slots
-                Open This Month: <strong>Transform Your Business
-                    Today</strong></span>
+                Open This Month: <strong>Transform Your Business</strong></span>
             <iconify-icon icon="solar:arrow-right-linear" width="16"
                 class="text-emerald-400 group-hover:translate-x-0.5 transition-transform"></iconify-icon>
         </a>
@@ -194,9 +288,9 @@
             </div>
 
             <!-- CTA -->
-            <a href="x-scale.html"
+            <a href="value.html"
                 class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-xs font-medium text-white">
-                <span class="">8 Spots Open This Month</span>
+                <span class="">Free Value</span>
                 <iconify-icon icon="solar:arrow-right-linear" width="16" class=""></iconify-icon>
             </a>
 
@@ -377,29 +471,64 @@
                 </div>
 
                 <!-- Graphic: Chaos vs Order -->
-                <div
-                    class="relative h-96 w-full glass-panel rounded-xl overflow-hidden flex items-center justify-center">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-purple-500/10"></div>
-                    <div class="grid grid-cols-2 gap-8 w-full max-w-md p-8">
-                        <div class="space-y-4 text-center opacity-40">
+                <!-- Graphic: Chaos vs Order (Spotlight Card) -->
+                <div class="card-spotlight w-full flex items-center justify-center p-8">
+                    <div class="grid grid-cols-[0.8fr_1.2fr] gap-8 w-full max-w-md relative z-10">
+                        <!-- Current State -->
+                        <div class="space-y-4 text-center opacity-40 flex flex-col justify-center">
                             <iconify-icon icon="solar:danger-triangle-linear" width="48"
                                 class="text-red-400 mx-auto"></iconify-icon>
                             <h3 class="text-sm font-semibold uppercase tracking-widest text-red-400">Current State</h3>
-                            <div class="text-xs text-neutral-500 space-y-1 font-mono">
-                                <p class="">Disparate Tools</p>
-                                <p class="">Siloed Data</p>
-                                <p class="">Manual Handoffs</p>
+                            <div class="text-xs text-neutral-500 space-y-2 font-mono">
+                                <p>Disparate Tools</p>
+                                <p>Siloed Data</p>
+                                <p>Manual Handoffs</p>
+                                <p>Fragmented Stack</p>
                             </div>
                         </div>
-                        <div class="space-y-4 text-center relative">
-                            <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-[1px] bg-white/20"></div>
+
+                        <!-- Exo State -->
+                        <div
+                            class="space-y-4 text-center relative border-l border-white/10 pl-8 flex flex-col items-center justify-center">
                             <iconify-icon icon="solar:check-circle-linear" width="48"
                                 class="text-emerald-400 mx-auto"></iconify-icon>
                             <h3 class="text-sm font-semibold uppercase tracking-widest text-emerald-400">Exo State</h3>
-                            <div class="text-xs text-neutral-300 space-y-1 font-mono">
-                                <p class="">Unified Logic</p>
-                                <p class="">Autonomous Agents</p>
-                                <p class="">Single Truth</p>
+
+                            <div class="text-xs text-neutral-300 space-y-4 font-mono w-full">
+                                <!-- Core System -->
+                                <div class="flex flex-col items-center">
+                                    <iconify-icon icon="solar:box-minimalistic-bold" class="text-emerald-400 mb-1"
+                                        width="20"></iconify-icon>
+                                    <p class="font-bold text-white mb-0.5">Flow OS & Custom Roadmap</p>
+                                    <p class="text-[10px] text-neutral-500">The Core System</p>
+                                </div>
+
+                                <!-- Bonuses Section -->
+                                <div class="pt-2 border-t border-white/5 w-full">
+                                    <p class="text-[10px] font-bold text-emerald-500/80 uppercase tracking-widest mb-3">
+                                        Bonuses</p>
+
+                                    <div class="space-y-3">
+                                        <div class="flex flex-col items-center">
+                                            <iconify-icon icon="solar:star-bold" class="text-emerald-400 mb-1"
+                                                width="16"></iconify-icon>
+                                            <p class="text-white font-medium">Exo Concierge</p>
+                                            <p class="text-[10px] text-neutral-500">On Standby</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <iconify-icon icon="solar:star-bold" class="text-emerald-400 mb-1"
+                                                width="16"></iconify-icon>
+                                            <p class="text-white font-medium">AI Knowledge Base</p>
+                                            <p class="text-[10px] text-neutral-500">Always On-Going</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <iconify-icon icon="solar:star-bold" class="text-emerald-400 mb-1"
+                                                width="16"></iconify-icon>
+                                            <p class="text-white font-medium">AI-Specific Add-Ons</p>
+                                            <p class="text-[10px] text-neutral-500">Custom Extensions</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -476,7 +605,7 @@
     </section>
 
     <!-- HOW IT WORKS (3-Phase Delivery) -->
-    <section id="how-it-works" class="py-24 bg-neutral-950 border-t border-white/5">
+    <section id="how-it-works" class="pt-24 pb-12 bg-neutral-950 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6">
             <div class="mb-16">
                 <h2 class="md:text-5xl text-3xl font-light text-white tracking-tight mb-6">We Build. We Run. <br> <span
@@ -555,7 +684,7 @@
             </div>
 
             <!-- Choose Your Path -->
-            <div class="mt-20">
+            <div class="mt-16">
                 <h3 class="text-center text-sm font-medium uppercase tracking-widest text-neutral-500 mb-10">Choose Your
                     Path</h3>
                 <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -578,79 +707,287 @@
                         <p class="text-xs text-neutral-500">We keep running the system as a service.</p>
                     </a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- PRODUCT LANES -->
-    <section id="products" class="py-24 bg-neutral-900/30 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl lg:text-5xl font-light tracking-tight text-white">The
-                    Compounding<br><span class="font-serif italic text-neutral-400">Capability Stack</span></h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Flow OS -->
-                <div
-                    class="hover:border-blue-500/50 transition-all group flex flex-col bg-neutral-950/50 h-full border-white/10 border rounded-xl pt-6 pr-6 pb-6 pl-6">
-                    <div class="mb-6"><iconify-icon icon="solar:widget-linear"
-                            class="text-3xl text-blue-500"></iconify-icon></div>
-                    <h3 class="text-lg font-medium text-white mb-2">Flow OS</h3>
-                    <p class="text-sm text-neutral-400 flex-grow mb-6">The operating system for operations. Project
-                        management execution.
-                    </p>
-                    <a href="#"
-                        class="inline-flex items-center text-xs font-semibold text-white group-hover:text-blue-400 transition-colors">
-                        View Demo <iconify-icon icon="solar:arrow-right-linear" class="ml-1"></iconify-icon>
-                    </a>
-                </div>
-
-                <!-- Deal OS -->
-                <div
-                    class="p-6 rounded-xl border border-white/10 bg-neutral-950/50 hover:border-teal-500/50 transition-all group flex flex-col h-full">
-                    <div class="mb-6"><iconify-icon icon="solar:wallet-money-linear"
-                            class="text-3xl text-teal-400"></iconify-icon></div>
-                    <h3 class="text-lg text-white font-medium mb-2">Deal OS</h3>
-                    <p class="text-sm text-neutral-400 flex-grow mb-6">Revenue intelligence engine. Automated pipeline
-                        management.</p>
-                    <a href="#"
-                        class="inline-flex items-center text-xs font-semibold text-white group-hover:text-teal-400 transition-colors">
-                        View Demo <iconify-icon icon="solar:arrow-right-linear" class="ml-1"></iconify-icon>
-                    </a>
-                </div>
-
-                <!-- Exo Academy -->
-                <div
-                    class="hover:border-blue-400/50 transition-all group flex flex-col bg-neutral-950/50 h-full border-white/10 border rounded-xl pt-6 pr-6 pb-6 pl-6">
-                    <div class="mb-6"><iconify-icon icon="solar:book-linear" class="text-3xl text-blue-400" width="30"
-                            height="30" style="color: rgb(192, 219, 254)"></iconify-icon></div>
-                    <h3 class="text-lg text-white font-medium mb-2">Exo Academy</h3>
-                    <p class="text-sm text-neutral-400 flex-grow mb-6">Knowledge transfer system. Training your team to
-                        run the machine.
-                    </p>
-                    <a href="#"
-                        class="inline-flex items-center group-hover:text-blue-200 transition-colors text-xs font-semibold text-white">
-                        Access Portal <iconify-icon icon="solar:arrow-right-linear" class="ml-1"></iconify-icon>
-                    </a>
-                </div>
-
-                <!-- Exo AI -->
-                <div
-                    class="p-6 rounded-xl border border-white/10 bg-neutral-950/50 hover:border-white/50 transition-all group flex flex-col h-full">
-                    <div class="mb-6"><iconify-icon icon="solar:stars-minimalistic-linear" class="text-3xl text-white"
-                            width="30" height="30" style="color: rgb(255, 255, 255)"></iconify-icon></div>
-                    <h3 class="text-lg font-medium text-white mb-2">Exo AI</h3>
-                    <p class="text-sm text-neutral-400 flex-grow mb-6">Compounding agent frameworks and neural
-                        processing cores.</p>
-                    <a href="#"
-                        class="inline-flex items-center text-xs font-semibold text-white group-hover:text-white transition-colors">
-                        Learn More <iconify-icon icon="solar:arrow-right-linear" class="ml-1"></iconify-icon>
-                    </a>
+                <!-- Scroll Indicator -->
+                <div class="flex justify-center animate-bounce opacity-80 mt-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"></path>
+                    </svg>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- STACKED CARDS SECTION -->
+    <section id="stacked-cards-section" class="stacked-cards-container">
+        <!-- Header -->
+        <div class="sticky top-0 h-[100vh] flex items-center justify-center z-0 pointer-events-none">
+            <div class="absolute inset-0 bg-neutral-950/80 z-0"></div> <!-- Dim background -->
+        </div>
+
+        <!-- Cards -->
+        <!-- Note: The HTML structure here is slightly different to accommodate the GSAP loop logic visually. 
+             We will create a long container that allows scrolling, and sticking cards. -->
+
+        <!-- WRAPPER FOR SCROLLING -->
+        <div id="cards-wrapper" class="relative z-10">
+            <!-- Hero / Title Card -->
+            <div class="h-screen flex items-center justify-center sticky top-0 bg-neutral-950">
+                <div id="stacked-title-content" class="text-center z-10 px-4">
+                    <p class="text-xs font-mono text-emerald-400 mb-4 tracking-widest">EXOSYSTEM</p>
+                    <h2 class="text-4xl md:text-6xl font-light text-white tracking-tight mb-6">
+                        The Compounding <br>
+                        <span class="font-serif italic text-neutral-500">Capability Stack</span>
+                    </h2>
+                    <p class="text-neutral-400 animate-bounce mt-8">Scroll to Explore 👇</p>
+                </div>
+
+                <!-- Background Grid Effect -->
+                <div class="absolute inset-0 z-0 opacity-20"
+                    style="background-image: linear-gradient(to right, rgba(79, 79, 79, 0.18) 1px, transparent 1px), linear-gradient(to bottom, rgba(79, 79, 79, 0.18) 1px, transparent 1px); background-size: 54px 54px; mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);">
+                </div>
+            </div>
+
+            <!-- Card 1: Exo Concierge Team -->
+            <div class="card-step h-screen sticky top-0 flex items-center justify-center">
+                <div class="card-content" style="--card-color: #fbbf24; z-index: 1;">
+                    <div class="exo-card-bg">
+                        <div class="exo-card-border-gradient"></div>
+
+                        <!-- Icon -->
+                        <div class="mb-8 relative">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-400/20 to-transparent flex items-center justify-center border border-amber-400/20">
+                                <iconify-icon icon="solar:users-group-two-rounded-bold-duotone"
+                                    class="text-4xl text-amber-400"></iconify-icon>
+                            </div>
+                            <!-- Decorative background glow -->
+                            <div class="absolute -inset-4 bg-amber-400/20 blur-2xl rounded-full -z-10 opacity-50"></div>
+                        </div>
+
+                        <p class="font-semibold text-white tracking-[-0.02em] leading-tight text-[28px] pb-4">
+                            Exo Concierge Team
+                        </p>
+                        <p class="font-medium leading-relaxed text-white/50 text-base">
+                            Your dedicated elite support squad. We don't just troubleshoot; we actively upgrade your
+                            team's capabilities and ensure smooth operation 24/7.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Flow OS -->
+            <div class="card-step h-screen sticky top-0 flex items-center justify-center">
+                <div class="card-content" style="--card-color: #3b82f6; z-index: 2;">
+                    <div class="exo-card-bg">
+                        <div class="exo-card-border-gradient"></div>
+                        <div class="mb-8 relative">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500/20 to-transparent flex items-center justify-center border border-blue-500/20">
+                                <iconify-icon icon="solar:widget-bold-duotone"
+                                    class="text-4xl text-blue-500"></iconify-icon>
+                            </div>
+                            <div class="absolute -inset-4 bg-blue-500/20 blur-2xl rounded-full -z-10 opacity-50"></div>
+                        </div>
+                        <p class="font-semibold text-white tracking-[-0.02em] leading-tight text-[28px] pb-4">Flow OS
+                        </p>
+                        <p class="font-medium leading-relaxed text-white/50 text-base">
+                            The core plugin that unifies your entire operation. Creates seamless cross-compatibility for
+                            all teams in one place—eliminating the need for hundreds of siloed apps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Deal OS -->
+            <div class="card-step h-screen sticky top-0 flex items-center justify-center">
+                <div class="card-content" style="--card-color: #10b981; z-index: 3;">
+                    <div class="exo-card-bg">
+                        <div class="exo-card-border-gradient"></div>
+                        <div class="mb-8 relative">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-transparent flex items-center justify-center border border-emerald-500/20">
+                                <iconify-icon icon="solar:wallet-money-bold-duotone"
+                                    class="text-4xl text-emerald-500"></iconify-icon>
+                            </div>
+                            <div class="absolute -inset-4 bg-emerald-500/20 blur-2xl rounded-full -z-10 opacity-50">
+                            </div>
+                        </div>
+                        <p class="font-semibold text-white tracking-[-0.02em] leading-tight text-[28px] pb-4">Deal OS
+                        </p>
+                        <p class="font-medium leading-relaxed text-white/50 text-base">
+                            Enhance Revenue, Profit, and Sales Training with an end-to-end Pipeline view. Automated
+                            intelligence that drives your bottom line.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Exo Academy (EXA) -->
+            <div class="card-step h-screen sticky top-0 flex items-center justify-center">
+                <div class="card-content" style="--card-color: #8b5cf6; z-index: 4;">
+                    <div class="exo-card-bg">
+                        <div class="exo-card-border-gradient"></div>
+                        <div class="mb-8 relative">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-500/20 to-transparent flex items-center justify-center border border-violet-500/20">
+                                <iconify-icon icon="solar:book-bookmark-bold-duotone"
+                                    class="text-4xl text-violet-500"></iconify-icon>
+                            </div>
+                            <div class="absolute -inset-4 bg-violet-500/20 blur-2xl rounded-full -z-10 opacity-50">
+                            </div>
+                        </div>
+                        <p class="font-semibold text-white tracking-[-0.02em] leading-tight text-[28px] pb-4">Exo
+                            Academy (EXA)</p>
+                        <p class="font-medium leading-relaxed text-white/50 text-base">
+                            Permanent institutional knowledge. Connects all departments with training that lasts
+                            forever. Many clients stay purely for EXA's immense helpfulness.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: AURA AI -->
+            <div class="card-step h-screen sticky top-0 flex items-center justify-center">
+                <div class="card-content" style="--card-color: #ec4899; z-index: 5;">
+                    <div class="exo-card-bg">
+                        <div class="exo-card-border-gradient"></div>
+                        <div class="mb-8 relative">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-pink-500/20 to-transparent flex items-center justify-center border border-pink-500/20">
+                                <iconify-icon icon="solar:user-id-bold-duotone"
+                                    class="text-4xl text-pink-500"></iconify-icon>
+                            </div>
+                            <div class="absolute -inset-4 bg-pink-500/20 blur-2xl rounded-full -z-10 opacity-50"></div>
+                        </div>
+                        <p class="font-semibold text-white tracking-[-0.02em] leading-tight text-[28px] pb-4">AURA AI
+                        </p>
+                        <p class="font-medium leading-relaxed text-white/50 text-base">
+                            Your Hiring AI. Scouts, vets, and eliminates the best (and worst) talent before you even
+                            post a job. Precision recruitment at scale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Exo Launch -->
+            <div class="card-step h-screen sticky top-0 flex items-center justify-center">
+                <div class="card-content" style="--card-color: #f97316; z-index: 6;">
+                    <div class="exo-card-bg">
+                        <div class="exo-card-border-gradient"></div>
+                        <div class="mb-8 relative">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-500/20 to-transparent flex items-center justify-center border border-orange-500/20">
+                                <iconify-icon icon="solar:rocket-bold-duotone"
+                                    class="text-4xl text-orange-500"></iconify-icon>
+                            </div>
+                            <div class="absolute -inset-4 bg-orange-500/20 blur-2xl rounded-full -z-10 opacity-50">
+                            </div>
+                        </div>
+                        <p class="font-semibold text-white tracking-[-0.02em] leading-tight text-[28px] pb-4">Exo Launch
+                        </p>
+                        <p class="font-medium leading-relaxed text-white/50 text-base">
+                            The most powerful marketing department once installed. Creates immediate ad variations,
+                            brand assets, and social strategies aligned with your branding.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7: Exo AI -->
+            <div class="card-step h-screen sticky top-0 flex items-center justify-center">
+                <div class="card-content" style="--card-color: #e5e5e5; z-index: 7;">
+                    <div class="exo-card-bg">
+                        <div class="exo-card-border-gradient"></div>
+                        <div class="mb-8 relative">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-white/20 to-transparent flex items-center justify-center border border-white/20">
+                                <iconify-icon icon="solar:stars-minimalistic-bold-duotone"
+                                    class="text-4xl text-white"></iconify-icon>
+                            </div>
+                            <div class="absolute -inset-4 bg-white/20 blur-2xl rounded-full -z-10 opacity-50"></div>
+                        </div>
+                        <p class="font-semibold text-white tracking-[-0.02em] leading-tight text-[28px] pb-4">Exo AI</p>
+                        <p class="font-medium leading-relaxed text-white/50 text-base">
+                            Ask Exo ANYTHING. It scans your entire company to give you direct, accurate answers at a
+                            moment's notice. Your omniscient oracle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8: STEEL -->
+            <div class="card-step h-screen sticky top-0 flex items-center justify-center">
+                <div class="card-content" style="--card-color: #94a3b8; z-index: 8;">
+                    <div class="exo-card-bg">
+                        <div class="exo-card-border-gradient"></div>
+                        <div class="mb-8 relative">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-slate-400/20 to-transparent flex items-center justify-center border border-slate-400/20">
+                                <iconify-icon icon="solar:shield-bold-duotone"
+                                    class="text-4xl text-slate-400"></iconify-icon>
+                            </div>
+                            <div class="absolute -inset-4 bg-slate-400/20 blur-2xl rounded-full -z-10 opacity-50"></div>
+                        </div>
+                        <p class="font-semibold text-white tracking-[-0.02em] leading-tight text-[28px] pb-4">STEEL</p>
+                        <p class="font-medium leading-relaxed text-white/50 text-base">
+                            A personal growth mechanism. Propels you to higher heights with the freedom of connections.
+                            Our gift to all leaders and teams in Exo. On Us.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GSAP Script for Stacked Cards -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const cards = gsap.utils.toArray(".card-step");
+            const totalCards = cards.length;
+
+            cards.forEach((card, i) => {
+                const cardContent = card.querySelector('.card-content');
+                // Calculate target scale:
+                // The last card (top of stack) stays at 1.
+                // The first card (bottom of stack) scales down the most.
+                const targetScale = 1 - ((totalCards - 1 - i) * 0.05);
+
+                ScrollTrigger.create({
+                    trigger: card,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true,
+                    onUpdate: (self) => {
+                        const progress = self.progress;
+                        // Animate from 1 down to targetScale
+                        const currentScale = 1 - (progress * (1 - targetScale));
+                        gsap.set(cardContent, {
+                            scale: currentScale
+                        });
+                    }
+                });
+            });
+
+            // Title Fade-Out Animation
+            const titleContent = document.getElementById('stacked-title-content');
+            if (titleContent && cards.length > 0) {
+                ScrollTrigger.create({
+                    trigger: cards[0], // Trigger based on the first card
+                    start: "top bottom", // When top of first card hits bottom of viewport
+                    end: "top center",   // When top of first card hits center of viewport
+                    scrub: true,
+                    onUpdate: (self) => {
+                        gsap.set(titleContent, { opacity: 1 - self.progress });
+                    }
+                });
+            }
+        });
+    </script>
 
     <!-- PROOF / METRICS -->
     <section class="py-20 border-t border-white/5 bg-neutral-950">
@@ -991,7 +1328,7 @@
                     <span id="btn-text">Book Risk Free</span>
                     <iconify-icon icon="solar:arrow-right-linear" class=""></iconify-icon>
                 </button>
-                <p class="text-xs text-neutral-500 mt-4 mb-0">8 Slots Per Quarter. No commitment required. 100%
+                <p class="text-xs text-neutral-500 mt-4 mb-0">8 Teams Per Quarter. No commitment required. 100%
                     Confidential.</p>
                 <p class="text-xs text-neutral-500 mt-0 mb-0">© Steel Security Protocol always active</p>
             </form>
@@ -1265,7 +1602,7 @@
                 { name: 'Marketing', class: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-transparent bg-clip-text' },
                 { name: 'Customer Success', class: 'text-sky-400' },
                 { name: 'Operations', class: 'text-blue-500' },
-                { name: 'IT', class: 'text-slate-300' },
+                { name: 'I.T.', class: 'text-slate-300' },
                 { name: 'Finance', class: 'text-emerald-900' },
                 { name: 'Legal', class: 'text-blue-900' },
                 { name: 'Hiring', class: 'text-purple-400' },
@@ -1301,6 +1638,19 @@
                     }, 500); // Wait for fade out
                 }, 3000); // 3 second interval
             }
+
+            // Spotlight Card Logic
+            const spotlightCards = document.querySelectorAll('.card-spotlight');
+            spotlightCards.forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                    card.style.setProperty('--spotlight-color', 'rgba(0, 229, 255, 0.2)');
+                });
+            });
         });
     </script>
 </body>
