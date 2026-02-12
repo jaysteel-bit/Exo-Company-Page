@@ -36,6 +36,10 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Iconify -->
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- GSAP for Scroll Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <meta name="disabled-font-classes"
     content="font-instrument-serif,font-bricolage,font-jakarta,font-manrope,font-space-grotesk,font-work-sans,font-pt-serif,font-space-mono,font-quicksand,font-nunito">
   <style id="aura-editor-visibility-style">
@@ -607,7 +611,7 @@ Sequence animation intro. Usage:
                   <a href="/x-scale.html"
                     class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">
                     Manage — Scale Your Operations
-                  </a><a href="/x-scale.html"
+                  </a><a href="index.html#exo-ai"
                     class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">Exo
                     AI — Custom Solutions</a>
                 </div>
@@ -797,7 +801,7 @@ Sequence animation intro. Usage:
             <a href="/x-scale.html"
               class="block text-base text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
               style="backdrop-filter: blur(8px);">Manage — Scale Your Operations</a>
-            <a href="/x-scale.html"
+            <a href="index.html#exo-ai"
               class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">Exo
               Custom Solutions</a>
           </div>
@@ -825,7 +829,7 @@ Sequence animation intro. Usage:
               class="ml-2 text-xl minus hidden">-</span></button>
           <div class="mobile-submenu hidden mt-3 pl-2 space-y-2"><a href="/steel.html"
               class="block text-sm text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
-              style="backdrop-filter: blur(8px);">The Steel Card</a><a href="/steel.html"
+              style="backdrop-filter: blur(8px);">The Steel Card</a><a href="index.html#exo-ai"
               class="block text-sm text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
               style="backdrop-filter: blur(8px);">Exo AI</a></div>
         </div>
@@ -1191,7 +1195,7 @@ Sequence animation intro. Usage:
                 <div
                   class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
                   <span
-                    class="font-['Urbanist'] text-sm font-bold text-white text-center leading-tight">Global<br>Scale</span>
+                    class="font-['Urbanist'] text-sm font-bold text-white text-center leading-tight">Tinian<br>Resort</span>
                 </div>
               </div>
             </div>
@@ -1285,6 +1289,149 @@ Sequence animation intro. Usage:
       }
     </style>
   </section>
+
+  <!-- HERO SCROLL DEMO (Adapted for Flow Page) -->
+  <section id="solution" class="bg-slate-950 overflow-hidden relative">
+      <div id="merged-scroll-trigger" class="py-10 md:py-20">
+          <div class="h-[50rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-20">
+              <div class="py-10 md:py-20 w-full relative" style="perspective: 1000px;">
+                  
+                  <!-- Header Component -->
+                  <div id="scroll-demo-header" class="max-w-4xl mx-auto text-center mb-10 z-0 relative transform">
+                      <span class="uppercase block text-xs text-indigo-400 tracking-widest font-mono mb-4">Exo First Principles Engine</span>
+                      <h2 class="text-4xl md:text-7xl font-light text-white tracking-tight mb-6">
+                          Enter <span class="font-serif italic text-slate-200">Flow OS</span>
+                      </h2>
+                      <p class="text-xl text-slate-400 font-light max-w-2xl mx-auto">
+                          The department-in-a-box solution. We don't just advise on AI. We build the rig, install the agents,
+                          and hand you the keys to a fully autonomous department.
+                      </p>
+                  </div>
+
+                  <!-- Card Component (Tablet Frame) -->
+                  <div id="scroll-demo-card"
+                      class="max-w-6xl -mt-24 mx-auto h-[35rem] md:h-[45rem] w-full border-[8px] border-slate-800 p-2 md:p-6 bg-slate-950 rounded-[40px] shadow-[0_30px_60px_rgba(0,0,0,0.5)] z-20 relative">
+                      <!-- Screen Content -->
+                      <div class="h-full w-full overflow-hidden rounded-[24px] bg-slate-900 border border-slate-800 relative">
+                          <!-- Image/Demo Placeholder -->
+                           <img src="https://ui.aceternity.com/_next/image?url=%2Flinear.webp&w=3840&q=75"
+                                  alt="hero" class="mx-auto rounded-[24px] object-cover h-full object-left-top w-full"
+                                  draggable="false" />
+                      </div>
+                  </div>
+
+                  <!-- Features Grid (Moved Below Card) -->
+                  <div id="scroll-demo-features" class="max-w-6xl mx-auto mt-10 z-30 relative">
+                      <div class="grid md:grid-cols-3 gap-6">
+                          <!-- Feature 1 -->
+                          <div class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 shadow-sm hover:shadow-md transition-all group">
+                              <div class="w-12 h-12 bg-sky-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:bg-sky-900/50 transition-colors">
+                                  <iconify-icon icon="solar:layers-minimalistic-linear" class="text-sky-400 text-2xl"></iconify-icon>
+                              </div>
+                              <h3 class="text-lg text-white font-semibold mb-2">System Architecture</h3>
+                              <p class="text-slate-400 text-sm leading-relaxed">
+                                  A unified namespace for your data. We map your entire operational ontology.
+                              </p>
+                          </div>
+
+                          <!-- Feature 2 -->
+                          <div class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 shadow-sm hover:shadow-md transition-all group">
+                              <div class="w-12 h-12 bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-900/50 transition-colors">
+                                  <iconify-icon icon="solar:cpu-bolt-linear" class="text-indigo-400 text-2xl"></iconify-icon>
+                              </div>
+                              <h3 class="text-lg text-white font-semibold mb-2">AI Agents</h3>
+                              <p class="text-slate-400 text-sm leading-relaxed">
+                                  Autonomous workers that execute SOPs, manage CRM updates, and handle load.
+                              </p>
+                          </div>
+
+                          <!-- Feature 3 -->
+                          <div class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 shadow-sm hover:shadow-md transition-all group">
+                              <div class="w-12 h-12 bg-emerald-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-900/50 transition-colors">
+                                  <iconify-icon icon="solar:graph-up-linear" class="text-emerald-400 text-2xl"></iconify-icon>
+                              </div>
+                              <h3 class="text-lg text-white font-semibold mb-2">Outcome Assurance</h3>
+                              <p class="text-slate-400 text-sm leading-relaxed">
+                                  We don't leave until it works. Our "Co-Run" phase ensures efficiency gains.
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- GSAP Script for Merged Section -->
+  <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+          gsap.registerPlugin(ScrollTrigger);
+
+          const isMobile = window.innerWidth <= 768;
+          const scaleValues = isMobile ? [0.8, 0.9] : [1.1, 1]; 
+
+          // Header Animation (Emerges from behind)
+          gsap.fromTo("#scroll-demo-header",
+              {
+                  y: 150, 
+                  opacity: 0.5
+              },
+              {
+                  y: -200, 
+                  opacity: 1,
+                  ease: "none",
+                  scrollTrigger: {
+                      trigger: "#merged-scroll-trigger",
+                      start: "top bottom",
+                      end: "center center", 
+                      scrub: 1
+                  }
+              }
+          );
+
+          // Card Animation (Rotate, Scale, Translate)
+          gsap.fromTo("#scroll-demo-card",
+              {
+                  rotationX: 25,
+                  scale: scaleValues[0],
+                  y: 100,
+                  boxShadow: "0 0 0px rgba(0,0,0,0)"
+              },
+              {
+                  rotationX: 0,
+                  scale: scaleValues[1],
+                  y: -50, 
+                  boxShadow: "0 30px 60px rgba(0,0,0,0.5)",
+                  ease: "none",
+                  scrollTrigger: {
+                      trigger: "#merged-scroll-trigger",
+                      start: "top bottom",
+                      end: "bottom bottom",
+                      scrub: 1
+                  }
+              }
+          );
+
+           // Features Grid Animation (Parallax Depth)
+           gsap.fromTo("#scroll-demo-features",
+              {
+                  y: 200,
+                  opacity: 0
+              },
+              {
+                  y: -100, 
+                  opacity: 1,
+                  ease: "none",
+                  scrollTrigger: {
+                      trigger: "#merged-scroll-trigger",
+                      start: "top bottom",
+                      end: "bottom bottom",
+                      scrub: 1
+                  }
+              }
+          );
+      });
+  </script>
 
   <!-- PROBLEM/SOLUTION SECTION - Old Way vs New Way -->
   <section class="overflow-hidden md:py-28 bg-slate-950 pt-20 pb-20 relative" id="comparison">
@@ -3817,10 +3964,12 @@ Sequence animation intro. Usage:
                 </p>
               </div>
 
-              <!-- Conditional Guarantee Fine Print for Activation Steps-->
+              <!-- Conditional Guarantee Fine Print for Activation Steps, *This needs to be updated -
+                  So that it is engineered to walk clients toward activation steps-->
               <div class="pt-4 border-t border-white/5">
-                <p class="leading-relaxed text-xs text-slate-500 font-geist text-center">*This needs to be updated -
-                  So that it is engineered to walk clients toward activation steps.</p>
+                <p class="leading-relaxed text-xs text-slate-200 font-geist font-bold text-center">FIND OUT IF YOU'RE A FIT
+                  TODAY.
+                </p>
               </div>
             </div>
           </div>
@@ -3889,7 +4038,8 @@ Sequence animation intro. Usage:
                 </li>
 
                 <li>
-                  <a href="#Departments" class="transition hover:text-white text-sm text-slate-400 font-geist">
+                  <a href="index.html#departments"
+                    class="transition hover:text-white text-sm text-slate-400 font-geist">
                     Departments
                   </a>
                 </li>

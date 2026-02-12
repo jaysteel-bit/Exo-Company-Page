@@ -537,72 +537,161 @@
         </div>
     </section>
 
-    <!-- SOLUTION SECTION (Exo OS) -->
-    <section id="solution" class="py-24 bg-neutral-900/50 relative border-t border-white/5">
-        <div
-            class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150">
-        </div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="uppercase block text-xs text-indigo-400 tracking-widest font-mono mb-4">Exo First
-                    Principles Engine</span>
-                <h2 class="text-4xl md:text-6xl font-light text-white tracking-tight mb-6">
-                    Enter <span class="font-serif italic">Flow OS</span>
-                </h2>
-                <p class="text-xl text-neutral-400 font-light">
-                    The department-in-a-box solution. We don't just advise on AI. We build the rig, install the agents,
-                    and hand you the keys to a fully autonomous department.
-                </p>
-            </div>
+    <!-- SOLUTION SECTION (Merged with Scroll Demo) -->
+    <section id="solution" class="bg-white overflow-hidden relative">
+        <div id="merged-scroll-trigger" class="py-10 md:py-20">
+            <div class="h-[50rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-20">
+                <div class="py-10 md:py-20 w-full relative" style="perspective: 1000px;">
 
-            <!-- Features Grid -->
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div
-                    class="glass-panel hover:border-sky-500/50 transition-colors duration-300 group rounded-2xl pt-8 pr-8 pb-8 pl-8">
-                    <div
-                        class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-sky-500/20 transition-colors">
-                        <iconify-icon icon="solar:layers-minimalistic-linear"
-                            class="text-white text-2xl"></iconify-icon>
+                    <!-- Header Component (Was Solution Text) -->
+                    <div id="scroll-demo-header" class="max-w-4xl mx-auto text-center mb-10 z-0 relative transform">
+                        <span class="uppercase block text-xs text-indigo-500 tracking-widest font-mono mb-4">Exo First
+                            Principles Engine</span>
+                        <h2 class="text-4xl md:text-7xl font-light text-black tracking-tight mb-6">
+                            Enter <span class="font-serif italic text-neutral-800">Flow OS</span>
+                        </h2>
+                        <p class="text-xl text-neutral-600 font-light max-w-2xl mx-auto">
+                            The department-in-a-box solution. We don't just advise on AI. We build the rig, install the
+                            agents,
+                            and hand you the keys to a fully autonomous department.
+                        </p>
                     </div>
-                    <h3 class="text-xl text-white font-medium mb-3">System Architecture</h3>
-                    <p class="text-neutral-400 text-sm leading-relaxed">
-                        A unified namespace for your data. We map your entire operational ontology before writing a
-                        single line of code.
-                    </p>
-                </div>
 
-                <!-- Card 2 -->
-                <div
-                    class="glass-panel hover:border-blue-500/50 transition-colors duration-300 group rounded-2xl pt-8 pr-8 pb-8 pl-8">
-                    <div
-                        class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
-                        <iconify-icon icon="solar:cpu-bolt-linear" class="text-white text-2xl"></iconify-icon>
+                    <!-- Card Component (Tablet Frame) -->
+                    <div id="scroll-demo-card"
+                        class="max-w-6xl -mt-24 mx-auto h-[35rem] md:h-[45rem] w-full border-[8px] border-gray-200 p-2 md:p-6 bg-white rounded-[40px] shadow-[0_30px_60px_rgba(0,0,0,0.12)] z-20 relative">
+                        <!-- Screen Content -->
+                        <div
+                            class="h-full w-full overflow-hidden rounded-[24px] bg-gray-50 border border-gray-100 relative">
+                            <!-- Image/Demo Placeholder -->
+                            <img src="https://ui.aceternity.com/_next/image?url=%2Flinear.webp&w=3840&q=75" alt="hero"
+                                class="mx-auto rounded-[24px] object-cover h-full object-left-top w-full"
+                                draggable="false" />
+                        </div>
                     </div>
-                    <h3 class="text-xl text-white font-medium mb-3">AI Agents</h3>
-                    <p class="text-neutral-400 text-sm leading-relaxed">
-                        Autonomous workers that execute SOPs, manage CRM updates, and handle 80% of repetitive
-                        operational load.
-                    </p>
-                </div>
 
-                <!-- Card 3 -->
-                <div
-                    class="glass-panel hover:border-emerald-500/50 transition-colors duration-300 group rounded-2xl pt-8 pr-8 pb-8 pl-8">
-                    <div
-                        class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors">
-                        <iconify-icon icon="solar:graph-up-linear" class="text-white text-2xl"></iconify-icon>
+                    <!-- Features Grid (Moved Below Card) -->
+                    <div id="scroll-demo-features" class="max-w-6xl mx-auto mt-10 z-30 relative">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <!-- Feature 1 -->
+                            <div
+                                class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all group">
+                                <div
+                                    class="w-12 h-12 bg-sky-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-sky-100 transition-colors">
+                                    <iconify-icon icon="solar:layers-minimalistic-linear"
+                                        class="text-sky-600 text-2xl"></iconify-icon>
+                                </div>
+                                <h3 class="text-lg text-neutral-900 font-semibold mb-2">System Architecture</h3>
+                                <p class="text-neutral-500 text-sm leading-relaxed">
+                                    A unified namespace for your data. We map your entire operational ontology.
+                                </p>
+                            </div>
+
+                            <!-- Feature 2 -->
+                            <div
+                                class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all group">
+                                <div
+                                    class="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-100 transition-colors">
+                                    <iconify-icon icon="solar:cpu-bolt-linear"
+                                        class="text-indigo-600 text-2xl"></iconify-icon>
+                                </div>
+                                <h3 class="text-lg text-neutral-900 font-semibold mb-2">AI Agents</h3>
+                                <p class="text-neutral-500 text-sm leading-relaxed">
+                                    Autonomous workers that execute SOPs, manage CRM updates, and handle load.
+                                </p>
+                            </div>
+
+                            <!-- Feature 3 -->
+                            <div
+                                class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all group">
+                                <div
+                                    class="w-12 h-12 bg-emerald-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-100 transition-colors">
+                                    <iconify-icon icon="solar:graph-up-linear"
+                                        class="text-emerald-600 text-2xl"></iconify-icon>
+                                </div>
+                                <h3 class="text-lg text-neutral-900 font-semibold mb-2">Outcome Assurance</h3>
+                                <p class="text-neutral-500 text-sm leading-relaxed">
+                                    We don't leave until it works. Our "Co-Run" phase ensures efficiency gains.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl text-white font-medium mb-3">Outcome Assurance</h3>
-                    <p class="text-neutral-400 text-sm leading-relaxed">
-                        We don't leave until it works. Our "Co-Run" phase ensures your team sees 40-50% efficiency gains
-                        immediately.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- GSAP Script for Merged Section -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const isMobile = window.innerWidth <= 768;
+            const scaleValues = isMobile ? [0.8, 0.9] : [1.1, 1]; // Start slightly larger to feel immersive
+
+            // Header Animation (Emerges from behind)
+            gsap.fromTo("#scroll-demo-header",
+                {
+                    y: 150, // Start lower (behind card top)
+                    opacity: 0.5
+                },
+                {
+                    y: -200, // Move up significantly to be readable above card
+                    opacity: 1,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#merged-scroll-trigger",
+                        start: "top bottom",
+                        end: "center center", // Finish animation earlier so text is readable
+                        scrub: 1
+                    }
+                }
+            );
+
+            // Card Animation (Rotate, Scale, Translate)
+            gsap.fromTo("#scroll-demo-card",
+                {
+                    rotationX: 25,
+                    scale: scaleValues[0],
+                    y: 100,
+                    boxShadow: "0 0 0px rgba(0,0,0,0)"
+                },
+                {
+                    rotationX: 0,
+                    scale: scaleValues[1],
+                    y: -50,
+                    boxShadow: "0 30px 60px rgba(0,0,0,0.12)",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#merged-scroll-trigger",
+                        start: "top bottom",
+                        end: "bottom bottom",
+                        scrub: 1
+                    }
+                }
+            );
+
+            // Features Grid Animation (Parallax Depth)
+            gsap.fromTo("#scroll-demo-features",
+                {
+                    y: 200,
+                    opacity: 0
+                },
+                {
+                    y: -100, // Move up to tuck under/follow the card 
+                    opacity: 1,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: "#merged-scroll-trigger",
+                        start: "top bottom",
+                        end: "bottom bottom",
+                        scrub: 1
+                    }
+                }
+            );
+        });
+    </script>
 
     <!-- HOW IT WORKS (3-Phase Delivery) -->
     <section id="how-it-works" class="pt-24 pb-12 bg-neutral-950 border-t border-white/5">
@@ -732,6 +821,7 @@
 
         <!-- WRAPPER FOR SCROLLING -->
         <div id="cards-wrapper" class="relative z-10">
+            <div id="departments" class="absolute -top-20"></div>
             <!-- Hero / Title Card -->
             <div class="h-[100lvh] flex items-center justify-center sticky top-0 bg-neutral-950">
                 <div id="stacked-title-content" class="text-center z-10 px-4">
@@ -750,7 +840,7 @@
             </div>
 
             <!-- Card 1: Exo Concierge Team -->
-            <div class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
+            <div id="concierge" class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
                 <div class="card-content" style="--card-color: #fbbf24; z-index: 1;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
@@ -778,7 +868,7 @@
             </div>
 
             <!-- Card 2: Flow OS -->
-            <div class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
+            <div id="flow-os" class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
                 <div class="card-content" style="--card-color: #3b82f6; z-index: 2;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
@@ -801,7 +891,7 @@
             </div>
 
             <!-- Card 3: Deal OS -->
-            <div class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
+            <div id="deal-os" class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
                 <div class="card-content" style="--card-color: #10b981; z-index: 3;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
@@ -825,7 +915,7 @@
             </div>
 
             <!-- Card 4: Exo Academy (EXA) -->
-            <div class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
+            <div id="exa" class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
                 <div class="card-content" style="--card-color: #87CEEB; z-index: 4;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
@@ -849,7 +939,7 @@
             </div>
 
             <!-- Card 5: AURA AI -->
-            <div class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
+            <div id="aura" class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
                 <div class="card-content" style="--card-color: #8b5cf6; z-index: 5;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
@@ -873,7 +963,7 @@
             </div>
 
             <!-- Card 6: Exo Launch -->
-            <div class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
+            <div id="launch" class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
                 <div class="card-content" style="--card-color: #f97316; z-index: 6;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
@@ -897,7 +987,7 @@
             </div>
 
             <!-- Card 7: Exo AI -->
-            <div class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
+            <div id="exo-ai" class="card-step h-[100lvh] sticky top-0 flex items-center justify-center">
                 <div class="card-content" style="--card-color: #e5e5e5; z-index: 7;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
@@ -1128,7 +1218,7 @@
                             <p
                                 class="text-white font-geist tracking-tight text-2xl sm:text-3xl lg:text-4xl leading-snug">
                                 "We saved on hosting and boosted conversions just by running
-                                Pulse."
+                                Flow. The Exo AI Team and insights are incredible."
                             </p>
                             <div class="mt-8">
                                 <div class="text-white text-base font-medium">
@@ -1204,7 +1294,7 @@
                             <div
                                 class="testi-fade-out-1 flex flex-col xl:bg-neutral-950 text-left bg-white/5 rounded-none ring-white/10 ring-1 pt-6 pr-6 pb-6 pl-6 justify-between h-full">
                                 <p class="text-zinc-300 text-base leading-relaxed">
-                                    "Switching to Pulse was a game-changer. Our deployment
+                                    "Switching to Exo was a game-changer. Our deployment
                                     time dropped from hours to seconds, and the developer
                                     experience is incredible."
                                 </p>
@@ -1278,7 +1368,7 @@
                             <div
                                 class="testi-fade-out-3 flex flex-col xl:bg-neutral-950 text-left bg-white/5 rounded-none ring-white/10 ring-1 pt-6 pr-6 pb-6 pl-6 justify-between h-full">
                                 <p class="text-zinc-300 text-base leading-relaxed">
-                                    "We migrated 50+ client projects to Pulse. The performance
+                                    "We migrated 50+ client projects to Exo. The performance
                                     improvements were immediate, and our clients noticed the
                                     difference right away."
                                 </p>
@@ -1396,12 +1486,6 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/x-scale.html"
-                                class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
-                                Consult
-                            </a>
-                        </li>
-                        <li>
                             <a href="/steel.html"
                                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
                                 STEEL
@@ -1411,6 +1495,12 @@
                             <a href="mailto:[EMAIL_ADDRESS]"
                                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
                                 Support
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/x-scale.html"
+                                class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
+                                Consult | Enterprise
                             </a>
                         </li>
                     </ul>
@@ -1428,31 +1518,31 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#departments"
+                            <a href="#deal-os"
                                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
                                 Deal OS
                             </a>
                         </li>
                         <li>
-                            <a href="#departments"
+                            <a href="#launch"
                                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
                                 Launch
                             </a>
                         </li>
                         <li>
-                            <a href="#departments"
+                            <a href="#exa"
                                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
                                 EXA AI
                             </a>
                         </li>
                         <li>
-                            <a href="#departments"
+                            <a href="#aura"
                                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
                                 AURA
                             </a>
                         </li>
                         <li>
-                            <a href="/firm.html"
+                            <a href="#exo-ai"
                                 class="text-sm text-neutral-300 hover:text-white transition-colors font-geist font-normal">
                                 Exo AI
                             </a>

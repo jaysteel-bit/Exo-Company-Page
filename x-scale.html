@@ -32,6 +32,10 @@
     <!-- Iconify -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -283,43 +287,176 @@
     <!-- SOCIAL PROOF -->
     <section class="py-20 border-t border-white/5 bg-neutral-900/30">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-10 font-['Urbanist'] font-medium">
-                Trusted by founders building the future</p>
+            <p class="text-[10px] uppercase tracking-[0.2em] text-white mb-10 font-['Urbanist'] font-medium">
+                Trusted by founders and leaders building the future</p>
 
-            <!-- Logos Grid (Reusing SVG Paths from index.html for visual consistency) -->
-            <div class="flex flex-wrap gap-12 md:gap-24 justify-center items-center opacity-60">
-                <!-- Google -->
-                <svg width="100" height="34" viewBox="0 0 130 44" fill="none"
-                    class="h-6 w-auto grayscale hover:grayscale-0 transition-all duration-500">
-                    <g>
-                        <path
-                            d="M58.0779 22.3848C58.0779 26.5489 54.8203 29.6174 50.8225 29.6174C46.8247 29.6174 43.567 26.5489 43.567 22.3848C43.567 18.1913 46.8247 15.1522 50.8225 15.1522C54.8203 15.1522 58.0779 18.1913 58.0779 22.3848ZM54.9018 22.3848C54.9018 19.7826 53.0138 18.0022 50.8225 18.0022C48.6312 18.0022 46.7431 19.7826 46.7431 22.3848C46.7431 24.9609 48.6312 26.7674 50.8225 26.7674C53.0138 26.7674 54.9018 24.9576 54.9018 22.3848Z"
-                            fill="white" />
-                        <path
-                            d="M73.7301 22.3848C73.7301 26.5489 70.4725 29.6174 66.4747 29.6174C62.4768 29.6174 59.2192 26.5489 59.2192 22.3848C59.2192 18.1946 62.4768 15.1522 66.4747 15.1522C70.4725 15.1522 73.7301 18.1913 73.7301 22.3848ZM70.554 22.3848C70.554 19.7826 68.666 18.0022 66.4747 18.0022C64.2834 18.0022 62.3953 19.7826 62.3953 22.3848C62.3953 24.9609 64.2834 26.7674 66.4747 26.7674C68.666 26.7674 70.554 24.9576 70.554 22.3848Z"
-                            fill="white" />
-                        <path
-                            d="M88.7301 15.5891V28.5739C88.7301 33.9152 85.5801 36.0967 81.8562 36.0967C78.3507 36.0967 76.241 33.7522 75.4453 31.8348L78.2105 30.6837C78.7029 31.8609 79.9094 33.25 81.8529 33.25C84.2366 33.25 85.7138 31.7793 85.7138 29.0109V27.9706H85.6029C84.892 28.8478 83.5225 29.6141 81.7942 29.6141C78.1779 29.6141 74.8649 26.4641 74.8649 22.4109C74.8649 18.3282 78.1779 15.1522 81.7942 15.1522C83.5192 15.1522 84.8888 15.9185 85.6029 16.7696H85.7138V15.5924H88.7301V15.5891ZM85.9388 22.4109C85.9388 19.8641 84.2399 18.0022 82.0779 18.0022C79.8866 18.0022 78.0507 19.8641 78.0507 22.4109C78.0507 24.9315 79.8866 26.7674 82.0779 26.7674C84.2399 26.7674 85.9388 24.9315 85.9388 22.4109Z"
-                            fill="white" />
-                        <path d="M93.7029 7.97824V29.1739H90.6051V7.97824H93.7029Z" fill="white" />
-                        <path
-                            d="M105.775 24.7652L108.24 26.4087C107.444 27.5859 105.527 29.6141 102.214 29.6141C98.1051 29.6141 95.0366 26.438 95.0366 22.3815C95.0366 18.0804 98.1312 15.1489 101.858 15.1489C105.612 15.1489 107.447 18.1359 108.047 19.75L108.377 20.5717L98.7084 24.5761C99.4486 26.0272 100.6 26.7674 102.214 26.7674C103.831 26.7674 104.953 25.9717 105.775 24.7652ZM98.1866 22.163L104.65 19.4793C104.294 18.5761 103.225 17.9467 101.966 17.9467C100.352 17.9467 98.1051 19.3717 98.1866 22.163Z"
-                            fill="white" />
-                        <path
-                            d="M31.841 20.5033V17.4348H42.1812C42.2823 17.9696 42.3344 18.6022 42.3344 19.287C42.3344 21.5891 41.7051 24.4359 39.6768 26.4641C37.704 28.5185 35.1834 29.6141 31.8442 29.6141C25.6551 29.6141 20.4507 24.5728 20.4507 18.3837C20.4507 12.1946 25.6551 7.15326 31.8442 7.15326C35.2681 7.15326 37.7073 8.49674 39.5399 10.2478L37.3747 12.413C36.0605 11.1804 34.2801 10.2217 31.841 10.2217C27.3214 10.2217 23.7866 13.8641 23.7866 18.3837C23.7866 22.9033 27.3214 26.5457 31.841 26.5457C34.7725 26.5457 36.4421 25.3685 37.5116 24.2989C38.379 23.4315 38.9497 22.1924 39.1747 20.5L31.841 20.5033Z"
-                            fill="white" />
-                    </g>
-                </svg>
-                <!-- Airbnb -->
-                <svg width="90" height="34" viewBox="0 0 120 44" fill="none"
-                    class="h-6 w-auto grayscale hover:grayscale-0 transition-all duration-500">
-                    <path
-                        d="M22.584 8C20.8 10.5 19.5 12.8 19.2 14.5C19.1 15.1 19.1 15.6 19.2 16.1C19.3 16.5 19.5 16.9 19.7 17.2C20.3 18 21.3 18.5 22.6 18.5C23.8 18.5 24.9 18 25.5 17.2C25.7 16.9 25.9 16.5 26 16.1C26.1 15.6 26.1 15.1 25.9 14.5C25.5 12.8 24.3 10.5 22.584 8ZM32.7 31.3C34.3 30.7 35.5 29.3 35.7 27.6C35.8 26.8 35.7 26 35.5 25.2C35.4 24.9 35.3 24.7 35.2 24.4C35.1 24.3 35.1 24.2 35 24.1C34.9 23.8 34.8 23.6 34.7 23.3C34.6 23.1 34.5 22.8 34.3 22.5V22.5C32.1 17.7 29.6 12.8 27.1 8L27 7.8C26.9 7.6 26.8 7.4 26.6 7.1C26.5 6.9 26.4 6.6 26.2 6.4C26 5.9 25.7 5.4 25.3 5C24.6 4.3 23.7 3.9 22.6 3.9C21.6 3.9 20.7 4.3 20 5C19.6 5.4 19.4 5.9 19.1 6.4C19 6.6 18.9 6.9 18.7 7.1C18.6 7.4 18.5 7.6 18.3 7.8L18.2 8C15.7 12.8 13.3 17.7 11 22.5L11 22.5C10.7 23.1 10.4 23.6 10.2 24.1C10.2 24.2 10.1 24.3 10.1 24.4C10 24.7 9.9 24.9 9.8 25.2C9.5 26 9.4 26.8 9.5 27.6C9.7 29.3 10.9 30.7 12.5 31.3C13.2 31.6 14.1 31.7 15 31.6C15.8 31.5 16.6 31.3 17.5 30.9C18.7 30.2 19.9 29.2 21.2 27.7C19.1 25.1 17.7 23 17.3 21.1C17 20.2 17 19.3 17.1 18.5C17.2 17.7 17.5 17 18 16.4C19 15 20.7 14.1 22.6 14.1C24.5 14.1 26.2 15 27.3 16.4C27.7 17 28 17.7 28.1 18.5C28.2 19.3 28.2 20.2 28 21.1C27.5 23 26.2 25.1 24 27.7C25.4 29.2 26.6 30.2 27.7 30.9C28.6 31.3 29.4 31.5 30.2 31.6C31.1 31.7 32 31.6 32.7 31.3Z"
-                        stroke="white" stroke-width="1.8" fill="none" /><text x="42" y="26" font-family="sans-serif"
-                        font-size="16" font-weight="500" fill="white" letter-spacing="-0.02em">airbnb</text>
-                </svg>
-                <!-- Other logos would go here -->
+            <!-- Animated Tooltip Component (Replaces Logos Grid) -->
+            <div class="flex flex-row items-center justify-center mb-10 w-full animate-fade-up"
+                style="animation-delay: 0.2s;">
+                <div class="flex items-center gap-2" id="animated-tooltip-container">
+                    <!-- Items will be injected here or hardcoded below -->
+
+                    <!-- Person 1 -->
+                    <div class="relative group cursor-pointer -mr-4" data-id="1">
+                        <!-- Tooltip -->
+                        <div class="tooltip absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs flex-col items-center justify-center rounded-md bg-neutral-900 border border-white/10 z-50 shadow-xl px-4 py-2 opacity-0 scale-75 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 translate-y-4"
+                            style="white-space: nowrap;">
+                            <div
+                                class="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px">
+                            </div>
+                            <div
+                                class="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px">
+                            </div>
+                            <div class="font-bold text-white relative z-30 text-base">John Doe</div>
+                            <div class="text-neutral-400 text-xs">Software Engineer</div>
+                        </div>
+                        <!-- Image -->
+                        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
+                            alt="John Doe"
+                            class="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-neutral-950 relative transition duration-500"
+                            onmousemove="handleTooltipMove(event, this)">
+                    </div>
+
+                    <!-- Person 2 -->
+                    <div class="relative group cursor-pointer -mr-4" data-id="2">
+                        <div class="tooltip absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs flex-col items-center justify-center rounded-md bg-neutral-900 border border-white/10 z-50 shadow-xl px-4 py-2 opacity-0 scale-75 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 translate-y-4"
+                            style="white-space: nowrap;">
+                            <div
+                                class="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px">
+                            </div>
+                            <div
+                                class="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px">
+                            </div>
+                            <div class="font-bold text-white relative z-30 text-base">Robert Johnson</div>
+                            <div class="text-neutral-400 text-xs">Product Manager</div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+                            alt="Robert Johnson"
+                            class="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-neutral-950 relative transition duration-500"
+                            onmousemove="handleTooltipMove(event, this)">
+                    </div>
+
+                    <!-- Person 3 -->
+                    <div class="relative group cursor-pointer -mr-4" data-id="3">
+                        <div class="tooltip absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs flex-col items-center justify-center rounded-md bg-neutral-900 border border-white/10 z-50 shadow-xl px-4 py-2 opacity-0 scale-75 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 translate-y-4"
+                            style="white-space: nowrap;">
+                            <div
+                                class="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px">
+                            </div>
+                            <div
+                                class="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px">
+                            </div>
+                            <div class="font-bold text-white relative z-30 text-base">Jane Smith</div>
+                            <div class="text-neutral-400 text-xs">Data Scientist</div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+                            alt="Jane Smith"
+                            class="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-neutral-950 relative transition duration-500"
+                            onmousemove="handleTooltipMove(event, this)">
+                    </div>
+
+                    <!-- Person 4 -->
+                    <div class="relative group cursor-pointer -mr-4" data-id="4">
+                        <div class="tooltip absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs flex-col items-center justify-center rounded-md bg-neutral-900 border border-white/10 z-50 shadow-xl px-4 py-2 opacity-0 scale-75 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 translate-y-4"
+                            style="white-space: nowrap;">
+                            <div
+                                class="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px">
+                            </div>
+                            <div
+                                class="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px">
+                            </div>
+                            <div class="font-bold text-white relative z-30 text-base">Emily Davis</div>
+                            <div class="text-neutral-400 text-xs">UX Designer</div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
+                            alt="Emily Davis"
+                            class="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-neutral-950 relative transition duration-500"
+                            onmousemove="handleTooltipMove(event, this)">
+                    </div>
+
+                    <!-- Person 5 -->
+                    <div class="relative group cursor-pointer -mr-4" data-id="5">
+                        <div class="tooltip absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs flex-col items-center justify-center rounded-md bg-neutral-900 border border-white/10 z-50 shadow-xl px-4 py-2 opacity-0 scale-75 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 translate-y-4"
+                            style="white-space: nowrap;">
+                            <div
+                                class="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px">
+                            </div>
+                            <div
+                                class="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px">
+                            </div>
+                            <div class="font-bold text-white relative z-30 text-base">Tyler Durden</div>
+                            <div class="text-neutral-400 text-xs">Soap Developer</div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80"
+                            alt="Tyler Durden"
+                            class="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-neutral-950 relative transition duration-500"
+                            onmousemove="handleTooltipMove(event, this)">
+                    </div>
+
+                    <!-- Person 6 -->
+                    <div class="relative group cursor-pointer -mr-4" data-id="6">
+                        <div class="tooltip absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs flex-col items-center justify-center rounded-md bg-neutral-900 border border-white/10 z-50 shadow-xl px-4 py-2 opacity-0 scale-75 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 translate-y-4"
+                            style="white-space: nowrap;">
+                            <div
+                                class="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px">
+                            </div>
+                            <div
+                                class="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px">
+                            </div>
+                            <div class="font-bold text-white relative z-30 text-base">Dora</div>
+                            <div class="text-neutral-400 text-xs">The Explorer</div>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80"
+                            alt="Dora"
+                            class="object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-neutral-950 relative transition duration-500"
+                            onmousemove="handleTooltipMove(event, this)">
+                    </div>
+
+                </div>
             </div>
+
+            <script>
+                // Logic for Animated Tooltip (Spring Physics)
+                function handleTooltipMove(event, imgElement) {
+                    const container = imgElement.parentElement;
+                    const tooltip = container.querySelector('.tooltip');
+
+                    if (!tooltip) return;
+
+                    // Calculate mouse position relative to the image
+                    const halfWidth = imgElement.offsetWidth / 2;
+                    const xPos = event.offsetX - halfWidth; // -width/2 to +width/2
+
+                    // Spring physics values
+                    // Rotation: -100px -> -45deg, 100px -> 45deg
+                    const rotateVal = (xPos / 100) * 45;
+                    // TranslateX: -100px -> -50px, 100px -> 50px
+                    const translateXVal = (xPos / 100) * 50;
+
+                    gsap.to(tooltip, {
+                        x: translateXVal,
+                        rotate: rotateVal,
+                        duration: 0.2, // Quick response
+                        ease: "power2.out",
+                        overwrite: "auto"
+                    });
+                }
+
+                // Clear transforms on mouse leave to reset (optional, though the CSS transition handles opacity/scale)
+                document.querySelectorAll('#animated-tooltip-container .group').forEach(group => {
+                    group.addEventListener('mouseleave', () => {
+                        const tooltip = group.querySelector('.tooltip');
+                        if (tooltip) {
+                            gsap.to(tooltip, {
+                                x: 0,
+                                rotate: 0,
+                                duration: 0.2,
+                                ease: "power2.out"
+                            });
+                        }
+                    });
+                });
+            </script>
 
             <!-- Testimonial Reel Placeholder -->
             <div class="mt-20">
