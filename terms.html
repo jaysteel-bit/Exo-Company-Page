@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exo Enterprise | Terms of Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Terms of Service for Exo Enterprise.">
+    <meta property="og:title" content="Exo Enterprise | Terms of Service">
+    <meta property="og:description" content="Terms of Service for Exo Enterprise.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <!-- Spline Preconnect -->
+    <link rel="preconnect" href="https://my.spline.design">
+    <link rel="dns-prefetch" href="https://my.spline.design">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- Fonts -->
+    <link id="all-fonts-link-font-urbanist" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-geist">
+        .font-geist {
+            font-family: 'Urbanist', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-playfair" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
+    <style id="all-fonts-style-font-playfair">
+        .font-playfair {
+            font-family: 'Playfair Display', serif !important;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-neutral-950 text-neutral-200 antialiased overflow-x-hidden" style="font-family:'Urbanist',sans-serif;">
+
+    <!-- Navigation -->
+    <nav class="relative w-full z-50 border-b border-white/5 bg-neutral-950/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-8 h-8 rounded border border-white/20 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors overflow-hidden">
+                    <img src="./logos/LOGO%20MARK.png" alt="Exo Logo" class="w-full h-full object-contain">
+                </div>
+                <span class="text-md font-medium tracking-tight text-white/90">Exo Enterprise</span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide uppercase text-neutral-400">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="flow.html" class="hover:text-white transition-colors">Flow OS</a>
+                <a href="firm.html" class="hover:text-white transition-colors">About The Firm</a>
+                <a href="/careers.html" class="hover:text-white transition-colors">Careers</a>
+            </div>
+
+            <!-- CTA -->
+            <a href="x-scale.html"
+                class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-xs font-medium text-white">
+                <span>Start Transformation</span>
+                <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+            </a>
+
+            <!-- Mobile Menu Icon -->
+            <button class="md:hidden text-white" id="mobile-menu-toggle">
+                <iconify-icon icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer (Matches firm.html) -->
+    <div id="mobile-drawer"
+        class="fixed inset-0 z-[70] md:hidden transition-transform duration-300 -translate-x-full bg-neutral-950">
+        <div class="p-6 flex flex-col h-full">
+            <div class="flex items-center justify-between mb-8">
+                <span class="text-white font-medium text-lg">Menu</span>
+                <button id="mobile-drawer-close" class="text-white bg-white/10 p-2 rounded-full">
+                    <iconify-icon icon="solar:close-circle-linear" width="24"></iconify-icon>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6 text-lg font-medium text-neutral-300">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="flow.html" class="hover:text-white transition-colors">Flow OS</a>
+                <a href="firm.html" class="hover:text-white transition-colors">About The Firm</a>
+                <a href="/careers.html" class="hover:text-white transition-colors">Careers</a>
+                <a href="x-scale.html" class="text-emerald-400">Start Transformation</a>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- Header -->
+    <header class="py-20 bg-neutral-900/30 border-b border-white/5">
+        <div class="max-w-4xl mx-auto px-6 text-center animate-fade-up">
+            <h1 class="text-4xl md:text-5xl font-light text-white mb-6 font-playfair">Terms of Service</h1>
+            <p class="text-neutral-400 text-sm md:text-base max-w-2xl mx-auto">
+                Please read these terms carefully before using our services. By accessing or using our website and
+                services, you agree to be bound by these terms.
+            </p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="py-20">
+        <div class="max-w-3xl mx-auto px-6 space-y-12">
+
+            <!-- Section 1 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">1. Acceptance of Terms</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        By accessing this website, accessible from <strong>Exo Enterprise</strong>, you are agreeing to
+                        be bound by these Website Terms and Conditions of Use and agree that you are responsible for the
+                        agreement with any applicable local laws. If you disagree with any of these terms, you are
+                        prohibited from accessing this site. The materials contained in this website are protected by
+                        copyright and trade mark law.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">2. Use License</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        Permission is granted to temporarily download one copy of the materials on Exo Enterprise's
+                        Website for personal, non-commercial transitory viewing only. This is the grant of a license,
+                        not a transfer of title, and under this license you may not:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>modify or copy the materials;</li>
+                        <li>use the materials for any commercial purpose or for any public display;</li>
+                        <li>attempt to reverse engineer any software contained on Exo Enterprise's Website;</li>
+                        <li>remove any copyright or other proprietary notations from the materials; or</li>
+                        <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+                    </ul>
+                    <p>
+                        This will let Exo Enterprise to terminate upon violations of any of these restrictions. Upon
+                        termination, your viewing right will also be terminated and you should destroy any downloaded
+                        materials in your possession whether it is printed or electronic format.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">3. Disclaimer</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        All the materials on Exo Enterprise's Website are provided "as is". Exo Enterprise makes no
+                        warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore,
+                        Exo Enterprise does not make any representations concerning the accuracy or likely results of
+                        the use of the materials on its Website or otherwise relating to such materials or on any sites
+                        linked to this Website.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">4. Limitations</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        Exo Enterprise or its suppliers will not be hold accountable for any damages that will arise
+                        with the use or inability to use the materials on Exo Enterprise's Website, even if Exo
+                        Enterprise or an authorize representative of this Website has been notified, orally or written,
+                        of the possibility of such damage. Some jurisdiction does not allow limitations on implied
+                        warranties or limitations of liability for incidental damages, these limitations may not apply
+                        to you.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">5. Revisions and Errata</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        The materials appearing on Exo Enterprise's Website may include technical, typographical, or
+                        photographic errors. Exo Enterprise will not promise that any of the materials in this Website
+                        are accurate, complete, or current. Exo Enterprise may change the materials contained on its
+                        Website at any time without notice. Exo Enterprise does not make any commitment to update the
+                        materials.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 6 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">6. Links</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        Exo Enterprise has not reviewed all of the sites linked to its Website and is not responsible
+                        for the contents of any such linked site. The presence of any link does not imply endorsement by
+                        Exo Enterprise of the site. The use of any linked website is at the user's own risk.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 7 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">7. Site Terms of Use Modifications</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        Exo Enterprise may revise these Terms of Use for its Website at any time without prior notice.
+                        By using this Website, you are agreeing to be bound by the current version of these Terms and
+                        Conditions of Use.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 8 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">8. Governing Law</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        Any claim related to Exo Enterprise's Website shall be governed by the laws of the Country
+                        without regards to its conflict of law provisions.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs text-neutral-600 uppercase tracking-widest">
+                © 2026 Exo Enterprise. All rights reserved.
+            </p>
+            <div class="mt-4 flex justify-center gap-6">
+                <a href="privacy.html" class="text-xs text-neutral-500 hover:text-white transition-colors">Privacy
+                    Policy</a>
+                <a href="terms.html" class="text-xs text-neutral-500 hover:text-white transition-colors">Terms of
+                    Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Mobile Menu Toggle
+        const openBtn = document.getElementById('mobile-menu-toggle');
+        const closeBtn = document.getElementById('mobile-drawer-close');
+        const drawer = document.getElementById('mobile-drawer');
+
+        if (openBtn && drawer) {
+            openBtn.addEventListener('click', () => {
+                drawer.classList.remove('-translate-x-full');
+            });
+        }
+        if (closeBtn && drawer) {
+            closeBtn.addEventListener('click', () => {
+                drawer.classList.add('-translate-x-full');
+            });
+        }
+
+        // Initialize Icons
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>

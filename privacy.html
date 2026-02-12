@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exo Enterprise | Privacy Policy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Privacy Policy for Exo Enterprise.">
+    <meta property="og:title" content="Exo Enterprise | Privacy Policy">
+    <meta property="og:description" content="Privacy Policy for Exo Enterprise.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    <!-- Spline Preconnect -->
+    <link rel="preconnect" href="https://my.spline.design">
+    <link rel="dns-prefetch" href="https://my.spline.design">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- Fonts -->
+    <link id="all-fonts-link-font-urbanist" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-geist">
+        .font-geist {
+            font-family: 'Urbanist', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-playfair" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
+    <style id="all-fonts-style-font-playfair">
+        .font-playfair {
+            font-family: 'Playfair Display', serif !important;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-neutral-950 text-neutral-200 antialiased overflow-x-hidden" style="font-family:'Urbanist',sans-serif;">
+
+    <!-- Navigation -->
+    <nav class="relative w-full z-50 border-b border-white/5 bg-neutral-950/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div
+                    class="w-8 h-8 rounded border border-white/20 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors overflow-hidden">
+                    <img src="./logos/LOGO%20MARK.png" alt="Exo Logo" class="w-full h-full object-contain">
+                </div>
+                <span class="text-md font-medium tracking-tight text-white/90">Exo Enterprise</span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide uppercase text-neutral-400">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="flow.html" class="hover:text-white transition-colors">Flow OS</a>
+                <a href="firm.html" class="hover:text-white transition-colors">About The Firm</a>
+                <a href="/careers.html" class="hover:text-white transition-colors">Careers</a>
+            </div>
+
+            <!-- CTA -->
+            <a href="x-scale.html"
+                class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-xs font-medium text-white">
+                <span>Start Transformation</span>
+                <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+            </a>
+
+            <!-- Mobile Menu Icon -->
+            <button class="md:hidden text-white" id="mobile-menu-toggle">
+                <iconify-icon icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer (Matches firm.html) -->
+    <div id="mobile-drawer"
+        class="fixed inset-0 z-[70] md:hidden transition-transform duration-300 -translate-x-full bg-neutral-950">
+        <div class="p-6 flex flex-col h-full">
+            <div class="flex items-center justify-between mb-8">
+                <span class="text-white font-medium text-lg">Menu</span>
+                <button id="mobile-drawer-close" class="text-white bg-white/10 p-2 rounded-full">
+                    <iconify-icon icon="solar:close-circle-linear" width="24"></iconify-icon>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6 text-lg font-medium text-neutral-300">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="flow.html" class="hover:text-white transition-colors">Flow OS</a>
+                <a href="firm.html" class="hover:text-white transition-colors">About The Firm</a>
+                <a href="/careers.html" class="hover:text-white transition-colors">Careers</a>
+                <a href="x-scale.html" class="text-emerald-400">Start Transformation</a>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- Header -->
+    <header class="py-20 bg-neutral-900/30 border-b border-white/5">
+        <div class="max-w-4xl mx-auto px-6 text-center animate-fade-up">
+            <h1 class="text-4xl md:text-5xl font-light text-white mb-6 font-playfair">Privacy Policy</h1>
+            <p class="text-neutral-400 text-sm md:text-base max-w-2xl mx-auto">
+                Your privacy is important to us. It is Exo Enterprise's policy to respect your privacy regarding any
+                information we may collect from you across our website.
+            </p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="py-20">
+        <div class="max-w-3xl mx-auto px-6 space-y-12">
+
+            <!-- Section 1 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">1. Information Collection</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        We only ask for personal information when we truly need it to provide a service to you. We
+                        collect it by fair and lawful means, with your knowledge and consent. We also let you know why
+                        we’re collecting it and how it will be used.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">2. Use of Information</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        We do not share any personally identifying information publicly or with third-parties, except
+                        when required to by law. We may use your personal information to contact you with newsletters,
+                        marketing or promotional materials and other information that may be of interest to you. You may
+                        opt out of receiving any, or all, of these communications from us by following the unsubscribe
+                        link or instructions provided in any email we send.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">3. Data Retention</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        We only retain collected information for as long as necessary to provide you with your requested
+                        service. What data we store, we’ll protect within commercially acceptable means to prevent loss
+                        and theft, as well as unauthorized access, disclosure, copying, use or modification.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">4. Cookies</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        Our website may use "cookies" to collect information and improve our services. You have the
+                        option to either accept or refuse these cookies and know when a cookie is being sent to your
+                        computer. If you choose to refuse our cookies, you may not be able to use some portions of our
+                        Service.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">5. Links to Other Sites</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        Our Service may contain links to other sites that are not operated by us. If you click on a
+                        third party link, you will be directed to that third party's site. We strongly advise you to
+                        review the Privacy Policy of every site you visit.
+                    </p>
+                    <p>
+                        We have no control over and assume no responsibility for the content, privacy policies or
+                        practices of any third party sites or services.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 6 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">6. Changes to This Privacy Policy</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        We may update our Privacy Policy from time to time. We will notify you of any changes by posting
+                        the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically
+                        for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 7 -->
+            <section class="space-y-4">
+                <h2 class="text-2xl text-white font-medium font-playfair">7. Contact Us</h2>
+                <div class="text-neutral-400 text-sm leading-relaxed space-y-4 font-geist">
+                    <p>
+                        If you have any questions about this Privacy Policy, please contact us.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xs text-neutral-600 uppercase tracking-widest">
+                © 2026 Exo Enterprise. All rights reserved.
+            </p>
+            <div class="mt-4 flex justify-center gap-6">
+                <a href="privacy.html" class="text-xs text-neutral-500 hover:text-white transition-colors">Privacy
+                    Policy</a>
+                <a href="terms.html" class="text-xs text-neutral-500 hover:text-white transition-colors">Terms of
+                    Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Mobile Menu Toggle
+        const openBtn = document.getElementById('mobile-menu-toggle');
+        const closeBtn = document.getElementById('mobile-drawer-close');
+        const drawer = document.getElementById('mobile-drawer');
+
+        if (openBtn && drawer) {
+            openBtn.addEventListener('click', () => {
+                drawer.classList.remove('-translate-x-full');
+            });
+        }
+        if (closeBtn && drawer) {
+            closeBtn.addEventListener('click', () => {
+                drawer.classList.add('-translate-x-full');
+            });
+        }
+
+        // Initialize Icons
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+        });
+    </script>
+</body>
+
+</html>
