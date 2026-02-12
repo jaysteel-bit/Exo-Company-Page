@@ -156,7 +156,6 @@
 <body class="bg-neutral-950 text-neutral-200 antialiased selection:bg-emerald-500/30 selection:text-white">
 
     <!-- Lead Magnet Notification Banner -->
-    <!-- Lead Magnet Notification Banner -->
     <div id="value-notification-banner"
         class="fixed top-0 left-0 w-full z-[9999] bg-emerald-950/95 backdrop-blur-md border-b border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.2)] transform -translate-y-full transition-transform duration-500 ease-out">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-center gap-3">
@@ -173,16 +172,14 @@
 
     <!-- SPLINE LOADING PLACEHOLDER -->
     <div id="spline-loader"
-        class="fixed inset-0 -z-10 bg-neutral-950 flex items-center justify-center transition-opacity duration-1000"
-        style="z-index: -9;">
+        class="fixed inset-0 z-[120] bg-neutral-950 flex items-center justify-center transition-opacity duration-700 pointer-events-none">
         <div class="text-center relative z-10">
             <img src="./logos/LOGO%20MARK.png" alt="Loading..." class="w-16 h-16 mx-auto mb-4 opacity-60"
                 style="animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;">
             <div class="w-8 h-8 border-2 border-white/20 border-t-emerald-500 rounded-full mx-auto"
                 style="animation: spin 1s linear infinite;"></div>
         </div>
-        <div
-            class="absolute inset-0 bg-gradient-to-b from-neutral-900/40 via-transparent to-neutral-950 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-b from-neutral-900/40 via-transparent to-neutral-950">
         </div>
     </div>
 
@@ -1001,21 +998,25 @@
             const splineIframe = document.getElementById('spline-iframe');
             const loader = document.getElementById('spline-loader');
 
-            if (splineIframe && loader) {
-                splineIframe.addEventListener('load', function () {
+            function hideLoader() {
+                if (loader && loader.style.display !== 'none') {
                     loader.style.opacity = '0';
                     setTimeout(() => {
                         loader.style.display = 'none';
-                    }, 1000);
-                });
+                    }, 700);
+                }
+            }
 
-                // Fallback: Hide loader after 8 seconds regardless
-                setTimeout(() => {
-                    if (loader.style.display !== 'none') {
-                        loader.style.opacity = '0';
-                        setTimeout(() => loader.style.display = 'none', 1000);
-                    }
-                }, 8000);
+            if (splineIframe && loader) {
+                // If already loaded
+                if (splineIframe.contentDocument && splineIframe.contentDocument.readyState === 'complete') {
+                    hideLoader();
+                } else {
+                    splineIframe.addEventListener('load', hideLoader);
+                }
+
+                // Fallback: Hide loader after 5 seconds regardless (faster for UX)
+                setTimeout(hideLoader, 5000);
             }
         })();
     </script>
