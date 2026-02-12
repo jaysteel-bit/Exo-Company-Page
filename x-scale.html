@@ -158,14 +158,13 @@
     <!-- Lead Magnet Notification Banner -->
     <!-- Lead Magnet Notification Banner -->
     <div id="value-notification-banner"
-        style="transform: translateY(-100%); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); z-index: 9999;"
-        class="fixed top-0 left-0 w-full bg-emerald-950/95 backdrop-blur-md border-b border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+        class="fixed top-0 left-0 w-full z-[9999] bg-emerald-950/95 backdrop-blur-md border-b border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.2)] transform -translate-y-full transition-transform duration-500 ease-out">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-center gap-3">
             <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
             <p class="text-sm font-medium text-emerald-100 tracking-wide text-center">
                 Access granted. Check your email for the gift in a moment.
             </p>
-            <button onclick="document.getElementById('value-notification-banner').style.transform = 'translateY(-100%)'"
+            <button onclick="document.getElementById('value-notification-banner').classList.add('-translate-y-full')"
                 class="ml-4 text-emerald-400 hover:text-emerald-200 transition-colors">
                 <iconify-icon icon="solar:close-circle-bold" class="text-lg"></iconify-icon>
             </button>
@@ -806,47 +805,41 @@
         let isPhoneValid = false;
 
         // --- 1. Auto-Populate from Session ---
-        document.addEventListener('DOMContentLoaded', () => {
-            // Check for Lead Magnet Redirect
-            // Check for Lead Magnet Redirect
-            const showBanner = sessionStorage.getItem('exo_show_value_banner');
-            console.log('Value Banner Flag:', showBanner); // Debug log
+        // Check for Lead Magnet Redirect
+        const showBanner = sessionStorage.getItem('exo_show_value_banner');
+        console.log('Value Banner Flag:', showBanner); // Debug log
 
-            if (showBanner === 'true') {
-                const banner = document.getElementById('value-notification-banner');
-                if (banner) {
-                    // Show instantly
-                    // Force reflow
-                    void banner.offsetWidth;
+        if (showBanner === 'true') {
+            const banner = document.getElementById('value-notification-banner');
+            if (banner) {
+                // Show instantly
+                setTimeout(() => {
+                    banner.classList.remove('-translate-y-full');
+                }, 100);
 
-                    setTimeout(() => {
-                        banner.style.transform = 'translateY(0)';
-                    }, 50);
+                // Cleanup flag
+                sessionStorage.removeItem('exo_show_value_banner');
 
-                    // Cleanup flag
-                    sessionStorage.removeItem('exo_show_value_banner');
-
-                    // Auto-hide
-                    setTimeout(() => {
-                        banner.style.transform = 'translateY(-100%)';
-                    }, 4000); // 4 seconds visibility
-                }
+                // Auto-hide
+                setTimeout(() => {
+                    banner.classList.add('-translate-y-full');
+                }, 4000); // 4 seconds visibility
             }
-            const rawData = sessionStorage.getItem('exo_lead_data');
-            if (rawData) {
-                try {
-                    const data = JSON.parse(rawData);
-                    if (data.firstName) document.getElementById('first-name-x').value = data.firstName;
-                    if (data.lastName) document.getElementById('last-name-x').value = data.lastName;
-                    if (data.email) document.getElementById('email-x').value = data.email;
-                    console.log("Lead data restored:", data);
-                } catch (e) {
-                    console.error("Failed to parse lead data", e);
-                }
+        }
+        const rawData = sessionStorage.getItem('exo_lead_data');
+        if (rawData) {
+            try {
+                const data = JSON.parse(rawData);
+                if (data.firstName) document.getElementById('first-name-x').value = data.firstName;
+                if (data.lastName) document.getElementById('last-name-x').value = data.lastName;
+                if (data.email) document.getElementById('email-x').value = data.email;
+                console.log("Lead data restored:", data);
+            } catch (e) {
+                console.error("Failed to parse lead data", e);
             }
-            // Initialize dropdown click listeners
-            initDropdowns();
-        });
+        }
+        // Initialize dropdown click listeners
+        initDropdowns();
 
         // --- 2. Custom Dropdown Logic ---
         function initDropdowns() {
