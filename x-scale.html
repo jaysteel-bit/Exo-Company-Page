@@ -132,6 +132,24 @@
                 opacity: 1;
             }
         }
+
+        @keyframes emerald-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 15px -5px rgba(16, 185, 129, 0.3);
+                border-color: rgba(16, 185, 129, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 25px 5px rgba(16, 185, 129, 0.6);
+                border-color: rgba(16, 185, 129, 0.7);
+            }
+        }
+
+        .animate-emerald-pulse {
+            animation: emerald-pulse 3s ease-in-out infinite;
+        }
     </style>
 </head>
 
@@ -198,7 +216,7 @@
             </h1>
 
             <!-- Sub-headline -->
-            <p
+            <p style="text-shadow: 0 2px 10px rgba(0,0,0,0.6), 0 1px 1px rgba(0,0,0,0.75);"
                 class="text-lg md:text-xl text-slate-300 font-['Urbanist'] font-normal max-w-3xl mx-auto leading-relaxed">
                 Join our <span class="text-white font-medium">Department Transformation Program</span>. We install a
                 self-running AI department in your company, removing you as the single point of failure.<br>
@@ -216,7 +234,7 @@
 
             <!-- Video Placeholder -->
             <div
-                class="w-full max-w-4xl mx-auto aspect-video glass-panel rounded-xl overflow-hidden relative group cursor-pointer shadow-2xl shadow-emerald-900/10 border border-white/10 mt-8">
+                class="w-full max-w-4xl mx-auto aspect-video glass-panel rounded-xl overflow-hidden relative group cursor-pointer shadow-2xl shadow-emerald-900/10 border border-white/10 mt-8 animate-emerald-pulse">
                 <div
                     class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-all">
                     <div
