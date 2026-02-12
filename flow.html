@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Flow OS by Exo | The Operating System for Operations</title>
+  <title>Flow OS by Exo | The Operating System for Departments</title>
   <meta name="description"
     content="Flow OS is the department-in-a-box solution. We build the rig, install the agents, and hand you the keys to a fully autonomous department.">
-  <meta property="og:title" content="Flow OS by Exo | The Operating System for Operations">
+  <meta property="og:title" content="Flow OS by Exo | The Operating System for Departments">
   <meta property="og:description" content="The department-in-a-box solution. Autonomous operations in 90 days.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/favicon.png">
@@ -651,7 +651,7 @@ Sequence animation intro. Usage:
                   </a>
                   <a href="https://exoent.co"
                     class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">
-                    Exo AI
+                    Ask Exo AI
                   </a>
                 </div>
               </div>
@@ -734,6 +734,7 @@ Sequence animation intro. Usage:
                 By Exo
               </span>
             </a>
+            <!-- MOBILE SECTION: HAMBURGER BUTTON -->
             <button aria-label="Open menu"
               class="md:hidden inline-flex hover:ring-white/30 hover:bg-white/15 transition text-white bg-white/10 rounded-full ring-white/15 ring-1 ml-1 pt-2 pr-2 pb-2 pl-2 items-center justify-center"
               type="button" id="mobileMenuToggle">
@@ -760,8 +761,9 @@ Sequence animation intro. Usage:
         </div>
       </div>
     </header>
-    <div id="mobileNavDrawer" class="fixed inset-0 z-50 transition-transform duration-300 bg-slate-900/80"
-      style="backdrop-filter: blur(8px); transform: translateX(-100%);">
+    <!-- MOBILE SECTION: NAVIGATION DRAWER -->
+    <div id="mobileNavDrawer" class="fixed inset-0 z-50 transition-transform duration-300 bg-slate-900/80 md:hidden"
+      style="backdrop-filter: blur(8px);">
       <div class="absolute top-0 left-0 right-0 p-4 flex items-center justify-between z-50">
         <span class="text-white font-geist font-semibold">Menu</span>
         <button id="mobileMenuClose" aria-label="Close menu"
@@ -819,11 +821,11 @@ Sequence animation intro. Usage:
           </button>
           <div class="mobile-submenu hidden mt-3 pl-2 space-y-2"><a href="/x-scale.html"
               class="block text-sm text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
-              style="backdrop-filter: blur(8px);">View Pricing Tiers</a><a href="/x-scale.html"
+              style="backdrop-filter: blur(8px);">Pricing</a><a href="/x-scale.html"
               class="block text-sm text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
               style="backdrop-filter: blur(8px);">ROI Calculator</a><a href="/x-scale.html"
               class="block text-sm text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
-              style="backdrop-filter: blur(8px);">Book Consultation</a></div>
+              style="backdrop-filter: blur(8px);">Get Started</a></div>
         </div>
         <div class="border-b border-white/10 py-4">
           <button class="w-full flex items-center justify-between text-white font-geist text-lg mobile-accordion-toggle"
@@ -1001,7 +1003,7 @@ Sequence animation intro. Usage:
                 <span
                   style="content: ''; pointer-events: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1; width: 100%; aspect-ratio: 1; background: linear-gradient(-50deg, transparent, #1d4ed8, transparent); mask-image: radial-gradient(circle at bottom, transparent 40%, black); opacity: 0.6; animation: shimmer 4s linear infinite;"></span>
               </a>
-              <a href="/steel.html"
+              <a href="/x-scale.html"
                 class="inline-flex items-center justify-center gap-2 transition [animation:fadeSlideIn_1s_ease-out_0.5s_both] hover:bg-white/15 hover:ring-white/25 ring-white/15 ring-1 text-sm font-medium text-white/90 font-geist text-center bg-white/10 w-full rounded-full pt-2.5 pr-4 pb-2.5 pl-4 backdrop-blur-sm">
                 Scale Your Business
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -1020,237 +1022,278 @@ Sequence animation intro. Usage:
     <!-- Subtle vignette -->
     <div class="pointer-events-none absolute top-0 right-0 bottom-0 left-0"></div>
   </div>
-  <!-- SOCIAL PROOF BAR - Standalone Section -->
-  <section class="overflow-hidden md:pt-5 bg-slate-950 border-white/5 border-t border-b pt-5 pb-16 relative">
-    <!-- Decorative grid lines -->
-    <div class="pointer-events-none z-0 absolute inset-0">
-      <div class="absolute inset-y-0 left-[25%] w-px bg-gradient-to-b from-transparent to-transparent via-white/5">
+  <!-- DUAL-MARQUEE LOGO TICKER - Scroll-Reactive Social Proof -->
+  <section class="overflow-hidden md:py-16 bg-slate-950 py-16 relative">
+
+    <!-- Container -->
+    <div class="z-10 max-w-7xl mx-auto relative space-y-12">
+
+      <!-- Section 1: Tech Stack Integrations (Right to Left) -->
+      <div>
+        <div class="text-center mb-6">
+          <p class="text-sm font-medium font-geist text-slate-400 tracking-widest uppercase">
+            Integrates With Your Existing Tools
+          </p>
+        </div>
+
+        <div class="marquee-container group relative overflow-hidden" data-direction="right-to-left"
+          style="--duration: 50s; --direction: normal;">
+          <!-- Gradient Overlay -->
+          <div
+            class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none">
+          </div>
+          <div
+            class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none">
+          </div>
+
+          <div class="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+            <!-- Marquee Content -->
+            <div class="flex gap-8 px-4">
+              <!-- Tech Stack Items -->
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Slack</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Notion</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">HubSpot</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Salesforce</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Google</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">AWS</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Asana</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Zapier</span>
+              </div>
+            </div>
+            <!-- Duplicate Content -->
+            <div class="flex gap-8 px-4">
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Slack</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Notion</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">HubSpot</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Salesforce</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Google</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">AWS</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Asana</span>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <span class="text-xl font-semibold text-white font-geist">Zapier</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="absolute inset-y-0 left-[50%] w-px bg-gradient-to-b from-transparent to-transparent via-white/8">
+
+      <!-- Section 2: Client Social Proof (Left to Right) -->
+      <div>
+        <div class="marquee-container group relative overflow-hidden" data-direction="left-to-right"
+          style="--duration: 40s; --direction: reverse;">
+          <!-- Gradient Overlay -->
+          <div
+            class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none">
+          </div>
+          <div
+            class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none">
+          </div>
+
+          <div class="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
+            <!-- Marquee Content -->
+            <div class="flex gap-8 px-4">
+              <!-- Client Logos -->
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/Chen-firm.JPG" alt="Chen Firm"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/Nexora-logo.jpeg" alt="Nexora"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/alponze-LTD.jpeg" alt="Alponze"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/basel-team.jpeg" alt="Basel"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/bynb-team.jpeg" alt="BYNB"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/tamtam-logo.jpeg" alt="TamTam"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/vertex-team.jpeg" alt="Vertex"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <span
+                    class="font-['Urbanist'] text-sm font-bold text-white text-center leading-tight">Global<br>Scale</span>
+                </div>
+              </div>
+            </div>
+            <!-- Duplicate Content -->
+            <div class="flex gap-8 px-4">
+              <!-- Client Logos -->
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/Chen-firm.JPG" alt="Chen Firm"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/Nexora-logo.jpeg" alt="Nexora"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/alponze-LTD.jpeg" alt="Alponze"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/basel-team.jpeg" alt="Basel"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/bynb-team.jpeg" alt="BYNB"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/tamtam-logo.jpeg" alt="TamTam"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <img loading="lazy" src="./logos/testimonial-logos/vertex-team.jpeg" alt="Vertex"
+                    class="h-10 w-auto object-contain">
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-center p-5 rounded-xl ring-1 bg-white/5 ring-white/10 hover:bg-white/8 transition-all duration-300 min-w-[160px] h-[88px]">
+                <div
+                  class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
+                  <span
+                    class="font-['Urbanist'] text-sm font-bold text-white text-center leading-tight">Global<br>Scale</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="absolute inset-y-0 left-[75%] w-px bg-gradient-to-b from-transparent to-transparent via-white/5">
-      </div>
+
     </div>
+    <style>
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
+        }
 
-    <div class="z-10 md:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
-      <!-- Badge -->
-      <div class="text-center mb-10 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.1s_both] animate">
-        <div
-          class="inline-flex ring-1 ring-white/10 text-sm font-medium text-white/80 font-geist bg-white/5 rounded-full pt-2 pr-4 pb-2 pl-4 shadow-2xl backdrop-blur-sm gap-x-2 gap-y-2 items-center">
-          Built by AI Specialists — 10+ Years Combined Experience
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="w-4 h-4 text-blue-400">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-        </div>
-      </div>
+        to {
+          transform: translateX(calc(-50%));
+        }
+      }
 
-      <!-- Icon Grid -->
-      <div
-        class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-4 md:gap-6 max-w-6xl mx-auto animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.2s_both] animate">
-        <!-- Legal -->
-        <div
-          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
-          <div
-            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="text-slate-300">
-              <path
-                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
-              </path>
-            </svg>
-          </div>
-          <span
-            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
-            Legal
-          </span>
-        </div>
-
-        <!-- Real Estate -->
-        <div
-          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
-          <div
-            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="text-slate-300">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-          </div>
-          <span
-            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
-            Real Estate
-          </span>
-        </div>
-
-        <!-- Healthcare -->
-        <div
-          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
-          <div
-            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="text-slate-300">
-              <path d="M12 2v4"></path>
-              <path d="M12 18v4"></path>
-              <path d="M4.93 4.93l2.83 2.83"></path>
-              <path d="M16.24 16.24l2.83 2.83"></path>
-              <path d="M2 12h4"></path>
-              <path d="M18 12h4"></path>
-              <path d="M4.93 19.07l2.83-2.83"></path>
-              <path d="M16.24 7.76l2.83-2.83"></path>
-            </svg>
-          </div>
-          <span
-            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
-            Healthcare
-          </span>
-        </div>
-
-        <!-- Financial Services -->
-        <div
-          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
-          <div
-            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="text-slate-300">
-              <line x1="12" x2="12" y1="2" y2="22"></line>
-              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <span
-            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
-            Financial
-          </span>
-        </div>
-
-        <!-- Manufacturing -->
-        <div
-          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
-          <div
-            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="text-slate-300">
-              <path d="M12 2v20"></path>
-              <path d="m15 5 4 4H5l4-4"></path>
-              <path d="M3 9h18" class=""></path>
-              <path d="m5 15 4-4"></path>
-              <path d="m15 15-4-4"></path>
-            </svg>
-          </div>
-          <span
-            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
-            Manufacturing
-          </span>
-        </div>
-
-        <!-- Logistics -->
-        <div
-          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
-          <div
-            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="text-slate-300">
-              <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" class=""></path>
-              <path d="M15 18H9"></path>
-              <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path>
-              <circle cx="17" cy="18" r="2"></circle>
-              <circle cx="7" cy="18" r="2"></circle>
-            </svg>
-          </div>
-          <span
-            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
-            Logistics
-          </span>
-        </div>
-
-        <!-- Retail & E-commerce -->
-        <div
-          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
-          <div
-            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="text-slate-300">
-              <circle cx="8" cy="21" r="1"></circle>
-              <circle cx="19" cy="21" r="1"></circle>
-              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-            </svg>
-          </div>
-          <span
-            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
-            Retail
-          </span>
-        </div>
-
-        <!-- Hospitality -->
-        <div
-          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
-          <div
-            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="text-slate-300">
-              <path d="M2 20v-5c0-1.1.9-2 2-2h3"></path>
-              <path d="M20 20v-5c0-1.1-.9-2-2-2h-3"></path>
-              <path d="M10 20v-8"></path>
-              <path d="M14 20v-8"></path>
-              <path d="M2 4h20"></path>
-              <path d="M7 4v4"></path>
-              <path d="M12 4v4"></path>
-              <path d="M17 4v4"></path>
-            </svg>
-          </div>
-          <span
-            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
-            Hospitality
-          </span>
-        </div>
-
-        <!-- & More (with glow and heavy shadows) -->
-        <div
-          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/20 relative">
-          <!-- Glowing background effect -->
-          <div
-            class="absolute inset-0 bg-blue-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          </div>
-
-          <div
-            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-blue-500/20 transition-all relative shadow-xl shadow-blue-500/50">
-            <!-- Pulsing glow ring -->
-            <div class="absolute inset-0 rounded-xl bg-blue-400/20 blur-md animate-pulse"></div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="text-blue-400 relative z-10">
-              <line x1="12" x2="12" y1="5" y2="19"></line>
-              <line x1="5" x2="19" y1="12" y2="12"></line>
-            </svg>
-          </div>
-          <span
-            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-blue-300 transition-colors relative z-10">
-            &amp; More
-          </span>
-        </div>
-      </div>
-
-      <!-- Supporting Text -->
-      <div class="text-center mt-10 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.3s_both] animate">
-        <p class="md:text-base text-sm font-medium text-slate-400 font-geist">
-          Helping businesses reclaim
-          <span class="font-semibold text-white">960+ hours per year</span>
-        </p>
-      </div>
-    </div>
+      .animate-marquee {
+        animation: marquee var(--duration) linear infinite;
+        animation-direction: var(--direction);
+      }
+    </style>
   </section>
+
   <!-- PROBLEM/SOLUTION SECTION - Old Way vs New Way -->
   <section class="overflow-hidden md:py-28 bg-slate-950 pt-20 pb-20 relative" id="comparison">
     <!-- Decorative grid lines -->
@@ -1586,8 +1629,8 @@ Sequence animation intro. Usage:
       </div>
     </div>
   </section>
-  <!-- DUAL-MARQUEE LOGO TICKER - Scroll-Reactive Social Proof -->
-  <section class="overflow-hidden md:py-16 bg-slate-950 pt-12 pb-12 relative">
+  <!-- SOCIAL PROOF BAR - Standalone Section -->
+  <section class="overflow-hidden md:pt-5 bg-slate-950 border-white/5 border-t border-b pt-5 pb-16 relative">
     <!-- Decorative grid lines -->
     <div class="pointer-events-none z-0 absolute inset-0">
       <div class="absolute inset-y-0 left-[25%] w-px bg-gradient-to-b from-transparent to-transparent via-white/5">
@@ -1598,549 +1641,227 @@ Sequence animation intro. Usage:
       </div>
     </div>
 
-    <div class="z-10 max-w-7xl mr-auto ml-auto relative">
-      <!-- Top Marquee -->
-      <div class="mb-10">
-        <!-- Label -->
-        <div class="text-center mb-6 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.1s_both] animate">
-          <p class="text-xs md:text-sm font-medium font-geist text-slate-400 tracking-wide uppercase">
-            Trusted By Forward-Thinking Teams
-          </p>
-        </div>
-
-        <!-- Top Bar Container -->
-        <div class="marquee-container top-marquee relative" data-direction="right-to-left">
-          <!-- Gradient fade overlays -->
-          <div
-            class="pointer-events-none absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-slate-950 to-transparent z-10">
-          </div>
-          <div
-            class="pointer-events-none absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-slate-950 to-transparent z-10">
-          </div>
-
-          <!-- Scrolling track -->
-          <div class="marquee-track flex gap-12 pt-6 pb-6 gap-x-12 gap-y-12 items-center">
-            <!-- First set of logos -->
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/Chen-firm.JPG" alt="Chen Firm"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/Nexora-logo.jpeg" alt="Nexora"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/alponze-LTD.jpeg" alt="Alponze"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/basel-team.jpeg" alt="Basel"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/bynb-team.jpeg" alt="BYNB"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/tamtam-logo.jpeg" alt="TamTam"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/vertex-team.jpeg" alt="Vertex"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <span
-                  class="font-['Urbanist'] text-lg font-bold text-white text-center leading-tight">Global<br>Scale</span>
-              </div>
-            </div>
-
-            <!-- Duplicate set for seamless loop -->
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/Chen-firm.JPG" alt="Chen Firm"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/Nexora-logo.jpeg" alt="Nexora"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/alponze-LTD.jpeg" alt="Alponze"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/basel-team.jpeg" alt="Basel"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/bynb-team.jpeg" alt="BYNB"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/tamtam-logo.jpeg" alt="TamTam"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div
-                class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center overflow-hidden">
-                <img loading="lazy" src="./logos/testimonial-logos/vertex-team.jpeg" alt="Vertex"
-                  class="w-full h-full object-cover">
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24">
-              <div class="flex bg-slate-800/50 w-32 h-20 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <span
-                  class="font-['Urbanist'] text-lg font-bold text-white text-center leading-tight">Global<br>Scale</span>
-              </div>
-            </div>
-          </div>
+    <div class="z-10 md:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
+      <!-- Badge -->
+      <div class="text-center mb-10 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.1s_both] animate">
+        <div
+          class="inline-flex ring-1 ring-white/10 text-sm font-medium text-white/80 font-geist bg-white/5 rounded-full pt-2 pr-4 pb-2 pl-4 shadow-2xl backdrop-blur-sm gap-x-2 gap-y-2 items-center">
+          Built by AI Specialists — 10+ Years Combined Experience
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="w-4 h-4 text-blue-400">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
         </div>
       </div>
 
-      <!-- Bottom Marquee -->
-      <div class="">
-        <!-- Bottom Bar Container -->
-        <div class="marquee-container bottom-marquee relative" data-direction="left-to-right">
-          <!-- Gradient fade overlays -->
+      <!-- Icon Grid -->
+      <div
+        class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-4 md:gap-6 max-w-6xl mx-auto animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.2s_both] animate">
+        <!-- Legal -->
+        <div
+          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
           <div
-            class="pointer-events-none absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-slate-950 to-transparent z-10">
+            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-slate-300">
+              <path
+                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z">
+              </path>
+            </svg>
           </div>
-          <div
-            class="pointer-events-none absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-slate-950 to-transparent z-10">
-          </div>
-
-          <!-- Scrolling track -->
-          <div class="marquee-track flex pt-6 pb-6 gap-x-12 gap-y-12 items-center">
-            <!-- First set of 6 logos -->
-
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="flex bg-slate-800/50 w-32 h-16 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/c1c508e5-c781-41a7-beef-455c3eeba73b_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-            <div
-              class="marquee-item flex hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] bg-slate-900/30 opacity-90 h-24 ring-white/10 ring-1 rounded-2xl pt-6 pr-6 pb-6 pl-6 shadow-2xl backdrop-blur-sm items-center justify-center">
-              <div class="flex bg-slate-800/50 w-32 h-16 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/b7032397-8291-4070-9b4e-d5ff017341c8_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="flex bg-slate-800/50 w-32 h-16 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/cb6e5c64-a3c9-43a3-8813-aa96bdd0bb3c_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="flex bg-slate-800/50 w-32 h-16 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/5b7e9e3b-5ef8-4ed1-ba5b-19aaa6d3523b_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="flex bg-slate-800/50 w-32 h-16 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/702a1485-51fe-4e27-9ba9-f638a635ca07_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="w-32 h-16 bg-slate-800/50 rounded-lg ring-1 ring-white/10 flex items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/99d6e736-8c96-430e-9fcd-c49bd66c9ed0_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-
-            <!-- Duplicate set for seamless loop -->
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="flex bg-slate-800/50 w-32 h-16 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/b7032397-8291-4070-9b4e-d5ff017341c8_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="flex bg-slate-800/50 w-32 h-16 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/c1c508e5-c781-41a7-beef-455c3eeba73b_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="flex bg-slate-800/50 w-32 h-16 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/cb6e5c64-a3c9-43a3-8813-aa96bdd0bb3c_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="flex bg-slate-800/50 w-32 h-16 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/5b7e9e3b-5ef8-4ed1-ba5b-19aaa6d3523b_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="flex bg-slate-800/50 w-32 h-16 ring-white/10 ring-1 rounded-lg items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/702a1485-51fe-4e27-9ba9-f638a635ca07_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-
-            <div
-              class="marquee-item flex items-center justify-center p-6 rounded-2xl ring-1 bg-slate-900/30 ring-white/10 backdrop-blur-sm shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 min-w-[180px] h-24 opacity-90">
-              <div class="w-32 h-16 bg-slate-800/50 rounded-lg ring-1 ring-white/10 flex items-center justify-center">
-                <img
-                  src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/99d6e736-8c96-430e-9fcd-c49bd66c9ed0_3840w.png"
-                  alt="Container background" class="w-full h-full object-contain" data-container-bg="true">
-                <span class="text-xs text-slate-500 font-geist"></span>
-              </div>
-            </div>
-          </div>
+          <span
+            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
+            Legal
+          </span>
         </div>
 
-        <!-- Label -->
-        <div class="text-center mt-6 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.2s_both]">
-          <p class="md:text-sm text-xs font-medium text-slate-500 tracking-wide font-geist">
-            And Many More...
-          </p>
+        <!-- Real Estate -->
+        <div
+          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
+          <div
+            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-slate-300">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <span
+            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
+            Real Estate
+          </span>
+        </div>
+
+        <!-- Healthcare -->
+        <div
+          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
+          <div
+            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-slate-300">
+              <path d="M12 2v4"></path>
+              <path d="M12 18v4"></path>
+              <path d="M4.93 4.93l2.83 2.83"></path>
+              <path d="M16.24 16.24l2.83 2.83"></path>
+              <path d="M2 12h4"></path>
+              <path d="M18 12h4"></path>
+              <path d="M4.93 19.07l2.83-2.83"></path>
+              <path d="M16.24 7.76l2.83-2.83"></path>
+            </svg>
+          </div>
+          <span
+            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
+            Healthcare
+          </span>
+        </div>
+
+        <!-- Financial Services -->
+        <div
+          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
+          <div
+            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-slate-300">
+              <line x1="12" x2="12" y1="2" y2="22"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <span
+            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
+            Financial
+          </span>
+        </div>
+
+        <!-- Manufacturing -->
+        <div
+          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
+          <div
+            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-slate-300">
+              <path d="M12 2v20"></path>
+              <path d="m15 5 4 4H5l4-4"></path>
+              <path d="M3 9h18" class=""></path>
+              <path d="m5 15 4-4"></path>
+              <path d="m15 15-4-4"></path>
+            </svg>
+          </div>
+          <span
+            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
+            Manufacturing
+          </span>
+        </div>
+
+        <!-- Logistics -->
+        <div
+          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
+          <div
+            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-slate-300">
+              <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" class=""></path>
+              <path d="M15 18H9"></path>
+              <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path>
+              <circle cx="17" cy="18" r="2"></circle>
+              <circle cx="7" cy="18" r="2"></circle>
+            </svg>
+          </div>
+          <span
+            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
+            Logistics
+          </span>
+        </div>
+
+        <!-- Retail & E-commerce -->
+        <div
+          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
+          <div
+            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-slate-300">
+              <circle cx="8" cy="21" r="1"></circle>
+              <circle cx="19" cy="21" r="1"></circle>
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+            </svg>
+          </div>
+          <span
+            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
+            Retail
+          </span>
+        </div>
+
+        <!-- Hospitality -->
+        <div
+          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/10">
+          <div
+            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-white/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-slate-300">
+              <path d="M2 20v-5c0-1.1.9-2 2-2h3"></path>
+              <path d="M20 20v-5c0-1.1-.9-2-2-2h-3"></path>
+              <path d="M10 20v-8"></path>
+              <path d="M14 20v-8"></path>
+              <path d="M2 4h20"></path>
+              <path d="M7 4v4"></path>
+              <path d="M12 4v4"></path>
+              <path d="M17 4v4"></path>
+            </svg>
+          </div>
+          <span
+            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
+            Hospitality
+          </span>
+        </div>
+
+        <!-- & More (with glow and heavy shadows) -->
+        <div
+          class="group flex flex-col items-center gap-3 p-4 rounded-2xl ring-1 bg-slate-900/40 ring-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-slate-900/60 hover:ring-white/20 shadow-2xl hover:shadow-blue-500/20 relative">
+          <!-- Glowing background effect -->
+          <div
+            class="absolute inset-0 bg-blue-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          </div>
+
+          <div
+            class="w-10 h-10 rounded-xl ring-1 flex items-center justify-center bg-white/5 ring-white/10 group-hover:bg-blue-500/20 transition-all relative shadow-xl shadow-blue-500/50">
+            <!-- Pulsing glow ring -->
+            <div class="absolute inset-0 rounded-xl bg-blue-400/20 blur-md animate-pulse"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="text-blue-400 relative z-10">
+              <line x1="12" x2="12" y1="5" y2="19"></line>
+              <line x1="5" x2="19" y1="12" y2="12"></line>
+            </svg>
+          </div>
+          <span
+            class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-blue-300 transition-colors relative z-10">
+            &amp; More
+          </span>
         </div>
       </div>
-      <style>
-        /* Base animations for left-to-right */
-        @keyframes marquee-ltr {
-          0% {
-            transform: translateX(0);
-          }
 
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        /* Base animations for right-to-left */
-        @keyframes marquee-rtl {
-          0% {
-            transform: translateX(-50%);
-          }
-
-          100% {
-            transform: translateX(0);
-          }
-        }
-
-        /* Apply animations */
-        .top-marquee[data-direction="left-to-right"] .marquee-track {
-          animation: marquee-ltr 30s linear infinite;
-        }
-
-        .top-marquee[data-direction="right-to-left"] .marquee-track {
-          animation: marquee-rtl 30s linear infinite;
-        }
-
-        .bottom-marquee[data-direction="left-to-right"] .marquee-track {
-          animation: marquee-ltr 30s linear infinite;
-        }
-
-        .bottom-marquee[data-direction="right-to-left"] .marquee-track {
-          animation: marquee-rtl 30s linear infinite;
-        }
-
-        /* Pause on hover */
-        .marquee-container:hover .marquee-track,
-        .marquee-container.paused .marquee-track {
-          animation-play-state: paused !important;
-        }
-
-        /* Smooth transitions */
-        .marquee-track {
-          transition: transform 0.6s ease-in-out;
-        }
-      </style>
-      <script>
-          (function() {
-            const component = document.querySelector('[data-element-id="aura-emgy24ol6n29ah5l"]');
-          if (!component) return;
-
-          const topMarquee = component.querySelector('.top-marquee');
-          const bottomMarquee = component.querySelector('.bottom-marquee');
-          if (!topMarquee || !bottomMarquee) return;
-
-          let lastScrollY = window.scrollY;
-          let isHovered = false;
-          let scrollTimeout;
-          let scrollDirection = 'down'; // Initial assumed direction
-
-            const handleMouseEnter = () => {
-            isHovered = true;
-          topMarquee.classList.add('paused');
-          bottomMarquee.classList.add('paused');
-            };
-
-            const handleMouseLeave = () => {
-            isHovered = false;
-          topMarquee.classList.remove('paused');
-          bottomMarquee.classList.remove('paused');
-            };
-
-          topMarquee.addEventListener('mouseenter', handleMouseEnter);
-          topMarquee.addEventListener('mouseleave', handleMouseLeave);
-          bottomMarquee.addEventListener('mouseenter', handleMouseEnter);
-          bottomMarquee.addEventListener('mouseleave', handleMouseLeave);
-
-            const handleScroll = () => {
-              if (isHovered) return;
-
-          clearTimeout(scrollTimeout);
-              scrollTimeout = setTimeout(() => {
-                const currentScrollY = window.scrollY;
-          const scrollDistance = currentScrollY - lastScrollY;
-          const scrollThreshold = 30; // Min pixels to scroll to trigger a change
-
-          let newDirection;
-
-                if (scrollDistance > scrollThreshold) {
-            newDirection = 'down';
-                } else if (scrollDistance < -scrollThreshold) {
-            newDirection = 'up';
-                } else {
-                  // Not enough momentum, do nothing
-                  return;
-                }
-
-          // Only update if the direction has actually changed
-          if (newDirection !== scrollDirection) {
-            scrollDirection = newDirection;
-
-          if (scrollDirection === 'down') {
-            // Scrolling DOWN - Set to reverse directions
-            topMarquee.setAttribute('data-direction', 'right-to-left');
-          bottomMarquee.setAttribute('data-direction', 'left-to-right');
-                  } else {
-            // Scrolling UP - Set to original directions
-            topMarquee.setAttribute('data-direction', 'left-to-right');
-          bottomMarquee.setAttribute('data-direction', 'right-to-left');
-                  }
-                }
-
-          lastScrollY = currentScrollY;
-
-              }, 150); // Increased timeout for smoother detection
-            };
-
-          window.addEventListener('scroll', handleScroll, {passive: true });
-          })();
-      </script>
+      <!-- Supporting Text -->
+      <div class="text-center mt-10 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.3s_both] animate">
+        <p class="md:text-base text-sm font-medium text-slate-400 font-geist">
+          Helping businesses reclaim
+          <span class="font-semibold text-white">960+ hours per year</span>
+        </p>
+      </div>
     </div>
   </section>
 
-  <!-- Dual-Marquee Animation Styles & JavaScript -->
-  <style class="">
-    /* Base animations for left-to-right */
-    @keyframes marquee-ltr {
-      0% {
-        transform: translateX(0);
-      }
 
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Base animations for right-to-left */
-    @keyframes marquee-rtl {
-      0% {
-        transform: translateX(-50%);
-      }
-
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    /* Apply animations */
-    .top-marquee[data-direction="left-to-right"] .marquee-track {
-      animation: marquee-ltr 30s linear infinite;
-    }
-
-    .top-marquee[data-direction="right-to-left"] .marquee-track {
-      animation: marquee-rtl 30s linear infinite;
-    }
-
-    .bottom-marquee[data-direction="left-to-right"] .marquee-track {
-      animation: marquee-ltr 30s linear infinite;
-    }
-
-    .bottom-marquee[data-direction="right-to-left"] .marquee-track {
-      animation: marquee-rtl 30s linear infinite;
-    }
-
-    /* Pause on hover */
-    .marquee-container:hover .marquee-track,
-    .marquee-container.paused .marquee-track {
-      animation-play-state: paused !important;
-    }
-
-    /* Smooth transitions */
-    .marquee-track {
-      transition: transform 0.6s ease-in-out;
-    }
-  </style>
-
-  <script>
-          (function() {
-        const topMarquee = document.querySelector('.top-marquee');
-          const bottomMarquee = document.querySelector('.bottom-marquee');
-          let lastScrollY = window.scrollY;
-          let isHovered = false;
-
-          // Hover pause (affects both marquees)
-          const marquees = [topMarquee, bottomMarquee];
-        marquees.forEach(marquee => {
-            marquee.addEventListener('mouseenter', () => {
-              isHovered = true;
-              topMarquee.classList.add('paused');
-              bottomMarquee.classList.add('paused');
-            });
-
-          marquee.addEventListener('mouseleave', () => {
-            isHovered = false;
-          topMarquee.classList.remove('paused');
-          bottomMarquee.classList.remove('paused');
-          });
-        });
-
-          // Scroll direction detection with smooth reversal
-          let scrollTimeout;
-        window.addEventListener('scroll', () => {
-          if (isHovered) return; // Don't change direction while hovering
-
-          clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY > lastScrollY) {
-            // Scrolling DOWN - REVERSE both directions
-            topMarquee.setAttribute('data-direction', 'right-to-left');
-          bottomMarquee.setAttribute('data-direction', 'left-to-right');
-            } else {
-            // Scrolling UP - RETURN to original directions
-            topMarquee.setAttribute('data-direction', 'left-to-right');
-          bottomMarquee.setAttribute('data-direction', 'right-to-left');
-            }
-
-          lastScrollY = currentScrollY;
-          }, 50); // Slight delay for smooth detection
-        });
-      })();
-  </script>
   <!-- SERVICES SECTION - Value-Focused Hybrid Approach -->
   <section class="overflow-hidden lg:py-28 bg-slate-950 pt-28 pb-28 relative" id="services">
     <!-- Decorative grid lines -->
@@ -2297,7 +2018,7 @@ Sequence animation intro. Usage:
             <div class="p-8">
               <h3
                 class="text-2xl md:text-3xl font-semibold tracking-tight font-geist text-white mb-4 group-hover:text-emerald-300 transition-colors">
-                From Chaos to Clarity in 14 Days
+                From Chaos to Clarity in 30 Days
               </h3>
 
               <p class="leading-relaxed text-base text-slate-400 font-geist mb-6">
@@ -2313,7 +2034,7 @@ Sequence animation intro. Usage:
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                   <p class="text-sm font-geist text-slate-300">
-                    Live in production within 14 days—not 6 months
+                    Live in production within 30 days—not 6 months
                   </p>
                 </div>
 
@@ -3144,7 +2865,8 @@ Sequence animation intro. Usage:
               <p class="leading-relaxed text-base text-slate-400 font-geist">Past failures aren't a reason to
                 quit—they're proof you needed
                 a better partner. Most AI projects fail because they're built
-                by developers, not operators who understand your workflows. We've come across some stories and have made
+                by developers, not operators who understand your workflows. We've come across some stories and have
+                made
                 transformations.
                 We've implemented 100+ systems for SMBs like you. Your last
                 vendor burned you once—don't let that bad decision burn you
@@ -3302,7 +3024,8 @@ Sequence animation intro. Usage:
 
                 <p class="leading-relaxed text-sm text-neutral-900 mb-4">"We were drowning in 30+ hours of scheduling
                   chaos every week. Flow and the Exo team built us an AI system that handles everything—client intake,
-                  appointment booking, follow-ups. We got 25 hours back in the first month. Absolute Game-changer."</p>
+                  appointment booking, follow-ups. We got 25 hours back in the first month. Absolute Game-changer."
+                </p>
 
                 <!-- Author row -->
                 <div class="pt-3 border-t border-neutral-200 flex items-center justify-between">
@@ -3601,9 +3324,10 @@ Sequence animation intro. Usage:
 
               <!-- Testimonial Quote -->
               <div class="p-4 rounded-xl bg-slate-800/30 ring-1 ring-white/10">
-                <p class="text-sm italic text-slate-300 font-geist mb-3">"We're competing with big firms now—without the
+                <p class="text-sm italic text-slate-300 font-geist mb-3">"We're competing with big firms now—without
+                  the
                   overhead.
-                  Steel gave us our lives back while growing revenue."</p>
+                  Exo gave us our lives back while growing revenue."</p>
                 <div class="flex items-center gap-2">
                   <div
                     class="flex text-xs font-semibold text-white bg-gradient-to-br from-blue-500 to-blue-600 w-8 h-8 rounded-full items-center justify-center">
@@ -3692,7 +3416,7 @@ Sequence animation intro. Usage:
                   Predictive inventory AI, supplier automation, AI quality
                   inspection, production optimization.
                   <span class="text-emerald-400 font-semibold">
-                    Delivered in 10 days.
+                    Delivered in 10 days. Faster than promised.
                   </span>
                 </p>
               </div>
@@ -3750,7 +3474,8 @@ Sequence animation intro. Usage:
 
               <!-- Testimonial Quote -->
               <div class="p-4 rounded-xl bg-slate-800/30 ring-1 ring-white/10">
-                <p class="text-sm italic text-slate-300 font-geist mb-3">"You guys didn't just save us money—but made us
+                <p class="text-sm italic text-slate-300 font-geist mb-3">"You guys didn't just save us money—but made
+                  us
                   way
                   more competitive. We're winning contracts against bigger
                   players."</p>
@@ -3851,7 +3576,7 @@ Sequence animation intro. Usage:
         <div class="lg:col-span-5">
           <div
             class="inline-flex animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.05s_both] xl:text-[#fffff]/80 xl:text-[#ffffff]/95 ring-white/10 ring-1 text-xs font-medium text-[#ffffff]/95 font-geist bg-white/5 w-fit rounded-full pt-1.5 pr-3 pb-1.5 pl-3 shadow-xl gap-x-2 gap-y-2 items-center">
-            Steel Global
+            Steel by Exo
           </div>
 
           <h2
@@ -3861,9 +3586,10 @@ Sequence animation intro. Usage:
 
           <p class="leading-relaxed animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.25s_both] text-[#fffff]/70 md:mt-5 md:text-lg md:font-semibold md:text-[#ffffff] text-base font-semibold text-[#ffffff] font-geist mt-5"
             style="text-shadow: 0 -1px 0 rgba(255,255,255,0.28), 0 1px 0 rgba(0,0,0,0.55), 0 2px 6px rgba(2,6,23,0.5), 0 0 12px rgba(255,255,255,0.12);">
-            Introducing The Steel Card — your gateway to an exclusive network of forward-thinking leaders, curated perks
+            Introducing The Steel Card — your gateway to an exclusive network of forward-thinking leaders, curated
+            perks
             that unlock doors that don't advertise, and financial tools designed for those who move fast. Reserved for
-            Exo partners and select early adopters — Access Compounds with Steel Global</p>
+            Exo partners and select early adopters — Access Compounds with Steel by Exo</p>
 
           <a href="/steel.html"
             class="group inline-flex items-center gap-2 underline underline-offset-4 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.35s_both] xl:text-[#ffffff] decoration-white/30 hover:decoration-white/60 text-sm font-medium text-white font-geist mt-6 transition duration-300"
