@@ -130,6 +130,30 @@
             bottom: -200px;
             right: -200px;
         }
+
+        /* Custom Dropdown Styles (Ported from x-scale) */
+        .custom-dropdown .options-container {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Custom Scrollbar for dropdown */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 
@@ -285,13 +309,61 @@
             </div>
 
             <div id="success-message"
-                class="hidden space-y-4 pt-4 text-center animate-slide-up flex flex-col items-center">
-                <div
-                    class="inline-flex items-center justify-center p-2 rounded-full bg-emerald-500/10 text-emerald-500 mb-2">
-                    <i data-lucide="check" class="w-5 h-5"></i>
+                class="hidden pt-4 text-center animate-slide-up flex flex-col md:flex-col-reverse items-center gap-8">
+
+                <!-- Success Content (Check & Text) -->
+                <div class="flex flex-col items-center space-y-4">
+                    <div
+                        class="inline-flex items-center justify-center p-2 rounded-full bg-emerald-500/10 text-emerald-500 mb-2">
+                        <i data-lucide="check" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="text-white font-serif text-xl">You're on the list.</h3>
+                    <p class="text-sm text-brand-muted">Watch your inbox. We'll be in touch Q3 2026.</p>
                 </div>
-                <h3 class="text-white font-serif text-xl">You're on the list.</h3>
-                <p class="text-sm text-brand-muted">Watch your inbox. We'll be in touch Q3 2026.</p>
+
+                <!-- Phone Capture Field (Add-on) -->
+                <div class="w-full space-y-4 animate-fade-in" style="animation-delay: 0.3s;">
+                    <h4 class="text-white font-serif italic text-lg">Enter Your Number To Skip The Line</h4>
+
+                    <div class="flex gap-2 relative">
+                        <!-- Custom Country Dropdown -->
+                        <div class="relative w-24 custom-dropdown" id="country-dropdown">
+                            <button type="button"
+                                class="w-full px-3 py-3.5 glass rounded-lg text-sm text-brand-muted flex items-center justify-between hover:bg-white/10 transition-colors">
+                                <span class="selected-value truncate text-white">🇺🇸 +1</span>
+                                <i data-lucide="chevron-down"
+                                    class="w-4 h-4 chevron transition-transform duration-200"></i>
+                            </button>
+                            <div
+                                class="absolute top-full left-0 w-full mt-1 bg-[#0a0a0a] border border-white/10 rounded-lg shadow-xl overflow-hidden z-20 hidden options-container">
+                                <div class="option px-3 py-2 text-sm text-brand-muted hover:bg-white/5 cursor-pointer flex items-center gap-2"
+                                    data-value="+1">🇺🇸 +1</div>
+                                <div class="option px-3 py-2 text-sm text-brand-muted hover:bg-white/5 cursor-pointer flex items-center gap-2"
+                                    data-value="+44">🇬🇧 +44</div>
+                                <div class="option px-3 py-2 text-sm text-brand-muted hover:bg-white/5 cursor-pointer flex items-center gap-2"
+                                    data-value="+61">🇦🇺 +61</div>
+                            </div>
+                            <input type="hidden" id="countryCode" name="countryCode" value="+1">
+                        </div>
+
+                        <!-- Phone Input -->
+                        <div class="relative flex-1">
+                            <input type="tel" id="phone-input"
+                                class="w-full px-4 py-3.5 glass rounded-lg text-white placeholder-neutral-500 text-sm focus:border-brand-accent/50 focus:ring-1 focus:ring-brand-accent/50 outline-none transition-all"
+                                placeholder="(555) 123-4567" maxlength="14">
+
+                            <!-- Phone Submission Button (Appears when valid-ish) -->
+                            <button type="button" id="submit-phone-btn"
+                                class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-brand-accent text-black rounded-md hover:scale-105 transition-transform disabled:opacity-50 disabled:cursor-not-allowed">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="phone-success"
+                        class="hidden text-brand-accent text-xs tracking-wide uppercase font-medium">
+                        Spot Reserved.
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -347,6 +419,138 @@
     <script type="module">
         import { client } from "./js/convex-client.js";
 
+        // Global state for lead ID
+        let currentLeadId = null;
+
+        // --- Custom Dropdown Logic (Ported) ---
+        function initDropdowns() {
+            document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
+                const button = dropdown.querySelector('button');
+                const optionsContainer = dropdown.querySelector('.options-container');
+                const hiddenInput = dropdown.querySelector('input[type="hidden"]');
+                const selectedText = dropdown.querySelector('.selected-value');
+                const chevron = dropdown.querySelector('.chevron');
+
+                // Toggle Open
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    // Close others
+                    document.querySelectorAll('.custom-dropdown .options-container').forEach(el => {
+                        if (el !== optionsContainer) el.classList.add('hidden');
+                    });
+                    document.querySelectorAll('.chevron').forEach(el => {
+                        if (el !== chevron && el) el.classList.remove('rotate-180');
+                    });
+
+                    optionsContainer.classList.toggle('hidden');
+                    if (chevron) {
+                        // Lucide rotation logic or class toggle
+                        chevron.style.transform = optionsContainer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                    }
+                });
+
+                // Select Option
+                dropdown.querySelectorAll('.option').forEach(option => {
+                    option.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const value = option.dataset.value;
+                        const text = option.innerText;
+
+                        hiddenInput.value = value;
+                        selectedText.innerText = text;
+                        // selectedText.classList.remove('text-neutral-400');
+                        // selectedText.classList.add('text-white'); // Already white
+
+                        optionsContainer.classList.add('hidden');
+                        if (chevron) chevron.style.transform = 'rotate(0deg)';
+                    });
+                });
+            });
+
+            // Click outside to close
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.custom-dropdown .options-container').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('.chevron').forEach(el => {
+                    el.style.transform = 'rotate(0deg)';
+                });
+            });
+        }
+
+        initDropdowns();
+
+
+        // --- Phone Masking & Validation ---
+        const phoneInput = document.getElementById('phone-input');
+        const phoneSubmitBtn = document.getElementById('submit-phone-btn');
+        let isPhoneValid = false;
+
+        if (phoneInput) {
+            phoneInput.addEventListener('input', (e) => {
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+                e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+
+                // Count actual digits
+                const digitCount = e.target.value.replace(/\D/g, '').length;
+                if (digitCount >= 10) {
+                    isPhoneValid = true;
+                    phoneSubmitBtn.removeAttribute('disabled');
+                    phoneSubmitBtn.classList.add('bg-emerald-400'); // Highlight
+                } else {
+                    isPhoneValid = false;
+                    phoneSubmitBtn.setAttribute('disabled', 'true');
+                    phoneSubmitBtn.classList.remove('bg-emerald-400');
+                }
+            });
+        }
+
+
+        // --- Phone Submission ---
+        if (phoneSubmitBtn) {
+            phoneSubmitBtn.addEventListener('click', async () => {
+                if (!isPhoneValid) return;
+
+                const phone = phoneInput.value;
+                const countryCode = document.getElementById('countryCode').value;
+                const fullPhone = `${countryCode} ${phone}`;
+
+                const originalIcon = phoneSubmitBtn.innerHTML;
+                phoneSubmitBtn.innerHTML = '<span class="animate-spin inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full"></span>';
+                phoneSubmitBtn.disabled = true;
+
+                try {
+                    // Update existing lead or create new log
+                    if (currentLeadId) {
+                        await client.mutation("leads:updateLeadPhone", {
+                            id: currentLeadId,
+                            phone: fullPhone
+                        });
+                    } else {
+                        // Fallback if ID missing
+                        console.log("No lead ID found, just logging phone");
+                    }
+
+                    // Mailchimp Update (Fire and forget)
+                    // Implementation depends on if we saved email globally. match by email? 
+                    // Simplest is to just console log or rely on the backend update if integrated.
+                    // Or just treat it as a "skip the line" signal.
+
+                    // Show success
+                    phoneInput.value = '';
+                    phoneInput.placeholder = 'Saved.';
+                    document.getElementById('phone-success').classList.remove('hidden');
+                    phoneSubmitBtn.classList.add('hidden');
+
+                } catch (e) {
+                    console.error("Phone submit error", e);
+                    phoneSubmitBtn.innerHTML = originalIcon;
+                    phoneSubmitBtn.disabled = false;
+                    alert("Error saving number.");
+                }
+            });
+        }
+
+
+        // --- Main Form Submission ---
         const form = document.getElementById('waitlist-form');
 
         if (form) {
@@ -374,11 +578,15 @@
 
                 try {
                     // 1. Save lead to Convex database
-                    await client.mutation("leads:submitLead", {
+                    const leadId = await client.mutation("leads:submitLead", {
                         firstName: firstName,
                         lastName: "Waitlist",
                         email: email
                     });
+
+                    if (leadId) {
+                        currentLeadId = leadId; // Store for phone update
+                    }
 
                     // 2. Add subscriber to Mailchimp (Steel B2C audience)
                     // Fire-and-forget: don't block UX on Mailchimp
@@ -396,9 +604,12 @@
                         });
                     }
 
-                    // 4. Show success state
+                    // 4. Show success state (reveal layout)
                     document.getElementById('waitlist-form').classList.add('hidden');
                     document.getElementById('success-message').classList.remove('hidden');
+
+                    // Re-render icons for new content
+                    if (window.lucide) window.lucide.createIcons();
 
                 } catch (error) {
                     console.error("Steel waitlist submission failed:", error);

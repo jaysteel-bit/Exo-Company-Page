@@ -63,3 +63,15 @@ export const submitApplication = mutation({
         }
     },
 });
+
+export const updateLeadPhone = mutation({
+    args: {
+        id: v.id("leads"),
+        phone: v.string(),
+    },
+    handler: async (ctx, args) => {
+        await ctx.db.patch(args.id, {
+            phone: args.phone,
+        });
+    },
+});
