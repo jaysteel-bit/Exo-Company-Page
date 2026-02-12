@@ -267,8 +267,7 @@ Sequence animation intro. Usage:
       class="flex items-center gap-2 text-sm font-medium text-emerald-100 hover:text-white transition-colors group">
       <span class="font-['Urbanist'] tracking-wide"><span
           class="inline-flex items-center justify-center bg-white text-emerald-950 text-[10px] font-bold px-2 py-0.5 rounded-full mr-2 leading-none">NEW</span>Slots
-        Open This Month: <strong>Transform Your Business
-          Today</strong></span>
+        Open This Month: <strong>Transform Your Business</strong></span>
       <iconify-icon icon="solar:arrow-right-linear" width="16"
         class="text-emerald-400 group-hover:translate-x-0.5 transition-transform"></iconify-icon>
     </a>
@@ -1293,7 +1292,7 @@ Sequence animation intro. Usage:
   <!-- HERO SCROLL DEMO (Adapted for Flow Page) -->
   <section id="solution" class="bg-slate-950 overflow-hidden relative">
       <div id="merged-scroll-trigger" class="py-10 md:py-20">
-          <div class="h-[50rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-20">
+          <div class="h-[90rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-20">
               <div class="py-10 md:py-20 w-full relative" style="perspective: 1000px;">
                   
                   <!-- Header Component -->
@@ -1310,7 +1309,7 @@ Sequence animation intro. Usage:
 
                   <!-- Card Component (Tablet Frame) -->
                   <div id="scroll-demo-card"
-                      class="max-w-6xl -mt-24 mx-auto h-[35rem] md:h-[45rem] w-full border-[8px] border-slate-800 p-2 md:p-6 bg-slate-950 rounded-[40px] shadow-[0_30px_60px_rgba(0,0,0,0.5)] z-20 relative">
+                      class="max-w-6xl -mt-10 md:-mt-24 mx-auto h-[30rem] md:h-[45rem] w-full border-[8px] border-slate-800 p-2 md:p-6 bg-slate-950 rounded-[40px] shadow-[0_30px_60px_rgba(0,0,0,0.5)] z-20 relative">
                       <!-- Screen Content -->
                       <div class="h-full w-full overflow-hidden rounded-[24px] bg-slate-900 border border-slate-800 relative">
                           <!-- Image/Demo Placeholder -->
@@ -1368,22 +1367,27 @@ Sequence animation intro. Usage:
           gsap.registerPlugin(ScrollTrigger);
 
           const isMobile = window.innerWidth <= 768;
-          const scaleValues = isMobile ? [0.8, 0.9] : [1.1, 1]; 
+          const scaleValues = isMobile ? [0.8, 0.9] : [1.1, 1];
+
+          // Mobile-specific y-values to prevent clipping
+          const headerY = isMobile ? { from: 80, to: -50 } : { from: 150, to: -200 };
+          const cardY = isMobile ? { from: 50, to: 0 } : { from: 100, to: -50 };
+          const featuresY = isMobile ? { from: 100, to: 0 } : { from: 200, to: -100 };
 
           // Header Animation (Emerges from behind)
           gsap.fromTo("#scroll-demo-header",
               {
-                  y: 150, 
+                  y: headerY.from,
                   opacity: 0.5
               },
               {
-                  y: -200, 
+                  y: headerY.to,
                   opacity: 1,
                   ease: "none",
                   scrollTrigger: {
                       trigger: "#merged-scroll-trigger",
                       start: "top bottom",
-                      end: "center center", 
+                      end: "center center",
                       scrub: 1
                   }
               }
@@ -1392,15 +1396,15 @@ Sequence animation intro. Usage:
           // Card Animation (Rotate, Scale, Translate)
           gsap.fromTo("#scroll-demo-card",
               {
-                  rotationX: 25,
+                  rotationX: isMobile ? 15 : 25,
                   scale: scaleValues[0],
-                  y: 100,
+                  y: cardY.from,
                   boxShadow: "0 0 0px rgba(0,0,0,0)"
               },
               {
                   rotationX: 0,
                   scale: scaleValues[1],
-                  y: -50, 
+                  y: cardY.to,
                   boxShadow: "0 30px 60px rgba(0,0,0,0.5)",
                   ease: "none",
                   scrollTrigger: {
@@ -1415,11 +1419,11 @@ Sequence animation intro. Usage:
            // Features Grid Animation (Parallax Depth)
            gsap.fromTo("#scroll-demo-features",
               {
-                  y: 200,
+                  y: featuresY.from,
                   opacity: 0
               },
               {
-                  y: -100, 
+                  y: featuresY.to,
                   opacity: 1,
                   ease: "none",
                   scrollTrigger: {

@@ -541,7 +541,7 @@
     <!-- SOLUTION SECTION (Merged with Scroll Demo) -->
     <section id="solution" class="bg-white overflow-hidden relative">
         <div id="merged-scroll-trigger" class="py-10 md:py-20">
-            <div class="h-[50rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-20">
+            <div class="h-[90rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-20">
                 <div class="py-10 md:py-20 w-full relative" style="perspective: 1000px;">
 
                     <!-- Header Component (Was Solution Text) -->
@@ -560,7 +560,7 @@
 
                     <!-- Card Component (Tablet Frame) -->
                     <div id="scroll-demo-card"
-                        class="max-w-6xl -mt-24 mx-auto h-[35rem] md:h-[45rem] w-full border-[8px] border-gray-200 p-2 md:p-6 bg-white rounded-[40px] shadow-[0_30px_60px_rgba(0,0,0,0.12)] z-20 relative">
+                        class="max-w-6xl -mt-10 md:-mt-24 mx-auto h-[30rem] md:h-[45rem] w-full border-[8px] border-gray-200 p-2 md:p-6 bg-white rounded-[40px] shadow-[0_30px_60px_rgba(0,0,0,0.12)] z-20 relative">
                         <!-- Screen Content -->
                         <div
                             class="h-full w-full overflow-hidden rounded-[24px] bg-gray-50 border border-gray-100 relative">
@@ -630,20 +630,25 @@
             const isMobile = window.innerWidth <= 768;
             const scaleValues = isMobile ? [0.8, 0.9] : [1.1, 1]; // Start slightly larger to feel immersive
 
+            // Mobile-specific y-values to prevent clipping
+            const headerY = isMobile ? { from: 80, to: -50 } : { from: 150, to: -200 };
+            const cardY = isMobile ? { from: 50, to: 0 } : { from: 100, to: -50 };
+            const featuresY = isMobile ? { from: 100, to: 0 } : { from: 200, to: -100 };
+
             // Header Animation (Emerges from behind)
             gsap.fromTo("#scroll-demo-header",
                 {
-                    y: 150, // Start lower (behind card top)
+                    y: headerY.from,
                     opacity: 0.5
                 },
                 {
-                    y: -200, // Move up significantly to be readable above card
+                    y: headerY.to,
                     opacity: 1,
                     ease: "none",
                     scrollTrigger: {
                         trigger: "#merged-scroll-trigger",
                         start: "top bottom",
-                        end: "center center", // Finish animation earlier so text is readable
+                        end: "center center",
                         scrub: 1
                     }
                 }
@@ -652,15 +657,15 @@
             // Card Animation (Rotate, Scale, Translate)
             gsap.fromTo("#scroll-demo-card",
                 {
-                    rotationX: 25,
+                    rotationX: isMobile ? 15 : 25,
                     scale: scaleValues[0],
-                    y: 100,
+                    y: cardY.from,
                     boxShadow: "0 0 0px rgba(0,0,0,0)"
                 },
                 {
                     rotationX: 0,
                     scale: scaleValues[1],
-                    y: -50,
+                    y: cardY.to,
                     boxShadow: "0 30px 60px rgba(0,0,0,0.12)",
                     ease: "none",
                     scrollTrigger: {
@@ -675,11 +680,11 @@
             // Features Grid Animation (Parallax Depth)
             gsap.fromTo("#scroll-demo-features",
                 {
-                    y: 200,
+                    y: featuresY.from,
                     opacity: 0
                 },
                 {
-                    y: -100, // Move up to tuck under/follow the card 
+                    y: featuresY.to,
                     opacity: 1,
                     ease: "none",
                     scrollTrigger: {
