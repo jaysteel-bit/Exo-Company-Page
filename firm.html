@@ -137,145 +137,41 @@
       </a>
 
       <!-- Mobile Menu Icon -->
-      <button class="md:hidden text-white">
-        <iconify-icon icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
+      <button id="mobile-menu-toggle" class="md:hidden text-white z-[100] relative" aria-label="Toggle menu">
+        <iconify-icon id="menu-icon" icon="solar:hamburger-menu-linear" width="24"></iconify-icon>
       </button>
     </div>
   </nav>
 
-  <div id="mobile-drawer" class="fixed inset-0 z-[70] md:hidden transition-transform duration-300 -translate-x-full">
-    <div id="mobile-drawer-overlay" class="absolute inset-0 bg-neutral-900/70 backdrop-blur-xl"
-      style="backdrop-filter: blur(8px);"></div>
-    <nav role="navigation" aria-label="Mobile Navigation"
-      class="relative z-[80] h-full w-full overflow-y-auto p-6 flex flex-col gap-4">
-      <div class="flex items-center justify-between mb-6">
-        <span class="text-neutral-200 font-geist text-lg tracking-tight">
-          Exo
-        </span>
-        <button id="mobile-drawer-close" aria-label="Close menu" type="button"
-          class="p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x"
-            class="lucide lucide-x w-5 h-5">
-            <path d="M18 6 6 18"></path>
-            <path d="m6 6 12 12"></path>
-          </svg>
-        </button>
+  <!-- MOBILE MENU (Full Screen) -->
+  <div id="mobile-menu"
+    class="fixed inset-0 bg-neutral-950/95 backdrop-blur-xl z-[99] hidden flex flex-col items-center justify-center p-6">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-blue-500/10 pointer-events-none">
+    </div>
+    <div class="absolute inset-0 backdrop-filter backdrop-blur-[1px] pointer-events-none"
+      style="background: radial-gradient(circle at 50% 50%, rgba(16,185,129,0.1) 0%, transparent 50%)"></div>
+
+    <div class="relative z-10 text-center space-y-8 w-full">
+      <nav class="flex flex-col gap-6 items-center">
+        <a href="index.html" class="text-2xl font-light text-white hover:text-emerald-400 transition-colors">Home</a>
+        <a href="flow.html" class="text-2xl font-light text-white hover:text-emerald-400 transition-colors">Flow OS</a>
+        <a href="#departments"
+          class="text-2xl font-light text-white hover:text-emerald-400 transition-colors">Departments</a>
+        <a href="firm.html" class="text-2xl font-light text-white hover:text-emerald-400 transition-colors">About The
+          Firm</a>
+        <a href="/careers.html"
+          class="text-2xl font-light text-white hover:text-emerald-400 transition-colors">Careers</a>
+      </nav>
+
+      <div class="border-t border-white/10 pt-8">
+        <a href="x-scale.html"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-neutral-200 transition-colors">
+          8 Spots Open This Month
+          <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+        </a>
       </div>
-      <div class="rounded-lg border border-white/10 ring-1 ring-white/10 bg-white/5 backdrop-blur-xl"
-        style="backdrop-filter: blur(8px);">
-        <button data-mobile-accordion="" aria-controls="mobile-products-sub" aria-expanded="false" type="button"
-          class="w-full flex items-center justify-between px-4 py-3 text-neutral-200 shiny-cta focus:outline-none cursor-hover-target"
-          style="display:flex; align-items:center; justify-content:space-between; width:100%; padding: 0.35rem 0.6rem; font-size: 0.875rem;">
-          <span class="font-geist text-base" style="font-family: 'Playfair Display', serif;">
-            Products
-          </span>
-          <span class="ml-4 flex items-center relative z-[2]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus"
-              data-icon="plus" class="lucide lucide-plus w-5 h-5">
-              <path d="M5 12h14"></path>
-              <path d="M12 5v14"></path>
-            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="minus"
-              data-icon="minus" class="lucide lucide-minus w-5 h-5 hidden">
-              <path d="M5 12h14"></path>
-            </svg>
-          </span>
-        </button>
-        <div id="mobile-products-sub" class="hidden px-4 pb-3 space-y-2">
-          <a href="x-scale.html"
-            class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
-            Exo AI
-          </a>
-          <a href="x-scale.html"
-            class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
-            Steel Global
-          </a>
-          <a href="x-scale.html"
-            class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
-            The Steel Card
-          </a>
-        </div>
-      </div>
-      <div class="rounded-lg border border-white/10 ring-1 ring-white/10 bg-white/5 backdrop-blur-xl"
-        style="backdrop-filter: blur(8px);">
-        <button data-mobile-accordion="" aria-controls="mobile-solutions-sub" aria-expanded="false" type="button"
-          class="w-full flex items-center justify-between px-4 py-3 text-neutral-200 shiny-cta focus:outline-none cursor-hover-target"
-          style="display:flex; align-items:center; justify-content:space-between; width:100%; padding: 0.35rem 0.6rem; font-size: 0.875rem;">
-          <span class="font-geist text-base" style="font-family: 'Playfair Display', serif;">
-            Solutions
-          </span>
-          <span class="ml-4 flex items-center relative z-[2]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus"
-              data-icon="plus" class="lucide lucide-plus w-5 h-5">
-              <path d="M5 12h14"></path>
-              <path d="M12 5v14"></path>
-            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="minus"
-              data-icon="minus" class="lucide lucide-minus w-5 h-5 hidden">
-              <path d="M5 12h14"></path>
-            </svg>
-          </span>
-        </button>
-        <div id="mobile-solutions-sub" class="hidden px-4 pb-3 space-y-2">
-          <a href="x-scale.html"
-            class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
-            Rebuild — upskill your current team on Flow OS
-          </a>
-          <a href="x-scale.html"
-            class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
-            Recruit — hire and train a new AI-native team for you
-          </a>
-          <a href="x-scale.html"
-            class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
-            Managed Services — We run your system as a service
-          </a>
-          <a href="x-scale.html"
-            class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
-            Custom
-          </a>
-        </div>
-      </div>
-      <div class="rounded-lg border border-white/10 ring-1 ring-white/10 bg-white/5 backdrop-blur-xl"
-        style="backdrop-filter: blur(8px);">
-        <button data-mobile-accordion="" aria-controls="mobile-enterprise-sub" aria-expanded="false" type="button"
-          class="w-full flex items-center justify-between px-4 py-3 text-neutral-200 shiny-cta focus:outline-none cursor-hover-target"
-          style="display:flex; align-items:center; justify-content:space-between; width:100%; padding: 0.35rem 0.6rem; font-size: 0.875rem;">
-          <span class="font-geist text-base" style="font-family: 'Playfair Display', serif;">
-            Enterprise
-          </span>
-          <span class="ml-4 flex items-center relative z-[2]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus"
-              data-icon="plus" class="lucide lucide-plus w-5 h-5">
-              <path d="M5 12h14"></path>
-              <path d="M12 5v14"></path>
-            </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="minus"
-              data-icon="minus" class="lucide lucide-minus w-5 h-5 hidden">
-              <path d="M5 12h14"></path>
-            </svg>
-          </span>
-        </button>
-        <div id="mobile-enterprise-sub" class="hidden px-4 pb-3 space-y-2">
-          <a href="x-scale.html"
-            class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
-            Quarterly Engagements
-          </a>
-          <a href="x-scale.html"
-            class="block px-3 py-2 rounded-lg text-neutral-300 hover:text-white hover:bg-white/5 font-geist text-sm">
-            Contact Enterprise Team
-          </a>
-        </div>
-      </div>
-      <a href="x-scale.html"
-        class="mt-2 block w-full text-center text-neutral-200 shiny-cta focus:outline-none font-playfair cursor-hover-target"
-        style="display:block; width:100%; padding: 0.35rem 0.6rem; font-size: 0.875rem;">
-        <span style="font-family: 'Playfair Display', serif;">Careers</span>
-      </a>
-    </nav>
+    </div>
   </div>
 
   <header class="relative overflow-hidden pt-20">
@@ -1293,8 +1189,13 @@
           </ul>
         </div>
       </div>
-      <div class="text-xs font-normal text-black font-geist border-black/50 border-t mt-10 pt-6">© Exo
-        Enterprise. All rights reserved.</div>
+      <div class="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-neutral-500">© <span id="year">2026</span> Exo Enterprise. All rights reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="privacy.html" class="text-xs text-neutral-500 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="text-xs text-neutral-500 hover:text-white transition-colors">Terms of Service</a>
+        </div>
+      </div>
     </div>
   </footer>
 
@@ -1349,16 +1250,6 @@
     }
   </style>
   <style>
-    @media (max-width: 768px) {
-      #mobile-drawer {
-        transform: translateX(-100%);
-      }
-
-      #mobile-drawer.open {
-        transform: translateX(0);
-      }
-    }
-
     /* Ensure desktop dropdowns stack correctly */
     nav .group>div[class*="absolute"] {
       z-index: 60;
@@ -1395,7 +1286,37 @@
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script>
-    (function () { const toggleBtn = document.getElementById('mobile-menu-toggle'); const drawer = document.getElementById('mobile-drawer'); const overlay = document.getElementById('mobile-drawer-overlay'); const closeBtn = document.getElementById('mobile-drawer-close'); if (toggleBtn && drawer) { const setExpanded = (val) => toggleBtn.setAttribute('aria-expanded', String(val)); const open = () => { drawer.classList.add('open'); setExpanded(true); }; const close = () => { drawer.classList.remove('open'); setExpanded(false); }; toggleBtn.addEventListener('click', () => { if (drawer.classList.contains('open')) { close(); } else { open(); } }); if (overlay) { overlay.addEventListener('click', close); } if (closeBtn) { closeBtn.addEventListener('click', close); } document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); }); } document.querySelectorAll('[data-mobile-accordion]').forEach((btn) => { btn.addEventListener('click', () => { const id = btn.getAttribute('aria-controls'); const panel = id ? document.getElementById(id) : null; if (!panel) return; const expanded = btn.getAttribute('aria-expanded') === 'true'; btn.setAttribute('aria-expanded', String(!expanded)); panel.classList.toggle('hidden', expanded); const plus = btn.querySelector('svg[data-icon="plus"]'); const minus = btn.querySelector('svg[data-icon="minus"]'); if (plus && minus) { plus.classList.toggle('hidden', !expanded); minus.classList.toggle('hidden', expanded); } }); }); })();
+    (function () {
+      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      let isMenuOpen = false;
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          isMenuOpen = !isMenuOpen;
+          if (isMenuOpen) {
+            mobileMenu.classList.remove('hidden');
+            menuIcon.setAttribute('icon', 'solar:close-circle-linear');
+            document.body.style.overflow = 'hidden';
+          } else {
+            mobileMenu.classList.add('hidden');
+            menuIcon.setAttribute('icon', 'solar:hamburger-menu-linear');
+            document.body.style.overflow = 'auto';
+          }
+        });
+
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            isMenuOpen = false;
+            mobileMenu.classList.add('hidden');
+            menuIcon.setAttribute('icon', 'solar:hamburger-menu-linear');
+            document.body.style.overflow = 'auto';
+          });
+        });
+      }
+    })();
   </script>
 
   <!-- Spline Loader Fade-Out -->
