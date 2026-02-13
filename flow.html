@@ -4151,6 +4151,41 @@ Sequence animation intro. Usage:
           (function(){ const openBtn=document.getElementById('mobileMenuToggle'); const closeBtn=document.getElementById('mobileMenuClose'); const drawer=document.getElementById('mobileNavDrawer'); function open(){ if(drawer) drawer.classList.add('open'); } function close(){ if(drawer) drawer.classList.remove('open'); } if(openBtn) openBtn.addEventListener('click', open); if(closeBtn) closeBtn.addEventListener('click', close); if(drawer) drawer.addEventListener('click', (e)=>{ if(e.target===drawer) close(); }); document.querySelectorAll('.mobile-accordion-toggle').forEach(btn=>{btn.addEventListener('click', () => { const wrap = btn.parentElement; const submenu = wrap.querySelector('.mobile-submenu'); const plus = btn.querySelector('.plus'); const minus = btn.querySelector('.minus'); if (submenu) { submenu.classList.toggle('hidden'); } if (plus && minus) { plus.classList.toggle('hidden'); minus.classList.toggle('hidden'); } }); }); })();
   </script>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[100] bg-black border-t border-white/10 text-white px-6 py-4 transform translate-y-full transition-transform duration-500 ease-out flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
+        <p class="text-xs sm:text-sm text-neutral-300 font-geist text-center sm:text-left max-w-4xl">
+            Exo uses cookies to maintain user sessions and track marketing efforts. By continuing to use our website, you agree to our use of cookies for these purposes. 
+            <a href="privacy.html" class="text-white underline hover:no-underline transition-colors">Read our Privacy Policy</a>
+        </p>
+        <button id="close-cookie-banner" aria-label="Close cookie banner" class="text-white hover:text-neutral-400 transition-colors p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        (function() {
+            const banner = document.getElementById('cookie-banner');
+            const closeBtn = document.getElementById('close-cookie-banner');
+            const consentKey = 'exo-cookie-consent-dismissed';
+
+            if (!localStorage.getItem(consentKey)) {
+                // Delay appearance for "pop up" effect
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-full');
+                }, 1000);
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    banner.classList.add('translate-y-full');
+                    localStorage.setItem(consentKey, 'true');
+                });
+            }
+        })();
+    </script>
 </body>
 
 </html>
