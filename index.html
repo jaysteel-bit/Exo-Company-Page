@@ -89,6 +89,15 @@
             scrollbar-width: none;
         }
 
+        /* Protected Images — prevent save/drag/right-click */
+        .img-protected {
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+        }
+
         /* Glass Cards */
         .glass-panel {
             background: rgba(20, 20, 20, 0.4);
@@ -974,7 +983,8 @@
                             Your dedicated operations team on standby. We don't wait for tickets — we monitor, optimize,
                             and upgrade your system continuously so nothing falls through.
                         </p>
-                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Always on. Always improving.</p>
+                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Always on. Always
+                            improving.</p>
                     </div>
                 </div>
             </div>
@@ -998,7 +1008,8 @@
                             Your unified operations layer. Every workflow, every decision, every handoff — captured in
                             one system. The foundation everything else builds on.
                         </p>
-                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">One system. Every department.</p>
+                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">One system. Every
+                            department.</p>
                     </div>
                 </div>
             </div>
@@ -1023,7 +1034,8 @@
                             End-to-end revenue operations. Pipeline visibility, deal intelligence, and automated
                             follow-ups — so nothing stalls between first call and closed-won.
                         </p>
-                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Close faster. Lose nothing.</p>
+                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Close faster. Lose
+                            nothing.</p>
                     </div>
                 </div>
             </div>
@@ -1049,7 +1061,8 @@
                             documented SOPs — so onboarding takes days instead of months. The reason most clients never
                             leave.
                         </p>
-                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Knowledge that compounds.</p>
+                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Knowledge that
+                            compounds.</p>
                     </div>
                 </div>
             </div>
@@ -1075,7 +1088,8 @@
                             single job listing. Find the right people faster — or let us white-label it for your
                             clients.
                         </p>
-                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Hire smarter. Scale faster.</p>
+                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Hire smarter. Scale
+                            faster.</p>
                     </div>
                 </div>
             </div>
@@ -1100,7 +1114,8 @@
                             Marketing operations, installed. Ad variations, brand assets, and campaign strategies
                             generated from your existing brand guidelines — not generic templates.
                         </p>
-                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Your brand. Amplified.</p>
+                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Your brand.
+                            Amplified.</p>
                     </div>
                 </div>
             </div>
@@ -1123,7 +1138,8 @@
                             Ask anything about your business and get an answer in seconds. Exo AI scans every workflow,
                             document, and decision log across your operation — institutional memory that never forgets.
                         </p>
-                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Your business. Instant answers.</p>
+                        <p class="text-white font-bold text-sm mt-6 pt-4 border-t border-white/10">Your business.
+                            Instant answers.</p>
                     </div>
                 </div>
             </div>
@@ -1318,9 +1334,11 @@
                     <div class="grid lg:grid-cols-2 lg:gap-y-8 lg:gap-x-6 gap-x-6 gap-y-8 items-stretch">
                         <!-- Photo panel -->
                         <div
-                            class="overflow-hidden min-h-[320px] [animation:fadeSlideIn_0.8s_ease-out_0.2s_both] animate-on-scroll bg-white/5 rounded-none ring-white/10 ring-1 relative">
-                            <img src="./images/exo-feedback-6.jpeg" alt="Customer portrait" loading="lazy"
-                                class="opacity-100 w-full h-full object-cover">
+                            class="overflow-hidden min-h-[320px] [animation:fadeSlideIn_0.8s_ease-out_0.2s_both] animate-on-scroll bg-white/5 rounded-none ring-white/10 ring-1 relative" oncontextmenu="return false;">
+                            <img src="./assets/images/exo-feedback-6.jpeg" alt="Kevin Nishimura portrait" loading="lazy"
+                                class="img-protected opacity-100 w-full h-full object-cover" draggable="false">
+                            <!-- Transparent overlay to block click/save -->
+                            <div class="absolute inset-0 z-10"></div>
                             <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/60 to-transparent mix-blend-multiply"
                                 style="visibility: hidden;"></div>
                             <div class="absolute inset-0 opacity-40 bg-[linear-gradient(to_right,rgba(255,255,255,.18)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.18)_1px,transparent_1px)] bg-[size:10px_10px]"
@@ -1427,8 +1445,8 @@
                                     18 hours a week across my team. We grew 40% this quarter without a single new hire."
                                 </p>
                                 <div class="flex items-center gap-3 mt-6">
-                                    <img src="./images/jenn-testimonial.jpeg" alt="Naveen Patel avatar" loading="lazy"
-                                        class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10">
+                                    <img src="./assets/images/jenn-testimonial.jpeg" alt="Naveen Patel avatar" loading="lazy"
+                                        class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10 img-protected" draggable="false">
                                     <div>
                                         <div class="text-white text-sm font-medium">Naveen Patel</div>
                                         <div class="text-zinc-500 text-xs">VP of Engineering @ Northgate Technologies
@@ -1440,17 +1458,15 @@
                             <div
                                 class="testi-fade-in-1 absolute inset-0 flex flex-col xl:bg-neutral-950 text-left bg-white/5 rounded-none ring-white/10 ring-1 pt-6 pr-6 pb-6 pl-6 justify-between">
                                 <p class="text-zinc-300 text-base leading-relaxed">
-                                    "I run a lean operation — four people, seven figures. Exo handles the work I used to
-                                    outsource. Same output, a third of the cost, and I actually know what's happening in
-                                    my business."
+                                    "Lean team, 13 people, $7M in revenue. Exo handles the work we used to outsource — same output, a third of the cost. The concierge alone feels like having an AI business partner. I'd recommend them to any company looking to scale."
                                 </p>
                                 <div class="flex items-center gap-3 mt-6">
-                                    <img src="./assets/images/exo-feedback-02.jpeg" alt="Cole Barrett avatar" loading="lazy"
-                                        class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10">
+                                    <img src="./assets/images/exo-feedback-02.jpeg" alt="Cole Barrett avatar"
+                                        loading="lazy" class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10 img-protected" draggable="false">
                                     <div>
                                         <div class="text-white text-sm font-medium">Cole Barrett</div>
                                         <div class="text-zinc-500 text-xs">Head of Partnerships @ Benchmark Advisory
-                                            Group</div>
+                                            LTD.</div>
                                     </div>
                                 </div>
                             </div>
@@ -1462,15 +1478,14 @@
                             <div
                                 class="testi-fade-out-2 flex flex-col xl:bg-neutral-950 text-left bg-white/5 rounded-none ring-white/10 ring-1 pt-6 pr-6 pb-6 pl-6 justify-between h-full">
                                 <p class="leading-relaxed text-base text-zinc-300">
-                                    "I need data, not gut feelings. Exo pulls from every channel and shows me exactly
-                                    where to put budget. My attribution went from murky to surgical in about 30 days."
+                                    "We were running on gut feelings and whatever worked last quarter. Exo set up tracking across every channel — now I see exactly where to put budget. Attribution went from murky to surgical."
                                 </p>
                                 <div class="flex gap-3 mt-6 items-center">
-                                    <img src="./images/client-nate.jpg" alt="Rachel Devereux avatar" loading="lazy"
-                                        class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10">
+                                    <img src="./assets/images/client-nate.jpg" alt="Grant Devereux avatar" loading="lazy"
+                                        class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10 img-protected" draggable="false">
                                     <div>
-                                        <div class="text-white text-sm font-medium">Rachel Devereux</div>
-                                        <div class="text-zinc-500 text-xs">CMO @ Ironclad Systems</div>
+                                        <div class="text-white text-sm font-medium">Grant Devereux</div>
+                                        <div class="text-zinc-500 text-xs">CMO @ Ironclad Analytics</div>
                                     </div>
                                 </div>
                             </div>
@@ -1479,15 +1494,14 @@
                                 class="testi-fade-in-2 absolute inset-0 flex flex-col xl:bg-neutral-950 text-left bg-white/5 rounded-none ring-white/10 ring-1 pt-6 pr-6 pb-6 pl-6 justify-between">
                                 <p class="text-zinc-300 text-base leading-relaxed">
                                     "We had great creative but no real system behind it. Exo gave us the infrastructure
-                                    to actually scale what was working. Pipeline is up, guesswork is down."
+                                    to actually scale what was working. Pipeline is up, guesswork is way down."
                                 </p>
                                 <div class="flex items-center gap-3 mt-6">
                                     <img src="./assets/images/exo-feedback-12.jpg" alt="Andre Wolff avatar" loading="lazy"
-                                        class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10">
+                                        class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10 img-protected" draggable="false">
                                     <div>
                                         <div class="text-white text-sm font-medium">Andre Wolff</div>
-                                        <div class="text-zinc-500 text-xs">Chief Revenue Officer @ Crestwood Capital
-                                        </div>
+                                        <div class="text-zinc-500 text-xs">Partner @ Crescentwood Capital Group</div>
                                     </div>
                                 </div>
                             </div>
@@ -1504,10 +1518,10 @@
                                     in it."
                                 </p>
                                 <div class="flex items-center gap-3 mt-6">
-                                    <img src="./images/exo-feedback-13.jpeg" alt="Finn Daley avatar" loading="lazy"
-                                        class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10">
+                                    <img src="./assets/images/exo-feedback-13.jpeg" alt="Vanessa Daley avatar" loading="lazy"
+                                        class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10 img-protected" draggable="false">
                                     <div>
-                                        <div class="text-white text-sm font-medium">Finn Daley</div>
+                                        <div class="text-white text-sm font-medium">Vanessa Daley</div>
                                         <div class="text-zinc-500 text-xs">Owner @ Bureau Studio</div>
                                     </div>
                                 </div>
@@ -1516,15 +1530,14 @@
                             <div
                                 class="testi-fade-in-3 absolute inset-0 flex flex-col xl:bg-neutral-950 text-left bg-white/5 rounded-none ring-white/10 ring-1 pt-6 pr-6 pb-6 pl-6 justify-between">
                                 <p class="text-zinc-300 text-base leading-relaxed">
-                                    "At our scale, the cost of a bad decision is significant. Exo gives me visibility
-                                    across departments that I used to have to wait weeks for. That alone is worth it."
+                                    "This is my second company and I've never had this level of cross-department visibility. Exo surfaces what I used to wait weeks for. Plus, EXA is upskilling my team in AI ops — that's a cherry on top."
                                 </p>
                                 <div class="flex items-center gap-3 mt-6">
-                                    <img src="./images/jenn-testimonial.jpeg" alt="Serena Nakamura avatar"
-                                        loading="lazy" class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10">
+                                    <img src="./assets/images/jenn-testimonial.jpeg" alt="Serena Velasco avatar"
+                                        loading="lazy" class="h-8 w-8 rounded-none object-cover ring-1 ring-white/10 img-protected" draggable="false">
                                     <div>
-                                        <div class="text-white text-sm font-medium">Serena Nakamura</div>
-                                        <div class="text-zinc-500 text-xs">CEO &amp; Founder @ Parable Analytics</div>
+                                        <div class="text-white text-sm font-medium">Serena Velasco</div>
+                                        <div class="text-zinc-500 text-xs">CEO &amp; Founder @ Parable</div>
                                     </div>
                                 </div>
                             </div>
@@ -1746,6 +1759,14 @@
                 }
             });
         }
+    </script>
+
+    <!-- Image Protection: Block right-click on testimonial images -->
+    <script>
+        document.querySelectorAll('.img-protected').forEach(img => {
+            img.addEventListener('contextmenu', e => e.preventDefault());
+            img.addEventListener('dragstart', e => e.preventDefault());
+        });
     </script>
 
     <!-- PostHog Event Tracking -->
