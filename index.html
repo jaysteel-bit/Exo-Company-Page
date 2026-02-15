@@ -227,10 +227,97 @@
             background: linear-gradient(71deg, #110e0e, var(--card-color, #afa220), #110e0e);
         }
 
-        @media (min-width: 768px) {
-            .card-content {
-                width: 400px;
+        .card-content {
+            width: 400px;
+        }
+        }
+
+        /* SHINY CTA STYLES */
+        @property --gradient-angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @property --gradient-angle-offset {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @property --gradient-percent {
+            syntax: "<percentage>";
+            initial-value: 20%;
+            inherits: false;
+        }
+
+        @property --gradient-shine {
+            syntax: "<color>";
+            initial-value: #8484ff;
+            inherits: false;
+        }
+
+        .shiny-cta {
+            --gradient-angle: 0deg;
+            --gradient-angle-offset: 0deg;
+            --gradient-percent: 20%;
+            --gradient-shine: #10b981;
+            /* Default to Emerald if variable misses */
+            --shadow-size: 2px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 9999px;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.75rem;
+            line-height: 1.2;
+            font-weight: 500;
+            color: #ffffff;
+            /* Simplified Background: Just the border gradient, no internal mesh/blue */
+            background: linear-gradient(#000000, #000000) padding-box,
+                conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+                    transparent 0%, #064e3b 5%, var(--gradient-shine) 15%, #064e3b 30%,
+                    transparent 40%, transparent 100%) border-box;
+            border: 2px solid transparent;
+            box-shadow: inset 0 0 0 1px #1a1818;
+            outline: none;
+            /* Ensure transition is smooth but animation is active */
+            transition: box-shadow 0.3s;
+            cursor: pointer;
+            isolation: isolate;
+            outline-offset: 4px;
+            z-index: 0;
+            /* Speed up or adjust animation if "stuck" - ensure it runs */
+            animation: border-spin 3s linear infinite;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* Custom "Flow OS" Vibe for Index Page as requested */
+        .flow-cta {
+            --gradient-shine: #34d399;
+            /* Emerald Green */
+        }
+
+        @keyframes border-spin {
+            from {
+                --gradient-angle: 0deg;
             }
+
+            to {
+                --gradient-angle: 360deg;
+            }
+        }
+
+        /* Removed ::before (mesh) and ::after (shimmer) for "simpler" look */
+
+        .shiny-cta>span {
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
         }
     </style>
 </head>
@@ -288,7 +375,7 @@
             <!-- Desktop Links -->
             <div class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide uppercase text-neutral-400">
                 <a href="#problem" class="hover:text-white transition-colors">The Chaos</a>
-                <a href="value.html" class="hover:text-white transition-colors">Guides</a>
+                <a href="value.html" class="hover:text-white transition-colors">Vault</a>
                 <a href="flow.html" class="hover:text-white transition-colors">Flow OS</a>
                 <a href="#how-it-works" class="hover:text-white transition-colors">Process</a>
                 <a href="#departments" class="hover:text-white transition-colors">Departments</a>
@@ -297,10 +384,10 @@
             </div>
 
             <!-- CTA -->
-            <a href="value.html"
-                class="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-xs font-medium text-white">
-                <span class="">FREE GIFTS TO SCALE</span>
-                <iconify-icon icon="solar:arrow-right-linear" width="16" class=""></iconify-icon>
+            <!-- CTA -->
+            <a href="value.html" class="shiny-cta flow-cta hidden md:inline-flex">
+                <span>FREE GIFTS IN VAULT <iconify-icon icon="solar:arrow-right-linear"
+                        width="16"></iconify-icon></span>
             </a>
 
             <!-- Mobile Menu Icon -->
@@ -334,7 +421,7 @@
                 <a href="#how-it-works"
                     class="text-2xl font-light text-white hover:text-emerald-400 transition-colors">Process</a>
                 <a href="value.html"
-                    class="text-2xl font-light text-white hover:text-emerald-400 transition-colors">Guides</a>
+                    class="text-2xl font-light text-white hover:text-emerald-400 transition-colors">Vault</a>
                 <a href="#departments"
                     class="text-2xl font-light text-white hover:text-emerald-400 transition-colors">Departments</a>
                 <a href="firm.html"
@@ -879,7 +966,7 @@
                 <p class="text-sm text-neutral-400 leading-relaxed">
                     <span class="text-neutral-200 font-medium">Flexible timeline.</span> Some clients transfer at Week
                     12. Others prefer an extended Operate phase.<br class="hidden md:block">
-                    We adjust based on your team's readiness — not arbitrary deadlines.
+                    We adjust based on your team's readiness — not arbitrary deadlines. Leading to true transformation.
                 </p>
             </div>
 
@@ -891,14 +978,14 @@
                     The difference is how long we stay.</p>
                 <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                     <!-- Path 1: Jumpstart -->
-                    <a href="#contact"
+                    <a href="#contact" onclick="selectEngagement('Jumpstart')"
                         class="group block p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all text-center">
                         <h4 class="group-hover:text-sky-300 transition-colors font-medium text-white mb-2">Jumpstart
                         </h4>
                         <p class="text-xs text-neutral-300">Full build + training. Your team takes over at Week 12.</p>
                     </a>
                     <!-- Path 2: Co-Pilot -->
-                    <a href="#contact"
+                    <a href="#contact" onclick="selectEngagement('Co-Pilot')"
                         class="group block p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all text-center">
                         <h4 class="text-white font-medium mb-2 group-hover:text-teal-400 transition-colors">Co-Pilot
                         </h4>
@@ -907,7 +994,7 @@
                         </p>
                     </a>
                     <!-- Path 3: Fully Managed -->
-                    <a href="#contact"
+                    <a href="#contact" onclick="selectEngagement('Fully Managed')"
                         class="group block p-6 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all text-center">
                         <h4 class="text-white font-medium mb-2 group-hover:text-white transition-colors">Fully Managed
                         </h4>
@@ -965,6 +1052,12 @@
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
 
+                        <!-- Ribbon -->
+                        <div class="absolute top-8 right-0 bg-amber-400 text-black font-bold italic px-4 py-1.5 pl-8 text-[10px] uppercase tracking-widest shadow-lg transform hover:scale-105 transition-transform origin-right z-20"
+                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15% 50%);">
+                            YOUR HIGH-TOUCH AI TEAM
+                        </div>
+
                         <!-- Icon -->
                         <div class="mb-8 relative">
                             <div
@@ -994,6 +1087,11 @@
                 <div class="card-content" style="--card-color: #3b82f6; z-index: 2;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
+                        <!-- Ribbon -->
+                        <div class="absolute top-8 right-0 bg-blue-500 text-white font-bold italic px-4 py-1.5 pl-8 text-[10px] uppercase tracking-widest shadow-lg transform hover:scale-105 transition-transform origin-right z-20"
+                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15% 50%);">
+                            THE FOUNDATION
+                        </div>
                         <div class="mb-8 relative">
                             <div
                                 class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500/20 to-transparent flex items-center justify-center border border-blue-500/20">
@@ -1019,6 +1117,14 @@
                 <div class="card-content" style="--card-color: #10b981; z-index: 3;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
+                        <!-- Ribbon + Value Anchor -->
+                        <div class="absolute top-8 right-0 z-20 text-right">
+                            <div class="bg-emerald-500 text-black font-bold italic px-4 py-1.5 pl-8 text-[10px] uppercase tracking-widest shadow-lg transform hover:scale-105 transition-transform origin-right"
+                                style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15% 50%);">
+                                HIGHEST ROI
+                            </div>
+                            <p class="text-[9px] text-emerald-400/70 font-bold uppercase tracking-wider mt-1.5 mr-1">Value: $9,500/mo standalone</p>
+                        </div>
                         <div class="mb-8 relative">
                             <div
                                 class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-transparent flex items-center justify-center border border-emerald-500/20">
@@ -1045,6 +1151,11 @@
                 <div class="card-content" style="--card-color: #87CEEB; z-index: 4;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
+                        <!-- Ribbon -->
+                        <div class="absolute top-8 right-0 bg-red-600 text-white font-bold italic px-4 py-1.5 pl-8 text-[10px] uppercase tracking-widest shadow-lg transform hover:scale-105 transition-transform origin-right z-20"
+                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15% 50%);">
+                            MOST POPULAR
+                        </div>
                         <div class="mb-8 relative">
                             <div
                                 class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-200/20 to-transparent flex items-center justify-center border border-violet-500/20">
@@ -1072,6 +1183,11 @@
                 <div class="card-content" style="--card-color: #8b5cf6; z-index: 5;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
+                        <!-- Ribbon -->
+                        <div class="absolute top-8 right-0 bg-violet-500 text-white font-bold italic px-4 py-1.5 pl-8 text-[10px] uppercase tracking-widest shadow-lg transform hover:scale-105 transition-transform origin-right z-20"
+                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15% 50%);">
+                            PREMIUM ADD-ON
+                        </div>
                         <div class="mb-8 relative">
                             <div
                                 class="w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-500/20 to-transparent flex items-center justify-center border border-pink-500/20">
@@ -1099,6 +1215,11 @@
                 <div class="card-content" style="--card-color: #f97316; z-index: 6;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
+                        <!-- Ribbon -->
+                        <div class="absolute top-8 right-0 bg-orange-500 text-black font-bold italic px-4 py-1.5 pl-8 text-[10px] uppercase tracking-widest shadow-lg transform hover:scale-105 transition-transform origin-right z-20"
+                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15% 50%);">
+                            NEW DEPARTMENT
+                        </div>
                         <div class="mb-8 relative">
                             <div
                                 class="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-500/20 to-transparent flex items-center justify-center border border-orange-500/20">
@@ -1125,6 +1246,11 @@
                 <div class="card-content" style="--card-color: #e5e5e5; z-index: 7;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
+                        <!-- Ribbon -->
+                        <div class="absolute top-8 right-0 bg-white text-black font-bold italic px-4 py-1.5 pl-8 text-[10px] uppercase tracking-widest shadow-lg transform hover:scale-105 transition-transform origin-right z-20"
+                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15% 50%);">
+                            INCLUDED FREE IN PLAN
+                        </div>
                         <div class="mb-8 relative">
                             <div
                                 class="w-20 h-20 rounded-2xl bg-gradient-to-br from-white/20 to-transparent flex items-center justify-center border border-white/20">
@@ -1149,6 +1275,11 @@
                 <div class="card-content" style="--card-color: #066304; z-index: 8;">
                     <div class="exo-card-bg">
                         <div class="exo-card-border-gradient"></div>
+                        <!-- Ribbon -->
+                        <div class="absolute top-8 right-0 bg-[#CBA135] text-black font-bold italic px-4 py-1.5 pl-8 text-[10px] uppercase tracking-widest shadow-lg transform hover:scale-105 transition-transform origin-right z-20"
+                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15% 50%);">
+                            OUR GIFT TO YOU AND YOUR TEAM
+                        </div>
                         <div class="mb-8 relative">
                             <div
                                 class="w-20 h-20 rounded-2xl bg-gradient-to-br from-slate-400/20 to-transparent flex items-center justify-center border border-slate-400/20">
@@ -1166,8 +1297,9 @@
                         <div class="mt-6 pt-5 border-t border-white/10">
                             <p class="font-medium leading-relaxed text-white/40 text-sm">
                                 After Transfer, you own the complete system — software, workflows, documentation,
-                                training materials. No subscriptions required for core functionality.
+                                training materials. No subscriptions for core functionality.
                             </p>
+                            <br>
                             <br>
                             <span class="text-white font-bold text-base">Along with much more +</span>
                         </div>
@@ -1726,6 +1858,21 @@
             </div>
         </div>
     </footer>
+    <!-- Engagement Preference Tracker -->
+    <script>
+        function selectEngagement(tier) {
+            sessionStorage.setItem('exo_engagement_preference', tier);
+            console.log('Engagement selected:', tier);
+            // PostHog: track which engagement tier they clicked
+            if (window.posthog) {
+                posthog.capture('engagement_tier_selected', {
+                    tier: tier,
+                    page: 'home'
+                });
+            }
+        }
+    </script>
+
     <script type="module">
         import { client } from "./js/convex-client.js";
 
@@ -1748,10 +1895,12 @@
 
                 try {
                     // 1. Submit to Convex
+                    const engagementPref = sessionStorage.getItem('exo_engagement_preference') || '';
                     await client.mutation("leads:submitLead", {
                         firstName,
                         lastName,
-                        email
+                        email,
+                        engagementPreference: engagementPref || undefined
                     });
 
                     // 2. Sync to Mailchimp (B2B audience)
@@ -1763,7 +1912,8 @@
                     }).catch(err => console.error("Mailchimp sync error:", err));
 
                     // 3. Save to Session for the next page
-                    const leadData = { firstName, lastName, email };
+                    const engagementPref = sessionStorage.getItem('exo_engagement_preference') || '';
+                    const leadData = { firstName, lastName, email, engagementPreference: engagementPref };
                     sessionStorage.setItem('exo_lead_data', JSON.stringify(leadData));
 
                     // 4. Redirect to X-Scale page

@@ -177,11 +177,17 @@
                 <span class="text-md font-medium tracking-tight text-white/90">Exo Resources</span>
             </a>
 
-            <a href="x-scale.html"
-                class="flex items-center gap-2 text-xs font-medium text-neutral-400 hover:text-white transition-colors">
-                Back to Main Site
-                <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
-            </a>
+            <div class="flex items-center gap-6">
+                <a href="#departments"
+                    class="text-xs font-medium text-neutral-400 hover:text-white transition-colors">Home</a>
+                <a href="flow.html" class="text-xs font-medium text-neutral-400 hover:text-white transition-colors">Flow
+                    OS</a>
+                <a href="x-scale.html"
+                    class="flex items-center gap-2 text-xs font-medium bg-emerald-500 hover:bg-emerald-400 text-black px-4 py-2 rounded-lg transition-colors">
+                    Start Transformation
+                    <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -194,17 +200,16 @@
                 <div>
                     <span
                         class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium uppercase tracking-widest border border-emerald-500/20 mb-6">
-                        Exo's Free Gifts
+                        Exo Vault
                     </span>
                     <h1
                         class="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight mb-6">
-                        Unlock High-Leverage <br>
-                        <span class="font-serif italic text-emerald-400">Operational Assets.</span>
+                        Unlock the Playbooks Used <br>to Build <span
+                            class="font-serif italic text-emerald-400">Self-Running Teams.</span>
                     </h1>
                     <p class="text-lg text-white leading-relaxed max-w-md">
-                        Stop guessing. Get the frameworks, SOP templates, and advanced blueprints regularly released
-                        that we use to build
-                        self-running enterprises. <span class="text-emerald-300 font-bold">On Us.</span>
+                        The frameworks, SOP templates, and blueprints we use to build
+                        self-running departments. <span class="text-emerald-300 font-bold">Free — On Us.</span>
                     </p>
                 </div>
 
@@ -215,7 +220,7 @@
                             <iconify-icon icon="solar:document-add-linear" class="text-xl"></iconify-icon>
                         </div>
                         <div>
-                            <h3 class="text-white font-medium font-bold text-sm">Process Maps</h3>
+                            <h3 class="text-white font-medium font-bold text-sm">Department Workflow Maps</h3>
                             <p class="text-white text-xs">Visual workflows for every department.</p>
                         </div>
                     </div>
@@ -225,8 +230,8 @@
                             <iconify-icon icon="solar:users-group-rounded-linear" class="text-xl"></iconify-icon>
                         </div>
                         <div>
-                            <h3 class="text-white font-medium font-bold text-sm">Hiring Archetypes</h3>
-                            <p class="text-white text-xs">Job descriptions for the AI era.</p>
+                            <h3 class="text-white font-medium font-bold text-sm">AI-Era Role Templates</h3>
+                            <p class="text-white text-xs">Job descriptions built for the AI era.</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-3">
@@ -235,7 +240,7 @@
                             <iconify-icon icon="solar:graph-new-linear" class="text-xl"></iconify-icon>
                         </div>
                         <div>
-                            <h3 class="text-white font-medium font-bold text-sm">Audit Frameworks</h3>
+                            <h3 class="text-white font-medium font-bold text-sm">Ops Bottleneck Audit (Self-Serve)</h3>
                             <p class="text-white text-xs">Self-assess your operational bottlenecks.</p>
                         </div>
                     </div>
@@ -246,9 +251,9 @@
                         </div>
                         <div>
                             <h3 class="text-white font-medium font-bold text-sm"><span
-                                    class="text-emerald-300 font-bold">And Much More</span></h3>
-                            <p class="text-white text-xs">Videos, eBooks, Guides, Templates,<br>
-                                Downloads & more to help you succeed.</p>
+                                    class="text-emerald-300 font-bold">New resources added weekly</span></h3>
+                            <p class="text-white text-xs">Videos, eBooks, Guides, Templates &amp; more to help you
+                                Win.</p>
                         </div>
                     </div>
                 </div>
@@ -264,17 +269,18 @@
                 </div>
 
                 <form id="lead-magnet-form" class="space-y-5">
+                    <input type="hidden" id="lead-interest-selector" name="leadInterest" value="General">
                     <!-- Name & Email -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div class="space-y-1.5">
-                            <label for="name" class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Full
+                            <label for="name" class="text-xs uppercase tracking-wider text-neutral-200 font-medium">Full
                                 Name</label>
                             <input type="text" id="name" required placeholder="John Doe"
                                 class="w-full px-4 py-3 rounded-xl text-sm placeholder-neutral-600 focus:placeholder-neutral-500">
                         </div>
                         <div class="space-y-1.5">
                             <label for="email"
-                                class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Work Email</label>
+                                class="text-xs uppercase tracking-wider text-neutral-200 font-medium">Work Email</label>
                             <input type="email" id="email" required placeholder="john@company.com"
                                 class="w-full px-4 py-3 rounded-xl text-sm placeholder-neutral-600 focus:placeholder-neutral-500">
                         </div>
@@ -283,75 +289,91 @@
                     <!-- Company Name -->
                     <div class="space-y-1.5">
                         <label for="company"
-                            class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Company Name</label>
-                        <input type="text" id="company" required placeholder="Acme Corp"
+                            class="text-xs uppercase tracking-wider text-neutral-200 font-medium">Company Name</label>
+                        <input type="text" id="company" required placeholder="Exo Corp"
                             class="w-full px-4 py-3 rounded-xl text-sm placeholder-neutral-600 focus:placeholder-neutral-500">
                     </div>
 
-                    <!-- Dropdowns -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div class="space-y-1.5">
-                            <label for="company-size"
-                                class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Team Size</label>
-                            <div class="relative custom-dropdown" id="size-dropdown">
-                                <button type="button"
-                                    class="w-full px-4 py-3 rounded-xl text-sm bg-[rgba(255,255,255,0.03)] border border-white/10 text-neutral-400 flex items-center justify-between hover:bg-[rgba(255,255,255,0.05)] hover:border-emerald-500/50 transition-colors focus:ring-1 focus:ring-emerald-500/50 text-left group">
-                                    <span class="selected-value">Select size</span>
-                                    <iconify-icon icon="solar:alt-arrow-down-linear"
-                                        class="text-neutral-500 transition-transform duration-200 chevron group-hover:text-emerald-400"></iconify-icon>
-                                </button>
-                                <div
-                                    class="absolute top-full left-0 w-full mt-1 bg-[#1a1a1a] border border-white/10 rounded-xl shadow-xl overflow-hidden z-20 hidden options-container max-h-60 overflow-y-auto custom-scrollbar backdrop-blur-xl">
-                                    <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
-                                        data-value="1-10">1-10 Employees</div>
-                                    <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
-                                        data-value="11-50">11-50 Employees</div>
-                                    <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
-                                        data-value="51-200">51-200 Employees</div>
-                                    <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
-                                        data-value="201-500">201-500 Employees</div>
-                                    <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
-                                        data-value="500+">500+ Employees</div>
+                    <!-- Qualifying Fields (Hidden until company input) -->
+                    <div id="qualifying-fields"
+                        class="hidden opacity-0 translate-y-2 transition-all duration-500 ease-out space-y-5">
+                        <!-- Dropdowns -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div class="space-y-1.5">
+                                <label for="company-size"
+                                    class="text-xs uppercase tracking-wider text-neutral-200 font-medium">Team
+                                    Size</label>
+                                <div class="relative custom-dropdown" id="size-dropdown">
+                                    <button type="button"
+                                        class="w-full px-4 py-3 rounded-xl text-sm bg-[rgba(255,255,255,0.03)] border border-white/10 text-neutral-400 flex items-center justify-between hover:bg-[rgba(255,255,255,0.05)] hover:border-emerald-500/50 transition-colors focus:ring-1 focus:ring-emerald-500/50 text-left group">
+                                        <span class="selected-value">Select size</span>
+                                        <iconify-icon icon="solar:alt-arrow-down-linear"
+                                            class="text-neutral-500 transition-transform duration-200 chevron group-hover:text-emerald-400"></iconify-icon>
+                                    </button>
+                                    <div
+                                        class="absolute top-full left-0 w-full mt-1 bg-[#1a1a1a] border border-white/10 rounded-xl shadow-xl overflow-hidden z-20 hidden options-container max-h-60 overflow-y-auto custom-scrollbar backdrop-blur-xl">
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="1-10">1-10 Employees</div>
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="11-50">11-50 Employees</div>
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="51-200">51-200 Employees</div>
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="201-500">201-500 Employees</div>
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="500+">500+ Employees</div>
+                                    </div>
+                                    <input type="hidden" id="company-size" name="companySize" value="">
                                 </div>
-                                <input type="hidden" id="company-size" name="companySize" value="">
                             </div>
-                        </div>
-                        <div class="space-y-1.5">
-                            <label for="revenue"
-                                class="text-xs uppercase tracking-wider text-neutral-500 font-medium">Annual
-                                Revenue</label>
-                            <div class="relative custom-dropdown" id="revenue-dropdown">
-                                <button type="button"
-                                    class="w-full px-4 py-3 rounded-xl text-sm bg-[rgba(255,255,255,0.03)] border border-white/10 text-neutral-400 flex items-center justify-between hover:bg-[rgba(255,255,255,0.05)] hover:border-emerald-500/50 transition-colors focus:ring-1 focus:ring-emerald-500/50 text-left group">
-                                    <span class="selected-value">Select revenue range</span>
-                                    <iconify-icon icon="solar:alt-arrow-down-linear"
-                                        class="text-neutral-500 transition-transform duration-200 chevron group-hover:text-emerald-400"></iconify-icon>
-                                </button>
-                                <div
-                                    class="absolute top-full left-0 w-full mt-1 bg-[#1a1a1a] border border-white/10 rounded-xl shadow-xl overflow-hidden z-20 hidden options-container max-h-60 overflow-y-auto custom-scrollbar backdrop-blur-xl">
-                                    <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
-                                        data-value="Pre-Revenue">Pre-Revenue</div>
-                                    <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
-                                        data-value="< $1M">&lt; $1M</div>
-                                    <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
-                                        data-value="$1M - $5M">$1M - $5M</div>
-                                    <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
-                                        data-value="$5M - $20M">$5M - $20M</div>
-                                    <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
-                                        data-value="$20M+">$20M+</div>
+                            <div class="space-y-1.5">
+                                <label for="revenue"
+                                    class="text-xs uppercase tracking-wider text-neutral-200 font-medium">Annual
+                                    Revenue</label>
+                                <div class="relative custom-dropdown" id="revenue-dropdown">
+                                    <button type="button"
+                                        class="w-full px-4 py-3 rounded-xl text-sm bg-[rgba(255,255,255,0.03)] border border-white/10 text-neutral-400 flex items-center justify-between hover:bg-[rgba(255,255,255,0.05)] hover:border-emerald-500/50 transition-colors focus:ring-1 focus:ring-emerald-500/50 text-left group">
+                                        <span class="selected-value">Select revenue range</span>
+                                        <iconify-icon icon="solar:alt-arrow-down-linear"
+                                            class="text-neutral-500 transition-transform duration-200 chevron group-hover:text-emerald-400"></iconify-icon>
+                                    </button>
+                                    <div
+                                        class="absolute top-full left-0 w-full mt-1 bg-[#1a1a1a] border border-white/10 rounded-xl shadow-xl overflow-hidden z-20 hidden options-container max-h-60 overflow-y-auto custom-scrollbar backdrop-blur-xl">
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="Under $100k">Under $100k</div>
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="$100k to $250k">$100k to $250k</div>
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="$250k to $500k">$250k to $500k</div>
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="$500k to $1M">$500k to $1M</div>
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="$1M to $3M">$1M to $3M</div>
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="$3M to $10M">$3M to $10M</div>
+                                        <div class="option px-4 py-2.5 text-sm text-neutral-300 hover:bg-white/5 cursor-pointer hover:text-white transition-colors border-b border-white/5 last:border-0"
+                                            data-value="$10M to $30M">$10M to $30M</div>
+                                    </div>
+                                    <input type="hidden" id="revenue" name="annualRevenue" value="">
                                 </div>
-                                <input type="hidden" id="revenue" name="annualRevenue" value="">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Struggle -->
-                    <div class="space-y-1.5">
-                        <label for="struggle" class="text-xs uppercase tracking-wider text-neutral-500 font-medium">What
-                            is your biggest operational bottleneck?</label>
-                        <textarea id="struggle" required rows="3"
-                            placeholder="e.g. Sales handoff, hiring, project management..."
-                            class="w-full px-4 py-3 rounded-xl text-sm placeholder-neutral-600 focus:placeholder-neutral-500 resize-none"></textarea>
+                    <!-- Social Proof -->
+                    <div class="flex items-center gap-2 pt-1">
+                        <iconify-icon icon="solar:users-group-rounded-bold"
+                            class="text-emerald-500 text-sm"></iconify-icon>
+                        <p class="text-[11px] text-neutral-500">Joined by <span
+                                class="text-neutral-300 font-medium">65+</span> teams scaling with Exo resources</p>
+                    </div>
+
+                    <!-- Mini Testimonial -->
+                    <div class="border-l-2 border-emerald-500/30 pl-4 py-1">
+                        <p class="text-xs text-neutral-400 italic leading-relaxed">"Honestly thought it'd be regular AI
+                            fluff. Was referred to the Vault by a friend of mine. The Org blueprint that was sent in
+                            alone saved me weeks of planning. Now I'm in. These tactics should be paid content."</p>
+                        <p class="text-[10px] text-neutral-500 mt-1">— Team Lead, SaaS Agency</p>
                     </div>
 
                     <!-- Newsletter Toggle -->
@@ -392,6 +414,125 @@
             </div>
         </div>
     </main>
+
+    <!-- Rotating Value Deck -->
+    <section id="value-deck"
+        class="w-full py-16 px-6 relative z-10 border-t border-white/5 bg-neutral-950/50 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto">
+
+            <!-- Cross-Fade Wrapper (CSS Grid Stack) -->
+            <div class="grid grid-cols-1 grid-rows-1 relative min-h-[400px] md:min-h-[350px]" id="deck-container">
+
+                <!-- VIEW A: The Roadmap (Hero State) -->
+                <div id="view-a"
+                    class="col-start-1 row-start-1 w-full h-full transition-opacity duration-1000 ease-in-out opacity-100 z-10 pointer-events-auto flex flex-col items-center justify-center text-center glass-panel p-8 md:p-12 rounded-3xl border border-emerald-500/20 shadow-[0_0_50px_-20px_rgba(16,185,129,0.1)] group cursor-pointer"
+                    onclick="selectResource('Roadmap')">
+
+                    <div class="absolute top-6 right-6 bg-red-600 text-white font-bold italic px-4 py-1.5 pr-8 text-xs uppercase tracking-widest shadow-lg rounded-l-md transform hover:scale-105 transition-transform"
+                        style="clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);">
+                        Brand New
+                    </div>
+
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium uppercase tracking-widest border border-emerald-500/20 mb-6 font-sans">
+                        Founder's Favorite
+                    </span>
+
+                    <h2 class="text-3xl md:text-5xl font-light text-white mb-8 tracking-tight">
+                        The <span class="text-emerald-400 font-serif italic">EXO Scaling Roadmap</span>
+                    </h2>
+
+                    <!-- Decorative "Spreadsheet" Visual (Abstract) -->
+                    <div
+                        class="w-full max-w-lg h-24 bg-gradient-to-r from-neutral-900 to-neutral-800 rounded-lg border border-white/10 mb-8 flex items-center justify-center relative overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:250%_250%] animate-[shimmer_3s_infinite]">
+                        </div>
+                        <div class="grid grid-cols-4 gap-2 w-3/4 opacity-30">
+                            <div class="h-2 bg-emerald-500 rounded col-span-1"></div>
+                            <div class="h-2 bg-white rounded col-span-3"></div>
+                            <div class="h-2 bg-white rounded col-span-2"></div>
+                            <div class="h-2 bg-white rounded col-span-2"></div>
+                            <div class="h-2 bg-white rounded col-span-3"></div>
+                            <div class="h-2 bg-emerald-500 rounded col-span-1"></div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-bold tracking-wide rounded-xl transition-all shadow-[0_0_20px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.5)] transform hover:-translate-y-1 relative overflow-hidden">
+                        GET THE ROADMAP
+                    </button>
+
+                    <p class="text-neutral-500 text-xs mt-4 uppercase tracking-wider">Yours free. Tap to unlock.</p>
+                </div>
+
+                <!-- VIEW B: The Catalog (Stack State) -->
+                <div id="view-b"
+                    class="col-start-1 row-start-1 w-full h-full transition-opacity duration-1000 ease-in-out opacity-0 z-0 pointer-events-none grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10 glass-panel rounded-3xl overflow-hidden">
+
+                    <!-- Item 1: Hiring -->
+                    <div class="relative p-8 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors cursor-pointer group"
+                        onclick="selectResource('Hiring Archetypes')">
+                        <!-- Ribbon -->
+                        <div class="absolute top-4 right-4 bg-emerald-600 text-white font-bold italic px-3 py-1 pr-6 text-[10px] uppercase tracking-widest shadow-lg rounded-l-md transform hover:scale-105 transition-transform"
+                            style="clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);">
+                            It's FREE
+                        </div>
+                        <div
+                            class="w-16 h-16 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <iconify-icon icon="solar:users-group-rounded-linear" class="text-3xl"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl text-white font-serif italic mb-2">Hiring Archetypes</h3>
+                        <p class="text-sm text-neutral-400 mb-6">The exact profiles you need for an AI-native team.</p>
+                        <span
+                            class="text-emerald-400 text-sm font-medium border-b border-emerald-500/30 pb-0.5 group-hover:border-emerald-500 transition-colors">Get
+                            It &rarr;</span>
+                    </div>
+
+                    <!-- Item 2: Process -->
+                    <div class="relative p-8 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors cursor-pointer group"
+                        onclick="selectResource('Process Maps')">
+                        <!-- Ribbon -->
+                        <div class="absolute top-4 right-4 bg-emerald-600 text-white font-bold italic px-3 py-1 pr-6 text-[10px] uppercase tracking-widest shadow-lg rounded-l-md transform hover:scale-105 transition-transform"
+                            style="clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);">
+                            It's FREE
+                        </div>
+                        <div
+                            class="w-16 h-16 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <iconify-icon icon="solar:document-add-linear" class="text-3xl"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl text-white font-serif italic mb-2">Process Maps</h3>
+                        <p class="text-sm text-neutral-400 mb-6">Visual SOPs to automate your core operations.</p>
+                        <span
+                            class="text-emerald-400 text-sm font-medium border-b border-emerald-500/30 pb-0.5 group-hover:border-emerald-500 transition-colors">Get
+                            It &rarr;</span>
+                    </div>
+
+                    <!-- Item 3: AI Frameworks -->
+                    <div class="relative p-8 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors cursor-pointer group"
+                        onclick="selectResource('AI Frameworks')">
+                        <!-- Ribbon -->
+                        <div class="absolute top-4 right-4 bg-red-600 text-white font-bold italic px-3 py-1 pr-6 text-[10px] uppercase tracking-widest shadow-lg rounded-l-md transform hover:scale-105 transition-transform"
+                            style="clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);">
+                            NEW RELEASES
+                        </div>
+                        <div
+                            class="w-16 h-16 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+                            <iconify-icon icon="solar:graph-new-linear" class="text-3xl"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl text-white font-serif italic mb-2">AI Frameworks</h3>
+                        <p class="text-sm text-neutral-400 mb-6">Strategic implementation guides and up to date
+                            walkthroughs for everything AI.</p>
+                        <span
+                            class="text-emerald-400 text-sm font-medium border-b border-emerald-500/30 pb-0.5 group-hover:border-emerald-500 transition-colors">Get
+                            It &rarr;</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Simple -->
     <footer class="py-8 text-center text-xs text-neutral-700 border-t border-white/5 bg-neutral-950">
@@ -453,51 +594,180 @@
             document.querySelectorAll('.chevron').forEach(el => el.classList.remove('rotate-180'));
         });
 
-        document.getElementById('lead-magnet-form').addEventListener('submit', function (e) {
-            e.preventDefault();
+        // --- Progressive Reveal: Show qualifying fields when company input starts ---
+        const companyInput = document.getElementById('company');
+        const qualifyingFields = document.getElementById('qualifying-fields');
+        let fieldsRevealed = false;
 
-            // 1. Validate Newsletter Opt-in
-            const newsletterOptIn = document.getElementById('newsletter');
-            if (!newsletterOptIn.checked) {
-                alert("Please confirm you'd like to receive the free resources.");
-                return;
+        if (companyInput && qualifyingFields) {
+            companyInput.addEventListener('input', () => {
+                if (!fieldsRevealed && companyInput.value.trim().length > 0) {
+                    fieldsRevealed = true;
+                    qualifyingFields.classList.remove('hidden');
+                    setTimeout(() => {
+                        qualifyingFields.classList.remove('opacity-0', 'translate-y-2');
+                    }, 10);
+                }
+            });
+        }
+
+        // Form submit is handled in the module script below (for Convex + Mailchimp access)
+
+        // --- Rotating Value Deck Logic ---
+        const viewA = document.getElementById('view-a');
+        const viewB = document.getElementById('view-b');
+        const deckContainer = document.getElementById('deck-container');
+        let activeView = 'A'; // Start with A
+        let intervalId;
+
+        // Function to switch views
+        function toggleViews() {
+            if (activeView === 'A') {
+                // Switch to B
+                viewA.classList.remove('opacity-100', 'z-10', 'pointer-events-auto');
+                viewA.classList.add('opacity-0', 'z-0', 'pointer-events-none');
+
+                viewB.classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+                viewB.classList.add('opacity-100', 'z-10', 'pointer-events-auto');
+                activeView = 'B';
+            } else {
+                // Switch to A
+                viewB.classList.remove('opacity-100', 'z-10', 'pointer-events-auto');
+                viewB.classList.add('opacity-0', 'z-0', 'pointer-events-none');
+
+                viewA.classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+                viewA.classList.add('opacity-100', 'z-10', 'pointer-events-auto');
+                activeView = 'A';
+            }
+        }
+
+        // Start Loop
+        function startLoop() {
+            intervalId = setInterval(toggleViews, 5000);
+        }
+
+        // Pause on Hover
+        deckContainer.addEventListener('mouseenter', () => {
+            clearInterval(intervalId);
+        });
+
+        // Resume on Leave
+        deckContainer.addEventListener('mouseleave', () => {
+            startLoop();
+        });
+
+        // Initialize
+        startLoop();
+
+        // Click Handler
+        function selectResource(resourceName) {
+            // 1. Update Hidden Input
+            const selector = document.getElementById('lead-interest-selector');
+            if (selector) {
+                selector.value = resourceName;
+                console.log('Resource Selected:', resourceName);
             }
 
-            // 2. Gather Data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                company: document.getElementById('company').value,
-                size: document.getElementById('company-size').value,
-                revenue: document.getElementById('revenue').value,
-                struggle: document.getElementById('struggle').value,
-                newsletter: document.getElementById('newsletter').checked
-            };
+            // 2. Smooth Scroll to Form
+            const formSection = document.getElementById('lead-magnet-form');
+            if (formSection) {
+                // Calculate offset to center the form nicely or define top
+                const yOffset = -150; // Adjust for header
+                const y = formSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-            console.log('Lead Captured:', formData);
+                window.scrollTo({ top: y, behavior: 'smooth' });
 
-            // Optional: Save to sessionStorage to pre-fill subsequent forms (like on x-scale.html)
-            sessionStorage.setItem('exo_lead_data', JSON.stringify({
-                firstName: formData.name.split(' ')[0],
-                lastName: formData.name.split(' ').slice(1).join(' '),
-                email: formData.email,
-                company: formData.company
-            }));
+                // Optional: Highlight the form briefly
+                formSection.classList.add('ring-2', 'ring-emerald-500', 'ring-offset-2', 'ring-offset-neutral-950');
+                setTimeout(() => {
+                    formSection.classList.remove('ring-2', 'ring-emerald-500', 'ring-offset-2', 'ring-offset-neutral-950');
+                }, 1000);
+            }
+        }
+    </script>
 
-            // 2. Show UI Feedback
-            const btn = this.querySelector('button');
-            const originalText = btn.innerHTML;
-            btn.disabled = true;
-            btn.innerHTML = '<iconify-icon icon="svg-spinners:ring-resize" class="text-xl"></iconify-icon> Processing...';
+    <!-- Convex + Mailchimp Integration (module script for import support) -->
+    <script type="module">
+        import { client } from "./js/convex-client.js";
 
-            // 3. Set Flag for Next Page (Trigger notification on x-scale.html)
-            sessionStorage.setItem('exo_show_value_banner', 'true');
+        const form = document.getElementById('lead-magnet-form');
+        if (form) {
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
 
-            // 4. Redirect Immediately (simulate network request delay)
-            setTimeout(() => {
-                window.location.href = 'x-scale.html';
-            }, 800);
-        });
+                // 1. Validate Newsletter Opt-in
+                const newsletterOptIn = document.getElementById('newsletter');
+                if (!newsletterOptIn.checked) {
+                    alert("Please confirm you'd like to receive the free resources.");
+                    return;
+                }
+
+                // 2. Gather Data
+                const fullName = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const company = document.getElementById('company').value;
+                const companySize = document.getElementById('company-size').value;
+                const revenue = document.getElementById('revenue').value;
+                const leadInterest = document.getElementById('lead-interest-selector').value;
+                const newsletter = newsletterOptIn.checked;
+
+                const firstName = fullName.split(' ')[0];
+                const lastName = fullName.split(' ').slice(1).join(' ');
+
+                console.log('Lead Captured:', { firstName, lastName, email, company, companySize, revenue, leadInterest });
+
+                // 3. Save to sessionStorage (pre-fill x-scale.html)
+                sessionStorage.setItem('exo_lead_data', JSON.stringify({
+                    firstName, lastName, email, company, revenue, companySize
+                }));
+
+                // 4. Show UI Feedback
+                const btn = form.querySelector('button[type="submit"]');
+                btn.disabled = true;
+                btn.innerHTML = '<iconify-icon icon="svg-spinners:ring-resize" class="text-xl"></iconify-icon> Processing...';
+
+                // 5. Set Flag for Next Page
+                sessionStorage.setItem('exo_show_value_banner', 'true');
+
+                // 6. Send to Convex (non-blocking — don't delay redirect)
+                client.mutation("leads:submitValueLead", {
+                    firstName,
+                    lastName,
+                    email,
+                    company: company || undefined,
+                    companySize: companySize || undefined,
+                    annualRevenue: revenue || undefined,
+                    leadInterest: leadInterest || undefined,
+                    newsletterOptIn: newsletter,
+                }).catch(err => console.error("Convex error:", err));
+
+                // 7. Sync to Mailchimp (non-blocking)
+                if (newsletter) {
+                    client.action("mailchimp:addSubscriber", {
+                        email,
+                        firstName,
+                        lastName,
+                        brandType: "exo_b2b",
+                        company: company || undefined,
+                    }).catch(err => console.error("Mailchimp sync error:", err));
+                }
+
+                // 8. PostHog event tracking
+                if (window.posthog) {
+                    posthog.capture('vault_lead_submitted', {
+                        lead_interest: leadInterest,
+                        company_size: companySize,
+                        annual_revenue: revenue,
+                        newsletter_opt_in: newsletter,
+                    });
+                }
+
+                // 9. Redirect after brief delay
+                setTimeout(() => {
+                    window.location.href = 'x-scale.html';
+                }, 800);
+            });
+        }
     </script>
 </body>
 
