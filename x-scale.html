@@ -165,7 +165,8 @@
     </style>
 </head>
 
-<body class="bg-neutral-950 text-neutral-200 antialiased selection:bg-emerald-500/30 selection:text-white">
+<body
+    class="bg-neutral-950 text-neutral-200 antialiased selection:bg-emerald-500/30 selection:text-white overflow-x-hidden">
 
     <!-- Lead Magnet Notification Banner -->
     <div id="value-notification-banner"
@@ -298,7 +299,7 @@
             <p class="text-[10px] uppercase tracking-[0.2em] text-white mb-10 font-['Urbanist'] font-medium">
                 Trusted by founders and leaders building the future</p>
 
-            <!-- Animated Tooltip Component (Replaces Logos Grid) -->
+            <!-- Animated Tooltip Component -->
             <div class="flex flex-row items-center justify-center mb-10 w-full animate-fade-up"
                 style="animation-delay: 0.2s;">
                 <div class="flex items-center gap-2" id="animated-tooltip-container">
@@ -443,6 +444,7 @@
 
                     gsap.to(tooltip, {
                         x: translateXVal,
+                        xPercent: -50, // Keep centered relative to parent
                         rotate: rotateVal,
                         duration: 0.2, // Quick response
                         ease: "power2.out",
@@ -457,6 +459,7 @@
                         if (tooltip) {
                             gsap.to(tooltip, {
                                 x: 0,
+                                xPercent: -50, // Reset to center
                                 rotate: 0,
                                 duration: 0.2,
                                 ease: "power2.out"
