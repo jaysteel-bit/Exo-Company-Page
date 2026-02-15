@@ -65,6 +65,8 @@ export const submitValueLead = mutation({
             .withIndex("by_email", (q) => q.eq("email", args.email))
             .first();
 
+        let leadId;
+
         if (existingLead) {
             await ctx.db.patch(existingLead._id, {
                 firstName: args.firstName,
@@ -76,22 +78,38 @@ export const submitValueLead = mutation({
                 newsletterOptIn: args.newsletterOptIn,
                 source: existingLead.source || "value",
             });
-            return existingLead._id;
+            leadId = existingLead._id;
+        } else {
+            leadId = await ctx.db.insert("leads", {
+                firstName: args.firstName,
+                lastName: args.lastName,
+                email: args.email,
+                company: args.company,
+                companySize: args.companySize,
+                annualRevenue: args.annualRevenue,
+                leadInterest: args.leadInterest,
+                newsletterOptIn: args.newsletterOptIn,
+                timestamp: Date.now(),
+                status: "new",
+                source: "value",
+            });
         }
 
-        const leadId = await ctx.db.insert("leads", {
-            firstName: args.firstName,
-            lastName: args.lastName,
-            email: args.email,
-            company: args.company,
-            companySize: args.companySize,
-            annualRevenue: args.annualRevenue,
-            leadInterest: args.leadInterest,
-            newsletterOptIn: args.newsletterOptIn,
-            timestamp: Date.now(),
-            status: "new",
-            source: "value",
-        });
+        // ─── Mailchimp Integration ──────────────────────────────────────────
+        // Automatically subscribe to Exo-B2B audience
+        try {
+            await ctx.scheduler.runAfter(0, internal.mailchimp.addSubscriber, {
+                email: args.email,
+                firstName: args.firstName,
+                lastName: args.lastName,
+                brandType: "exo_b2b",
+                company: args.company,
+            });
+        } catch (error) {
+            console.error("Failed to schedule Mailchimp subscription:", error);
+            // Settle for just the database entry if this fails
+        }
+
         return leadId;
     },
 });
