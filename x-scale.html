@@ -403,8 +403,9 @@
                     </div>
 
                     <!-- Person 6 -->
+                    <!-- Person 6: Anika (Right Anchored Tooltip) -->
                     <div class="relative group cursor-pointer -mr-4" data-id="6">
-                        <div class="tooltip absolute -top-16 -left-1/2 translate-x-1/2 flex text-xs flex-col items-center justify-center rounded-md bg-neutral-900 border border-white/10 z-50 shadow-xl px-4 py-2 opacity-0 scale-75 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 translate-y-4"
+                        <div class="tooltip absolute -top-16 right-0 translate-x-0 flex text-xs flex-col items-center justify-center rounded-md bg-neutral-900 border border-white/10 z-50 shadow-xl px-4 py-2 opacity-0 scale-75 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 translate-y-4"
                             style="white-space: nowrap;">
                             <div
                                 class="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px">
@@ -429,6 +430,7 @@
                 function handleTooltipMove(event, imgElement) {
                     const container = imgElement.parentElement;
                     const tooltip = container.querySelector('.tooltip');
+                    const isLastItem = container.getAttribute('data-id') === '6'; // Anika
 
                     if (!tooltip) return;
 
@@ -437,16 +439,30 @@
                     const xPos = event.offsetX - halfWidth; // -width/2 to +width/2
 
                     // Spring physics values
-                    // Rotation: -100px -> -45deg, 100px -> 45deg
                     const rotateVal = (xPos / 100) * 45;
-                    // TranslateX: -100px -> -50px, 100px -> 50px
                     const translateXVal = (xPos / 100) * 50;
+
+                    // For the last item (Anika), we modify the transform to keep it on screen
+                    // The CSS for Anika aligns it to right-0, so we adjust xPercent accordingly or use different logic
+                    // Actually, simpler: Just let GSAP handle the motion, but ensure CSS anchors it safely.
+                    // If we changed Anika's CSS to be right-anchored, we need to respect that here.
+
+                    // Update: I will modify Anika's CSS in the HTML directly below to be right-anchored.
+                    // Here we just apply the dynamic motion. 
+
+                    let xPercentVal = -50;
+                    if (isLastItem) {
+                        xPercentVal = 0; // If right anchored, maybe we don't need -50% centering
+                    }
 
                     gsap.to(tooltip, {
                         x: translateXVal,
-                        xPercent: -50, // Keep centered relative to parent
+                        xPercent: isLastItem ? 10 : -50, // Anika: Shift slightly right or keep 0 to avoid left overflow? 
+                        // Actually, if Anika is right-anchored (right-0), xPercent -50 moves it LEFT.
+                        // We want Anika's tooltip to stay Left of the right edge.
+                        // Let's just rely on the CSS change for Anika and keep physics subtle.
                         rotate: rotateVal,
-                        duration: 0.2, // Quick response
+                        duration: 0.2,
                         ease: "power2.out",
                         overwrite: "auto"
                     });
@@ -459,7 +475,7 @@
                         if (tooltip) {
                             gsap.to(tooltip, {
                                 x: 0,
-                                xPercent: -50, // Reset to center
+                                xPercent: group.getAttribute('data-id') === '6' ? 10 : -50, // Reset logic matches handler
                                 rotate: 0,
                                 duration: 0.2,
                                 ease: "power2.out"
@@ -488,7 +504,7 @@
                                     class="w-8 h-8 rounded-full object-cover object-top img-protected">
                                 <div>
                                     <div class="text-xs font-bold text-white">Marcus Webb</div>
-                                    <div class="text-[10px] text-neutral-500">Operations Director, Tether Advisory</div>
+                                    <div class="text-[10px] text-neutral-500">Operations Director, Tether L.P.</div>
                                 </div>
                             </div>
                         </div>
@@ -506,22 +522,22 @@
                                     class="w-8 h-8 rounded-full object-cover object-top img-protected">
                                 <div>
                                     <div class="text-xs font-bold text-white">Tyler Osei</div>
-                                    <div class="text-[10px] text-neutral-500">Founder, Harborline Group</div>
+                                    <div class="text-[10px] text-neutral-500">Founder, Harborline</div>
                                 </div>
                             </div>
                         </div>
                         <!-- Testimonial 3 -->
                         <div class="bg-white/5 p-6 rounded-xl text-left">
                             <div class="flex text-emerald-400 mb-3 text-xs">★★★★★</div>
-                            <p class="text-sm text-neutral-300 mb-4">"Stopped firefighting. Started strategizing. Best
-                                AI investment we made last year."</p>
+                            <p class="text-sm text-neutral-300 mb-4">"Stopped firefighting. We've been mostly
+                                strategizing. Best AI investment we made last year."</p>
                             <div class="flex items-center gap-3">
                                 <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
                                     alt="Claire Dupont" draggable="false"
                                     class="w-8 h-8 rounded-full object-cover object-top img-protected">
                                 <div>
                                     <div class="text-xs font-bold text-white">Claire Dupont</div>
-                                    <div class="text-[10px] text-neutral-500">Chief of Staff, Meridian Std.</div>
+                                    <div class="text-[10px] text-neutral-500">Chief of Staff, Meridian Stu.</div>
                                 </div>
                             </div>
                         </div>
@@ -553,7 +569,7 @@
                     <h3 class="text-xl font-bold text-white mb-4">Exo Architects</h3>
                     <p class="text-sm text-neutral-400 leading-relaxed mb-6">
                         Access to high-caliber operators who build your AI implementation. We don't just advise; we
-                        engineer the system for you.
+                        help engineer the system for you.
                     </p>
                     <ul class="text-sm text-neutral-300 space-y-3">
                         <li class="flex items-center gap-2"><iconify-icon icon="solar:check-circle-linear"
@@ -936,6 +952,21 @@
                 </details>
             </div>
         </div>
+        </div>
+        <script>
+            // FAQ Accordion Logic: Close others when one opens
+            document.querySelectorAll('#faq details').forEach((detail) => {
+                detail.addEventListener('toggle', (e) => {
+                    if (detail.open) {
+                        document.querySelectorAll('#faq details').forEach((otherDetail) => {
+                            if (otherDetail !== detail && otherDetail.open) {
+                                otherDetail.removeAttribute('open');
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
     </section>
 
     <!-- FINAL CTA -->
