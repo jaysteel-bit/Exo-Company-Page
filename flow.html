@@ -222,46 +222,11 @@ Sequence animation intro. Usage:
       font-family: 'Urbanist', sans-serif !important;
     }
   </style>
-  <link id="all-fonts-link-font-roboto" rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap">
-  <style id="all-fonts-style-font-roboto">
-    .font-roboto {
-      font-family: 'Roboto', sans-serif !important;
-    }
-  </style>
-  <link id="all-fonts-link-font-montserrat" rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
-  <style id="all-fonts-style-font-montserrat">
-    .font-montserrat {
-      font-family: 'Montserrat', sans-serif !important;
-    }
-  </style>
-  <link id="all-fonts-link-font-poppins" rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
-  <style id="all-fonts-style-font-poppins">
-    .font-poppins {
-      font-family: 'Poppins', sans-serif !important;
-    }
-  </style>
   <link id="all-fonts-link-font-playfair" rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
   <style id="all-fonts-style-font-playfair">
     .font-playfair {
       font-family: 'Playfair Display', serif !important;
-    }
-  </style>
-  <link id="all-fonts-link-font-merriweather" rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap">
-  <style id="all-fonts-style-font-merriweather">
-    .font-merriweather {
-      font-family: 'Merriweather', serif !important;
-    }
-  </style>
-  <link id="all-fonts-link-font-geist-mono" rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap">
-  <style id="all-fonts-style-font-geist-mono">
-    .font-geist-mono {
-      font-family: 'Geist Mono', monospace !important;
     }
   </style>
 </head>
@@ -286,167 +251,29 @@ Sequence animation intro. Usage:
 
   <div class="aura-background-component z-10 mix-blend-screen w-full h-screen absolute top-0">
     <div class="-z-10 absolute top-0 right-0 bottom-0 left-0" id="particles-js">
-      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" class=""></script>
-      <script class="">
-        <script class="">
-          // Lazy load particles after initial render
-          window.addEventListener('load', function() {
-            setTimeout(function () {
-              // Initialize ParticlesJS
-              particlesJS('particles-js', {
-                particles: {
-                  number: { value: 80, density: { enable: true, value_area: 800 } },
-                  color: { value: "#ffffff" },
-                  shape: { type: "circle" },
-                  opacity: { value: 0.5, random: false },
-                  size: { value: 3, random: true },
-                  line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-                  move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
-                },
-                interactivity: {
-                  detect_on: "canvas",
-                  events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
-                  modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
-                },
-                retina_detect: true
-              });
-            }, 500); // Load particles after 500ms
-          });
-          // Initialize ParticlesJS
-          particlesJS('particles-js', {
-            particles: {
-            number: {value: 80, density: {enable: true, value_area: 800 } },
-          color: {value: "#ffffff" },
-          shape: {type: "circle" },
-          opacity: {value: 0.5, random: false },
-          size: {value: 3, random: true },
-          line_linked: {enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
-          move: {enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
-                  },
-          interactivity: {
-            detect_on: "canvas",
-          events: {onhover: {enable: true, mode: "repulse" }, onclick: {enable: true, mode: "push" }, resize: true },
-          modes: {grab: {distance: 400, line_linked: {opacity: 1 } }, bubble: {distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: {distance: 200, duration: 0.4 }, push: {particles_nb: 4 }, remove: {particles_nb: 2 } }
-                  },
-          retina_detect: true
-              });
-
-          const sections = document.querySelectorAll('.section');
-          const dots = document.querySelectorAll('.progress-dot');
-          const magneticElements = document.querySelectorAll('.magnetic');
-          let currentIndex = 0;
-          let isScrolling = false;
-          let touchStartY = 0;
-
-          // Initialize
-          updateActiveDot(currentIndex);
-
-              // Magnetic effect
-              magneticElements.forEach(el => {
-            el.addEventListener('mousemove', (e) => {
-              const rect = el.getBoundingClientRect();
-              const x = e.clientX - rect.left - rect.width / 2;
-              const y = e.clientY - rect.top - rect.height / 2;
-              el.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+      <script>
+        window.addEventListener('load', function () {
+          setTimeout(function () {
+            particlesJS('particles-js', {
+              particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+              },
+              interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+              },
+              retina_detect: true
             });
-
-                  el.addEventListener('mouseleave', () => {
-            el.style.transform = 'translate(0px, 0px)';
-                  });
-              });
-
-              // Scroll event
-              window.addEventListener('wheel', (e) => {
-                  if (isScrolling) return;
-
-          isScrolling = true;
-                  if (e.deltaY > 0) {
-                      if (currentIndex < sections.length - 1) {
-            currentIndex++;
-          changeSection(currentIndex);
-                      }
-                  } else {
-                      if (currentIndex > 0) {
-            currentIndex--;
-          changeSection(currentIndex);
-                      }
-                  }
-
-                  setTimeout(() => {
-            isScrolling = false;
-                  }, 1200);
-              });
-
-              // Touch events
-              document.addEventListener('touchstart', (e) => {
-            touchStartY = e.touches[0].clientY;
-              });
-
-              document.addEventListener('touchend', (e) => {
-                  if (isScrolling) return;
-
-          const touchEndY = e.changedTouches[0].clientY;
-          const diff = touchStartY - touchEndY;
-
-          isScrolling = true;
-                  if (diff > 50) {
-                      if (currentIndex < sections.length - 1) {
-            currentIndex++;
-          changeSection(currentIndex);
-                      }
-                  } else if (diff < -50) {
-                      if (currentIndex > 0) {
-            currentIndex--;
-          changeSection(currentIndex);
-                      }
-                  }
-
-                  setTimeout(() => {
-            isScrolling = false;
-                  }, 1200);
-              });
-
-              // Click on dots
-              dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-              const index = parseInt(dot.getAttribute('data-index'));
-              currentIndex = index;
-              changeSection(currentIndex);
-            });
-              });
-
-          function changeSection(index) {
-            sections.forEach(section => {
-              section.classList.remove('active');
-            });
-
-          sections[index].classList.add('active');
-          updateActiveDot(index);
-
-          const reveals = sections[index].querySelectorAll('.reveal');
-                  reveals.forEach((el, i) => {
-            setTimeout(() => {
-              el.classList.add('active');
-            }, i * 150);
-                  });
-
-                  sections.forEach((section, i) => {
-                      if (i !== index) {
-                          const otherReveals = section.querySelectorAll('.reveal');
-                          otherReveals.forEach(el => {
-            el.classList.remove('active');
-                          });
-                      }
-                  });
-              }
-
-          function updateActiveDot(index) {
-            dots.forEach(dot => {
-              dot.classList.remove('active');
-            });
-          dots[index].classList.add('active');
-              }
-          });
+          }, 500);
+        });
       </script>
 
 
@@ -458,8 +285,8 @@ Sequence animation intro. Usage:
   <div id="flow-spline-loader"
     class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-950/30 via-neutral-950 to-neutral-950 flex items-center justify-center transition-opacity duration-700">
     <div class="text-center relative z-10">
-      <img src="./logos/LOGO%20MARK.png" alt="Loading..." class="w-16 h-16 mx-auto mb-4 opacity-60 img-protected" draggable="false"
-        style="animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;">
+      <img src="./logos/LOGO%20MARK.png" alt="Loading..." class="w-16 h-16 mx-auto mb-4 opacity-60 img-protected"
+        draggable="false" style="animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;">
       <div class="w-8 h-8 border-2 border-white/20 border-t-emerald-500 rounded-full mx-auto"
         style="animation: spin 1s linear infinite;"></div>
       <p class="text-white/40 text-xs mt-4 tracking-wider uppercase">Loading Experience</p>
@@ -474,17 +301,17 @@ Sequence animation intro. Usage:
 
   <!-- Spline Loader Fade-Out -->
   <script>
-          (function() {
+    (function () {
       const splineIframe = document.getElementById('flow-spline-iframe');
-          const loader = document.getElementById('flow-spline-loader');
+      const loader = document.getElementById('flow-spline-loader');
 
-          if (splineIframe && loader) {
-            splineIframe.addEventListener('load', function () {
-              loader.style.opacity = '0';
-              setTimeout(() => {
-                loader.style.display = 'none';
-              }, 700);
-            });
+      if (splineIframe && loader) {
+        splineIframe.addEventListener('load', function () {
+          loader.style.opacity = '0';
+          setTimeout(() => {
+            loader.style.display = 'none';
+          }, 700);
+        });
 
         // Fallback: Hide loader after 6 seconds (shorter for hero priority)
         setTimeout(() => {
@@ -663,7 +490,7 @@ Sequence animation intro. Usage:
                     class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">
                     The Steel Card
                   </a>
-                  <a href="https://steel"
+                  <a href="/steel.html"
                     class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">
                     Ask Exo AI
                   </a>
@@ -793,7 +620,8 @@ Sequence animation intro. Usage:
       </div>
       <nav role="navigation" aria-label="Mobile Navigation" class="pt-36 px-6 h-full overflow-y-auto">
         <div class="border-b border-white/10 py-4">
-          <a href="index.html" class="w-full flex items-center text-white font-geist text-lg transition-colors hover:text-emerald-400">
+          <a href="index.html"
+            class="w-full flex items-center text-white font-geist text-lg transition-colors hover:text-emerald-400">
             Home - Exo
           </a>
         </div>
@@ -825,7 +653,7 @@ Sequence animation intro. Usage:
               class="ml-2 text-xl minus hidden">-</span></button>
           <div class="mobile-submenu hidden mt-3 pl-2 space-y-2"><a href="#comparison"
               class="block text-sm text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
-              style="backdrop-filter: blur(8px);">Old Way vs New Way</a><a href="#services"
+              style="backdrop-filter: blur(8px);">How It Works</a><a href="#services"
               class="block text-sm text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
               style="backdrop-filter: blur(8px);">Our Approach</a><a href="#results-roi"
               class="block text-sm text-white/90 font-geist bg-white/5 hover:bg-white/10 ring-1 ring-white/10 rounded-lg px-4 py-2 transition"
@@ -869,7 +697,7 @@ Sequence animation intro. Usage:
                 </path>
                 <circle cx="12" cy="8" r="6"></circle>
               </svg>
-              Trusted by 50+ Businesses
+              Your Unified Operations Layer
             </div>
 
             <h1
@@ -885,11 +713,11 @@ Sequence animation intro. Usage:
 
             <p class="[animation:fadeSlideIn_1s_ease-out_0.25s_both] md:text-2xl md:text-emerald-300/90 text-xl font-medium text-emerald-300 font-geist mt-4"
               style="text-shadow: 0 1px 0 rgba(255,255,255,0.85), 0 1px 2px rgba(0,0,0,0.45);">
-              We Build AI That Actually Works
+              We Architect the System. Arm Your Team.
             </p>
             <p class="[animation:fadeSlideIn_1s_ease-out_0.25s_both] md:text-2xl md:mt-0 md:text-emerald-300/90 text-xl font-medium text-emerald-300 font-geist mt-0"
               style="text-shadow: 0 1px 0 rgba(255,255,255,0.9), 0 -1px 0 rgba(255,255,255,0.25), 0 2px 4px rgba(2,6,23,0.45), 0 8px 20px rgba(2,6,23,0.25);">
-              —No Tech Team Required.
+              — Transfer Full Ownership.
             </p>
           </div>
 
@@ -903,11 +731,12 @@ Sequence animation intro. Usage:
           <!-- Column 2: Description -->
           <div class="md:col-span-4 lg:col-span-3 [animation:fadeSlideIn_1s_ease-out_0.3s_both] relative">
             <p class="leading-relaxed md:text-lg md:font-semibold md:text-white/95 text-base text-white font-geist"
-              style="text-shadow: 0 1px 0 rgba(255,255,255,0.75), 0 0 2px rgba(0,0,0,0.5);">Flow by Exo helps businesses
-              automate operations, cut costs, and reclaim 20+ hours per week.</p>
+              style="text-shadow: 0 1px 0 rgba(255,255,255,0.75), 0 0 2px rgba(0,0,0,0.5);">Flow OS captures every
+              workflow, decision, and handoff — transforming tribal knowledge into structured data you own forever.
+              Your team will never want to go back to slow again.</p>
             <p class="xl:text-emerald-300 text-sm font-medium italic text-emerald-300 font-geist mt-3"
               style="text-shadow: 0 1px 0 rgba(255,255,255,0.75), 0 0 2px rgba(0,0,0,0.45);">
-              Intelligence Without the Complexity
+              55% Efficiency Gains — Guaranteed
             </p>
             <div class="border-t mt-6 pt-6 border-white/10">
               <div class="flex gap-4 text-sm gap-x-4 gap-y-4 items-center text-white/50">
@@ -927,8 +756,8 @@ Sequence animation intro. Usage:
                     </div>
                   </div>
                   <span class="xl:text-white italic text-white font-geist"
-                    style="text-shadow: 0 1px 0 rgba(255,255,255,0.75), 0 0 2px rgba(0,0,0,0.45)">"Streamline
-                    Everything"</span>
+                    style="text-shadow: 0 1px 0 rgba(255,255,255,0.75), 0 0 2px rgba(0,0,0,0.45)">90 Days or Less
+                    &middot; 55% Gains &middot; <br>Zero Lock-In &middot; 100% Ownership</span>
                 </div>
               </div>
             </div>
@@ -944,7 +773,7 @@ Sequence animation intro. Usage:
           <!-- Column 3: Buttons -->
           <div class="md:col-span-12 lg:col-span-2 relative">
             <div class="flex flex-col gap-3">
-              <a href="/value.html"
+              <a href="/x-scale.html"
                 class="inline-flex items-center justify-center gap-2 transition whitespace-nowrap [animation:fadeSlideIn_1s_ease-out_0.4s_both] hover:bg-neutral-100 text-sm font-medium text-white font-geist rounded-full pt-2.5 pr-4 pb-2.5 pl-4 w-full"
                 style="--gradient-angle: 0deg; --gradient-angle-offset: 0deg; --gradient-percent: 20%; --gradient-shine: #8484ff; position: relative; overflow: hidden; background: linear-gradient(#000000, #000000) padding-box, conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)), transparent 0%, #1d4ed8 5%, var(--gradient-shine) 15%, #1d4ed8 30%, transparent 40%, transparent 100%) border-box; border: 2px solid transparent; box-shadow: rgb(26, 24, 24) 0px 0px 0px 1px inset; animation: 2.5s linear 0s infinite normal none running border-spin;">
                 <style>
@@ -1012,9 +841,9 @@ Sequence animation intro. Usage:
                 <span
                   style="content: ''; pointer-events: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1; width: 100%; aspect-ratio: 1; background: linear-gradient(-50deg, transparent, #1d4ed8, transparent); mask-image: radial-gradient(circle at bottom, transparent 40%, black); opacity: 0.6; animation: shimmer 4s linear infinite;"></span>
               </a>
-              <a href="/x-scale.html"
+              <a href="#how-it-works"
                 class="inline-flex items-center justify-center gap-2 transition [animation:fadeSlideIn_1s_ease-out_0.5s_both] hover:bg-white/15 hover:ring-white/25 ring-white/15 ring-1 text-sm font-medium text-white/90 font-geist text-center bg-white/10 w-full rounded-full pt-2.5 pr-4 pb-2.5 pl-4 backdrop-blur-sm">
-                Scale Your Business
+                See How It Works
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                   class="w-4 h-4">
@@ -1208,7 +1037,8 @@ Sequence animation intro. Usage:
                 <div
                   class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
                   <span
-                    class="font-['Urbanist'] text-sm font-bold text-white text-center leading-tight">Nordic<br>Village Resort</span>
+                    class="font-['Urbanist'] text-sm font-bold text-white text-center leading-tight">Nordic<br>Village
+                    Resort</span>
                 </div>
               </div>
             </div>
@@ -1305,157 +1135,167 @@ Sequence animation intro. Usage:
 
   <!-- HERO SCROLL DEMO (Adapted for Flow Page) -->
   <section id="solution" class="bg-slate-950 relative">
-      <div id="merged-scroll-trigger" class="py-10 md:py-20">
-          <div class="h-[90rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-20">
-              <div class="py-10 md:py-20 w-full relative" style="perspective: 1000px;">
-                  
-                  <!-- Header Component -->
-                  <div id="scroll-demo-header" class="max-w-4xl mx-auto text-center mb-10 z-0 relative transform">
-                      <span class="uppercase block text-xs text-indigo-400 tracking-widest font-mono mb-4">Exo First Principles Engine</span>
-                      <h2 class="text-4xl md:text-7xl font-light text-white tracking-tight mb-6">
-                          Enter <span class="font-serif italic text-slate-200">Flow OS</span>
-                      </h2>
-                      <p class="text-xl text-slate-400 font-light max-w-2xl mx-auto">
-                          The department-in-a-box solution. We don't just advise on AI. We build the rig, install the agents,
-                          and hand you the keys to a fully autonomous department.
-                      </p>
-                  </div>
+    <div id="merged-scroll-trigger" class="py-10 md:py-20">
+      <div class="h-[90rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-20">
+        <div class="py-10 md:py-20 w-full relative" style="perspective: 1000px;">
 
-                  <!-- Card Component (Tablet Frame) -->
-                  <div id="scroll-demo-card"
-                      class="max-w-6xl -mt-10 md:-mt-24 mx-auto h-[30rem] md:h-[45rem] w-full border-[8px] border-slate-800 p-2 md:p-6 bg-slate-950 rounded-[40px] shadow-[0_30px_60px_rgba(0,0,0,0.5)] z-20 relative">
-                      <!-- Screen Content -->
-                      <div class="absolute inset-2 md:inset-6 overflow-hidden rounded-[24px] bg-slate-900 border border-slate-800">
-                          <!-- Image/Demo Placeholder -->
-                           <img src="./assets/new-dashboard-dark.jpeg"
-                                  alt="Flow OS Dashboard Demo" class="object-cover object-left-top w-full h-full block img-protected"
-                                  draggable="false" />
-                           <div class="absolute inset-0 z-10" oncontextmenu="return false;"></div>
-                      </div>
-                  </div>
-
-                  <!-- Features Grid (Moved Below Card) -->
-                  <div id="scroll-demo-features" class="max-w-6xl mx-auto mt-10 z-30 relative">
-                      <div class="grid md:grid-cols-3 gap-6">
-                          <!-- Feature 1 -->
-                          <div class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 shadow-sm hover:shadow-md transition-all group">
-                              <div class="w-12 h-12 bg-sky-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:bg-sky-900/50 transition-colors">
-                                  <iconify-icon icon="solar:layers-minimalistic-linear" class="text-sky-400 text-2xl"></iconify-icon>
-                              </div>
-                              <h3 class="text-lg text-white font-semibold mb-2">System Architecture</h3>
-                              <p class="text-slate-400 text-sm leading-relaxed">
-                                  A unified namespace for your data. We map your entire operational ontology.
-                              </p>
-                          </div>
-
-                          <!-- Feature 2 -->
-                          <div class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 shadow-sm hover:shadow-md transition-all group">
-                              <div class="w-12 h-12 bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-900/50 transition-colors">
-                                  <iconify-icon icon="solar:cpu-bolt-linear" class="text-indigo-400 text-2xl"></iconify-icon>
-                              </div>
-                              <h3 class="text-lg text-white font-semibold mb-2">AI Agents</h3>
-                              <p class="text-slate-400 text-sm leading-relaxed">
-                                  Autonomous workers that execute SOPs, manage CRM updates, and handle load.
-                              </p>
-                          </div>
-
-                          <!-- Feature 3 -->
-                          <div class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 shadow-sm hover:shadow-md transition-all group">
-                              <div class="w-12 h-12 bg-emerald-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-900/50 transition-colors">
-                                  <iconify-icon icon="solar:graph-up-linear" class="text-emerald-400 text-2xl"></iconify-icon>
-                              </div>
-                              <h3 class="text-lg text-white font-semibold mb-2">Outcome Assurance</h3>
-                              <p class="text-slate-400 text-sm leading-relaxed">
-                                  We don't leave until it works. Our "Co-Run" phase ensures efficiency gains.
-                              </p>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+          <!-- Header Component -->
+          <div id="scroll-demo-header" class="max-w-4xl mx-auto text-center mb-10 z-0 relative transform">
+            <span class="uppercase block text-xs text-indigo-400 tracking-widest font-mono mb-4">The Operating System
+              for Departments</span>
+            <h2 class="text-4xl md:text-7xl font-light text-white tracking-tight mb-6">
+              Enter <span class="font-serif italic text-slate-200">Flow OS</span>
+            </h2>
+            <p class="text-xl text-slate-400 font-light max-w-2xl mx-auto">
+              One department for every workflow, every agent, every decision. Flow OS is the unified operations layer
+              your entire business runs through — and at day 90, it's yours.
+            </p>
           </div>
+
+          <!-- Card Component (Tablet Frame) -->
+          <div id="scroll-demo-card"
+            class="max-w-6xl -mt-10 md:-mt-24 mx-auto h-[30rem] md:h-[45rem] w-full border-[8px] border-slate-800 p-2 md:p-6 bg-slate-950 rounded-[40px] shadow-[0_30px_60px_rgba(0,0,0,0.5)] z-20 relative">
+            <!-- Screen Content -->
+            <div
+              class="absolute inset-2 md:inset-6 overflow-hidden rounded-[24px] bg-slate-900 border border-slate-800">
+              <!-- Image/Demo Placeholder -->
+              <img src="./assets/new-dashboard-dark.jpeg" alt="Flow OS Dashboard Demo"
+                class="object-cover object-left-top w-full h-full block img-protected" draggable="false" />
+              <div class="absolute inset-0 z-10" oncontextmenu="return false;"></div>
+            </div>
+          </div>
+
+          <!-- Features Grid (Moved Below Card) -->
+          <div id="scroll-demo-features" class="max-w-6xl mx-auto mt-10 z-30 relative">
+            <div class="grid md:grid-cols-3 gap-6">
+              <!-- Feature 1 -->
+              <div
+                class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 shadow-sm hover:shadow-md transition-all group">
+                <div
+                  class="w-12 h-12 bg-sky-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:bg-sky-900/50 transition-colors">
+                  <iconify-icon icon="solar:layers-minimalistic-linear" class="text-sky-400 text-2xl"></iconify-icon>
+                </div>
+                <h3 class="text-lg text-white font-semibold mb-2">SOP Workflow Capture</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  Every process mapped, documented, and executable. Your playbook lives in the system — not in someone's
+                  head.
+                </p>
+              </div>
+
+              <!-- Feature 2 -->
+              <div
+                class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 shadow-sm hover:shadow-md transition-all group">
+                <div
+                  class="w-12 h-12 bg-indigo-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-900/50 transition-colors">
+                  <iconify-icon icon="solar:cpu-bolt-linear" class="text-indigo-400 text-2xl"></iconify-icon>
+                </div>
+                <h3 class="text-lg text-white font-semibold mb-2">Agent Orchestration</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  AI agents that execute tasks, route decisions, and escalate exceptions — operating 24/7 inside your
+                  workflows.
+                </p>
+              </div>
+
+              <!-- Feature 3 -->
+              <div
+                class="bg-slate-900/80 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 shadow-sm hover:shadow-md transition-all group">
+                <div
+                  class="w-12 h-12 bg-emerald-900/30 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-900/50 transition-colors">
+                  <iconify-icon icon="solar:graph-up-linear" class="text-emerald-400 text-2xl"></iconify-icon>
+                </div>
+                <h3 class="text-lg text-white font-semibold mb-2">Forever Memory</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  Every decision, every exception, every workaround — captured and searchable. Institutional knowledge
+                  that never walks out the door.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
   </section>
 
   <!-- GSAP Script for Merged Section -->
   <script>
-      document.addEventListener("DOMContentLoaded", (event) => {
-          gsap.registerPlugin(ScrollTrigger);
+    document.addEventListener("DOMContentLoaded", (event) => {
+      gsap.registerPlugin(ScrollTrigger);
 
-          const isMobile = window.innerWidth <= 768;
-          const scaleValues = isMobile ? [0.8, 0.9] : [1.1, 1];
+      const isMobile = window.innerWidth <= 768;
+      const scaleValues = isMobile ? [0.8, 0.9] : [1.1, 1];
 
-          // Mobile-specific y-values to prevent clipping
-          const headerY = isMobile ? { from: 80, to: -50 } : { from: 150, to: -200 };
-          const cardY = isMobile ? { from: 50, to: 0 } : { from: 100, to: -50 };
-          const featuresY = isMobile ? { from: 100, to: 0 } : { from: 200, to: -100 };
+      // Mobile-specific y-values to prevent clipping
+      const headerY = isMobile ? { from: 80, to: -50 } : { from: 150, to: -200 };
+      const cardY = isMobile ? { from: 50, to: 0 } : { from: 100, to: -50 };
+      const featuresY = isMobile ? { from: 100, to: 0 } : { from: 200, to: -100 };
 
-          // Header Animation (Emerges from behind)
-          gsap.fromTo("#scroll-demo-header",
-              {
-                  y: headerY.from,
-                  opacity: 0.5
-              },
-              {
-                  y: headerY.to,
-                  opacity: 1,
-                  ease: "none",
-                  scrollTrigger: {
-                      trigger: "#merged-scroll-trigger",
-                      start: "top bottom",
-                      end: "center center",
-                      scrub: 1
-                  }
-              }
-          );
+      // Header Animation (Emerges from behind)
+      gsap.fromTo("#scroll-demo-header",
+        {
+          y: headerY.from,
+          opacity: 0.5
+        },
+        {
+          y: headerY.to,
+          opacity: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#merged-scroll-trigger",
+            start: "top bottom",
+            end: "center center",
+            scrub: 1
+          }
+        }
+      );
 
-          // Card Animation (Rotate, Scale, Translate)
-          gsap.fromTo("#scroll-demo-card",
-              {
-                  rotationX: isMobile ? 15 : 25,
-                  scale: scaleValues[0],
-                  y: cardY.from,
-                  boxShadow: "0 0 0px rgba(0,0,0,0)"
-              },
-              {
-                  rotationX: 0,
-                  scale: scaleValues[1],
-                  y: cardY.to,
-                  boxShadow: "0 30px 60px rgba(0,0,0,0.5)",
-                  ease: "none",
-                  scrollTrigger: {
-                      trigger: "#merged-scroll-trigger",
-                      start: "top bottom",
-                      end: "bottom bottom",
-                      scrub: 1
-                  }
-              }
-          );
+      // Card Animation (Rotate, Scale, Translate)
+      gsap.fromTo("#scroll-demo-card",
+        {
+          rotationX: isMobile ? 15 : 25,
+          scale: scaleValues[0],
+          y: cardY.from,
+          boxShadow: "0 0 0px rgba(0,0,0,0)"
+        },
+        {
+          rotationX: 0,
+          scale: scaleValues[1],
+          y: cardY.to,
+          boxShadow: "0 30px 60px rgba(0,0,0,0.5)",
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#merged-scroll-trigger",
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: 1
+          }
+        }
+      );
 
-           // Features Grid Animation (Parallax Depth)
-           gsap.fromTo("#scroll-demo-features",
-              {
-                  y: featuresY.from,
-                  opacity: 0
-              },
-              {
-                  y: featuresY.to,
-                  opacity: 1,
-                  ease: "none",
-                  scrollTrigger: {
-                      trigger: "#merged-scroll-trigger",
-                      start: "top bottom",
-                      end: "bottom bottom",
-                      scrub: 1
-                  }
-              }
-          );
-      });
+      // Features Grid Animation (Parallax Depth)
+      gsap.fromTo("#scroll-demo-features",
+        {
+          y: featuresY.from,
+          opacity: 0
+        },
+        {
+          y: featuresY.to,
+          opacity: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#merged-scroll-trigger",
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: 1
+          }
+        }
+      );
+    });
   </script>
   <!-- Image Protection -->
   <script src="js/image-protection.js"></script>
 
-  <!-- PROBLEM/SOLUTION SECTION - Old Way vs New Way -->
-  <section class="overflow-hidden md:py-28 bg-slate-950 pt-20 pb-20 relative" id="comparison">
+  <!-- DREAM OUTCOME SECTION - What Flow OS Looks Like Running -->
+  <section class="overflow-hidden md:py-28 bg-slate-950 pt-20 pb-20 relative" id="how-it-works">
     <!-- Decorative grid lines -->
     <div class="pointer-events-none z-0 absolute inset-0">
       <div class="absolute inset-y-0 left-[20%] w-px bg-gradient-to-b from-transparent to-transparent via-white/5">
@@ -1476,276 +1316,136 @@ Sequence animation intro. Usage:
         class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.1s_both] animate">
         <h2 class="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tighter font-geist text-white mb-4">
           From Overwhelmed to Extraordinary
-          <span class="block bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/70">
-
-          </span>
         </h2>
         <p class="text-lg md:text-xl leading-relaxed font-geist text-slate-400 mt-6">
-          See how Main Street businesses are reclaiming
-          <span class="text-white font-semibold">20+ hours per week</span>
-          —without hiring.
+          Here's what your operation looks like
+          <span class="text-white font-semibold">running on Flow OS.</span>
         </p>
       </div>
 
-      <!-- Old Way vs New Way Comparison -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
-        <!-- OLD WAY Column (Red/Dark) -->
+      <!-- Dream Outcome Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+        <!-- Outcome 1: Visibility -->
         <div class="animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.2s_both] animate">
           <div
-            class="rounded-3xl ring-1 backdrop-blur-md p-8 md:p-10 h-full bg-gradient-to-br from-red-950/30 to-slate-950/60 ring-red-900/30 shadow-2xl shadow-red-900/20 relative overflow-hidden">
-            <!-- Subtle red glow background -->
-            <div class="absolute top-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl opacity-30"></div>
-
+            class="rounded-2xl ring-1 backdrop-blur-md p-8 h-full bg-gradient-to-br from-emerald-950/20 to-slate-950/60 ring-emerald-800/20 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl opacity-30"></div>
             <div class="relative z-10">
-              <div class="flex items-center gap-3 mb-8">
-                <div class="w-12 h-12 rounded-xl bg-red-900/40 ring-1 ring-red-800/50 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="text-red-400">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="15" x2="9" y1="9" y2="15"></line>
-                    <line x1="9" x2="15" y1="9" y2="15"></line>
-                  </svg>
-                </div>
-                <h3 class="text-2xl md:text-3xl font-semibold tracking-tight font-geist text-red-100">
-                  OLD WAY
-                </h3>
+              <div
+                class="w-12 h-12 rounded-xl bg-emerald-900/40 ring-1 ring-emerald-700/30 flex items-center justify-center mb-5">
+                <iconify-icon icon="solar:eye-bold-duotone" class="text-2xl text-emerald-400"></iconify-icon>
               </div>
-
-              <div class="space-y-5">
-                <!-- Pain Point 1 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-red-900/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-red-400">
-                    <line x1="18" x2="6" y1="6" y2="18"></line>
-                    <line x1="6" x2="18" y1="6" y2="18"></line>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-300 leading-relaxed">
-                    Spending
-                    <span class="text-red-300 font-semibold">
-                      20+ hours/week
-                    </span>
-                    on repetitive admin tasks instead of growing your business
-                  </p>
-                </div>
-
-                <!-- Pain Point 2 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-red-900/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-red-400">
-                    <line x1="18" x2="6" y1="6" y2="18"></line>
-                    <line x1="6" x2="18" y1="6" y2="18"></line>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-300 leading-relaxed">
-                    Competitors moving faster with automation
-                    <span class="text-red-300 font-semibold">
-                      while you're falling behind
-                    </span>
-                  </p>
-                </div>
-
-                <!-- Pain Point 3 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-red-900/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-red-400">
-                    <line x1="18" x2="6" y1="6" y2="18"></line>
-                    <line x1="6" x2="18" y1="6" y2="18"></line>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-300 leading-relaxed">
-                    Can't afford to hire
-                    <span class="text-red-300 font-semibold">
-                      (but desperately need help)
-                    </span>
-                  </p>
-                </div>
-
-                <!-- Pain Point 4 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-red-900/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-red-400">
-                    <line x1="18" x2="6" y1="6" y2="18"></line>
-                    <line x1="6" x2="18" y1="6" y2="18"></line>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-300 leading-relaxed">
-                    Working
-                    <span class="text-red-300 font-semibold">
-                      nights and weekends
-                    </span>
-                    , heading straight to burnout
-                  </p>
-                </div>
-
-                <!-- Pain Point 5 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-red-900/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-red-400">
-                    <line x1="18" x2="6" y1="6" y2="18"></line>
-                    <line x1="6" x2="18" y1="6" y2="18"></line>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-300 leading-relaxed">
-                    Missing revenue opportunities because
-                    <span class="text-red-300 font-semibold">
-                      you're too slow to respond
-                    </span>
-                    to leads
-                  </p>
-                </div>
-
-                <!-- Pain Point 6 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-red-900/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-red-400">
-                    <line x1="18" x2="6" y1="6" y2="18"></line>
-                    <line x1="6" x2="18" y1="6" y2="18"></line>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-300 leading-relaxed">
-                    Raising prices but
-                    <span class="text-red-300 font-semibold">
-                      still losing margin
-                    </span>
-                    to rising costs
-                  </p>
-                </div>
-              </div>
+              <h3 class="text-xl font-semibold tracking-tight font-geist text-white mb-3">Total Visibility</h3>
+              <p class="text-sm md:text-base font-geist text-slate-400 leading-relaxed">
+                Every workflow, every handoff, every decision — visible in one place. No more asking "who owns this?" or
+                digging through Slack threads to find a status update.
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- NEW WAY Column (Green/Bright) -->
+        <!-- Outcome 2: Control -->
+        <div class="animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.25s_both] animate">
+          <div
+            class="rounded-2xl ring-1 backdrop-blur-md p-8 h-full bg-gradient-to-br from-blue-950/20 to-slate-950/60 ring-blue-800/20 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl opacity-30"></div>
+            <div class="relative z-10">
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-900/40 ring-1 ring-blue-700/30 flex items-center justify-center mb-5">
+                <iconify-icon icon="solar:tuning-2-bold-duotone" class="text-2xl text-blue-400"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-semibold tracking-tight font-geist text-white mb-3">Operational Control</h3>
+              <p class="text-sm md:text-base font-geist text-slate-400 leading-relaxed">
+                Your operation runs on documented SOPs and AI agents — not on whoever happens to remember how things
+                work. Key-person risk drops to zero.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outcome 3: Speed -->
         <div class="animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.3s_both] animate">
           <div
-            class="rounded-3xl ring-1 backdrop-blur-md p-8 md:p-10 h-full bg-gradient-to-br from-emerald-950/30 to-blue-950/40 ring-emerald-800/30 shadow-2xl shadow-emerald-500/20 relative overflow-hidden">
-            <!-- Glowing green/blue background -->
-            <div class="absolute top-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl opacity-40"></div>
-            <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl opacity-30"></div>
-
+            class="rounded-2xl ring-1 backdrop-blur-md p-8 h-full bg-gradient-to-br from-indigo-950/20 to-slate-950/60 ring-indigo-800/20 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl opacity-30"></div>
             <div class="relative z-10">
-              <div class="flex items-center gap-3 mb-8">
-                <div
-                  class="w-12 h-12 rounded-xl bg-emerald-900/40 ring-1 ring-emerald-700/50 flex items-center justify-center shadow-lg shadow-emerald-500/30">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="text-emerald-400">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <h3 class="text-2xl md:text-3xl font-semibold tracking-tight font-geist text-emerald-100">
-                  NEW WAY
-                </h3>
+              <div
+                class="w-12 h-12 rounded-xl bg-indigo-900/40 ring-1 ring-indigo-700/30 flex items-center justify-center mb-5">
+                <iconify-icon icon="solar:bolt-bold-duotone" class="text-2xl text-indigo-400"></iconify-icon>
               </div>
+              <h3 class="text-xl font-semibold tracking-tight font-geist text-white mb-3">Execution Speed</h3>
+              <p class="text-sm md:text-base font-geist text-slate-400 leading-relaxed">
+                Agents handle the repetitive work. Your team handles the judgment calls. Onboarding that took months now
+                takes days. Processes that took hours now take minutes.
+              </p>
+            </div>
+          </div>
+        </div>
 
-              <div class="space-y-5">
-                <!-- Solution 1 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-emerald-800/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-emerald-400">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-100 leading-relaxed">
-                    Reclaim
-                    <span class="text-emerald-300 font-semibold">
-                      20+ hours/week
-                    </span>
-                    —spend time growing your business, not drowning in it
-                  </p>
-                </div>
-
-                <!-- Solution 2 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-emerald-800/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-emerald-400">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-100 leading-relaxed">
-                    Compete like the big guys—
-                    <span class="text-emerald-300 font-semibold">
-                      24/7 AI
-                    </span>
-                    that never sleeps, never misses a lead
-                  </p>
-                </div>
-
-                <!-- Solution 3 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-emerald-800/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-emerald-400">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-100 leading-relaxed">
-                    Scale without the payroll—AI does the work of
-                    <span class="font-semibold text-emerald-300">
-                      3-15 employees
-                    </span>
-                    for a fraction of the cost
-                  </p>
-                </div>
-
-                <!-- Solution 4 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-emerald-800/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-emerald-400">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-100 leading-relaxed">
-                    Get your
-                    <span class="text-emerald-300 font-semibold">
-                      nights and weekends back
-                    </span>
-                    —let AI handle operations while you focus on what matters
-                  </p>
-                </div>
-
-                <!-- Solution 5 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-emerald-800/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-emerald-400">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-100 leading-relaxed">
-                    Never miss a sale—AI
-                    <span class="text-emerald-300 font-semibold">
-                      responds to leads in seconds
-                    </span>
-                    , books appointments while you sleep
-                  </p>
-                </div>
-
-                <!-- Solution 6 -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-black/20 ring-1 ring-emerald-800/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="flex-shrink-0 mt-0.5 text-emerald-400">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <p class="text-sm md:text-base font-geist text-slate-100 leading-relaxed">
-                    Cut operational costs by
-                    <span class="text-emerald-300 font-semibold">40%</span>
-                    —automation does more with less, protecting your margins
-                  </p>
-                </div>
+        <!-- Outcome 4: Autonomy -->
+        <div class="animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.35s_both] animate">
+          <div
+            class="rounded-2xl ring-1 backdrop-blur-md p-8 h-full bg-gradient-to-br from-amber-950/20 to-slate-950/60 ring-amber-800/20 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl opacity-30"></div>
+            <div class="relative z-10">
+              <div
+                class="w-12 h-12 rounded-xl bg-amber-900/40 ring-1 ring-amber-700/30 flex items-center justify-center mb-5">
+                <iconify-icon icon="solar:key-bold-duotone" class="text-2xl text-amber-400"></iconify-icon>
               </div>
+              <h3 class="text-xl font-semibold tracking-tight font-geist text-white mb-3">Full Ownership</h3>
+              <p class="text-sm md:text-base font-geist text-slate-400 leading-relaxed">
+                At day 90, you get the Sovereignty Packet — SOPs, credentials, runbooks, trained team. The system is
+                yours. No subscriptions. No lock-in. We walk away.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outcome 5: Integration -->
+        <div class="animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.4s_both] animate">
+          <div
+            class="rounded-2xl ring-1 backdrop-blur-md p-8 h-full bg-gradient-to-br from-sky-950/20 to-slate-950/60 ring-sky-800/20 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-sky-500/10 rounded-full blur-3xl opacity-30"></div>
+            <div class="relative z-10">
+              <div
+                class="w-12 h-12 rounded-xl bg-sky-900/40 ring-1 ring-sky-700/30 flex items-center justify-center mb-5">
+                <iconify-icon icon="solar:plug-circle-bold-duotone" class="text-2xl text-sky-400"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-semibold tracking-tight font-geist text-white mb-3">Zero Migration</h3>
+              <p class="text-sm md:text-base font-geist text-slate-400 leading-relaxed">
+                Flow OS sits on top of your existing stack. Slack, HubSpot, Notion, Salesforce, Google — unified under
+                one layer. No rip-and-replace. No retraining.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outcome 6: Compounding -->
+        <div class="animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.45s_both] animate">
+          <div
+            class="rounded-2xl ring-1 backdrop-blur-md p-8 h-full bg-gradient-to-br from-violet-950/20 to-slate-950/60 ring-violet-800/20 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-40 h-40 bg-violet-500/10 rounded-full blur-3xl opacity-30"></div>
+            <div class="relative z-10">
+              <div
+                class="w-12 h-12 rounded-xl bg-violet-900/40 ring-1 ring-violet-700/30 flex items-center justify-center mb-5">
+                <iconify-icon icon="solar:graph-up-bold-duotone" class="text-2xl text-violet-400"></iconify-icon>
+              </div>
+              <h3 class="text-xl font-semibold tracking-tight font-geist text-white mb-3">Compounding Intelligence</h3>
+              <p class="text-sm md:text-base font-geist text-slate-400 leading-relaxed">
+                Every decision logged. Every exception documented. Every workaround captured. Your operation gets
+                smarter every week — and none of it lives in someone's head.
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- CTA + Social Proof -->
+      <!-- CTA -->
       <div
-        class="text-center max-w-2xl mx-auto animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.4s_both] animate">
+        class="text-center max-w-2xl mx-auto animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.5s_both] animate">
         <a href="/x-scale.html"
-          class="inline-flex items-center justify-center gap-3 md:text-lg transition-all duration-300 shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 hover:ring-orange-400/70 text-base font-semibold text-white font-geist bg-gradient-to-r from-orange-500 to-red-500 ring-orange-500/50 ring-2 rounded-full pt-4 pr-8 pb-4 pl-8 shadow-2xl">
-          Transform My Business
+          class="inline-flex items-center justify-center gap-3 md:text-lg transition-all duration-300 shadow-emerald-500/30 hover:shadow-emerald-500/50 hover:scale-105 hover:ring-emerald-400/70 text-base font-semibold text-white font-geist bg-gradient-to-r from-emerald-600 to-blue-600 ring-emerald-500/50 ring-2 rounded-full pt-4 pr-8 pb-4 pl-8 shadow-2xl">
+          Book Architecture Session
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
             <path d="M5 12h14"></path>
@@ -1753,12 +1453,7 @@ Sequence animation intro. Usage:
           </svg>
         </a>
 
-        <!-- Social Proof + Risk Reversal -->
         <div class="mt-8 space-y-3">
-          <p class="text-sm md:text-base font-geist text-slate-400">
-            <span class="text-white font-semibold">Join 50+ businesses</span>
-            who've made the switch
-          </p>
           <div class="flex flex-wrap items-center justify-center gap-6 text-xs md:text-sm font-geist text-slate-500">
             <div class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -1766,7 +1461,7 @@ Sequence animation intro. Usage:
                 class="text-emerald-400">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              <span class="">No long-term contracts</span>
+              <span>55% efficiency gains — guaranteed</span>
             </div>
             <div class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -1774,7 +1469,7 @@ Sequence animation intro. Usage:
                 class="text-emerald-400">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              <span class="">Up and running in 2 weeks</span>
+              <span>90 days to sovereignty</span>
             </div>
             <div class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -1782,7 +1477,7 @@ Sequence animation intro. Usage:
                 class="text-emerald-400">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              <span class="">8 clients/month for world-class results</span>
+              <span>You own everything we build</span>
             </div>
           </div>
         </div>
@@ -1806,7 +1501,7 @@ Sequence animation intro. Usage:
       <div class="text-center mb-10 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.1s_both] animate">
         <div
           class="inline-flex ring-1 ring-white/10 text-sm font-medium text-white/80 font-geist bg-white/5 rounded-full pt-2 pr-4 pb-2 pl-4 shadow-2xl backdrop-blur-sm gap-x-2 gap-y-2 items-center">
-          Built by AI Specialists — 10+ Years Combined Experience
+          Deployed Across Industries
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="w-4 h-4 text-blue-400">
@@ -2014,8 +1709,8 @@ Sequence animation intro. Usage:
       <!-- Supporting Text -->
       <div class="text-center mt-10 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.3s_both] animate">
         <p class="md:text-base text-sm font-medium text-slate-400 font-geist">
-          Helping businesses reclaim
-          <span class="font-semibold text-white">960+ hours per year</span>
+          Flow OS adapts to
+          <span class="font-semibold text-white">your industry's operational reality</span>
         </p>
       </div>
     </div>
@@ -2047,20 +1742,20 @@ Sequence animation intro. Usage:
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          How We Deliver Results
+          The On Ramp: Service + Software
         </div>
 
         <h2 class="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tighter font-geist text-white mb-6">
-          AI Implementation That
+          We Don't Just Build It.
           <span class="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-300 to-emerald-400">
-            Actually Transforms Businesses
+            We Run It Until You Own It.
           </span>
         </h2>
 
         <p class="text-lg md:text-xl leading-relaxed font-geist text-slate-400">
-          We don't just build AI tools and wish you luck. We deliver
-          <span class="text-white font-semibold">measurable results</span>
-          in weeks, not years—and stay until you're winning.
+          Flow OS is software. But getting it right requires the people who built it. We deliver
+          <span class="text-white font-semibold">measurable transformation</span>
+          in 90 days — then hand you the keys.
         </p>
       </div>
 
@@ -2078,9 +1773,8 @@ Sequence animation intro. Usage:
 
               <!-- Placeholder content - REPLACE THIS IMAGE -->
               <div class="z-10 flex h-full relative items-center justify-center">
-                <img
-                  src="./assets/images/Team.jpeg"
-                  alt="Done-For-You AI Team" class="w-full h-full object-cover object-[50%_25%] top-0 right-0 bottom-0 left-0"
+                <img src="./assets/images/Team.jpeg" alt="Done-For-You AI Team"
+                  class="w-full h-full object-cover object-[50%_25%] top-0 right-0 bottom-0 left-0"
                   data-container-bg="true">
               </div>
             </div>
@@ -2162,15 +1856,8 @@ Sequence animation intro. Usage:
 
               <!-- Placeholder content - REPLACE THIS IMAGE -->
               <div class="z-10 flex h-full relative items-center justify-center">
-                <img
-                  src="./assets/flow-image-asset/clairty-runner.jpeg"
-                  alt="Speed to Value Runner" class="absolute inset-0 w-full h-full object-cover object-[50%_25%]"
-                  data-container-bg="true">
-                <div class="text-center">
-                  <p class="text-xs font-geist text-slate-500 uppercase tracking-wider">
-                    Replace via Aura Gallery
-                  </p>
-                </div>
+                <img src="./assets/flow-image-asset/clairty-runner.jpeg" alt="Speed to Value Runner"
+                  class="absolute inset-0 w-full h-full object-cover object-[50%_25%]" data-container-bg="true">
               </div>
             </div>
 
@@ -2247,10 +1934,8 @@ Sequence animation intro. Usage:
 
               <!-- IMAGE -->
               <div class="z-10 flex h-full relative items-center justify-center">
-                <img
-                  src="./assets/flow-image-asset/flow-os-asset.jpeg"
-                  alt="Flow OS Asset" class="absolute inset-0 w-full h-full object-cover"
-                  data-container-bg="true">
+                <img src="./assets/flow-image-asset/flow-os-asset.jpeg" alt="Flow OS Asset"
+                  class="absolute inset-0 w-full h-full object-cover" data-container-bg="true">
                 <div class="text-center">
                   <p class="text-xs font-geist text-slate-500 uppercase tracking-wider">
                     Replace via Gallery
@@ -2263,12 +1948,12 @@ Sequence animation intro. Usage:
             <div class="p-8">
               <h3
                 class="text-2xl md:text-3xl font-semibold tracking-tight font-geist text-white mb-4 group-hover:text-purple-300 transition-colors">
-                20+ Hours Back Every Week
+                55% Efficiency Gains — Guaranteed
               </h3>
 
               <p class="text-base font-geist text-slate-400 leading-relaxed mb-6">
-                That's 960+ hours per year. Imagine what you could do with an
-                extra month of productive time—without hiring a single person.
+                Measured across time and cost. Your operation gets faster, leaner, and smarter — with a performance
+                baseline to prove it.
               </p>
 
               <div class="space-y-3">
@@ -2279,7 +1964,7 @@ Sequence animation intro. Usage:
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                   <p class="text-sm font-geist text-slate-300">
-                    Eliminate 20+ hours of weekly busywork—guaranteed
+                    Agents handle repetitive work autonomously
                   </p>
                 </div>
 
@@ -2301,8 +1986,7 @@ Sequence animation intro. Usage:
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                   <p class="text-sm text-slate-300 font-geist">
-                    AI does the work of 3-15 employees at a fraction of the
-                    cost
+                    Institutional memory captured — key-person risk eliminated
                   </p>
                 </div>
 
@@ -2313,7 +1997,7 @@ Sequence animation intro. Usage:
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                   <p class="text-sm font-geist text-slate-300">
-                    Reclaim your nights and weekends—get your life back
+                    Full ownership at day 90 — no subscriptions, no lock-in
                   </p>
                 </div>
               </div>
@@ -2333,15 +2017,8 @@ Sequence animation intro. Usage:
 
               <!-- Placeholder content - REPLACE THIS IMAGE -->
               <div class="z-10 flex h-full relative items-center justify-center">
-                <img
-                  src="./assets/flow-image-asset/support-asset-2.jpeg"
-                  alt="Support Partnership" class="absolute inset-0 w-full h-full object-cover"
-                  data-container-bg="true">
-                <div class="text-center">
-                  <p class="text-xs font-geist text-slate-500 uppercase tracking-wider">
-                    Replace via Aura Gallery
-                  </p>
-                </div>
+                <img src="./assets/flow-image-asset/support-asset-2.jpeg" alt="Support Partnership"
+                  class="absolute inset-0 w-full h-full object-cover" data-container-bg="true">
               </div>
             </div>
 
@@ -2435,6 +2112,336 @@ Sequence animation intro. Usage:
       </div>
     </div>
   </section>
+
+  <!-- PRODUCT MODULES SECTION - The Exosystem CardStack -->
+  <section class="overflow-hidden md:py-28 bg-slate-950 pt-20 pb-20 relative" id="modules">
+    <div class="pointer-events-none z-0 absolute inset-0">
+      <div class="absolute inset-y-0 left-[20%] w-px bg-gradient-to-b from-transparent to-transparent via-white/5">
+      </div>
+      <div class="absolute inset-y-0 left-[50%] w-px bg-gradient-to-b from-transparent to-transparent via-white/8">
+      </div>
+      <div class="absolute inset-y-0 left-[80%] w-px bg-gradient-to-b from-transparent to-transparent via-white/5">
+      </div>
+    </div>
+
+    <div class="z-10 md:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.1s_both]">
+        <div
+          class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium ring-1 mb-6 font-geist bg-indigo-500/10 text-indigo-300 ring-indigo-500/20 backdrop-blur-sm">
+          <iconify-icon icon="solar:widget-bold-duotone" class="text-sm"></iconify-icon>
+          The Exosystem
+        </div>
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tighter font-geist text-white mb-4">
+          Flow OS Is the Foundation.
+          <span
+            class="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400 pb-2">
+            Everything Else Compounds.
+          </span>
+        </h2>
+        <p class="text-lg md:text-xl leading-relaxed font-geist text-slate-400 mt-6">
+          Each module plugs into Flow OS — sharing data, agents, and institutional memory across your entire operation.
+        </p>
+      </div>
+
+      <!-- CardStack Container -->
+      <div class="max-w-5xl mx-auto">
+        <div id="cardstack-container" class="relative w-full" style="height: 420px; perspective: 1100px;" tabindex="0">
+          <!-- Spotlight bg -->
+          <div
+            class="pointer-events-none absolute inset-x-0 top-6 mx-auto h-48 w-[70%] rounded-full bg-white/5 blur-3xl"
+            aria-hidden="true"></div>
+          <div
+            class="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-40 w-[76%] rounded-full bg-black/30 blur-3xl"
+            aria-hidden="true"></div>
+
+          <div id="cardstack-stage" class="absolute inset-0 flex items-end justify-center"></div>
+        </div>
+
+        <!-- Dots -->
+        <div id="cardstack-dots" class="mt-6 flex items-center justify-center gap-2"></div>
+      </div>
+    </div>
+
+    <!-- CardStack JS -->
+    <style>
+      .cs-card {
+        position: absolute;
+        bottom: 0;
+        border-radius: 1rem;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        will-change: transform;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      .cs-card.active {
+        cursor: grab;
+        z-index: 100 !important;
+      }
+
+      .cs-card.active:active {
+        cursor: grabbing;
+      }
+
+      .cs-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+
+      .cs-card .cs-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%);
+        pointer-events: none;
+      }
+
+      .cs-card .cs-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        z-index: 10;
+      }
+
+      .cs-card .cs-tag {
+        display: inline-block;
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0.5rem;
+      }
+
+      .cs-card .cs-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 0.375rem;
+        line-height: 1.2;
+      }
+
+      .cs-card .cs-desc {
+        font-size: 0.8125rem;
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.6;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.4s ease;
+        opacity: 0;
+      }
+
+      .cs-card.active .cs-desc {
+        max-height: 12rem;
+        opacity: 1;
+      }
+
+      .cs-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+        padding: 0;
+      }
+
+      .cs-dot.active {
+        background: white;
+        transform: scale(1.3);
+      }
+
+      @media (max-width: 768px) {
+        #cardstack-container {
+          height: 360px;
+        }
+      }
+    </style>
+    <script>
+      (function () {
+        const items = [
+          { id: 1, tag: "THE FOUNDATION", title: "Flow OS", desc: "The control layer your entire operation runs through. Every SOP, every agent handoff, every decision \u2014 logged, searchable, and owned by you. Not a dashboard you rent. A department you keep.", img: "./assets/flow-image-asset/flow-os-asset.jpeg" },
+          { id: 2, tag: "REVENUE OPERATIONS", title: "Deal OS", desc: "Your pipeline stops leaking. Deal OS tracks every opportunity from first touch to closed-won \u2014 surfacing stalled deals, automating follow-ups, and giving your closers the context they need before the call even starts.", img: "./assets/flow-image-asset/deal-os-asset.jpeg" },
+          { id: 3, tag: "YOUR OPS TEAM ON CALL", title: "Exo Concierge", desc: "A dedicated operations team that doesn\u2019t wait for tickets. Concierge monitors your system around the clock \u2014 catching drift before it becomes downtime, optimizing workflows you forgot you built, and keeping the machine running while you sleep.", img: "./assets/flow-image-asset/Exo-concierge-wordmark-asset.jpeg" },
+          { id: 4, tag: "KNOWLEDGE THAT COMPOUNDS", title: "Exo Academy", desc: "The reason your best hire\u2019s knowledge stops being a liability. EXA turns every process into a living certification \u2014 structured training, documented SOPs, and onboarding paths that take days instead of quarters. Your team gets sharper the longer they\u2019re in the system.", img: "./assets/flow-image-asset/EXA-asset.JPG" },
+          { id: 5, tag: "TALENT INTELLIGENCE", title: "AURA AI", desc: "Your next great hire is already in the data. AURA scouts, screens, and ranks candidates against your actual operational needs \u2014 not a job description written six months ago. Recruiting that thinks like your best hiring manager, at scale.", img: "./assets/flow-image-asset/AURA-asset.jpeg" },
+          { id: 6, tag: "MARKETING OPS", title: "Exo Launch", desc: "Marketing operations that actually know your brand. Launch generates campaign strategies, ad variations, and assets from your existing guidelines \u2014 not generic templates from a prompt. Your voice, amplified across every channel, without the agency retainer.", img: "./assets/flow-image-asset/exo-launch-asset.JPG" },
+          { id: 7, tag: "INSTITUTIONAL MEMORY", title: "Exo AI", desc: "Ask your business a question and get a real answer. Exo AI indexes every workflow, document, and decision log across your entire operation \u2014 the kind of institutional memory that used to live in one person\u2019s head and walked out when they did.", img: "./assets/flow-image-asset/exo-ai-orb.JPG" },
+          { id: 8, tag: "INCLUDED BONUS", title: "STEEL", desc: "For the leaders behind the operation.", img: "./assets/flow-image-asset/steel-card-asset.jpeg" },
+          { id: 9, tag: "EXPANDING", title: "And More +", desc: "The Exosystem grows with your operation. New modules, new departments, new capabilities \u2014 all built on the same foundation. We are one of a kind.", img: null }
+        ];
+
+        const len = items.length;
+        let active = 0;
+        let hovering = false;
+        let dragStartX = 0;
+        let dragging = false;
+
+        const isMobile = window.innerWidth < 768;
+        const cardW = isMobile ? 300 : 520;
+        const cardH = isMobile ? 280 : 340;
+        const overlap = 0.48;
+        const spreadDeg = 48;
+        const depthPx = 140;
+        const tiltXDeg = 12;
+        const maxVisible = 7;
+        const maxOffset = Math.floor(maxVisible / 2);
+        const cardSpacing = Math.max(10, Math.round(cardW * (1 - overlap)));
+        const stepDeg = maxOffset > 0 ? spreadDeg / maxOffset : 0;
+
+        const stage = document.getElementById('cardstack-stage');
+        const dotsContainer = document.getElementById('cardstack-dots');
+        const container = document.getElementById('cardstack-container');
+
+        // Build cards
+        const cards = items.map((item, i) => {
+          const el = document.createElement('div');
+          el.className = 'cs-card';
+          el.style.width = cardW + 'px';
+          el.style.height = cardH + 'px';
+          el.innerHTML = `
+          ${item.img
+              ? `<img src="${item.img}" alt="${item.title}" loading="eager" draggable="false">`
+              : `<div style="width:100%;height:100%;background:linear-gradient(135deg,#1e1b4b,#0f172a);display:flex;align-items:center;justify-content:center;">
+                <span style="font-size:3rem;color:rgba(255,255,255,0.15);">+</span>
+              </div>`}
+          <div class="cs-overlay"></div>
+          <div class="cs-content">
+            <div class="cs-tag">${item.tag}</div>
+            <div class="cs-title">${item.title}</div>
+            <div class="cs-desc">${item.desc}</div>
+          </div>
+        `;
+          el.addEventListener('click', () => { if (!dragging) setActive(i); });
+          stage.appendChild(el);
+          return el;
+        });
+
+        // Build dots
+        const dots = items.map((item, i) => {
+          const btn = document.createElement('button');
+          btn.className = 'cs-dot';
+          btn.setAttribute('aria-label', 'Go to ' + item.title);
+          btn.addEventListener('click', () => setActive(i));
+          dotsContainer.appendChild(btn);
+          return btn;
+        });
+
+        function wrapIndex(n) { return ((n % len) + len) % len; }
+
+        function signedOffset(i) {
+          const raw = i - active;
+          const alt = raw > 0 ? raw - len : raw + len;
+          return Math.abs(alt) < Math.abs(raw) ? alt : raw;
+        }
+
+        function render() {
+          cards.forEach((el, i) => {
+            const off = signedOffset(i);
+            const abs = Math.abs(off);
+            const visible = abs <= maxOffset;
+
+            if (!visible) {
+              el.style.opacity = '0';
+              el.style.pointerEvents = 'none';
+              return;
+            }
+
+            const rotZ = off * stepDeg;
+            const x = off * cardSpacing;
+            const y = abs * 10;
+            const z = -abs * depthPx;
+            const isActive = off === 0;
+            const sc = isActive ? 1.03 : 0.94;
+            const lift = isActive ? -22 : 0;
+            const rotX = isActive ? 0 : tiltXDeg;
+            const zIdx = 100 - abs;
+
+            el.style.opacity = '1';
+            el.style.pointerEvents = 'auto';
+            el.style.zIndex = zIdx;
+            el.style.transform = `translateX(${x}px) translateY(${y + lift}px) translateZ(${z}px) rotateZ(${rotZ}deg) rotateX(${rotX}deg) scale(${sc})`;
+
+            if (isActive) { el.classList.add('active'); }
+            else { el.classList.remove('active'); }
+          });
+
+          dots.forEach((d, i) => {
+            if (i === active) d.classList.add('active');
+            else d.classList.remove('active');
+          });
+        }
+
+        function setActive(i) {
+          active = wrapIndex(i);
+          render();
+        }
+
+        // Keyboard
+        container.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') setActive(active - 1);
+          if (e.key === 'ArrowRight') setActive(active + 1);
+        });
+
+        // Touch/drag on active card
+        container.addEventListener('touchstart', (e) => {
+          dragStartX = e.touches[0].clientX;
+          dragging = false;
+        }, { passive: true });
+        container.addEventListener('touchend', (e) => {
+          const diff = dragStartX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 50) {
+            dragging = true;
+            if (diff > 0) setActive(active + 1);
+            else setActive(active - 1);
+            setTimeout(() => { dragging = false; }, 100);
+          }
+        });
+
+        // Mouse drag
+        let mouseDown = false, mouseStartX = 0;
+        container.addEventListener('mousedown', (e) => {
+          mouseDown = true; mouseStartX = e.clientX; dragging = false;
+        });
+        document.addEventListener('mousemove', (e) => {
+          if (mouseDown && Math.abs(e.clientX - mouseStartX) > 30) dragging = true;
+        });
+        document.addEventListener('mouseup', (e) => {
+          if (mouseDown && dragging) {
+            const diff = mouseStartX - e.clientX;
+            if (diff > 50) setActive(active + 1);
+            else if (diff < -50) setActive(active - 1);
+            setTimeout(() => { dragging = false; }, 100);
+          }
+          mouseDown = false;
+        });
+
+        // Hover pause
+        container.addEventListener('mouseenter', () => { hovering = true; });
+        container.addEventListener('mouseleave', () => { hovering = false; });
+
+        // Auto-advance
+        setInterval(() => {
+          if (!hovering && !document.hidden) setActive(active + 1);
+        }, 3500);
+
+        // Init
+        render();
+      })();
+    </script>
+  </section>
+
   <!-- SOCIAL PROOF + FAQ SECTION - Hybrid Trust Builder -->
   <section class="overflow-hidden bg-gradient-to-b from-slate-950 to-slate-900 pt-28 pb-28 relative lg:pt-20 lg:pb-20">
     <!-- Decorative grid lines -->
@@ -2459,7 +2466,7 @@ Sequence animation intro. Usage:
             <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
           </svg>
-          What Our Partners Experience
+          Measured Outcomes
         </div>
 
         <h2 class="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tighter font-geist text-white mb-6">
@@ -2490,15 +2497,15 @@ Sequence animation intro. Usage:
               </svg>
             </div>
             <h3 class="md:text-4xl text-3xl font-bold text-white font-geist mb-2">
-              23 Hours +
+              55%
             </h3>
             <p class="text-sm font-geist text-emerald-300 mb-4 uppercase tracking-wider">
-              Average Weekly Savings
+              Average Efficiency Gain
             </p>
             <p class="text-sm font-geist text-slate-400 leading-relaxed">
-              Partners typically reclaim 20-25 hours per week after full
-              implementation—time redirected to growth, strategy, and what
-              actually matters.
+              Measured in time and cost across all deployments.
+              Operations that used to take your team hours now run
+              autonomously — or in minutes.
             </p>
           </div>
         </div>
@@ -2520,15 +2527,14 @@ Sequence animation intro. Usage:
               </svg>
             </div>
             <h3 class="text-3xl md:text-4xl font-bold font-geist text-white mb-2">
-              14 Days
+              90 Days
             </h3>
             <p class="text-sm font-geist text-blue-300 mb-4 uppercase tracking-wider">
-              To Live Deployment
+              To Sovereignty
             </p>
             <p class="text-sm font-geist text-slate-400 leading-relaxed">
-              From first consultation to working systems—not 6 months. Our
-              partners see measurable improvements in the first week of
-              operation.
+              From kickoff to full team ownership of the system.
+              Architect. Engineer. Conductor. Then the keys are yours.
             </p>
           </div>
         </div>
@@ -2547,15 +2553,14 @@ Sequence animation intro. Usage:
               </svg>
             </div>
             <h3 class="text-3xl md:text-4xl font-bold font-geist text-white mb-2">
-              100%
+              Zero
             </h3>
             <p class="text-sm font-geist text-purple-300 mb-4 uppercase tracking-wider">
-              Results Guarantee
+              Lock-In
             </p>
             <p class="text-sm font-geist text-slate-400 leading-relaxed">
-              We don't stop until you win. If you don't hit your promised
-              outcomes, we work relentessly until you do. Zero excuses, zero fine
-              print.
+              You own the system. The Sovereignty Packet is yours. No
+              subscriptions. No retainers. We walk away — and it keeps running.
             </p>
           </div>
         </div>
@@ -2565,10 +2570,10 @@ Sequence animation intro. Usage:
       <div class="max-w-5xl mx-auto mb-20 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.5s_both]">
         <div class="text-center mb-12">
           <h3 class="text-3xl md:text-4xl font-semibold tracking-tight font-geist text-white mb-4">
-            Your 14-Day Transformation Journey
+            Your 90-Day Path to Sovereignty
           </h3>
           <p class="text-base md:text-lg font-geist text-slate-400">
-            From first call to live systems—faster than you thought possible.
+            Three phases. Three Extraordinaires. One outcome: you own everything.
           </p>
         </div>
 
@@ -2584,7 +2589,7 @@ Sequence animation intro. Usage:
                   </span>
                 </div>
                 <h4 class="text-xl font-semibold font-geist text-white">
-                  Week 1
+                  Architect — Days 1-14
                 </h4>
               </div>
               <ul class="space-y-2 text-sm font-geist text-slate-400">
@@ -2594,7 +2599,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-blue-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Discovery &amp; audit call
+                  Map every workflow and decision tree
                 </li>
                 <li class="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -2602,7 +2607,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-blue-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Map your biggest time drains
+                  Identify automation candidates
                 </li>
                 <li class="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -2610,7 +2615,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-blue-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Custom implementation plan
+                  Blueprint the department OS
                 </li>
                 <li class="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -2618,7 +2623,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-blue-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Begin AI system build
+                  Deliver Architecture Deck
                 </li>
               </ul>
             </div>
@@ -2644,7 +2649,7 @@ Sequence animation intro. Usage:
                   </span>
                 </div>
                 <h4 class="text-xl font-semibold font-geist text-white">
-                  Week 2
+                  Engineer — Days 15-45
                 </h4>
               </div>
               <ul class="space-y-2 text-sm font-geist text-slate-400">
@@ -2654,7 +2659,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-emerald-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Systems go live
+                  Configure Flow OS to your workflows
                 </li>
                 <li class="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -2662,7 +2667,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-emerald-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Team training sessions
+                  Deploy AI agents for each function
                 </li>
                 <li class="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -2670,7 +2675,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-emerald-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Integration with existing tools
+                  Integrate with your existing stack
                 </li>
                 <li class="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -2704,7 +2709,7 @@ Sequence animation intro. Usage:
                   </span>
                 </div>
                 <h4 class="text-xl font-semibold font-geist text-white">
-                  Weeks 3-12
+                  Conductor — Days 46-90
                 </h4>
               </div>
               <ul class="space-y-2 text-sm font-geist text-slate-400">
@@ -2714,7 +2719,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-purple-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Optimization &amp; refinement
+                  Co-run alongside your team
                 </li>
                 <li class="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -2722,7 +2727,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-purple-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Monthly strategy sessions
+                  Certify operators via Exo Academy
                 </li>
                 <li class="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -2730,7 +2735,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-purple-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Scale successful automations
+                  Capture institutional memory into system
                 </li>
                 <li class="flex items-start gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -2738,7 +2743,7 @@ Sequence animation intro. Usage:
                     class="flex-shrink-0 mt-0.5 text-purple-400">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  Hit guaranteed outcomes
+                  Deliver Sovereignty Packet
                 </li>
               </ul>
             </div>
@@ -2750,371 +2755,189 @@ Sequence animation intro. Usage:
       <div class="animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.6s_both] max-w-4xl mr-auto ml-auto">
         <div class="text-center mb-12">
           <h3 class="text-3xl md:text-4xl font-semibold tracking-tight font-geist text-white mb-4">
-            Questions? We've Got Answers.
+            Questions About Flow OS
           </h3>
           <p class="text-base md:text-lg font-geist text-slate-400">
-            Everything you need to know before booking your consultation.
+            Everything you need to know before your Architecture Session.
           </p>
         </div>
 
         <div class="space-y-4">
-          <!-- FAQ 1 -->
           <div
             class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
             <button
               class="faq-question flex gap-4 group text-left w-full pt-6 pr-6 pb-6 pl-6 gap-x-4 gap-y-4 items-center justify-between"
               onclick="toggleFAQ(this)">
               <span
-                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">
-                How fast will I actually see results?
-              </span>
+                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">What
+                size company is Flow OS built for?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300">
+                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300 w-6 h-6">
                 <path d="m6 9 6 6 6-6"></path>
               </svg>
             </button>
-            <div class="faq-answer hidden px-6 pb-6">
-              <p class="text-base font-geist text-slate-400 leading-relaxed">
-                Most partners see measurable time savings within the first 7
-                days of systems going live. Full transformation—20+ hours 
-                reclaimed—typically happens within 30 days. We guarantee
-                you'll hit your outcomes within 90 days, or the software
-                is free until you do. No games, no fine print.
-              </p>
+            <div class="faq-answer hidden">
+              <p class="leading-relaxed text-base text-slate-400 font-geist pt-0 pr-6 pb-6 pl-6">Flow OS is designed for
+                companies doing $2M–$50M in revenue — typically 15–200 employees — where operations have outgrown
+                spreadsheets and tribal knowledge but a full-time CTO or enterprise platform doesn't make sense yet.</p>
             </div>
           </div>
-
-          <!-- FAQ 2 -->
-          <div
-            class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
-            <button class="faq-question w-full text-left p-6 flex items-center justify-between gap-4 group"
-              onclick="toggleFAQ(this)">
-              <span
-                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">
-                Do I need a tech team or technical knowledge?
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300">
-                <path d="m6 9 6 6 6-6"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 pb-6">
-              <p class="text-base font-geist text-slate-400 leading-relaxed">
-                Absolutely not. That's the entire point. We handle
-                everything—strategy, build, training, deployment, and
-                optimization. You focus on running your business. If you can
-                use email and a web browser, you can use our systems. We train
-                your team on everything they need to know, and we're available
-                24/7 for support.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 3 -->
-          <div
-            class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
-            <button class="faq-question w-full text-left p-6 flex items-center justify-between gap-4 group"
-              onclick="toggleFAQ(this)">
-              <span
-                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">
-                What if the AI doesn't work for my specific business?
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300">
-                <path d="m6 9 6 6 6-6"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 pb-6">
-              <p class="text-base font-geist text-slate-400 leading-relaxed">
-                We've worked with legal practices, real estate firms,
-                healthcare providers, manufacturing operations, restaurants,
-                and professional services. Our systems are 80% productized
-                (proven, fast-deploying) and 20% custom (tailored to your
-                unique workflows). Before we start, we audit your business to
-                ensure AI is the right fit. If it's not, we'll tell you—we
-                don't take projects we can't win.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 4 -->
-          <div
-            class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
-            <button class="faq-question w-full text-left p-6 flex items-center justify-between gap-4 group"
-              onclick="toggleFAQ(this)">
-              <span
-                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">
-                How much time will this take away from running my business?
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300">
-                <path d="m6 9 6 6 6-6"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 pb-6">
-              <p class="text-base font-geist text-slate-400 leading-relaxed">
-                Minimal. You'll spend 2-3 hours in Week 1 for the audit and
-                planning. Another 1-2 hours in Week 2 for training. After
-                that, we handle everything. Most partners spend less time
-                implementing AI with us than they'd spend in a single day of
-                manual busywork. The ROI is immediate.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-          <div
-            class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
-            <button class="faq-question w-full text-left p-6 flex items-center justify-between gap-4 group"
-              onclick="toggleFAQ(this)">
-              <span
-                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">
-                What happens if I'm not satisfied with the results?
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300">
-                <path d="m6 9 6 6 6-6"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 pb-6">
-              <p class="text-base font-geist text-slate-400 leading-relaxed">
-                Simple: we don't stop until you win. If you don't hit your
-                guaranteed outcomes (20+ hours saved, measurable cost
-                reductions, etc.) within 90 days, we continue working at no
-                additional charge until you do. We eat the cost, not you.
-                There's no fine print, no gotchas. We only succeed when you
-                succeed.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 6 -->
-          <div
-            class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
-            <button class="faq-question w-full text-left p-6 flex items-center justify-between gap-4 group"
-              onclick="toggleFAQ(this)">
-              <span
-                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">
-                Will this actually save me money, or is it just another
-                expense?
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300">
-                <path d="m6 9 6 6 6-6"></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 pb-6">
-              <p class="text-base font-geist text-slate-400 leading-relaxed">
-                AI does the work of 3-5 full-time employees at a fraction of
-                the cost. No benefits, no turnover, no training cycles. If
-                you're spending 20+ hours per week on busywork (or paying
-                someone else to), you're already losing money. Our systems pay
-                for themselves within 60-90 days through time savings
-                alone—before you even factor in reduced errors, faster
-                response times, and increased capacity.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 7 -->
           <div
             class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
             <button
               class="faq-question flex gap-4 group text-left w-full pt-6 pr-6 pb-6 pl-6 gap-x-4 gap-y-4 items-center justify-between"
               onclick="toggleFAQ(this)">
               <span
-                class="md:text-xl group-hover:text-blue-300 transition-colors text-lg font-semibold text-white font-geist">
-                How do I know you won't just disappear after implementation?
-              </span>
+                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">Do
+                we own the system, or is this another SaaS subscription?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 transition-transform duration-300 w-[24px] h-[24px]"
-                data-icon-replaced="true" style="color: rgb(148, 163, 184); width: 24px; height: 24px;">
-                <path d="m6 9 6 6 6-6" class=""></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden pr-6 pb-6 pl-6">
-              <p class="leading-relaxed text-base text-slate-400 font-geist" style="">
-                We include 60-90 days of optimization and support—at no extra
-                charge. We're not a "deploy and ghost" agency. We schedule
-                monthly strategy sessions, provide priority support (24-hour
-                response time), and continuously refine your systems until
-                they're running perfectly. We're only limiting ourselves to 8
-                clients per month specifically so we can deliver this level of
-                white-glove service.
-              </p>
-            </div>
-          </div>
-
-          <!-- FAQ 8 -->
-          <div
-            class="faq-item overflow-hidden transition-all duration-300 hover:ring-white/20 bg-slate-900/40 ring-white/10 ring-1 rounded-2xl shadow-xl backdrop-blur-md">
-            <button
-              class="faq-question flex gap-4 group text-left w-full pt-6 pr-6 pb-6 pl-6 gap-x-4 gap-y-4 items-center justify-between"
-              onclick="toggleFAQ(this)">
-              <span
-                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">
-                What if my team doesn't adopt the new systems?
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 transition-transform duration-300 w-[24px] h-[24px]"
-                data-icon-replaced="true" style="color: rgb(148, 163, 184); width: 24px; height: 24px;">
-                <path d="m6 9 6 6 6-6" class=""></path>
-              </svg>
-            </button>
-            <div class="faq-answer hidden px-6 pb-6">
-              <p class="leading-relaxed text-base text-slate-400 font-geist">
-                We build systems so intuitive that adoption isn't an issue—but
-                we also include comprehensive team training as part of every
-                engagement. We don't just hand over documentation and wish you
-                luck. We train your staff hands-on, answer their questions in
-                real-time, and provide follow-up support for 90 days. If
-                someone's struggling, we jump in. Adoption is our problem to
-                solve, not yours.
-              </p>
-            </div>
-          </div>
-          <!-- New FAQ 9 -->
-          <div
-            class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
-            <button class="faq-question w-full text-left p-6 flex items-center justify-between gap-4 group"
-              onclick="toggleFAQ(this)">
-              <span
-                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">
-                Why should I choose you over competitors?
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300">
+                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300 w-6 h-6">
                 <path d="m6 9 6 6 6-6"></path>
               </svg>
             </button>
-            <div class="faq-answer hidden px-6 pb-6">
-              <p class="text-base font-geist text-slate-400 leading-relaxed">
-                We're the only AI consulting firm that guarantees 20+ hours
-                saved in 60 days or we keep working non-stop until you do. Most consultants
-                overpromise and disappear—we stay until you win. Plus, you get
-                a done-for-you system in 14 days, not 6 months of "strategy
-                calls."
-              </p>
+            <div class="faq-answer hidden">
+              <p class="leading-relaxed text-base text-slate-400 font-geist pt-0 pr-6 pb-6 pl-6">You own it. The
+                Sovereignty Packet includes all SOPs, agent configurations, credentials, and runbooks. When we hand you
+                the keys at day 90, we walk away. No recurring fees to Exo, no lock-in.</p>
             </div>
           </div>
-          <!-- New FAQ 10 -->
           <div
             class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
             <button
               class="faq-question flex gap-4 group text-left w-full pt-6 pr-6 pb-6 pl-6 gap-x-4 gap-y-4 items-center justify-between"
               onclick="toggleFAQ(this)">
               <span
-                class="md:text-xl group-hover:text-blue-300 transition-colors text-lg font-semibold text-white font-geist">
-                What if I've tried AI automation before and it didn't work?
-              </span>
+                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">What
+                happens to our existing tools?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300">
+                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300 w-6 h-6">
                 <path d="m6 9 6 6 6-6"></path>
               </svg>
             </button>
-            <div class="faq-answer hidden pr-6 pb-6 pl-6">
-              <p class="leading-relaxed text-base text-slate-400 font-geist">Past failures aren't a reason to
-                quit—they're proof you needed
-                a better partner. Most AI projects fail because they're built
-                by developers, not operators who understand your workflows. We've come across some stories and have
-                made
-                transformations.
-                We've implemented 100+ systems for SMBs like you. Your last
-                vendor burned you once—don't let that bad decision burn you
-                twice by missing out on what actually works.</p>
+            <div class="faq-answer hidden">
+              <p class="leading-relaxed text-base text-slate-400 font-geist pt-0 pr-6 pb-6 pl-6">Flow OS integrates with
+                your current stack — Slack, HubSpot, Notion, Salesforce, Google Workspace, and 200+ more. We don't rip
+                and replace. We unify. Though we can help you replace them if you want to. Simply let us know.</p>
             </div>
           </div>
-          <!-- New FAQ 11 -->
           <div
             class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
-            <button class="faq-question w-full text-left p-6 flex items-center justify-between gap-4 group"
+            <button
+              class="faq-question flex gap-4 group text-left w-full pt-6 pr-6 pb-6 pl-6 gap-x-4 gap-y-4 items-center justify-between"
               onclick="toggleFAQ(this)">
               <span
-                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">
-                Do I need to commit long-term, or can I start small?
-              </span>
+                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">How
+                much of our team's time does the 90-day engagement require?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300">
+                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300 w-6 h-6">
                 <path d="m6 9 6 6 6-6"></path>
               </svg>
             </button>
-            <div class="faq-answer hidden px-6 pb-6">
-              <p class="text-base font-geist text-slate-400 leading-relaxed">
-                You can start with a single department to test us out. Most
-                clients upgrade to full transformations within 30 days because
-                they see results fast. No long-term contracts—just results you
-                can measure.
-              </p>
+            <div class="faq-answer hidden">
+              <p class="leading-relaxed text-base text-slate-400 font-geist pt-0 pr-6 pb-6 pl-6">Minimal. The Architect
+                phase requires 4–6 hours of your leadership team's time for discovery. After that, our Engineer and
+                Conductor work alongside your operators — not instead of them. Most clients report less disruption than
+                onboarding a single new hire.</p>
             </div>
           </div>
-          <!-- New FAQ 12 -->
           <div
             class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
-            <button class="faq-question w-full text-left p-6 flex items-center justify-between gap-4 group"
+            <button
+              class="faq-question flex gap-4 group text-left w-full pt-6 pr-6 pb-6 pl-6 gap-x-4 gap-y-4 items-center justify-between"
               onclick="toggleFAQ(this)">
               <span
-                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">
-                What happens after the 14 days—am I on my own?
-              </span>
+                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">What's
+                the Sovereignty Packet?</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300">
+                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300 w-6 h-6">
                 <path d="m6 9 6 6 6-6"></path>
               </svg>
             </button>
-            <div class="faq-answer hidden px-6 pb-6">
-              <p class="text-base font-geist text-slate-400 leading-relaxed">
-                Nope. Every tier includes ongoing support: monthly check-ins
-                (Tier 2), unlimited tweaks (Tier 3), and priority Slack
-                access. We don't build and bail—we optimize until you're
-                crushing it. Think of us as your AI insurance policy.
-              </p>
+            <div class="faq-answer hidden">
+              <p class="leading-relaxed text-base text-slate-400 font-geist pt-0 pr-6 pb-6 pl-6">It's the full transfer
+                document: SOPs for every automated workflow, agent configuration docs, credentials, escalation
+                playbooks, Exo Academy certifications for your team, and a 90-day operational guarantee. It's designed
+                so you never need us again.</p>
+            </div>
+          </div>
+          <div
+            class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
+            <button
+              class="faq-question flex gap-4 group text-left w-full pt-6 pr-6 pb-6 pl-6 gap-x-4 gap-y-4 items-center justify-between"
+              onclick="toggleFAQ(this)">
+              <span
+                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">What
+                if our processes change after the engagement?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300 w-6 h-6">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden">
+              <p class="leading-relaxed text-base text-slate-400 font-geist pt-0 pr-6 pb-6 pl-6">Flow OS is built to be
+                modified by your team. The Conductor phase trains your operators to adjust workflows, add agents, and
+                update the system themselves. If you need help later, we offer advisory hours — but you'll likely never
+                need them.</p>
+            </div>
+          </div>
+          <div
+            class="faq-item rounded-2xl ring-1 backdrop-blur-md overflow-hidden transition-all duration-300 bg-slate-900/40 ring-white/10 shadow-xl hover:ring-white/20">
+            <button
+              class="faq-question flex gap-4 group text-left w-full pt-6 pr-6 pb-6 pl-6 gap-x-4 gap-y-4 items-center justify-between"
+              onclick="toggleFAQ(this)">
+              <span
+                class="text-lg md:text-xl font-semibold font-geist text-white group-hover:text-blue-300 transition-colors">What
+                does the 90-day operational guarantee cover?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="faq-icon flex-shrink-0 text-slate-400 transition-transform duration-300 w-6 h-6">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+            <div class="faq-answer hidden">
+              <p class="leading-relaxed text-base text-slate-400 font-geist pt-0 pr-6 pb-6 pl-6">If any workflow we
+                built breaks or underperforms within 90 days of handoff, we fix it at no charge. Period. We also include
+                a performance baseline so you can measure gains objectively.</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- FAQ Accordion JavaScript -->
   <script class="">
-          function toggleFAQ(button) {
-        const faqItem = button.closest('.faq-item');
-          const answer = faqItem.querySelector('.faq-answer');
-          const icon = button.querySelector('.faq-icon');
-          const allFAQs = document.querySelectorAll('.faq-item');
+    function toggleFAQ(button) {
+      const faqItem = button.closest('.faq-item');
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = button.querySelector('.faq-icon');
+      const allFAQs = document.querySelectorAll('.faq-item');
 
-        // Close all other FAQs
-        allFAQs.forEach(item => {
-          if (item !== faqItem) {
-            item.querySelector('.faq-answer').classList.add('hidden');
+      // Close all other FAQs
+      allFAQs.forEach(item => {
+        if (item !== faqItem) {
+          item.querySelector('.faq-answer').classList.add('hidden');
           item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
           item.classList.remove('ring-blue-500/30');
-          }
-        });
-
-          // Toggle current FAQ
-          if (answer.classList.contains('hidden')) {
-            answer.classList.remove('hidden');
-          icon.style.transform = 'rotate(180deg)';
-          faqItem.classList.add('ring-blue-500/30');
-        } else {
-            answer.classList.add('hidden');
-          icon.style.transform = 'rotate(0deg)';
-          faqItem.classList.remove('ring-blue-500/30');
         }
+      });
+
+      // Toggle current FAQ
+      if (answer.classList.contains('hidden')) {
+        answer.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+        faqItem.classList.add('ring-blue-500/30');
+      } else {
+        answer.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+        faqItem.classList.remove('ring-blue-500/30');
       }
+    }
   </script>
   <!-- HYBRID TESTIMONIAL SECTION - Quick Quotes + Detailed Case Studies -->
   <section class="overflow-hidden lg:py-28 bg-slate-950 pt-28 pb-28 relative">
@@ -3183,9 +3006,11 @@ Sequence animation intro. Usage:
                   </svg>
                 </div>
 
-                <p class="leading-relaxed text-sm text-neutral-900 mb-4">"We were drowning in 30+ hours of scheduling
-                  chaos every week. Flow and the Exo team built us an AI system that handles everything—client intake,
-                  appointment booking, follow-ups. We got 25 hours back in the first month. Absolute Game-changer."
+                <p class="leading-relaxed text-sm text-neutral-900 mb-4">"We were losing around $11K/month across 9
+                  different
+                  platforms nobody fully understood. Flow OS consolidated everything into one department, it was
+                  beautiful. One huge company view after a while. Our ops team
+                  went from all over the place to organized in 60 days time."
                 </p>
 
                 <!-- Author row -->
@@ -3193,14 +3018,14 @@ Sequence animation intro. Usage:
                   <div class="flex items-center gap-2">
                     <div
                       class="flex text-xs font-semibold text-white bg-gradient-to-br from-blue-500 to-blue-600 w-8 h-8 rounded-full items-center justify-center">
-                      JW
+                      MW
                     </div>
                     <div class="">
                       <div class="text-xs font-medium text-neutral-900">
-                        James Whitfield
+                        Marcus Webb
                       </div>
                       <div class="text-xs text-neutral-500">
-                        Founding Partner, Whitfield &amp; Cole LLP
+                        Operations Director, Tether L.P.
                       </div>
                     </div>
                   </div>
@@ -3218,7 +3043,7 @@ Sequence animation intro. Usage:
             </div>
           </div>
 
-          <!-- Quote Card 2: Restaurant -->
+          <!-- Quote Card 2: COO -->
           <div
             class="glass-card relative w-full max-w-[340px] md:w-[340px] h-[380px] bg-gradient-to-br from-white/8 to-transparent border border-white/10 rounded-2xl backdrop-blur-md shadow-2xl transition-all duration-500 md:rotate-0 md:z-20 hover:rotate-0 hover:scale-105 hover:z-30">
             <div
@@ -3240,10 +3065,9 @@ Sequence animation intro. Usage:
                 </div>
 
                 <p class="leading-relaxed text-sm text-neutral-900 mb-4">
-                  "Phone orders during dinner rush were killing us. From
-                  missed calls, wrong orders, stressed staff. Their AI voice
-                  system handles orders flawlessly, even during our busiest
-                  nights. Revenue up 18% in 60 days."
+                  "The Sovereignty Packet was the smoothest transition we've ever had. For the first time, our
+                  operational playbook exists
+                  outside of me and my partner. When our lead designer left, nothing broke. The AI's are handling it."
                 </p>
 
                 <!-- Author row -->
@@ -3251,14 +3075,14 @@ Sequence animation intro. Usage:
                   <div class="flex items-center gap-2">
                     <div
                       class="flex text-xs font-semibold text-white bg-gradient-to-br from-emerald-500 to-emerald-600 w-8 h-8 rounded-full items-center justify-center">
-                      SM
+                      TO
                     </div>
                     <div class="">
                       <div class="text-xs font-medium text-neutral-900">
-                        Sofia R. Martinez
+                        Tyler Osei
                       </div>
                       <div class="text-xs text-neutral-500">
-                        Owner, Verde Kitchen
+                        Founder, Harborline
                       </div>
                     </div>
                   </div>
@@ -3297,23 +3121,24 @@ Sequence animation intro. Usage:
                   </svg>
                 </div>
 
-                <p class="leading-relaxed text-sm text-neutral-900 mb-4">"We needed to scale without adding headcount.
-                  Flow OS automated our entire inventory and supplier workflow. Saved us $180K annually and eliminated
-                  the need for extra new hires. They delivered in 12 days."</p>
+                <p class="leading-relaxed text-sm text-neutral-900 mb-4">"Other firms wanted to lock us into retainers.
+                  Exo built the system, trained my team, and really did hand us the 'keys'. We've been running it
+                  ourselves for 6
+                  months. There is a noticeable difference with AI."</p>
 
                 <!-- Author row -->
                 <div class="pt-3 border-t border-neutral-200 flex items-center justify-between">
                   <div class="flex items-center gap-2">
                     <div
                       class="flex text-xs font-semibold text-white bg-gradient-to-br from-purple-500 to-purple-600 w-8 h-8 rounded-full items-center justify-center">
-                      BS
+                      CD
                     </div>
                     <div class="">
                       <div class="text-xs font-medium text-neutral-900">
-                        Brian Strickland
+                        Claire Dupont
                       </div>
                       <div class="text-xs text-neutral-500">
-                        Head of Operations, Kessler Industrial Group
+                        Chief of Staff, Meridian Stu.
                       </div>
                     </div>
                   </div>
@@ -3374,14 +3199,14 @@ Sequence animation intro. Usage:
               </div>
 
               <h4 class="text-2xl font-semibold tracking-tight font-geist text-white mb-3">
-                Law Firm Transformation
+                Firm Transformation
               </h4>
 
               <p class="text-sm font-geist text-slate-400 mb-4">
                 <span class="font-semibold text-white">
-                  12-person family law firm
+                  13-person family firm
                 </span>
-                • $1.8M annual revenue
+                • $7.8M annual revenue
               </p>
 
               <!-- The Problem -->
@@ -3492,13 +3317,13 @@ Sequence animation intro. Usage:
                 <div class="flex items-center gap-2">
                   <div
                     class="flex text-xs font-semibold text-white bg-gradient-to-br from-blue-500 to-blue-600 w-8 h-8 rounded-full items-center justify-center">
-                    LM
+                    CB
                   </div>
                   <div class="">
                     <div class="text-xs font-medium text-white">
-                      Leonardo Marino
+                      Cole Barrett
                     </div>
-                    <div class="text-xs text-slate-500">Managing Partner</div>
+                    <div class="text-xs text-slate-500">Head of Partnerships, Benchmark Advisory</div>
                   </div>
                 </div>
               </div>
@@ -3643,14 +3468,14 @@ Sequence animation intro. Usage:
                 <div class="flex gap-2 gap-x-2 gap-y-2 items-center">
                   <div
                     class="h-8 w-8 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white text-xs font-semibold">
-                    DF
+                    JC
                   </div>
                   <div class="">
                     <div class="text-xs font-medium text-white">
-                      Derek Fontenot
+                      Jordan Callahan
                     </div>
                     <div class="text-xs text-slate-500">
-                      VP of Supply Chain, Apex Fabrication Partners
+                      CEO &amp; Founder, Aided Design LP
                     </div>
                   </div>
                 </div>
@@ -3706,12 +3531,10 @@ Sequence animation intro. Usage:
     <!-- Floating portrait (desktop view) -->
     <div class="hidden lg:block absolute right-8 top-10 z-10">
       <div class="rounded-xl overflow-hidden ring-1 backdrop-blur-sm ring-white/10 bg-white/5" style="">
-        <img
-          src="./assets/flow-image-asset/steel-card-asset.jpeg"
-          alt="Container background" class="w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0"
-          data-container-bg="true">
-        <img loading="lazy" src="./assets/flow-image-asset/steel-card-asset.jpeg"
-          alt="Steel Card" class="w-48 h-36 object-cover">
+        <img src="./assets/flow-image-asset/steel-card-asset.jpeg" alt="Container background"
+          class="w-full h-full object-cover absolute top-0 right-0 bottom-0 left-0" data-container-bg="true">
+        <img loading="lazy" src="./assets/flow-image-asset/steel-card-asset.jpeg" alt="Steel Card"
+          class="w-48 h-36 object-cover">
       </div>
       <p class="text-[11px] xl:text-neutral-50 text-slate-400 font-geist mt-2">
         Introducing The Steel Card — Exclusive
@@ -3726,9 +3549,7 @@ Sequence animation intro. Usage:
         <!-- Large visual -->
         <div class="lg:col-span-7">
           <div class="aspect-[16/11] md:aspect-[5/4] overflow-hidden rounded-3xl relative">
-            <img
-              src="./assets/flow-image-asset/steel-phone-logo.png"
-              alt="Steel Phone App"
+            <img src="./assets/flow-image-asset/steel-phone-logo.png" alt="Steel Phone App"
               class="[animation:parallaxElement_linear_both] [animation-timeline:view()] [animation-range:entry_0%_entry_100%] w-full h-full object-cover">
           </div>
         </div>
@@ -3814,22 +3635,21 @@ Sequence animation intro. Usage:
           <!-- Headline -->
           <h2
             class="text-4xl sm:text-5xl md:text-6xl font-normal tracking-tighter font-geist text-white text-center mb-6">
-            Ready to Eliminate
+            Ready to Own
             <span
               class="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-emerald-400 to-blue-400">
-              20+ Hours of Weekly Busywork?
+              Your Operations?
             </span>
           </h2>
 
           <!-- Subheadline -->
           <p
             class="md:text-xl leading-relaxed text-lg text-slate-400 font-geist text-center max-w-3xl mr-auto mb-10 ml-auto">
-            Book your free AI audit—we'll identify your biggest time drains,
-            show you the exact automations that eliminate them, and give you a
-            custom 14-day roadmap.
+            In 45 minutes, an Exo Architect will map your current workflows, identify
+            the highest-impact automation candidates, and show you exactly what your
+            Flow OS department would look like.
             <span class="font-semibold text-white">
-              If we can't find 20+ hours to save you, the audit's on us—100%
-              free
+              Walk away with a blueprint you can use — whether you hire us or not.
             </span>
           </p>
 
@@ -3849,7 +3669,7 @@ Sequence animation intro. Usage:
                   Complete Workflow Audit
                 </h3>
                 <p class="text-sm font-geist text-slate-400">
-                  We'll find your biggest time drains
+                  Every process mapped and prioritized
                 </p>
               </div>
             </div>
@@ -3865,10 +3685,10 @@ Sequence animation intro. Usage:
               </div>
               <div class="">
                 <h3 class="text-base font-semibold font-geist text-white mb-1">
-                  Custom Automation Blueprint
+                  Custom Architecture Deck
                 </h3>
                 <p class="text-sm font-geist text-slate-400">
-                  See exactly what we'd build for you
+                  Your Flow OS blueprint — yours to keep
                 </p>
               </div>
             </div>
@@ -3884,10 +3704,10 @@ Sequence animation intro. Usage:
               </div>
               <div class="">
                 <h3 class="text-base font-semibold font-geist text-white mb-1">
-                  ROI Calculator
+                  90-Day Guarantee
                 </h3>
                 <p class="text-sm font-geist text-slate-400">
-                  Know your time + cost savings upfront
+                  55% efficiency gains or we stay until you hit it
                 </p>
               </div>
             </div>
@@ -3903,10 +3723,10 @@ Sequence animation intro. Usage:
               </div>
               <div class="">
                 <h3 class="text-base font-semibold font-geist text-white mb-1">
-                  14-Day Implementation Timeline
+                  Full Ownership Transfer
                 </h3>
                 <p class="text-sm font-geist text-slate-400">
-                  Fast deployment, guaranteed results
+                  Sovereignty Packet — no lock-in, ever
                 </p>
               </div>
             </div>
@@ -3914,9 +3734,9 @@ Sequence animation intro. Usage:
 
           <!-- CTA Button -->
           <div class="text-center mb-8">
-            <a href="/value.html"
-              class="group inline-flex items-center justify-center gap-3 md:text-xl transition-all duration-300 shadow-orange-500/40 hover:shadow-orange-500/60 hover:scale-105 hover:ring-orange-400/70 text-lg font-bold text-white font-geist bg-gradient-to-r from-orange-500 to-red-500 ring-orange-500/50 ring-2 rounded-full pt-5 pr-10 pb-5 pl-10 shadow-2xl">
-              Get My Free AI Roadmap
+            <a href="/x-scale.html"
+              class="group inline-flex items-center justify-center gap-3 md:text-xl transition-all duration-300 shadow-emerald-500/40 hover:shadow-emerald-500/60 hover:scale-105 hover:ring-emerald-400/70 text-lg font-bold text-white font-geist bg-gradient-to-r from-emerald-600 to-blue-600 ring-emerald-500/50 ring-2 rounded-full pt-5 pr-10 pb-5 pl-10 shadow-2xl">
+              Book Architecture Session
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="w-6 h-6 transition-transform group-hover:translate-x-1">
@@ -3930,9 +3750,9 @@ Sequence animation intro. Usage:
           <p class="text-center text-sm md:text-base font-medium font-geist text-slate-400 mb-8">
             Accepting
             <span class="text-white font-semibold">
-              8 pilot clients this month
+              4 new engagements at a time
             </span>
-            to ensure white-glove delivery—currently reviewing applications
+            to ensure white-glove delivery
           </p>
 
           <!-- Risk Reversal / Trust Elements -->
@@ -3948,11 +3768,9 @@ Sequence animation intro. Usage:
                 </svg>
                 <p class="text-sm md:text-base font-geist text-slate-300">
                   <span class="text-white font-semibold">
-                    We guarantee you'll save 20+ hours per week within 60
-                    days.
+                    90-day operational guarantee.
                   </span>
-                  If not, we'll stay at your side until you do! This is our
-                  commitment to your success!
+                  You own everything we build. If Flow OS doesn't deliver 55% efficiency gains, we stay until it does.
                 </p>
               </div>
 
@@ -3988,7 +3806,8 @@ Sequence animation intro. Usage:
               <!-- Conditional Guarantee Fine Print for Activation Steps, *This needs to be updated -
                   So that it is engineered to walk clients toward activation steps-->
               <div class="pt-4 border-t border-white/5">
-                <p class="leading-relaxed text-xs text-slate-200 font-geist font-bold text-center">FIND OUT IF YOU'RE A FIT
+                <p class="leading-relaxed text-xs text-slate-200 font-geist font-bold text-center">FIND OUT IF YOU'RE A
+                  FIT
                   TODAY.
                 </p>
               </div>
@@ -4026,9 +3845,8 @@ Sequence animation intro. Usage:
             </p>
           </div>
 
-          <!-- Product -->
+          <!-- Company -->
           <div class="">
-            <ul class="mt-4 space-y-3"></ul>
             <div class="">
               <h3 class="text-sm font-medium text-white font-geist" style="">
                 Company
@@ -4068,19 +3886,31 @@ Sequence animation intro. Usage:
             </div>
           </div>
 
-          <!-- Company -->
-          <div class="">
-            <ul class="mt-4 space-y-3"></ul>
-          </div>
-
-          <!-- Resources -->
-          <div class="">
+          <!-- Product -->
+          <div>
+            <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Product</h4>
             <ul class="mt-4 space-y-3">
-              <li class=""></li>
+              <li><a href="/flow.html" class="transition hover:text-white text-sm text-slate-400 font-geist">Flow OS</a>
+              </li>
+              <li><a href="/steel.html" class="transition hover:text-white text-sm text-slate-400 font-geist">Steel
+                  Card</a></li>
+              <li><a href="index.html#departments"
+                  class="transition hover:text-white text-sm text-slate-400 font-geist">Exo Academy</a></li>
+              <li><a href="index.html#departments"
+                  class="transition hover:text-white text-sm text-slate-400 font-geist">Integrations</a></li>
             </ul>
           </div>
 
           <!-- Legal -->
+          <div>
+            <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Legal</h4>
+            <ul class="mt-4 space-y-3">
+              <li><a href="privacy.html" class="transition hover:text-white text-sm text-slate-400 font-geist">Privacy
+                  Policy</a></li>
+              <li><a href="terms.html" class="transition hover:text-white text-sm text-slate-400 font-geist">Terms of
+                  Service</a></li>
+            </ul>
+          </div>
         </div>
         <!-- Bottom bar -->
         <div
@@ -4089,115 +3919,61 @@ Sequence animation intro. Usage:
             © 2026 Exo Enterprise — All rights reserved
           </p>
           <div class="flex items-center gap-6">
-            <a href="privacy.html" class="text-sm transition font-geist text-slate-400 hover:text-white" style="">
-              Privacy Policy
-            </a>
-            <a href="terms.html" class="text-sm transition font-geist text-slate-400 hover:text-white" style="">
-              Terms of Service
-            </a>
           </div>
         </div>
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" class=""></script>
-    <script class="">
-          (function () {
-          const el = document.getElementById('marketChart');
-          if (!el || !window.Chart) return;
-          const ctx = el.getContext('2d');
-          new Chart(ctx, {
-            type: 'line',
-          data: {
-            labels: ['2021', '2022', '2023', '2024', '2025'],
-          datasets: [{
-            label: 'Valuation',
-          data: [12, 18, 21, 24, 30],
-          borderColor: 'rgba(148, 163, 184, 0.9)',
-          backgroundColor: 'rgba(148, 163, 184, 0.15)',
-          fill: true,
-          tension: 0.35,
-          borderWidth: 2
-              }]
-            },
-          options: {
-            responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {display: false },
-          tooltip: {
-            backgroundColor: 'rgba(2,6,23,0.9)',
-          titleColor: '#fff',
-          bodyColor: '#cbd5e1',
-          borderColor: 'rgba(255,255,255,0.1)',
-          borderWidth: 1,
-          displayColors: false
-                }
-              },
-          scales: {
-            x: {
-            grid: {color: 'rgba(255,255,255,0.06)', drawBorder: false },
-          ticks: {color: 'rgba(203,213,225,0.8)', font: {family: 'Geist' } }
-                },
-          y: {
-            grid: {color: 'rgba(255,255,255,0.06)', drawBorder: false },
-          ticks: {color: 'rgba(203,213,225,0.8)', font: {family: 'Geist' } }
-                }
-              }
-            }
-          });
-          if (window.lucide && typeof window.lucide.createIcons === 'function') {
-            window.lucide.createIcons();
-          }
-        })();
-    </script>
-
-    <script class="">
-        // Initialize lucide icons
-          window.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-          });
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) lucide.createIcons();
+      });
     </script>
   </section>
 
   <script>
-          (function(){ const openBtn=document.getElementById('mobileMenuToggle'); const closeBtn=document.getElementById('mobileMenuClose'); const drawer=document.getElementById('mobileNavDrawer'); function open(){ if(drawer) drawer.classList.add('open'); } function close(){ if(drawer) drawer.classList.remove('open'); } if(openBtn) openBtn.addEventListener('click', open); if(closeBtn) closeBtn.addEventListener('click', close); if(drawer) drawer.addEventListener('click', (e)=>{ if(e.target===drawer) close(); }); document.querySelectorAll('.mobile-accordion-toggle').forEach(btn=>{btn.addEventListener('click', () => { const wrap = btn.parentElement; const submenu = wrap.querySelector('.mobile-submenu'); const plus = btn.querySelector('.plus'); const minus = btn.querySelector('.minus'); if (submenu) { submenu.classList.toggle('hidden'); } if (plus && minus) { plus.classList.toggle('hidden'); minus.classList.toggle('hidden'); } }); }); })();
+    (function () { const openBtn = document.getElementById('mobileMenuToggle'); const closeBtn = document.getElementById('mobileMenuClose'); const drawer = document.getElementById('mobileNavDrawer'); function open() { if (drawer) drawer.classList.add('open'); } function close() { if (drawer) drawer.classList.remove('open'); } if (openBtn) openBtn.addEventListener('click', open); if (closeBtn) closeBtn.addEventListener('click', close); if (drawer) drawer.addEventListener('click', (e) => { if (e.target === drawer) close(); }); document.querySelectorAll('.mobile-accordion-toggle').forEach(btn => { btn.addEventListener('click', () => { const wrap = btn.parentElement; const submenu = wrap.querySelector('.mobile-submenu'); const plus = btn.querySelector('.plus'); const minus = btn.querySelector('.minus'); if (submenu) { submenu.classList.toggle('hidden'); } if (plus && minus) { plus.classList.toggle('hidden'); minus.classList.toggle('hidden'); } }); }); })();
   </script>
 
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[100] bg-black border-t border-white/10 text-white px-6 py-4 transform translate-y-full transition-transform duration-500 ease-out flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
-        <p class="text-xs sm:text-sm text-neutral-300 font-geist text-center sm:text-left max-w-4xl">
-            Exo uses cookies to maintain user sessions and track marketing efforts. By continuing to use our website, you agree to our use of cookies for these purposes. 
-            <a href="privacy.html" class="text-white underline hover:no-underline transition-colors">Read our Privacy Policy</a>
-        </p>
-        <button id="close-cookie-banner" aria-label="Close cookie banner" class="text-white hover:text-neutral-400 transition-colors p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-    </div>
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner"
+    class="fixed bottom-0 left-0 right-0 z-[100] bg-black border-t border-white/10 text-white px-6 py-4 transform translate-y-full transition-transform duration-500 ease-out flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
+    <p class="text-xs sm:text-sm text-neutral-300 font-geist text-center sm:text-left max-w-4xl">
+      Exo uses cookies to maintain user sessions and track marketing efforts. By continuing to use our website, you
+      agree to our use of cookies for these purposes.
+      <a href="privacy.html" class="text-white underline hover:no-underline transition-colors">Read our Privacy
+        Policy</a>
+    </p>
+    <button id="close-cookie-banner" aria-label="Close cookie banner"
+      class="text-white hover:text-neutral-400 transition-colors p-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
 
-    <script>
-        (function() {
-            const banner = document.getElementById('cookie-banner');
-            const closeBtn = document.getElementById('close-cookie-banner');
-            const consentKey = 'exo-cookie-consent-dismissed';
+  <script>
+    (function () {
+      const banner = document.getElementById('cookie-banner');
+      const closeBtn = document.getElementById('close-cookie-banner');
+      const consentKey = 'exo-cookie-consent-dismissed';
 
-            if (!localStorage.getItem(consentKey)) {
-                // Delay appearance for "pop up" effect
-                setTimeout(() => {
-                    banner.classList.remove('translate-y-full');
-                }, 1000);
-            }
+      if (!localStorage.getItem(consentKey)) {
+        // Delay appearance for "pop up" effect
+        setTimeout(() => {
+          banner.classList.remove('translate-y-full');
+        }, 1000);
+      }
 
-            if (closeBtn) {
-                closeBtn.addEventListener('click', () => {
-                    banner.classList.add('translate-y-full');
-                    localStorage.setItem(consentKey, 'true');
-                });
-            }
-        })();
-    </script>
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          banner.classList.add('translate-y-full');
+          localStorage.setItem(consentKey, 'true');
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>
