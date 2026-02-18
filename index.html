@@ -98,6 +98,15 @@
             -webkit-touch-callout: none;
         }
 
+        /* Accordion */
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+
         /* Glass Cards */
         .glass-panel {
             background: rgba(20, 20, 20, 0.4);
@@ -1720,6 +1729,97 @@
         </div>
     </div>
 
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 bg-neutral-900/30 border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-light text-white text-center mb-16">Common Questions</h2>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <details
+                    class="group glass-panel rounded-xl overflow-hidden border border-white/5 open:border-emerald-500/30 transition-colors">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer bg-white/0 hover:bg-white/5 transition-colors">
+                        <h3 class="text-lg font-medium text-white pr-8">Is this a consultancy or a software product?
+                        </h3>
+                        <span class="text-2xl text-emerald-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-neutral-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2"><strong class="text-white">It is both.</strong> High-end consulting leaves you
+                            with a strategy but no execution. Software leaves you with a tool but no process.</p>
+                        <p>We are a <strong>Hybrid Firm</strong>. We consult to design the strategy, then we install our
+                            software (Flow OS) to execute it. Most importantly, we transfer the entire capability to you
+                            within 90 days.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 2 -->
+                <details
+                    class="group glass-panel rounded-xl overflow-hidden border border-white/5 open:border-emerald-500/30 transition-colors">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer bg-white/0 hover:bg-white/5 transition-colors">
+                        <h3 class="text-lg font-medium text-white pr-8">What exactly do I walk away with?</h3>
+                        <span class="text-2xl text-emerald-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-neutral-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2">You walk away with a <strong class="text-white">fully operational internal
+                                department</strong>.</p>
+                        <p>Specifically: 1) A configured instance of Flow OS running your ops, 2) A trained team (yours
+                            or new hires) certified in the system, and 3) A "Sovereignty Packet" containing all SOPs,
+                            IP, and data. You own 100% of the output.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ 3 -->
+                <details
+                    class="group glass-panel rounded-xl overflow-hidden border border-white/5 open:border-emerald-500/30 transition-colors">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer bg-white/0 hover:bg-white/5 transition-colors">
+                        <h3 class="text-lg font-medium text-white pr-8">Do I need to hire new people to run this?</h3>
+                        <span class="text-2xl text-emerald-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-neutral-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2">Not necessarily. We often train existing staff to become "Flow Architects".</p>
+                        <p>However, if your current team is at capacity or lacks the specific aptitude, we help you
+                            recruit and vet the right operators to run the system. We handle the training regardless.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- FAQ 4 -->
+                <details
+                    class="group glass-panel rounded-xl overflow-hidden border border-white/5 open:border-emerald-500/30 transition-colors">
+                    <summary
+                        class="flex items-center justify-between p-6 cursor-pointer bg-white/0 hover:bg-white/5 transition-colors">
+                        <h3 class="text-lg font-medium text-white pr-8">How secure is my data?</h3>
+                        <span class="text-2xl text-emerald-400 group-open:rotate-45 transition-transform">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-neutral-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                        <p class="mb-2">Security is paramount. That's why we built the <strong>STEEL Security
+                                Protocol</strong>.
+                        </p>
+                        <p>All data is encrypted, access is strictly role-based, and we operate with a "Zero-Trust"
+                            architecture.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <script>
+            // FAQ Accordion Logic: Close others when one opens
+            document.querySelectorAll('#faq details').forEach((detail) => {
+                detail.addEventListener('toggle', (e) => {
+                    if (detail.open) {
+                        document.querySelectorAll('#faq details').forEach((otherDetail) => {
+                            if (otherDetail !== detail && otherDetail.open) {
+                                otherDetail.removeAttribute('open');
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+    </section>
+
     <!-- FINAL CTA -->
     <section id="contact" class="py-32 relative overflow-hidden bg-neutral-950">
         <!-- Decoration -->
@@ -1751,9 +1851,16 @@
                     <span id="btn-text">Book Risk Free</span>
                     <iconify-icon icon="solar:arrow-right-linear" class=""></iconify-icon>
                 </button>
+
                 <p class="text-xs text-neutral-500 mt-4 mb-0">8 Teams Per Month. | No commitment required. | 100%
                     Confidential.</p>
                 <p class="text-xs text-neutral-500 mt-0 mb-0">© Steel Security Protocol always active</p>
+
+                <!-- Founder Message -->
+                <a href="firm.html"
+                    class="block w-full text-center py-3 px-4 rounded-lg border border-white/10 text-neutral-400 hover:text-white hover:bg-white/5 transition-colors text-sm mt-4">
+                    Message from our founder
+                </a>
             </form>
         </div>
     </section>
