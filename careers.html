@@ -88,100 +88,122 @@
                 class="w-full h-auto object-cover border-[8px] border-neutral-200 rounded-[40px] shadow-[0_30px_60px_rgba(0,0,0,0.12)] team-photo transform will-change-transform opacity-0 translate-y-24 rotate-x-12">
         </div>
 
-        <!-- Who We're Looking For -->
-        <section class="mb-20">
-            <h2 class="text-2xl font-serif text-black mb-8">Who We Are Looking For</h2>
-            <div class="space-y-6">
-                <!-- Point 1 -->
-                <div class="flex gap-4">
+        <!-- Who We're Looking For (Collapsible) -->
+        <section class="mb-20 flex justify-center">
+            <div id="looking-for-dropdown"
+                class="w-full max-w-md bg-white rounded-2xl shadow-xl shadow-black/5 overflow-hidden cursor-pointer select-none transition-all duration-500 border border-neutral-100 group"
+                onclick="toggleDropdown()">
+
+                <!-- Header -->
+                <div class="flex items-center gap-4 p-4">
                     <div
-                        class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-1">
-                        <i data-lucide="code-2" class="w-3.5 h-3.5"></i>
+                        class="flex h-12 w-12 items-center justify-center rounded-xl bg-neutral-50 transition-colors duration-300 group-hover:bg-neutral-100">
+                        <i data-lucide="search" class="h-5 w-5 text-neutral-600"></i>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-neutral-900">Systems Thinkers Who Ship</h3>
-                        <p class="text-neutral-500 mt-1 leading-relaxed">
-                            You don't just spot broken processes — you rebuild them from scratch and leave them running
-                            without you. Thinking in systems isn't a skill for you. It's a default.
+                    <div class="flex-1 overflow-hidden">
+                        <h3 class="text-base font-semibold text-neutral-900">Who We Are Looking For</h3>
+                        <p id="dropdown-subtitle"
+                            class="text-sm text-neutral-500 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] mt-0.5 max-h-6 opacity-100">
+                            The 6 key traits of an Exo operator
                         </p>
+                    </div>
+                    <div class="flex h-8 w-8 items-center justify-center">
+                        <i data-lucide="chevron-up" id="dropdown-chevron"
+                            class="h-5 w-5 text-neutral-400 transition-transform duration-500 rotate-180"></i>
                     </div>
                 </div>
 
-                <!-- Point 2 -->
-                <div class="flex gap-4">
-                    <div
-                        class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-1">
-                        <i data-lucide="compass" class="w-3.5 h-3.5"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-neutral-900">First Principles Builders</h3>
-                        <p class="text-neutral-500 mt-1 leading-relaxed">
-                            You're not looking for a playbook — you're the one writing it. We operate in ambiguity
-                            on purpose. It's where durable operations get built.
-                        </p>
-                    </div>
-                </div>
+                <!-- Activity List -->
+                <div id="dropdown-list"
+                    class="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
+                    <div class="overflow-hidden">
+                        <div class="px-2 pb-4 space-y-1">
 
-                <!-- Point 3 -->
-                <div class="flex gap-4">
-                    <div
-                        class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-1">
-                        <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-neutral-900">High Agency Operators</h3>
-                        <p class="text-neutral-500 mt-1 leading-relaxed">
-                            We don't manage people — we work with people who manage themselves. You own the outcome,
-                            not just the task. If you've never had a boss you fully respected, you'll fit right in.
-                        </p>
-                    </div>
-                </div>
+                            <!-- Item 1 -->
+                            <div
+                                class="dropdown-item flex items-start gap-3 rounded-xl p-3 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] translate-y-4 opacity-0 hover:bg-neutral-50">
+                                <div
+                                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 transition-colors duration-300">
+                                    <i data-lucide="code-2" class="h-5 w-5"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-sm font-semibold text-neutral-900">Systems Thinkers Who Ship</h4>
+                                    <p class="text-sm text-neutral-500 mt-0.5">You don't just spot broken processes —
+                                        you rebuild them.</p>
+                                </div>
+                            </div>
 
-                <!-- Point 4 -->
-                <div class="flex gap-4">
-                    <div
-                        class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-1">
-                        <i data-lucide="target" class="w-3.5 h-3.5"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-neutral-900">Judged by Outcomes. Nothing Else.</h3>
-                        <p class="text-neutral-500 mt-1 leading-relaxed">
-                            You are not evaluated by distant executives who haven't touched the problem. There's no
-                            oversight from anyone who isn't directly in it with you. Your work will speak for itself —
-                            and here, it actually gets heard.
-                        </p>
-                    </div>
-                </div>
+                            <!-- Item 2 -->
+                            <div
+                                class="dropdown-item flex items-start gap-3 rounded-xl p-3 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] translate-y-4 opacity-0 hover:bg-neutral-50">
+                                <div
+                                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 transition-colors duration-300">
+                                    <i data-lucide="compass" class="h-5 w-5"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-sm font-semibold text-neutral-900">First Principles Builders</h4>
+                                    <p class="text-sm text-neutral-500 mt-0.5">We operate in ambiguity on purpose. It's
+                                        where durable operations get built.</p>
+                                </div>
+                            </div>
 
-                <!-- Point 5 -->
-                <div class="flex gap-4">
-                    <div
-                        class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-1">
-                        <i data-lucide="unlock" class="w-3.5 h-3.5"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-neutral-900">Operators Take Initiative</h3>
-                        <p class="text-neutral-500 mt-1 leading-relaxed">
-                            When you see a solution, you own it. No top-down instruction holding you back.
-                            No committee to clear it through. This creates unusual freedom — and with it,
-                            unusual accountability. Operators at Exo don't wait to be told.
-                        </p>
-                    </div>
-                </div>
+                            <!-- Item 3 -->
+                            <div
+                                class="dropdown-item flex items-start gap-3 rounded-xl p-3 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] translate-y-4 opacity-0 hover:bg-neutral-50">
+                                <div
+                                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 transition-colors duration-300">
+                                    <i data-lucide="zap" class="h-5 w-5"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-sm font-semibold text-neutral-900">High Agency Operators</h4>
+                                    <p class="text-sm text-neutral-500 mt-0.5"> You own the outcome, not just the task.
+                                    </p>
+                                </div>
+                            </div>
 
-                <!-- Point 6 -->
-                <div class="flex gap-4">
-                    <div
-                        class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-1">
-                        <i data-lucide="timer" class="w-3.5 h-3.5"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-neutral-900">Fast Thinkers. Faster Movers.</h3>
-                        <p class="text-neutral-500 mt-1 leading-relaxed">
-                            Exo optimizes for impact over consensus. There is no bureaucratic distance between
-                            identifying a problem and fixing it. Decisions get made by the people closest to
-                            the problem — which is always you.
-                        </p>
+                            <!-- Item 4 -->
+                            <div
+                                class="dropdown-item flex items-start gap-3 rounded-xl p-3 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] translate-y-4 opacity-0 hover:bg-neutral-50">
+                                <div
+                                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 transition-colors duration-300">
+                                    <i data-lucide="target" class="h-5 w-5"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-sm font-semibold text-neutral-900">Judged by Outcomes</h4>
+                                    <p class="text-sm text-neutral-500 mt-0.5">No oversight from anyone not in it with
+                                        you. work speaks for itself.</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 5 -->
+                            <div
+                                class="dropdown-item flex items-start gap-3 rounded-xl p-3 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] translate-y-4 opacity-0 hover:bg-neutral-50">
+                                <div
+                                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 transition-colors duration-300">
+                                    <i data-lucide="unlock" class="h-5 w-5"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-sm font-semibold text-neutral-900">Operators Take Initiative</h4>
+                                    <p class="text-sm text-neutral-500 mt-0.5">No top-down instruction. Unusual freedom
+                                        and accountability.</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 6 -->
+                            <div
+                                class="dropdown-item flex items-start gap-3 rounded-xl p-3 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] translate-y-4 opacity-0 hover:bg-neutral-50">
+                                <div
+                                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 transition-colors duration-300">
+                                    <i data-lucide="timer" class="h-5 w-5"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h4 class="text-sm font-semibold text-neutral-900">Fast Thinkers</h4>
+                                    <p class="text-sm text-neutral-500 mt-0.5">Optimization for impact over consensus.
+                                        Decisions by those closest to the problem.</p>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -208,8 +230,10 @@
                     <p class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-4">01 — Architect</p>
                     <h3 class="text-xl font-serif text-black mb-3">Architects design.</h3>
                     <p class="text-neutral-500 text-sm leading-relaxed">
-                        They diagnose operational chaos, map every workflow, and blueprint the department OS before a single tool is touched.
-                        <span class="text-emerald-600">Architects identify the real bottleneck — not the surface symptom</span> — and build the structural foundation every Engineer will install on top of.
+                        They diagnose operational chaos, map every workflow, and blueprint the department OS before a
+                        single tool is touched.
+                        <span class="text-emerald-600">Architects identify the real bottleneck — not the surface
+                            symptom</span> — and build the structural foundation every Engineer will install on top of.
                     </p>
                 </div>
                 <!-- Engineers -->
@@ -217,7 +241,9 @@
                     <p class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-4">02 — Engineer</p>
                     <h3 class="text-xl font-serif text-black mb-3">Engineers install.</h3>
                     <p class="text-neutral-500 text-sm leading-relaxed">
-                        They turn blueprint into working system. Configure Flow OS, deploy AI agents, and build the automations that <span class="text-emerald-600">make a department run without its founder in the room.</span>
+                        They turn blueprint into working system. Configure Flow OS, deploy AI agents, and build the
+                        automations that <span class="text-emerald-600">make a department run without its founder in the
+                            room.</span>
                         Engineers do not theorize — they build until it works.
                     </p>
                 </div>
@@ -226,14 +252,17 @@
                     <p class="text-xs font-bold tracking-widest text-emerald-600 uppercase mb-4">03 — Conductor</p>
                     <h3 class="text-xl font-serif text-black mb-3">Conductors transfer.</h3>
                     <p class="text-neutral-500 text-sm leading-relaxed">
-                        They co-run the department alongside the client team, certify operators through Exo Academy, write the SOPs, and deliver the Sovereignty Packet.
-                        <span class="text-emerald-600">A Conductor's job is done when the client no longer needs them.</span>
+                        They co-run the department alongside the client team, certify operators through Exo Academy,
+                        write the SOPs, and deliver the Sovereignty Packet.
+                        <span class="text-emerald-600">A Conductor's job is done when the client no longer needs
+                            them.</span>
                     </p>
                 </div>
             </div>
             <div class="mt-6 bg-neutral-50 border border-neutral-100 rounded-2xl p-6 max-w-2xl mx-auto text-center">
                 <p class="text-neutral-500 text-sm leading-relaxed">
-                    <span class="text-emerald-600">While each role is distinct, they are designed to operate in overlap.</span>
+                    <span class="text-emerald-600">While each role is distinct, they are designed to operate in
+                        overlap.</span>
                     All three. Every time.
                 </p>
             </div>
@@ -385,6 +414,54 @@
             duration: 1.5,
             ease: "power3.out"
         });
+
+        // Dropdown Toggle Logic
+        function toggleDropdown() {
+            const dropdown = document.getElementById('looking-for-dropdown');
+            const list = document.getElementById('dropdown-list');
+            const subtitle = document.getElementById('dropdown-subtitle');
+            const chevron = document.getElementById('dropdown-chevron');
+            const items = document.querySelectorAll('.dropdown-item');
+
+            const isOpen = list.classList.contains('grid-rows-[1fr]');
+
+            if (isOpen) {
+                // Close
+                list.classList.remove('grid-rows-[1fr]', 'opacity-100');
+                list.classList.add('grid-rows-[0fr]', 'opacity-0');
+
+                subtitle.classList.remove('opacity-0', 'max-h-0', 'mt-0');
+                subtitle.classList.add('opacity-100', 'max-h-6', 'mt-0.5');
+
+                chevron.style.transform = 'rotate(180deg)';
+                dropdown.classList.remove('rounded-3xl');
+                dropdown.classList.add('rounded-2xl');
+
+                items.forEach(item => {
+                    item.classList.remove('translate-y-0', 'opacity-100');
+                    item.classList.add('translate-y-4', 'opacity-0');
+                    item.style.transitionDelay = '0ms';
+                });
+
+            } else {
+                // Open
+                list.classList.remove('grid-rows-[0fr]', 'opacity-0');
+                list.classList.add('grid-rows-[1fr]', 'opacity-100');
+
+                subtitle.classList.remove('opacity-100', 'max-h-6', 'mt-0.5');
+                subtitle.classList.add('opacity-0', 'max-h-0', 'mt-0');
+
+                chevron.style.transform = 'rotate(0deg)';
+                dropdown.classList.remove('rounded-2xl');
+                dropdown.classList.add('rounded-3xl');
+
+                items.forEach((item, index) => {
+                    item.classList.remove('translate-y-4', 'opacity-0');
+                    item.classList.add('translate-y-0', 'opacity-100');
+                    item.style.transitionDelay = `${index * 75}ms`;
+                });
+            }
+        }
     </script>
 </body>
 
