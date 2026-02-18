@@ -153,6 +153,15 @@
         #notification-banner.visible {
             transform: translateY(0);
         }
+
+        /* Protected Images */
+        .img-protected {
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+        }
     </style>
 </head>
 
@@ -172,7 +181,8 @@
             <a href="index.html" class="flex items-center gap-2 group">
                 <div
                     class="w-8 h-8 rounded border border-white/20 flex items-center justify-center bg-white/5 group-hover:bg-white/10 transition-colors overflow-hidden">
-                    <img src="./logos/LOGO%20MARK.png" alt="Exo Logo" class="w-full h-full object-contain">
+                    <img src="./logos/LOGO%20MARK.png" alt="Exo Logo" class="w-full h-full object-contain img-protected"
+                        draggable="false">
                 </div>
                 <span class="text-md font-medium tracking-tight text-white/90">Exo Resources</span>
             </a>
@@ -771,6 +781,8 @@
             });
         }
     </script>
+    <!-- Image Protection -->
+    <script src="js/image-protection.js"></script>
 </body>
 
 </html>

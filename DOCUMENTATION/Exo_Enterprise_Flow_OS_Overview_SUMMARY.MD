@@ -54,7 +54,7 @@ Flow OS is the proprietary SaaS core enabling our BOM/T (Build, Operate, Manage/
 	•	Operate: 4–X months collaborative run (we manage via FlowOS, upskill their staff or hire via our AI recruiter).
 	•	Manage/Transfer: Managed by Exo service offering is first. Client takes frozen instance; we offer advisory Manage (high-touch oversight) or/and full (high-margin) Transfer option. Predict/Fix/Replay/new modules remain SaaS-paywalled.
 # Economic Goal: 30-day CAC payback (client ROI funds next acquisition); self-funding from client #2. Revenue: Setup fees, SaaS subs ($X/mo + modules after transfer), recruitment fees if AURA is used, and retainers.
-# Defensibility: Data gravity (millions of proprietary diffs/whys make export painful); network effects (rule-pack marketplace, 30% cut); transparency (procedural/informational justice in AI decisions to build trust/data quality).
+# Defensibility: Data gravity (millions of proprietary diffs/whys make export painful); network effects (rule-pack marketplace) that customers can buy; transparency (procedural/informational justice in AI decisions to build trust/data quality).
 ## First-Principles Engine (The Only Thing Built Once)
 Per the Exo Enterprise Thesis: Everything is a state change (“diff”): before → after → why. Build once, branch forever—namespaces for departments (e.g., ops:task=closed, sales:lead=qualified). No LLM core; rules/retrieval first for reliability (LLMs optional for “why” suggestions).
 ## Three primitive layers (reflex arc like biology: sense, react, remember):

@@ -154,6 +154,15 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.3);
         }
+
+        /* Protected Images */
+        .img-protected {
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-touch-callout: none;
+        }
     </style>
 </head>
 
@@ -226,7 +235,8 @@
                     class="absolute inset-0 flex flex-col items-center justify-center space-y-8 opacity-0 px-8 pointer-events-none">
                     <div class="glass rounded-2xl p-8 w-full text-center space-y-6">
                         <img src="assets/images/steel-assets/alexa-pfp.jpg" alt="Alexis Rivera"
-                            class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-brand-accent/50 shadow-2xl">
+                            class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-brand-accent/50 shadow-2xl img-protected"
+                            draggable="false">
                         <h1 class="font-serif text-4xl italic metallic-text">Alexis Rivera</h1>
                         <p class="text-sm text-brand-muted">Creative Director | NYC</p>
                         <span
@@ -314,7 +324,7 @@
             <!-- Mobile Logo Placement -->
             <div class="block md:hidden mt-12 mb-8">
                 <img src="./logos/Exo MasterLogo/Steel Master Logo/Steel Logo - Transparent.png" alt="Steel by Exo"
-                    class="w-24 mx-auto">
+                    class="w-24 mx-auto img-protected" draggable="false">
             </div>
 
             <div id="success-message"
@@ -389,7 +399,8 @@
 
     <!-- Desktop Logo Placement -->
     <a href="#" class="hidden md:block fixed top-8 left-8 w-32 opacity-80 hover:opacity-100 transition-opacity z-50">
-        <img src="./logos/Exo MasterLogo/Steel Master Logo/Steel Logo - Transparent.png" alt="Steel by Exo">
+        <img src="./logos/Exo MasterLogo/Steel Master Logo/Steel Logo - Transparent.png" alt="Steel by Exo"
+            class="img-protected" draggable="false">
     </a>
 
     <script>
@@ -640,6 +651,8 @@
             });
         }
     </script>
+    <!-- Image Protection -->
+    <script src="js/image-protection.js"></script>
 </body>
 
 </html>
