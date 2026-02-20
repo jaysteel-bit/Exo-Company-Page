@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Flow OS by Exo | The Operating System for Departments</title>
   <meta name="description"
-    content="Flow OS is the department-in-a-box solution. We build the rig, install the agents, and hand you the keys to a fully autonomous department.">
+    content="Flow OS is the unified operations layer for growing companies. One department for every workflow, every agent, every decision — 90 days to full ownership.">
   <meta property="og:title" content="Flow OS by Exo | The Operating System for Departments">
   <meta property="og:description" content="The department-in-a-box solution. Autonomous operations in 90 days.">
   <meta property="og:type" content="website">
@@ -16,6 +16,24 @@
   <!-- Spline Preconnect for faster loading (PRIORITY) -->
   <link rel="preconnect" href="https://my.spline.design">
   <link rel="dns-prefetch" href="https://my.spline.design">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1715251733215249');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1715251733215249&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <!-- PostHog Analytics -->
   <script>
@@ -861,7 +879,7 @@ Sequence animation intro. Usage:
     <div class="pointer-events-none absolute top-0 right-0 bottom-0 left-0"></div>
   </div>
   <!-- DUAL-MARQUEE LOGO TICKER - Scroll-Reactive Social Proof -->
-  <section class="overflow-hidden md:py-16 bg-slate-950 py-16 relative">
+  <section id="integrations" class="overflow-hidden md:py-16 bg-slate-950 py-16 relative">
 
     <!-- Container -->
     <div class="z-10 max-w-7xl mx-auto relative space-y-12">
@@ -1050,7 +1068,7 @@ Sequence animation intro. Usage:
                 <div
                   class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
                   <img loading="lazy" src="./logos/testimonial-logos/Chen-firm.JPG" alt="Chen Firm"
-                    class="h-10 w-auto object-contain">
+                    class="h-10 w-auto object-contain img-protected" draggable="false">
                 </div>
               </div>
               <div
@@ -1058,7 +1076,7 @@ Sequence animation intro. Usage:
                 <div
                   class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
                   <img loading="lazy" src="./logos/testimonial-logos/Nexora-logo.jpeg" alt="Nexora"
-                    class="h-10 w-auto object-contain">
+                    class="h-10 w-auto object-contain img-protected" draggable="false">
                 </div>
               </div>
               <div
@@ -1066,7 +1084,7 @@ Sequence animation intro. Usage:
                 <div
                   class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
                   <img loading="lazy" src="./logos/testimonial-logos/alponze-LTD.jpeg" alt="Alponze"
-                    class="h-10 w-auto object-contain">
+                    class="h-10 w-auto object-contain img-protected" draggable="false">
                 </div>
               </div>
               <div
@@ -1074,7 +1092,7 @@ Sequence animation intro. Usage:
                 <div
                   class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
                   <img loading="lazy" src="./logos/testimonial-logos/basel-team.jpeg" alt="Basel"
-                    class="h-10 w-auto object-contain">
+                    class="h-10 w-auto object-contain img-protected" draggable="false">
                 </div>
               </div>
               <div
@@ -1082,7 +1100,7 @@ Sequence animation intro. Usage:
                 <div
                   class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
                   <img loading="lazy" src="./logos/testimonial-logos/bynb-team.jpeg" alt="BYNB"
-                    class="h-10 w-auto object-contain">
+                    class="h-10 w-auto object-contain img-protected" draggable="false">
                 </div>
               </div>
               <div
@@ -1090,7 +1108,7 @@ Sequence animation intro. Usage:
                 <div
                   class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
                   <img loading="lazy" src="./logos/testimonial-logos/tamtam-logo.jpeg" alt="TamTam"
-                    class="h-10 w-auto object-contain">
+                    class="h-10 w-auto object-contain img-protected" draggable="false">
                 </div>
               </div>
               <div
@@ -1098,7 +1116,7 @@ Sequence animation intro. Usage:
                 <div
                   class="flex bg-slate-800/40 w-full h-full ring-white/5 ring-1 rounded-lg items-center justify-center overflow-hidden p-2">
                   <img loading="lazy" src="./logos/testimonial-logos/vertex-team.jpeg" alt="Vertex"
-                    class="h-10 w-auto object-contain">
+                    class="h-10 w-auto object-contain img-protected" draggable="false">
                 </div>
               </div>
               <div
@@ -3756,6 +3774,7 @@ Sequence animation intro. Usage:
             </span>
             to ensure white-glove delivery
           </p>
+          <p class="text-center text-xs font-geist text-slate-500 -mt-5 mb-8 tracking-wide">*2 ROUNDS PER MONTH</p>
 
           <!-- Risk Reversal / Trust Elements -->
           <div class="border-t border-white/10 pt-8">
@@ -3867,7 +3886,7 @@ Sequence animation intro. Usage:
                 </li>
 
                 <li>
-                  <a href="x-scale.html" class="transition hover:text-white text-sm text-slate-400 font-geist">
+                  <a href="/x-scale.html" class="transition hover:text-white text-sm text-slate-400 font-geist">
                     Contact
                   </a>
                 </li>
@@ -3898,7 +3917,7 @@ Sequence animation intro. Usage:
                   Card</a></li>
               <li><a href="index.html#departments"
                   class="transition hover:text-white text-sm text-slate-400 font-geist">Exo Academy</a></li>
-              <li><a href="index.html#departments"
+              <li><a href="#integrations"
                   class="transition hover:text-white text-sm text-slate-400 font-geist">Integrations</a></li>
             </ul>
           </div>
@@ -3907,9 +3926,9 @@ Sequence animation intro. Usage:
           <div>
             <h4 class="text-xs font-semibold text-white uppercase tracking-wider mb-4">Legal</h4>
             <ul class="mt-4 space-y-3">
-              <li><a href="privacy.html" class="transition hover:text-white text-sm text-slate-400 font-geist">Privacy
+              <li><a href="/privacy.html" class="transition hover:text-white text-sm text-slate-400 font-geist">Privacy
                   Policy</a></li>
-              <li><a href="terms.html" class="transition hover:text-white text-sm text-slate-400 font-geist">Terms of
+              <li><a href="/terms.html" class="transition hover:text-white text-sm text-slate-400 font-geist">Terms of
                   Service</a></li>
             </ul>
           </div>
@@ -3917,11 +3936,9 @@ Sequence animation intro. Usage:
         <!-- Bottom bar -->
         <div
           class="flex flex-col md:flex-row gap-4 border-white/5 border-t mt-16 pt-8 gap-x-4 gap-y-4 items-center justify-center">
-          <p class="text-sm text-slate-400 font-geist" style="">
+          <p class="text-sm text-slate-400 font-geist">
             © 2026 Exo Enterprise — All rights reserved
           </p>
-          <div class="flex items-center gap-6">
-          </div>
         </div>
       </div>
     </footer>
@@ -3936,13 +3953,48 @@ Sequence animation intro. Usage:
     (function () { const openBtn = document.getElementById('mobileMenuToggle'); const closeBtn = document.getElementById('mobileMenuClose'); const drawer = document.getElementById('mobileNavDrawer'); function open() { if (drawer) drawer.classList.add('open'); } function close() { if (drawer) drawer.classList.remove('open'); } if (openBtn) openBtn.addEventListener('click', open); if (closeBtn) closeBtn.addEventListener('click', close); if (drawer) drawer.addEventListener('click', (e) => { if (e.target === drawer) close(); }); document.querySelectorAll('.mobile-accordion-toggle').forEach(btn => { btn.addEventListener('click', () => { const wrap = btn.parentElement; const submenu = wrap.querySelector('.mobile-submenu'); const plus = btn.querySelector('.plus'); const minus = btn.querySelector('.minus'); if (submenu) { submenu.classList.toggle('hidden'); } if (plus && minus) { plus.classList.toggle('hidden'); minus.classList.toggle('hidden'); } }); }); })();
   </script>
 
+  <!-- Meta Pixel Conversion Events -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Track Lead event on primary CTA clicks to x-scale.html
+      document.querySelectorAll('a[href*="x-scale.html"]').forEach(function(link) {
+        // Only track CTA buttons (rounded-full = button style), not nav/footer text links
+        if (link.classList.contains('rounded-full') || link.classList.contains('shiny-cta')) {
+          link.addEventListener('click', function() {
+            if (typeof fbq === 'function') {
+              fbq('track', 'Lead', { content_name: 'Flow OS CTA', content_category: 'Architecture Session' });
+            }
+          });
+        }
+      });
+
+      // Track ViewContent on key sections when they enter viewport
+      var tracked = {};
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !tracked[entry.target.id]) {
+            tracked[entry.target.id] = true;
+            if (typeof fbq === 'function') {
+              fbq('track', 'ViewContent', { content_name: entry.target.id });
+            }
+          }
+        });
+      }, { threshold: 0.3 });
+
+      ['how-it-works', 'services', 'modules', 'integrations'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    });
+  </script>
+
   <!-- Cookie Consent Banner -->
   <div id="cookie-banner"
     class="fixed bottom-0 left-0 right-0 z-[100] bg-black border-t border-white/10 text-white px-6 py-4 transform translate-y-full transition-transform duration-500 ease-out flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
     <p class="text-xs sm:text-sm text-neutral-300 font-geist text-center sm:text-left max-w-4xl">
       Exo uses cookies to maintain user sessions and track marketing efforts. By continuing to use our website, you
       agree to our use of cookies for these purposes.
-      <a href="privacy.html" class="text-white underline hover:no-underline transition-colors">Read our Privacy
+      <a href="/privacy.html" class="text-white underline hover:no-underline transition-colors">Read our Privacy
         Policy</a>
     </p>
     <button id="close-cookie-banner" aria-label="Close cookie banner"
