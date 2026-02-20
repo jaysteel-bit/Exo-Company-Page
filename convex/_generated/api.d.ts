@@ -10,7 +10,7 @@
 
 import type * as leads from "../leads.js";
 import type * as mailchimp from "../mailchimp.js";
-import type * as test from "../test.js";
+import type * as twilio from "../twilio.js";
 
 import type {
   ApiFromModules,
@@ -21,7 +21,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   leads: typeof leads;
   mailchimp: typeof mailchimp;
-  test: typeof test;
+  twilio: typeof twilio;
 }>;
 
 /**

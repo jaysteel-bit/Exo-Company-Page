@@ -41,6 +41,15 @@ export const submitLead = mutation({
             source: "index",
             ...(args.engagementPreference && { engagementPreference: args.engagementPreference }),
         });
+
+        // ─── Twilio SMS Alert ───────────────────────────────────────────────
+        await ctx.scheduler.runAfter(0, internal.twilio.notifyNewLead, {
+            leadId,
+            firstName: args.firstName,
+            email: args.email,
+            source: "index",
+        });
+
         return leadId;
     },
 });
@@ -92,6 +101,14 @@ export const submitValueLead = mutation({
                 newsletterOptIn: args.newsletterOptIn,
                 timestamp: Date.now(),
                 status: "new",
+                source: "value",
+            });
+
+            // ─── Twilio SMS Alert (new leads only) ─────────────────────────
+            await ctx.scheduler.runAfter(0, internal.twilio.notifyNewLead, {
+                leadId,
+                firstName: args.firstName,
+                email: args.email,
                 source: "value",
             });
         }
@@ -147,6 +164,15 @@ export const submitApplication = mutation({
                 ...(args.engagementPreference && { engagementPreference: args.engagementPreference }),
                 status: "application_submitted",
             });
+
+            // ─── Twilio SMS Alert (always fire for applications) ────────────
+            await ctx.scheduler.runAfter(0, internal.twilio.notifyNewLead, {
+                leadId: existingLead._id,
+                firstName: args.firstName,
+                email: args.email,
+                source: "x-scale",
+            });
+
             return existingLead._id;
         } else {
             // Create new if somehow missed earlier steps
@@ -163,6 +189,15 @@ export const submitApplication = mutation({
                 status: "application_submitted",
                 source: "x-scale",
             });
+
+            // ─── Twilio SMS Alert ───────────────────────────────────────────
+            await ctx.scheduler.runAfter(0, internal.twilio.notifyNewLead, {
+                leadId,
+                firstName: args.firstName,
+                email: args.email,
+                source: "x-scale",
+            });
+
             return leadId;
         }
     },
