@@ -132,8 +132,9 @@ people aren't going to do anything.
 They're just going to get they're just
 going to be like, man, this guy's great or this gal is great, right? So if we want to grow this this this little this little slice here, what do we do? Grow the bottom. You grow the base. And this fundamentally is what growing a brand is about. You're growing the base so that the top of the pyramid is way bigger than over here where you have to try and take someone up the elevator using the four-step process that I just walked through. So, that is my blueprint for unlocking your business's maximum monetization potential."
 
+---
 
-## Exo Transcipt for VSL:
+# Exo Transcipt for VSL:
 
 ---
 
@@ -655,3 +656,49 @@ By the way — this concludes the main video. What follows are just more testimo
 3. **Short cut (60–90 sec)** — Hook + 2 testimonials + CTA — for Meta/TikTok paid ads
 4. **Hook-only (15 sec)** — "Are you the biggest risk to your own business?" + single stat + CTA — for story/reel ads
 5. **Testimonial reel (60 sec)** — pure proof stack, all 8 cards, CTA at end — for retargeting
+
+---
+
+Done. The full VSL script is now above/in VSL.md under the "Exo Transcript for VSL" section. Here's what you've got:
+
+  Structure (follows the 5 P's framework from your guidance):
+
+  Section: Hook / Promise
+  Timestamp: 0:00–0:50
+  Purpose: "Would your business survive without you?"
+  ────────────────────────────────────────
+  Section: Pain
+  Timestamp: 0:50–3:30
+  Purpose: $10K/mo in broken tools, 15 hrs/week manual ops, deals slipping, knowledge walking out the door   
+  ────────────────────────────────────────
+  Section: Proof
+  Timestamp: 3:30–5:15
+  Purpose: Jay Steel origin story, team pedigree, 55% guarantee, first testimonial hits (Tyler, Naveen, Cole)  ────────────────────────────────────────
+  Section: Plan (Visual)
+  Timestamp: 5:15–8:30
+  Purpose: Full Exo Method walkthrough — 3 phases + all 8 products explained
+  ────────────────────────────────────────
+  Section: Picture
+  Timestamp: 8:30–9:30
+  Purpose: "Tuesday morning" vision of life after — dashboard, automated follow-ups, Vanessa's 15 hrs saved  
+  ────────────────────────────────────────
+  Section: First CTA
+  Timestamp: 9:30–10:00
+  Purpose: Mid-roll — apply below, 8 spots
+  ────────────────────────────────────────
+  Section: FAQ
+  Timestamp: 10:00–14:00
+  Purpose: 11 objections pre-handled in their language (price, timing, trust, security, scope, business size)  ────────────────────────────────────────
+  Section: Proof Stack
+  Timestamp: 14:00–15:30
+  Purpose: 8 testimonial cards — full reel
+  ────────────────────────────────────────
+  Section: Final CTA / Close
+  Timestamp: 15:30–16:30
+  Purpose: Application instructions, scarcity, "stop managing chaos" close
+
+  Plus a full production guide with every visual asset you need to create (B-roll lists, motion graphics     
+  specs, text card designs, music direction, and 5 cut versions for different channels).
+
+  Every line in the script is pulled directly from your actual site copy — same numbers, same product names, 
+  same brand voice. Ready for TTS + your visual layering.
