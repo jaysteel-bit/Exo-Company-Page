@@ -178,13 +178,13 @@ If you had to think about that for even a second — you already know the answer
 
 You are the single biggest risk to your own business.
 
-**[TEXT ON SCREEN: "You are the biggest risk to your own business."]**
+**[TEXT ON SCREEN: "You are the biggest risk to your own business."]** (Change this "You are the biggest risk to your own business." copy to something else)
 
 And this video is going to show you exactly how to fix that. Not with another tool. Not with another consultant who hands you a PDF and disappears. But with a fully operational, AI-powered department — built for your business, run until it's flawless, and then handed to you completely. In 90 days.
 
-**[TEXT ON SCREEN: "90 days. Full department. Yours forever."]**
+**[TEXT ON SCREEN: "90 days. Full AI department. Yours forever."]**
 
-My name is Jay Steel. I'm the founder of Exo Enterprise. And by the end of this video, you're going to know three things: why your operations are bleeding money right now, exactly what we build to stop it, and whether this is the right fit for your company.
+My name is Exo. I'm the AI Commander of Exo Enterprise. And by the end of this video, you're going to know three things: why your operations are bleeding money right now, exactly what we build to stop it, and whether this is the right fit for your company.
 
 Stay with me. This is worth your time.
 
@@ -197,7 +197,7 @@ Stay with me. This is worth your time.
 
 Let me describe your week. Tell me if this sounds familiar.
 
-You've got ten thousand dollars a month — minimum — going out the door in tools that don't talk to each other. Notion over here. Salesforce over there. A project management tool your team stopped using two months in. Some Zapier automations that break every other week. And a Google Sheet that somehow became the backbone of your entire operation.
+You've got thousands of dollars a month — minimum — going out the door in tools that don't talk to each other. Notion over here. Salesforce over there. A project management tool your team stopped using two months in. Some Zapier automations that break every other week. And a Google Sheet that somehow became the backbone of your entire operation.
 
 **[VISUAL: Quick-flash logos of Notion, Salesforce, Asana, Zapier, Google Sheets — then they scatter/shatter]**
 
@@ -334,7 +334,7 @@ Every decision gets logged as structured data. Your people learn by doing — th
 
 **[VISUAL: Quick cuts of Exo Academy interface mockup — training modules, certification badges, progress tracking]**
 
-And here's what gets installed during this phase. Let me walk you through the full capability stack:
+And here's another bonus — what gets installed during this phase. Let me walk you through the full capability stack:
 
 **[VISUAL: Each product card appears one at a time as described — glass panels, dark background, clean icons:]**
 
@@ -673,7 +673,7 @@ Done. The full VSL script is now above/in VSL.md under the "Exo Transcript for V
   ────────────────────────────────────────
   Section: Proof
   Timestamp: 3:30–5:15
-  Purpose: Jay Steel origin story, team pedigree, 55% guarantee, first testimonial hits (Tyler, Naveen, Cole)  ────────────────────────────────────────
+  Purpose: Jay Steel origin story [Update: Exo AI is main speaker now, not Jay]; team pedigree, 55% guarantee, first testimonial hits (Tyler, Naveen, Cole)  ────────────────────────────────────────
   Section: Plan (Visual)
   Timestamp: 5:15–8:30
   Purpose: Full Exo Method walkthrough — 3 phases + all 8 products explained
@@ -702,3 +702,16 @@ Done. The full VSL script is now above/in VSL.md under the "Exo Transcript for V
 
   Every line in the script is pulled directly from your actual site copy — same numbers, same product names, 
   same brand voice. Ready for TTS + your visual layering.
+
+
+ ## NOTES: [This script has not been reviewed by Jay, so please review it and make sure it is goode]
+  - I want to update the script slightly: Instead of me (Jay, the founder) as the main speaker, I want to have Exo AI as the main speaker along with the spline animation/image of it floating around or flying around the screen when it is time to talk about the products ... and use a TTS voice that is engaging and trustworthy. [This shows our might in using AI to actually run/help businesses by using it in our first VSL.] 
+  - Make sure the VSL is also displays the fact we are a team of ex-Google, ex-Airbnb, ex-Square, ex-Webflow employees
+  - Make sure the VSL is also displays the fact we are a team that also teaches them AI through Exo Academy
+  - Make sure the VSL is engaging and keeps the viewer's attention
+  - Make sure the VSL is easy to understand and follow
+  - Make sure the VSL is persuasive and makes the viewer want to buy
+  - Make sure the VSL is trustworthy and makes the viewer want to buy
+  - Make sure the VSL is professional and makes the viewer want to buy
+  - Make sure the VSL is high quality and makes the viewer want to buy
+  - Make sure the VSL is high quality and makes the viewer want to buy
