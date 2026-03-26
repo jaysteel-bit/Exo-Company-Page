@@ -20,20 +20,22 @@
 
   <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1715251733215249');
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1715251733215249&ev=PageView&noscript=1"
-  /></noscript>
+      src="https://www.facebook.com/tr?id=1715251733215249&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
 
   <!-- PostHog Analytics -->
@@ -933,7 +935,7 @@
           <h2 class="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight leading-tight">
             About Our Founder: <br />
             <span class="text-neutral-400 font-normal block mt-3 text-xl md:text-3xl">
-              Jay Steel — <span id="rotating-title"
+              Jacob Nkansah — <span id="rotating-title"
                 class="text-emerald-400 font-medium inline-block transition-all duration-500 transform translate-y-0 opacity-100">former
                 Systems Thinking Engineer</span>
             </span>
