@@ -14,24 +14,26 @@
     <link rel="icon" type="image/png" href="/logos/LOGO%20MARK.png">
 
     <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1715251733215249');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1715251733215249&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1715251733215249');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1715251733215249&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 
-  <!-- PostHog Analytics -->
+    <!-- PostHog Analytics -->
     <script>
         !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
         posthog.init('phc_N1Clw6iwKeyIqhNrxd1cejjCuvKXPtW17bn9h6ZUw9b', {
@@ -228,8 +230,9 @@
                 <div>
                     <span
                         class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium uppercase tracking-widest border border-emerald-500/20 mb-6">
-                        Exo Vault
-                    </span>
+                        Exo Vault</span>
+                    <iconify-icon icon="solar:double-alt-arrow-down-bold-duotone"
+                        class="text-emerald-400 text-lg animate-bounce ml-2 relative top-1 inline-block"></iconify-icon>
                     <h1
                         class="text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] tracking-tight mb-6">
                         Unlock the Playbooks Used <br>to Build <span
@@ -519,23 +522,24 @@
                             It &rarr;</span>
                     </div>
 
-                    <!-- Item 2: Process -->
+                    <!-- Item 2: 5hr Consultation -->
                     <div class="relative p-8 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors cursor-pointer group"
-                        onclick="selectResource('Process Maps')">
+                        onclick="selectResource('5hr Free Consultation')">
                         <!-- Ribbon -->
                         <div class="absolute top-4 right-4 bg-emerald-600 text-white font-bold italic px-3 py-1 pr-6 text-[10px] uppercase tracking-widest shadow-lg rounded-l-md transform hover:scale-105 transition-transform"
                             style="clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%);">
-                            It's FREE
+                            FREE LIMITED TIME
                         </div>
                         <div
                             class="w-16 h-16 rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform duration-300">
-                            <iconify-icon icon="solar:document-add-linear" class="text-3xl"></iconify-icon>
+                            <iconify-icon icon="solar:user-speak-rounded-linear" class="text-3xl"></iconify-icon>
                         </div>
-                        <h3 class="text-xl text-white font-serif italic mb-2">Process Maps</h3>
-                        <p class="text-sm text-neutral-400 mb-6">Visual SOPs to automate your core operations.</p>
+                        <h3 class="text-xl text-white font-serif italic mb-2">5 Full Hours Consultation</h3>
+                        <p class="text-sm text-neutral-400 mb-6">5 hours of free consultation and hands-on work from our
+                            core team.</p>
                         <span
-                            class="text-emerald-400 text-sm font-medium border-b border-emerald-500/30 pb-0.5 group-hover:border-emerald-500 transition-colors">Get
-                            It &rarr;</span>
+                            class="text-emerald-400 text-sm font-medium border-b border-emerald-500/30 pb-0.5 group-hover:border-emerald-500 transition-colors">Claim
+                            Now &rarr;</span>
                     </div>
 
                     <!-- Item 3: AI Frameworks -->

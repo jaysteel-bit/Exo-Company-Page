@@ -24,25 +24,27 @@
         rel="stylesheet">
 
     <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1715251733215249');
-    fbq('track', 'PageView');
-    fbq('track', 'Lead', { content_name: 'Form Submission', content_category: 'Consultation Booking' });
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1715251733215249&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1715251733215249');
+        fbq('track', 'PageView');
+        fbq('track', 'Lead', { content_name: 'Form Submission', content_category: 'Consultation Booking' });
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1715251733215249&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
 
-  <!-- PostHog Analytics -->
+    <!-- PostHog Analytics -->
     <script>
         !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
         posthog.init('phc_N1Clw6iwKeyIqhNrxd1cejjCuvKXPtW17bn9h6ZUw9b', {
@@ -125,7 +127,9 @@
                         1</div>
                     <h3 class="font-bold text-lg mb-2">Book Discovery</h3>
                     <p class="text-sm text-neutral-500 leading-snug">Claim your 15-min slot below to secure your
-                        priority review. <strong class="text-black">Click AI Assessment to book your slot.</strong></p>
+                        priority review. <strong class="text-black">Click <span class="text-blue-600">"AI
+                                Assessment"</span> to book your slot.</strong>
+                    </p>
                 </div>
 
                 <!-- Step 2 -->
@@ -229,7 +233,7 @@
             <!-- Support & Legal -->
             <div class="flex flex-col items-center md:items-end gap-3">
                 <div class="text-sm text-neutral-500">
-                    Have a question before your call? <a href="mailto:support@exo.enterprise"
+                    Have a question before your call? <a href="mailto:support@exoent.co"
                         class="text-emerald-600 font-semibold hover:underline">Contact Support</a>
                 </div>
                 <div class="flex items-center gap-4 text-[10px] text-neutral-400 uppercase tracking-widest">

@@ -19,20 +19,22 @@
 
   <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1715251733215249');
     fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1715251733215249&ev=PageView&noscript=1"
-  /></noscript>
+      src="https://www.facebook.com/tr?id=1715251733215249&ev=PageView&noscript=1" /></noscript>
   <!-- End Meta Pixel Code -->
 
   <!-- PostHog Analytics -->
@@ -508,9 +510,9 @@ Sequence animation intro. Usage:
                     class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">
                     The Steel Card
                   </a>
-                  <a href="/steel.html"
+                  <a href="/x-scale.html"
                     class="block hover:bg-white/10 transition text-sm text-white/90 font-geist rounded-lg pt-2 pr-3 pb-2 pl-3">
-                    Ask Exo AI
+                    Exosystem
                   </a>
                 </div>
               </div>
@@ -859,7 +861,7 @@ Sequence animation intro. Usage:
                 <span
                   style="content: ''; pointer-events: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 1; width: 100%; aspect-ratio: 1; background: linear-gradient(-50deg, transparent, #1d4ed8, transparent); mask-image: radial-gradient(circle at bottom, transparent 40%, black); opacity: 0.6; animation: shimmer 4s linear infinite;"></span>
               </a>
-              <a href="#how-it-works"
+              <a href="#solution"
                 class="inline-flex items-center justify-center gap-2 transition [animation:fadeSlideIn_1s_ease-out_0.5s_both] hover:bg-white/15 hover:ring-white/25 ring-white/15 ring-1 text-sm font-medium text-white/90 font-geist text-center bg-white/10 w-full rounded-full pt-2.5 pr-4 pb-2.5 pl-4 backdrop-blur-sm">
                 See How It Works
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -1670,7 +1672,7 @@ Sequence animation intro. Usage:
           </div>
           <span
             class="text-xs font-medium font-geist text-slate-400 text-center group-hover:text-slate-300 transition-colors">
-            Retail
+            Ecomm | Retail
           </span>
         </div>
 
@@ -1921,7 +1923,7 @@ Sequence animation intro. Usage:
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                   <p class="text-sm font-geist text-slate-300">
-                    Productized systems are feel custom but deploy at speed
+                    Productized systems are custom but deploy at speed
                   </p>
                 </div>
 
@@ -2015,7 +2017,7 @@ Sequence animation intro. Usage:
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
                   <p class="text-sm font-geist text-slate-300">
-                    Full ownership at day 90 — no subscriptions, no lock-in
+                    Full ownership at day 90 — no subscriptions needed, no lock-in
                   </p>
                 </div>
               </div>
@@ -2292,12 +2294,12 @@ Sequence animation intro. Usage:
           { id: 1, tag: "THE FOUNDATION", title: "Flow OS", desc: "The control layer your entire operation runs through. Every SOP, every agent handoff, every decision \u2014 logged, searchable, and owned by you. Not a dashboard you rent. A department you keep.", img: "./assets/flow-image-asset/flow-os-asset.jpeg" },
           { id: 2, tag: "REVENUE OPERATIONS", title: "Deal OS", desc: "Your pipeline stops leaking. Deal OS tracks every opportunity from first touch to closed-won \u2014 surfacing stalled deals, automating follow-ups, and giving your closers the context they need before the call even starts.", img: "./assets/flow-image-asset/deal-os-asset.jpeg" },
           { id: 3, tag: "YOUR OPS TEAM ON CALL", title: "Exo Concierge", desc: "A dedicated operations team that doesn\u2019t wait for tickets. Concierge monitors your system around the clock \u2014 catching drift before it becomes downtime, optimizing workflows you forgot you built, and keeping the machine running while you sleep.", img: "./assets/flow-image-asset/Exo-concierge-wordmark-asset.jpeg" },
-          { id: 4, tag: "KNOWLEDGE THAT COMPOUNDS", title: "Exo Academy", desc: "The reason your best hire\u2019s knowledge stops being a liability. EXA turns every process into a living certification \u2014 structured training, documented SOPs, and onboarding paths that take days instead of quarters. Your team gets sharper the longer they\u2019re in the system.", img: "./assets/flow-image-asset/EXA-asset.JPG" },
+          { id: 4, tag: "KNOWLEDGE THAT COMPOUNDS", title: "Exo Academy", desc: "The reason your best hire\u2019s knowledge stops being a liability. EXA turns every process into a living certification \u2014 structured training, documented SOPs, and onboarding paths that take days instead of quarters. Ask EXA anything to instantly learn any procedure or master a new department, empowering your team and leaders to scale their skills as fast as the business.", img: "./assets/flow-image-asset/EXA-asset.JPG" },
           { id: 5, tag: "TALENT INTELLIGENCE", title: "AURA AI", desc: "Your next great hire is already in the data. AURA scouts, screens, and ranks candidates against your actual operational needs \u2014 not a job description written six months ago. Recruiting that thinks like your best hiring manager, at scale.", img: "./assets/flow-image-asset/aura-asset.jpeg" },
           { id: 6, tag: "MARKETING OPS", title: "Exo Launch", desc: "Marketing operations that actually know your brand. Launch generates campaign strategies, ad variations, and assets from your existing guidelines \u2014 not generic templates from a prompt. Your voice, amplified across every channel, without the agency retainer.", img: "./assets/flow-image-asset/exo-launch-asset.JPG" },
-          { id: 7, tag: "INSTITUTIONAL MEMORY", title: "Exo AI", desc: "Ask your business a question and get a real answer. Exo AI indexes every workflow, document, and decision log across your entire operation \u2014 the kind of institutional memory that used to live in one person\u2019s head and walked out when they did.", img: "./assets/flow-image-asset/exo-ai-orb.JPG" },
-          { id: 8, tag: "INCLUDED BONUS", title: "STEEL", desc: "For the leaders behind the operation.", img: "./assets/flow-image-asset/steel-card-asset.jpeg" },
-          { id: 9, tag: "EXPANDING", title: "And More +", desc: "The Exosystem grows with your operation. New modules, new departments, new capabilities \u2014 all built on the same foundation. We are one of a kind.", img: null }
+          { id: 7, tag: "INSTITUTIONAL MEMORY", title: "Exo AI", desc: "Ask your business a question and get an instant answer. Exo AI indexes every workflow and enables autonomous execution that takes action on your behalf \u2014 the kind of intelligence that spots bottlenecks and turns memory into execution.", img: "./assets/flow-image-asset/exo-ai-orb.JPG" },
+          { id: 8, tag: "INCLUDED BONUS", title: "STEEL", desc: "For the leaders and teams behind the operation. Gain exponential lead-generation leverage.", img: "./assets/flow-image-asset/steel-card-asset.jpeg" },
+          { id: 9, tag: "EXPANDING", title: "And More +", desc: "The Exosystem grows with your operation. New modules, new departments, new capabilities \u2014 all built on the same foundation. All yours, one of a kind.", img: null }
         ];
 
         const len = items.length;
@@ -3829,7 +3831,7 @@ Sequence animation intro. Usage:
               <div class="pt-4 border-t border-white/5">
                 <p class="leading-relaxed text-xs text-slate-200 font-geist font-bold text-center">FIND OUT IF YOU'RE A
                   FIT
-                  TODAY.
+                  TODAY
                 </p>
               </div>
             </div>
@@ -3955,12 +3957,12 @@ Sequence animation intro. Usage:
 
   <!-- Meta Pixel Conversion Events -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Track Lead event on primary CTA clicks to x-scale.html
-      document.querySelectorAll('a[href*="x-scale.html"]').forEach(function(link) {
+      document.querySelectorAll('a[href*="x-scale.html"]').forEach(function (link) {
         // Only track CTA buttons (rounded-full = button style), not nav/footer text links
         if (link.classList.contains('rounded-full') || link.classList.contains('shiny-cta')) {
-          link.addEventListener('click', function() {
+          link.addEventListener('click', function () {
             if (typeof fbq === 'function') {
               fbq('track', 'Lead', { content_name: 'Flow OS CTA', content_category: 'Architecture Session' });
             }
@@ -3970,8 +3972,8 @@ Sequence animation intro. Usage:
 
       // Track ViewContent on key sections when they enter viewport
       var tracked = {};
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
           if (entry.isIntersecting && !tracked[entry.target.id]) {
             tracked[entry.target.id] = true;
             if (typeof fbq === 'function') {
@@ -3981,7 +3983,7 @@ Sequence animation intro. Usage:
         });
       }, { threshold: 0.3 });
 
-      ['how-it-works', 'services', 'modules', 'integrations'].forEach(function(id) {
+      ['how-it-works', 'services', 'modules', 'integrations'].forEach(function (id) {
         var el = document.getElementById(id);
         if (el) observer.observe(el);
       });
