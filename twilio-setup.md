@@ -2,10 +2,10 @@
 
 ## Everything looks correct. Now set the 4 Convex env vars (run these in your terminal one by one):
 
-  npx convex env set TWILIO_ACCOUNT_SID YOUR_ACCOUNT_SID --prod
-  npx convex env set TWILIO_AUTH_TOKEN YOUR_AUTH_TOKEN --prod
-  npx convex env set TWILIO_FROM_NUMBER "+1XXXXXXXXXX" --prod
-  npx convex env set ALERT_TO_NUMBER "+1XXXXXXXXXX" --prod
+  npx convex env set TWILIO_ACCOUNT_SID [REDACTED] --prod
+  npx convex env set TWILIO_AUTH_TOKEN [REDACTED] --prod
+  npx convex env set TWILIO_FROM_NUMBER "[REDACTED]" --prod
+  npx convex env set ALERT_TO_NUMBER "[REDACTED]" --prod
 
   Note: 929-202-1268 → E.164 format is +19292021268 (US numbers need the +1 prefix).
 

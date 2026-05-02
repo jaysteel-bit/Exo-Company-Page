@@ -21,7 +21,6 @@
   "homepage": "https://github.com/jaysteel-bit/Exo-Company-Page#readme",
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
-    "@remotion/player": "^4.0.419",
     "convex": "^1.31.6"
   },
   "devDependencies": {
