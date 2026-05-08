@@ -186,17 +186,28 @@ Photorealistic UI aesthetic.
 ---
 
 ### SCENE 02.03 | 2:05 — 2:20 | ~8s | EXIT — THE KNOWLEDGE WALK
-**[VISUAL]:** Cinematic slow-motion — person carrying a box out of an office. Whiteboard visible in background.
+**[VISUAL]:** Cinematic slow-motion — person carrying a box out. The whiteboard behind them is the real subject.
 
 **[PROMPT]:**
 ```
 Cinematic slow-motion. A person in business casual clothing carries a 
-cardboard box out of a modern open-plan office. Shot from behind at medium 
-distance. In the background: a large whiteboard densely covered in process 
-diagrams, flowcharts, and handwritten notes. Warm office light. The camera 
-slowly tracks the person walking away. The whiteboard grows smaller in frame. 
-Emotional weight. Cinematic color grade — slightly desaturated warm tones.
+cardboard box toward a glass exit door. Shot from behind at medium distance — 
+we never see their face. The camera holds: it does not track them. Instead 
+it slowly pushes TOWARD the whiteboard they're leaving behind.
+
+The whiteboard fills the background: densely annotated — process flowcharts, 
+handwritten escalation paths, client names, revenue formulas, org logic. 
+The kind of knowledge that lives only in one person's head and on one 
+board. As the person walks further from frame, the whiteboard looms larger. 
+They glance back once — a half-turn, barely — then continue through the door.
+
+The door swings shut. The whiteboard remains. Nobody is coming to explain it.
+
+Warm office light bleeding cool toward the exit. Slightly desaturated — 
+colors exist but they're tired. Cinematic. Photorealistic. 8 seconds.
 ```
+
+**[NOTES]:** The emotional beat here is the WHITEBOARD, not the person. The camera's decision to push toward the board while they walk away makes the viewer feel the loss without being told to. Do NOT zoom after the person — hold and push toward the board.
 
 **[VO CUE]:** *"When a key person leaves your company — and they will eventually — all of that knowledge walks right out the door with them."*
 
@@ -261,21 +272,37 @@ Photorealistic. Cinematic.
 
 ---
 
-### SCENE 03.02 | 4:00 — 4:20 | ~8s | F1 PIT STOP — HANDS
-**[VISUAL]:** Extreme close-up F1 pit stop — hands, tires, timer.
+### SCENE 03.02 | 4:00 — 4:20 | ~8s | F1 PIT STOP — EXO CREW SAVES THE DAY
+**[VISUAL]:** Daytime F1 pit lane — Exo-branded crew floods out in formation and gets the car back on track, better than it arrived.
 
 **[PROMPT]:**
 ```
-Extreme close-up of an F1 pit stop in progress. Gloved hands moving with 
-surgical precision — wheel nut spinning, carbon fiber under tension, 
-mechanisms engaging in fractions of a second. Ultra-fast motion: blurred 
-speed with moments of sharp freeze-frame clarity. Pit lane lit by dramatic 
-overhead work lights against a dark track environment — deep shadows, high 
-contrast. Color grade: dark, desaturated steel tones with faint warm catch-light 
-on metal surfaces. The framing stays intimate — elbows, wrists, mechanisms. 
-Not the spectacle of the race. The precision of the system. Cinematic. 
-Photorealistic.
+Cinematic F1 pit stop. DAYTIME. Bright overhead sun, hard track shadows, 
+heat shimmer off the asphalt. The pit lane is active — the car pulls in and 
+the Exo crew floods out in perfect formation. Full-black technical uniforms 
+with a small obsidian orb emblem on the upper arm and upper chest. 
+Every person has a specific job. No one overlaps.
+
+Beat 1: Burst of organized chaos — wheel gun spinning, jack rising, fresh 
+tire sliding on. Ultra-fast motion with freeze-frame clarity on key mechanisms. 
+Gloved hands, carbon fiber tension, chrome tools catching direct sun.
+
+Beat 2: Medium shot — the full crew visible as a unit. Six positions, six 
+roles, each executing without looking at each other. The choreography of a 
+system that has run this drill a thousand times.
+
+Beat 3: The car screams back out onto the track — faster, leaner, optimized. 
+The crew stops. Composed. Already watching it go. Timer on screen (barely 
+visible): 2.8 seconds.
+
+Warm direct sunlight. High contrast. Cinematic color grade — saturated 
+track colors with sharp shadows. The energy is controlled power, not panic.
+Photorealistic. 8-second clip.
 ```
+
+**[PRODUCTION NOTE — POST-VFX LAYER]:** In post, a subtle background layer can be added: the six department orbs (Flow OS blue, Deal OS emerald, Academy light blue, AURA violet, Launch orange, Concierge ring) floating faintly behind the pit lane environment — like a ghost layer, barely visible at 15–20% opacity. This connects the pit crew metaphor directly to the product suite without breaking the cinematic realism of the shot. This is an overlay/composite, not part of the AI generation prompt.
+
+**[NOTES]:** Generate three clips: (A) extreme close-up on hands/mechanisms, (B) medium shot of full crew in formation flooding out, (C) wide shot of car screaming back onto track with crew standing composed in the background. Edit as a tight 3-cut sequence in post.
 
 **[VO CUE]:** *"A pit crew of specialists runs out, executes twenty precise jobs in under three seconds..."*
 
@@ -298,17 +325,27 @@ is running without them. Medium shot. Cinematic. Warm natural color grade.
 ---
 
 ### SCENE 03.04 | 4:50 — 5:00 | ~4s | ORB STAT PULSE
-**[VISUAL]:** Exo orb pulses and expands as the 256k stat lands. Then contracts.
+**[VISUAL]:** Exo orb expands as the 256k stat lands — radiating real business data, not abstract streams.
 
 **[PROMPT]:**
 ```
-A black glossy orb in near-white void space. The orb pulses outward — 
-expanding to 120% scale over 1.5 seconds — as faint data streams of 
-text and numbers radiate outward from its surface like a sonar ping. 
-The streams fade quickly. The orb contracts back to its original size 
-and holds. The pulse feels like a system processing and delivering 
-output. Photorealistic. Cinematic.
+A black glossy orb in near-white void. The orb pulses outward — expanding 
+to 120% scale over 1.5 seconds. As it expands, faint data radiates from 
+its surface like a sonar pulse. The data is specific and legible for 
+one frame: sales pipeline stages, org charts, onboarding checklists, 
+revenue formulas, operational SOPs — recognizable document shapes and 
+line graphs dissolving at their outer edges. Not random noise. Business 
+context. The kind of information that normally lives across twelve tools 
+and four people's heads.
+
+The streams fade before reaching the frame edge. The orb contracts back 
+to resting size and holds completely still. The stillness after the pulse 
+is the point: it processed all of that and it isn't tired.
+
+Near-white void background. Photorealistic. Cinematic. 4–5 second clip.
 ```
+
+**[NOTES]:** The data shapes visible in the radiated pulse don't need to be perfectly readable — they need to look like real business artifacts (not sci-fi hexagons or random code). Think: a partially visible Excel-style grid, a flowchart branch, a bullet-point list. Familiar shapes that register in one second.
 
 **[VO CUE]:** *"...runs on a 256,000-token context window, trained across thousands of business inputs..."*
 

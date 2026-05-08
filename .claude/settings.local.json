@@ -34,7 +34,9 @@
       "Bash(python3 -c ' *)",
       "Bash(python3 -c \"from PIL import Image, ImageDraw, ImageFont; print\\('Pillow ready'\\)\")",
       "Bash(python3 -c \"from PIL import Image; print\\('Pillow ready'\\)\")",
-      "Bash(python3 make_character_sheets.py)"
+      "Bash(python3 make_character_sheets.py)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot\\\\evals\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot\\\\references\")"
     ]
   }
 }

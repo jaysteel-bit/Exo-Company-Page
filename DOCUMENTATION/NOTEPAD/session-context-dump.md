@@ -245,7 +245,7 @@ Where Claude gets marketing-skills plugin right automatically:
   ├─────────────────────────────────────┼───────────────────────────────────────┤
   │ copywriting vs sales-enablement     │ Depends on the asset type             │
   └─────────────────────────────────────┴───────────────────────────────────────┘
-If you just say "use marketing-skills" + describe the task, Claude will pick the right sub-skill ~85% of the time. The 15% failure cases are the overlapping ones above — for those, a one-word hint (e.g., "rewrite existing copy" vs "write new copy") resolves it.
+If you just say "use marketing-skills" + describe the task, Claude will pick the right sub-skill ~85% of the time. The 15% failure cases are the overlapping ones above — for those, a one-word hint (e.g., "rewrite existing copy" vs "write new copy") resolves it. -- **Claude Code Agent can even remind you which task within the marketing-skill and *when* using the skill could benefit you.**
 
 ---
 

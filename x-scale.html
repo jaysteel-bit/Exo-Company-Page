@@ -68,11 +68,19 @@
             --font-serif: 'Playfair Display', serif;
         }
 
+        /* iOS Safari uses html as scroll root — must set on both */
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
         body {
             font-family: var(--font-sans);
             background-color: #050505;
             color: #e5e5e5;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            max-width: 100%;
         }
 
         /* Typography Utilities */
@@ -215,7 +223,7 @@
     </div>
 
     <!-- SPLINE BACKGROUND -->
-    <div class="fixed top-0 left-0 w-full h-full -z-10 opacity-60 pointer-events-none">
+    <div class="fixed top-0 left-0 w-full h-full -z-10 opacity-60 pointer-events-none overflow-hidden">
         <div class="absolute inset-0 bg-neutral-950/40 z-10"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-neutral-850/20 via-transparent to-neutral-850 z-10"></div>
         <iframe id="spline-iframe" src="https://my.spline.design/animatedshapeblend-1gCFHvLukjcmK6imbIAFLY2d/"
@@ -318,9 +326,9 @@
                 Trusted by founders and leaders building the future</p>
 
             <!-- Animated Tooltip Component -->
-            <div class="flex flex-row items-center justify-center mb-10 w-full animate-fade-up"
+            <div class="flex flex-row items-center justify-center mb-10 w-full animate-fade-up overflow-x-hidden"
                 style="animation-delay: 0.2s;">
-                <div class="flex items-center gap-2" id="animated-tooltip-container">
+                <div class="flex items-center gap-2 max-w-full" id="animated-tooltip-container">
                     <!-- Items will be injected here or hardcoded below -->
 
                     <!-- Person 1 -->
