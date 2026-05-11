@@ -36,7 +36,21 @@
       "Bash(python3 -c \"from PIL import Image; print\\('Pillow ready'\\)\")",
       "Bash(python3 make_character_sheets.py)",
       "Bash(mkdir -p \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot\\\\evals\")",
-      "Bash(mkdir -p \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot\\\\references\")"
+      "Bash(mkdir -p \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot\\\\references\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot-workspace\\\\iteration-1\\\\eval-1-create-from-scratch\\\\workdir\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot-workspace\\\\iteration-1\\\\eval-1-create-from-scratch\\\\with_skill\\\\outputs\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot-workspace\\\\iteration-1\\\\eval-1-create-from-scratch\\\\without_skill\\\\outputs\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot-workspace\\\\iteration-1\\\\eval-2-smart-update\\\\workdir\\\\company-ssot\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot-workspace\\\\iteration-1\\\\eval-2-smart-update\\\\with_skill\\\\outputs\")",
+      "Bash(python eval-viewer/generate_review.py \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot-workspace\\\\iteration-1\" --skill-name \"company-ssot\" --benchmark \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot-workspace\\\\iteration-1\\\\benchmark.json\" --static \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot-workspace\\\\iteration-1\\\\review.html\")",
+      "Bash(Start-Process *)",
+      "PowerShell(Start-Process \"C:\\\\Users\\\\viole\\\\.claude\\\\skills\\\\company-ssot-workspace\\\\iteration-1\\\\review.html\")",
+      "Bash(Copy-Item *)",
+      "PowerShell(cmd /c ren \"C:\\\\Users\\\\viole\\\\Desktop\\\\openclaw-workspace\" \"agent-workspace\")",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\viole\\\\Desktop\\\\agent-workspace\\\\Exo Enterprise\\\\company-ssot\" | Sort-Object Name | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\viole\\\\Desktop\\\\agent-workspace\\\\Exo Enterprise\" | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\viole\\\\Desktop\\\\Biz Folder\\\\Exo Biz\\\\EXO-HTML\\\\DOCUMENTATION\" | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\viole\\\\Desktop\\\\Biz Folder\\\\Exo Biz\\\\EXO-HTML\\\\logos\" | ForEach-Object { $_.Name })"
     ]
   }
 }
